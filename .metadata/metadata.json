@@ -1,0 +1,11 @@
+﻿{
+	"name":	"Historical Tweaks - Colonization",
+	"id":	"historicaltweaks.colonization",
+	"version":	"0.1",
+	"supported_game_version":	"1.0.*",
+	"short_description":	"Colonization submod for Historical Tweaks.\nPortugal gets Brazil, Angola, Mozambique, the Azores, Madeira and Cape Verde.\nSpain gets most of the Americas, the Philipines and the Canaries.\nBritain gets Canada, the East Coast, Australia and wargoals on Dutch South Africa\nFrance gets Quebec\nFrance and Britain compete for Louisiana.\nMuscovy/Russia get Siberia and Alaska.\nPost-Yuan China gets Taiwan.\nUnified Japan gets Hokaido.\nThe Netherlands get Indonesia, South Africa and wargoals on northeast Brazil.\nCoastal Guinea is split between Portugal, France and Britain.\nAfrican inland colonization is blocked for countries with their capitals in Europe until they unlock Vaccinations.",
+	"tags":	["Events", "Historical"],
+	"relationships":	[],
+	"game_custom_data":	{
+}
+}

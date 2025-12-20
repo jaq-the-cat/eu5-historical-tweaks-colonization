@@ -12,8 +12,8 @@ class ColonizeProvince(TemplateData):
 
 	EVENT_TEMPLATE = '''htc_colonize_province_{name}.{n} = {{
 		type = country_event
-		title = htc_colonize_province_{name}.{n}.title
-		desc = htc_colonize_province_{name}.{n}.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {{
@@ -32,16 +32,11 @@ class ColonizeProvince(TemplateData):
 			province_definition:{geography} = {{
 				any_location_in_province_definition = {{
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}}
 				not = {{ has_colonial_charter = root }}
-				not = {{
-					any_present_country = {{
-						filter = {{ has_colonial_charters = yes }}
-						has_colonial_charter_in = prev
-					}}
-				}}
 			}}
 		}}
 

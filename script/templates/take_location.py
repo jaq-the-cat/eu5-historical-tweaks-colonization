@@ -12,8 +12,8 @@ class TakeLocation(TemplateData):
 
 	EVENT_TEMPLATE = '''htc_take_location_{name}.{n} = {{
 		type = country_event
-		title = htc_take_location_{name}.{n}.title
-		desc = htc_take_location_{name}.{n}.desc
+		title = htc_take_location.title
+		desc = htc_take_location.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {{

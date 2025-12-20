@@ -2,6 +2,7 @@
  
 REPLACE:create_colonial_charter = {
 	type = owncountry
+	type = owncountry
 	
 	potential = {
 		scope:actor = {
@@ -44,7 +45,7 @@ REPLACE:create_colonial_charter = {
 		column = {
 			data = colonial_charter
 		}
-		#no trigger, possible_colonial_charters does province for us in code
+		#no trigger, possible_colonial_charters does this for us in code
 		enabled = {
 			scope:actor = {
 				is_valid_colonial_charter = prev
@@ -62,59 +63,34 @@ REPLACE:create_colonial_charter = {
 		}
 	}
 
-	select_trigger = {
-		default_sort = population
-		top_widget = colony_item_card_at_province_select
-		looking_for_a = province
-		source = actor
-		target_flag = source
-		cache_targets = yes #always the same set
-		pre_evaluation_sort_value = {
-			value = population
-		}
-		pre_evaluation_number_to_evaluate_fully = 5
-		max_targets_for_ui = 100 #big countries really punish the UI
-		name = "create_colonial_charter_select_province"
-		none_available_msg_key = "create_colonial_charter_select_province_none"
-		column = {
-			data = create_colonial_charter_column
-		}
-		column = {
-			data = population
-		}
-		enabled = {
-			population > 1
-		}
-	}
- 
 	effect = {
 		scope:actor = {
 			if = {
 				limit = {
-					exists = scope:source
 					exists = scope:target
 				}
 				create_colonial_charter = {
-					source = scope:source
 					target = scope:target
 				}
 			}
 		}
 	}
-
+	
 	ai_will_do = {
 		if = {
 			limit =  {
 				or = {
 					scope:actor.capital.region = region:italy_region
 					scope:actor = {
-						has_or_had_tag = POR
-						has_or_had_tag = CAS
-						has_or_had_tag = FRA
-						has_or_had_tag = ENG
+						or = {
+							has_or_had_tag = POR
+							has_or_had_tag = CAS
+							has_or_had_tag = FRA
+							has_or_had_tag = ENG
+						}
 					}
 					scope:target = {
-						continent = africa
+						continent = continent:africa
 						not = {
 							any_location_in_province_definition = { is_coastal = yes }
 						}

@@ -2,8 +2,8 @@
 
 htc_colonize_province_portugal.1 = {
 		type = country_event
-		title = htc_colonize_province_portugal.1.title
-		desc = htc_colonize_province_portugal.1.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -22,16 +22,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:madeira_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -56,8 +51,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.2 = {
 		type = country_event
-		title = htc_colonize_province_portugal.2.title
-		desc = htc_colonize_province_portugal.2.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -76,16 +71,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:azores_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -110,8 +100,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.3 = {
 		type = country_event
-		title = htc_colonize_province_portugal.3.title
-		desc = htc_colonize_province_portugal.3.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -130,16 +120,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:canary_islands_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -164,8 +149,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.4 = {
 		type = country_event
-		title = htc_colonize_province_portugal.4.title
-		desc = htc_colonize_province_portugal.4.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -184,16 +169,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:cape_verde_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -218,8 +198,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.5 = {
 		type = country_event
-		title = htc_colonize_province_portugal.5.title
-		desc = htc_colonize_province_portugal.5.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -238,16 +218,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:guinean_coast_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -272,8 +247,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.6 = {
 		type = country_event
-		title = htc_colonize_province_portugal.6.title
-		desc = htc_colonize_province_portugal.6.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -292,16 +267,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:temne_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -326,8 +296,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.7 = {
 		type = country_event
-		title = htc_colonize_province_portugal.7.title
-		desc = htc_colonize_province_portugal.7.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -346,16 +316,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:fante_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -380,8 +345,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.8 = {
 		type = country_event
-		title = htc_colonize_province_portugal.8.title
-		desc = htc_colonize_province_portugal.8.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -400,16 +365,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:ewe_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -434,8 +394,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.9 = {
 		type = country_event
-		title = htc_colonize_province_portugal.9.title
-		desc = htc_colonize_province_portugal.9.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -454,16 +414,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:mbegela_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -488,8 +443,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.10 = {
 		type = country_event
-		title = htc_colonize_province_portugal.10.title
-		desc = htc_colonize_province_portugal.10.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -508,16 +463,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:namibe_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -542,8 +492,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.11 = {
 		type = country_event
-		title = htc_colonize_province_portugal.11.title
-		desc = htc_colonize_province_portugal.11.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -562,16 +512,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:owambo_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -596,8 +541,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.12 = {
 		type = country_event
-		title = htc_colonize_province_portugal.12.title
-		desc = htc_colonize_province_portugal.12.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -616,16 +561,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:ezorongondo_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -650,8 +590,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.13 = {
 		type = country_event
-		title = htc_colonize_province_portugal.13.title
-		desc = htc_colonize_province_portugal.13.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -670,16 +610,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:komati_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -704,8 +639,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.14 = {
 		type = country_event
-		title = htc_colonize_province_portugal.14.title
-		desc = htc_colonize_province_portugal.14.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -724,16 +659,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:inhambane_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -758,8 +688,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.15 = {
 		type = country_event
-		title = htc_colonize_province_portugal.15.title
-		desc = htc_colonize_province_portugal.15.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -778,16 +708,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:pungwe_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -812,8 +737,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.16 = {
 		type = country_event
-		title = htc_colonize_province_portugal.16.title
-		desc = htc_colonize_province_portugal.16.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -832,16 +757,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:buzi_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -866,8 +786,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.17 = {
 		type = country_event
-		title = htc_colonize_province_portugal.17.title
-		desc = htc_colonize_province_portugal.17.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -886,16 +806,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:lower_zambezi_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -920,8 +835,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.18 = {
 		type = country_event
-		title = htc_colonize_province_portugal.18.title
-		desc = htc_colonize_province_portugal.18.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -940,16 +855,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:ucungo_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -974,8 +884,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.19 = {
 		type = country_event
-		title = htc_colonize_province_portugal.19.title
-		desc = htc_colonize_province_portugal.19.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -994,16 +904,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:liganha_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -1028,8 +933,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.20 = {
 		type = country_event
-		title = htc_colonize_province_portugal.20.title
-		desc = htc_colonize_province_portugal.20.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -1048,16 +953,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:mozambique_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -1082,8 +982,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.21 = {
 		type = country_event
-		title = htc_colonize_province_portugal.21.title
-		desc = htc_colonize_province_portugal.21.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -1102,16 +1002,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:lower_lurio_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 
@@ -1136,8 +1031,8 @@ htc_colonize_province_portugal.1 = {
 	}
 	htc_colonize_province_portugal.22 = {
 		type = country_event
-		title = htc_colonize_province_portugal.22.title
-		desc = htc_colonize_province_portugal.22.desc
+		title = htc_colonize_province.title
+		desc = htc_colonize_province.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -1156,16 +1051,11 @@ htc_colonize_province_portugal.1 = {
 			province_definition:messalo_province = {
 				any_location_in_province_definition = {
 					has_owner = no
+					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root
 				}
 				not = { has_colonial_charter = root }
-				not = {
-					any_present_country = {
-						filter = { has_colonial_charters = yes }
-						has_colonial_charter_in = prev
-					}
-				}
 			}
 		}
 

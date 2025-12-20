@@ -2,8 +2,8 @@
 
 htc_colonize_in_region_castille.1 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.1.title
-		desc = htc_colonize_in_region_castille.1.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -21,31 +21,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:colombia_region
+				filter = { region = region:colombia_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:colombia_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:colombia_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}
@@ -65,8 +65,8 @@ htc_colonize_in_region_castille.1 = {
 	}
 	htc_colonize_in_region_castille.2 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.2.title
-		desc = htc_colonize_in_region_castille.2.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -84,31 +84,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:la_plata_region
+				filter = { region = region:la_plata_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:la_plata_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:la_plata_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}
@@ -128,8 +128,8 @@ htc_colonize_in_region_castille.1 = {
 	}
 	htc_colonize_in_region_castille.3 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.3.title
-		desc = htc_colonize_in_region_castille.3.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -147,31 +147,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:andes_region
+				filter = { region = region:andes_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:andes_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:andes_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}
@@ -191,8 +191,8 @@ htc_colonize_in_region_castille.1 = {
 	}
 	htc_colonize_in_region_castille.4 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.4.title
-		desc = htc_colonize_in_region_castille.4.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -210,31 +210,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:chaco_region
+				filter = { region = region:chaco_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:chaco_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:chaco_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}
@@ -254,8 +254,8 @@ htc_colonize_in_region_castille.1 = {
 	}
 	htc_colonize_in_region_castille.5 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.5.title
-		desc = htc_colonize_in_region_castille.5.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -273,31 +273,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:caribbean_region
+				filter = { region = region:caribbean_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:caribbean_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:caribbean_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}
@@ -317,8 +317,8 @@ htc_colonize_in_region_castille.1 = {
 	}
 	htc_colonize_in_region_castille.6 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.6.title
-		desc = htc_colonize_in_region_castille.6.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -336,31 +336,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:central_america_region
+				filter = { region = region:central_america_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:central_america_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:central_america_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}
@@ -380,8 +380,8 @@ htc_colonize_in_region_castille.1 = {
 	}
 	htc_colonize_in_region_castille.7 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.7.title
-		desc = htc_colonize_in_region_castille.7.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -399,31 +399,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:mesoamerica_region
+				filter = { region = region:mesoamerica_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:mesoamerica_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:mesoamerica_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}
@@ -443,8 +443,8 @@ htc_colonize_in_region_castille.1 = {
 	}
 	htc_colonize_in_region_castille.8 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.8.title
-		desc = htc_colonize_in_region_castille.8.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -462,31 +462,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:great_plains_region
+				filter = { region = region:great_plains_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:great_plains_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:great_plains_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}
@@ -506,8 +506,8 @@ htc_colonize_in_region_castille.1 = {
 	}
 	htc_colonize_in_region_castille.9 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.9.title
-		desc = htc_colonize_in_region_castille.9.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -525,31 +525,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:aridoamerica_region
+				filter = { region = region:aridoamerica_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:aridoamerica_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:aridoamerica_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}
@@ -569,8 +569,8 @@ htc_colonize_in_region_castille.1 = {
 	}
 	htc_colonize_in_region_castille.10 = {
 		type = country_event
-		title = htc_colonize_in_region_castille.10.title
-		desc = htc_colonize_in_region_castille.10.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -588,31 +588,31 @@ htc_colonize_in_region_castille.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:west_coast_region
+				filter = { region = region:west_coast_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:west_coast_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:west_coast_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}

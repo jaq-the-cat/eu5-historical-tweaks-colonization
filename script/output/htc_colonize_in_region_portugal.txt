@@ -2,8 +2,8 @@
 
 htc_colonize_in_region_portugal.1 = {
 		type = country_event
-		title = htc_colonize_in_region_portugal.1.title
-		desc = htc_colonize_in_region_portugal.1.desc
+		title = htc_colonize_in_region.title
+		desc = htc_colonize_in_region.desc
 		fire_only_once = no
 		
 		dynamic_historical_event = {
@@ -20,32 +20,31 @@ htc_colonize_in_region_portugal.1 = {
 
 		trigger = {
 			any_province_definition = {
-				region = region:brazil_region
+				filter = { region = region:brazil_region }
 				not = { has_colonial_charter = root }
-				not = { any_present_country = { has_colonial_charter_in = prev } }
 				any_location_in_province_definition = {
+					within_colonial_range_of = root
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
-					within_colonial_range_of = root
 				}
-				is_valid_colonial_charter = yes
 			}
 		}
 		
 		immediate = {
+			region:brazil_region = {
+				save_scope_as = source
+			}
 			random_province_definition = {
 				limit = {
 					region = region:brazil_region
 					not = { has_colonial_charter = root }
-					not = { any_present_country = { has_colonial_charter_in = prev } }
 					any_location_in_province_definition = {
+						within_colonial_range_of = root
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root
-						within_colonial_range_of = root
 					}
-					is_valid_colonial_charter = yes
 				}
 				save_scope_as = geo
 			}

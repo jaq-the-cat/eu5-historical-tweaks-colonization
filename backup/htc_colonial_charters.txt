@@ -47,7 +47,7 @@ REPLACE:create_colonial_charter = {
 		#no trigger, possible_colonial_charters does province for us in code
 		enabled = {
 			scope:actor = {
-				is_valid_colonial_charter = prev
+				
 				custom_tooltip = {
 					text = settle_the_frontier_ct
 					not = {

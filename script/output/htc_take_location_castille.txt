@@ -2,8 +2,8 @@
 
 htc_take_location_castille.1 = {
 		type = country_event
-		title = htc_take_location_castille.1.title
-		desc = htc_take_location_castille.1.desc
+		title = htc_take_location.title
+		desc = htc_take_location.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -49,8 +49,8 @@ htc_take_location_castille.1 = {
 	}
 	htc_take_location_castille.2 = {
 		type = country_event
-		title = htc_take_location_castille.2.title
-		desc = htc_take_location_castille.2.desc
+		title = htc_take_location.title
+		desc = htc_take_location.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -96,8 +96,8 @@ htc_take_location_castille.1 = {
 	}
 	htc_take_location_castille.3 = {
 		type = country_event
-		title = htc_take_location_castille.3.title
-		desc = htc_take_location_castille.3.desc
+		title = htc_take_location.title
+		desc = htc_take_location.desc
 		fire_only_once = yes
 		
 		dynamic_historical_event = {
@@ -134,6 +134,53 @@ htc_take_location_castille.1 = {
 			historical_option = yes
 			
 			location:beer_dun = {
+				change_location_owner = root
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_take_location_castille.4 = {
+		type = country_event
+		title = htc_take_location.title
+		desc = htc_take_location.desc
+		fire_only_once = yes
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1495.1.1
+			to = 1505.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			location:bermuda = {
+				has_owner = no
+				is_ownable = yes
+				within_colonial_range_of = root
+				is_discovered_by = root
+			}
+		}		
+
+		immediate = {
+			location:bermuda = {
+				save_scope_as = geo
+			}
+		}
+		
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+			
+			location:bermuda = {
 				change_location_owner = root
 			}
 		}

@@ -1,0 +1,633 @@
+﻿namespace = htc_colonize_in_region_castille
+
+htc_colonize_in_region_castille.1 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.1.title
+		desc = htc_colonize_in_region_castille.1.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:colombia_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:colombia_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_colonize_in_region_castille.2 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.2.title
+		desc = htc_colonize_in_region_castille.2.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:la_plata_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:la_plata_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_colonize_in_region_castille.3 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.3.title
+		desc = htc_colonize_in_region_castille.3.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:andes_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:andes_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_colonize_in_region_castille.4 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.4.title
+		desc = htc_colonize_in_region_castille.4.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:chaco_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:chaco_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_colonize_in_region_castille.5 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.5.title
+		desc = htc_colonize_in_region_castille.5.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:caribbean_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:caribbean_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_colonize_in_region_castille.6 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.6.title
+		desc = htc_colonize_in_region_castille.6.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:central_america_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:central_america_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_colonize_in_region_castille.7 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.7.title
+		desc = htc_colonize_in_region_castille.7.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:mesoamerica_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:mesoamerica_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_colonize_in_region_castille.8 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.8.title
+		desc = htc_colonize_in_region_castille.8.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:great_plains_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:great_plains_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_colonize_in_region_castille.9 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.9.title
+		desc = htc_colonize_in_region_castille.9.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:aridoamerica_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:aridoamerica_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	htc_colonize_in_region_castille.10 = {
+		type = country_event
+		title = htc_colonize_in_region_castille.10.title
+		desc = htc_colonize_in_region_castille.10.desc
+		fire_only_once = no
+		
+		dynamic_historical_event = {
+            tag = CAS
+            tag = SPA
+			from = 1480.1.1
+			to = 1836.1.1
+			monthly_chance = 10
+		}
+
+		illustration_tags = {
+			10 = happy
+			10 = exterior
+		}
+
+		trigger = {
+			any_province_definition = {
+				region = region:west_coast_region
+				not = { has_colonial_charter = root }
+				not = { any_present_country = { has_colonial_charter_in = prev } }
+				any_location_in_province_definition = {
+					is_ownable = yes
+					is_discovered_by = root
+					within_colonial_range_of = root
+				}
+				is_valid_colonial_charter = yes
+			}
+		}
+		
+		immediate = {
+			random_province_definition = {
+				limit = {
+					region = region:west_coast_region
+					not = { has_colonial_charter = root }
+					not = { any_present_country = { has_colonial_charter_in = prev } }
+					any_location_in_province_definition = {
+						has_owner = no
+						is_ownable = yes
+						is_discovered_by = root
+						within_colonial_range_of = root
+					}
+					is_valid_colonial_charter = yes
+				}
+				save_scope_as = geo
+			}
+		}
+
+		option = {
+			name = htc.options.take
+			historical_option = yes
+
+			create_colonial_charter = {
+				target = scope:geo
+			}
+		}
+		option = {
+			name = htc.options.no
+		}
+	}
+	

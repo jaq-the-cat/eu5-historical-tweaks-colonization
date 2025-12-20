@@ -1,0 +1,11 @@
+historical_colonisation_rule = {
+	default = strict_historical_colonization
+	
+	strict_historical_colonization = {
+		flag = flavour_rule
+	}
+
+	flexible_historical_colonization = {
+		flag = flavour_rule
+	}
+}

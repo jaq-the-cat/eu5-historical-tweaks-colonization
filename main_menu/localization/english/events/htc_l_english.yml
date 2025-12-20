@@ -1,0 +1,14 @@
+﻿l_english:
+  htc.options.take: "Take it!"
+  htc.options.claim: "Claim it!"
+  htc.options.no: "Ignore it."
+  htc_claim_reason_historical: "is a Historical Colony"
+
+  htc_take_location.title: "Take Location"
+  htc_take_location.title: "Take [SCOPE.sLocation('geo').GetName]"
+  htc_colonize_province.title: "Colonize Province"
+  htc_colonize_province.desc: "Colonize [SCOPE.sProvince('geo').GetName]"
+  htc_colonize_in_area.title: "Colonize Province In Area"
+  htc_colonize_in_area.desc: "Colonize [SCOPE.sProvince('geo').GetName]"
+  htc_colonize_in_region.title: "Colonize Province In Region"
+  htc_colonize_in_region.desc: "Colonize [SCOPE.sProvince('geo').GetName]"

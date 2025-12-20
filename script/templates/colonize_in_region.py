@@ -34,6 +34,7 @@ class ColonizeInRegion(TemplateData):
 				not = {{ has_colonial_charter = root }}
 				not = {{ any_present_country = {{ has_colonial_charter_in = prev }} }}
 				any_location_in_province_definition = {{
+					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
 					within_colonial_range_of = root

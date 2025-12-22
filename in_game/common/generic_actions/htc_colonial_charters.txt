@@ -2,7 +2,6 @@
  
 REPLACE:create_colonial_charter = {
 	type = owncountry
-	type = owncountry
 	
 	potential = {
 		scope:actor = {
@@ -29,7 +28,6 @@ REPLACE:create_colonial_charter = {
 	automation_tick_frequency = 1
 
 	player_automated_category = colonies
-
 	
 	price = price:create_colonial_charter
 	
@@ -78,36 +76,44 @@ REPLACE:create_colonial_charter = {
 	
 	ai_will_do = {
 		if = {
-			limit =  {
-				or = {
+			limit = {
+				not = {
 					scope:actor.capital.region = region:italy_region
-					scope:actor = {
-						or = {
-							has_or_had_tag = POR
-							has_or_had_tag = CAS
-							has_or_had_tag = FRA
-							has_or_had_tag = ENG
-						}
-					}
+					not = { capital.province_definition = province_definition:cape_verde_province }
+				}
+				not = {
 					scope:target = {
 						continent = continent:africa
-						not = {
-							any_location_in_province_definition = { is_coastal = yes }
+						# dont colonize inland provinces
+						not = { any_location_in_province_definition = { is_coastal = yes } }
+					}
+				}
+				or = {
+					and = {
+						current_year > 1720
+						scope:actor ={
+							or = {
+								capital.region = region:iberia_region
+								capital.region = region:france_region
+								capital.region = region:great_britain_region
+								capital.region = region:ireland_region
+							}
+						}
+					}
+					scope:actor = {
+						or = {
+							# who can colonize pre-1650
+							# POR, CAS, FRA, ENG colonize via event
+							and = {
+								is_subject_type = colonial_nation
+								country_tax_base > 50
+								capital.region = scope:target.region
+							}
+							has_or_had_tag = SWE
+							has_or_had_tag = FIN
 						}
 					}
 				}
-			}
-			add = -1000
-		}
-		else_if = {
-            limit = {
-                scope:actor = {
-					or = {
-						is_subject_type = colonial_nation
-						has_or_had_tag = SWE
-						has_or_had_tag = FIN
-					}
-                }
 			}
             add = "scope:actor.colonial_charter_utility(scope:target|scope:source)"
 		}

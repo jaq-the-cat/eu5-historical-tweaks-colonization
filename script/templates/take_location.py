@@ -11,49 +11,83 @@ class TakeLocation(TemplateData):
 '''[1:]
 
 	EVENT_TEMPLATE = '''htc_take_location_{name}.{n} = {{
-		type = country_event
-		title = htc_take_location.title
-		desc = htc_take_location.desc
-		fire_only_once = yes
-		
-		dynamic_historical_event = {{
+	type = country_event
+	title = htc_take_location.title
+	desc = htc_take_location.desc
+	fire_only_once = {once}
+	
+	dynamic_historical_event = {{
 {tags}
-			from = {from_year}.1.1
-			to = {to_year}.1.1
-			monthly_chance = 10
-		}}
+		from = {from_year}.1.1
+		to = {to_year}.1.1
+		monthly_chance = {chance}
+	}}
 
-		illustration_tags = {{
-			10 = happy
-			10 = exterior
-		}}
+	illustration_tags = {{
+		10 = happy
+		10 = exterior
+	}}
 
-		trigger = {{
-			location:{geography} = {{
-				has_owner = no
-				is_ownable = yes
-				within_colonial_range_of = root
-				is_discovered_by = root
-			}}
-		}}		
-
-		immediate = {{
-			location:{geography} = {{
-				save_scope_as = geo
-			}}
+	trigger = {{
+		location:{geography} = {{
+			has_owner = yes
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
 		}}
-		
+	}}		
 
-		option = {{
-			name = htc.options.take
-			historical_option = yes
-			
-			location:{geography} = {{
-				change_location_owner = root
-			}}
-		}}
-		option = {{
-			name = htc.options.no
+	immediate = {{
+		location:{geography} = {{
+			save_scope_as = geo
+			owner = {{ save_scope_as = prev_owner }}
 		}}
 	}}
-	'''
+	
+	option = {{
+		name = htc.options.purchase
+
+		add_gold = {{
+			value = -50
+			add = {{
+				value = location:{geography}.development
+				multiply = -35
+			}}
+		}}
+
+		location:{geography} = {{
+			create_country_from_location = {{
+				set_capital = prev
+				make_subject_of = {{ target = root type = subject_type:overseas_territory }}
+				set_new_foreign_ruler = root.ruler
+				change_government_type = root.government_type
+			}}
+		}}
+	}}
+
+	option = {{
+		name = htc.options.take_for_guarantee
+		historical_option = yes
+
+		trigger = {{ great_power_score > scope:prev_owner.great_power_score }}
+
+		create_relation = {{
+			first = root
+			second = scope:prev_owner
+			type = relation_type:guarantee
+		}}
+		location:{geography} = {{
+			create_country_from_location = {{
+				set_capital = prev
+				make_subject_of = {{ target = root type = subject_type:overseas_territory }}
+				set_new_foreign_ruler = root.ruler
+				change_government_type = root.government_type
+			}}
+		}}
+	}}
+
+	option = {{
+		name = htc.options.no
+	}}
+}}
+'''

@@ -1,0 +1,28 @@
+tags:
+  - POR
+  - CAS
+  - SPA
+  - ENG
+  - GBR
+  - FRA
+take:
+colonize:
+  provinces:
+    canary_islands_province: 1500
+    cape_verde_province: 1500
+  regions:
+    # americas
+    brazil_region: 1650
+    caribbean_region: 1650
+    mesoamerica_region: 1700
+    central_america_region: 1700
+    colombia_region: 1600
+    andes_region: 1600
+    la_plata_region: 1600
+    chaco_region: 1600
+    great_plains_region: 1670
+    aridoamerica_region: 1670
+    west_coast_region: 1670
+
+    # africa/asia
+    southern_africa_region: 1700

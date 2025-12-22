@@ -1,0 +1,29 @@
+﻿l_english:
+  # unique
+  new_castille_scripted_country_name: "New Castille"
+
+  # iberian
+  brazil_iberian_scripted_country_name: "Brazil"
+  brazil_iberian_scripted_country_name_ADJ: "Brazilian"
+  caribbean_iberian_scripted_country_name: "Cuba"
+  caribbean_iberian_scripted_country_name_ADJ: "Cuban"
+  colombia_iberian_scripted_country_name: "New Granada"
+  colombia_iberian_scripted_country_name_ADJ: "New Granadine"
+  central_america_iberian_scripted_country_name: "Guatemala"
+  central_america_iberian_scripted_country_name_ADJ: "Guatemalan"
+  la_plata_iberian_scripted_country_name: "La Plata"
+  la_plata_iberian_scripted_country_name_ADJ: "La Platan"
+  east_coast_iberian_scripted_country_name: "Florida"
+  east_coast_iberian_scripted_country_name_ADJ: "Floridan"
+
+  # french
+  caribbean_french_scripted_country_name: "Haiti"
+  caribbean_french_scripted_country_name_ADJ: "Haitian"
+  east_coast_french_scripted_country_name: "Floride"
+  east_coast_french_scripted_country_name_ADJ: "Floride"
+  great_plains_french_scripted_country_name: "Louisiana"
+  great_plains_french_scripted_country_name_ADJ: "Louisianan"
+
+  # english
+  south_africa_english_scripted_country_name: "South Africa"
+  south_africa_english_scripted_country_name_ADJ: "South African"

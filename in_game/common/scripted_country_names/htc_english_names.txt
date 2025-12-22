@@ -1,0 +1,15 @@
+﻿south_africa_english_scripted_country_name = {
+	# regular old country trigger
+	country_trigger = {
+		any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group }
+	}
+	
+	# trigger to check country's capital against, has to pass
+	capital_trigger = {
+		region = region:south_africa_region
+	}
+	
+	# trigger to check all the country locations against, all have to pass
+	location_trigger = {
+	}
+}

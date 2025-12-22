@@ -1,0 +1,5 @@
+﻿l_english:
+  overseas_fort: "Overseas Fort"
+  overseas_fort_maintenance: "Overseas Fort"
+  overseas_territory: "Overseas Territory"
+  overseas_territory_desc: "An $overseas_territory$ manages an $overseas_fort$ on behalf of their [overlord|e], helping estabilish control of important trade routes across large distances."

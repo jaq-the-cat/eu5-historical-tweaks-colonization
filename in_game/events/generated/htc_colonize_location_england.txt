@@ -1,0 +1,58 @@
+﻿namespace = htc_colonize_location_england
+
+htc_colonize_location_england.1 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1510.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:bermuda = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:bermuda = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:bermuda.development
+				multiply = -10
+			}
+		}
+		
+		location:bermuda = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}

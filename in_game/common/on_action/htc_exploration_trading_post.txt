@@ -1,0 +1,75 @@
+﻿#root = country, scope:target = area  scope:actor = character
+on_exploration_success = {
+	on_actions = {
+		exploration_success_trading_post
+	}
+}
+
+exploration_success_trading_post = {
+	effect = {
+		if = {
+			limit = {
+				or = {
+					# reneissance
+					has_advance = por_pursuing_waves
+					has_advance = route_to_the_indies_advance
+					# discovery
+					has_advance = coastal_trade_routes_advance
+					# reformation
+					has_advance = global_trade_routes_advance
+				}
+				or = {
+					is_ai = no
+					has_or_had_tag = POR
+					has_or_had_tag = CAS
+					has_or_had_tag = SPA
+					has_or_had_tag = FRA
+					has_or_had_tag = ENG
+					has_or_had_tag = GBR
+				}
+				any_exploration_port = {
+					area = scope:target
+				}
+			}
+			random_exploration_port = {
+				limit = {
+					area = scope:target
+				}
+				change_location_owner = root
+				change_integration_level = colonized
+			}
+		}
+		else_if = {
+			limit = {
+				or = {
+					# reneissance
+					has_advance = route_to_the_indies_advance
+					# discovery
+					has_advance = coastal_trade_routes_advance
+					# reformation
+					has_advance = global_trade_routes_advance
+				}
+				is_ai = no
+				scope:target = {
+					continent = continent:africa
+					any_location_in_area = {
+						has_owner = no
+						is_ownable = yes
+						is_coastal = yes
+					}
+				}
+			}
+			scope:target = {
+				random_location_in_area = {
+					limit = {
+						has_owner = no
+						is_ownable = yes
+						is_coastal = yes
+					}
+					change_location_owner = root
+					change_integration_level = colonized
+				}
+			}
+		}
+	}
+}

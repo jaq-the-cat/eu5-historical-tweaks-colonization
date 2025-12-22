@@ -11,52 +11,52 @@ class ColonizeProvince(TemplateData):
 '''[1:]
 
 	EVENT_TEMPLATE = '''htc_colonize_province_{name}.{n} = {{
-		type = country_event
-		title = htc_colonize_province.title
-		desc = htc_colonize_province.desc
-		fire_only_once = yes
-		
-		dynamic_historical_event = {{
+	type = country_event
+	title = htc_colonize_province.title
+	desc = htc_colonize_province.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {{
 {tags}
-			from = {from_year}.1.1
-			to = {to_year}.1.1
-			monthly_chance = 10
-		}}
+		from = {from_year}.1.1
+		to = {to_year}.1.1
+		monthly_chance = {chance}
+	}}
 
-		illustration_tags = {{
-			10 = happy
-			10 = exterior
-		}}
+	illustration_tags = {{
+		10 = happy
+		10 = exterior
+	}}
 
-		trigger = {{
-			province_definition:{geography} = {{
-				any_location_in_province_definition = {{
-					has_owner = no
-					is_ownable = yes
-					is_discovered_by = root
-					within_colonial_range_of = root
-				}}
-				not = {{ has_colonial_charter = root }}
+	trigger = {{
+		province_definition:{geography} = {{
+			any_location_in_province_definition = {{
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+				within_colonial_range_of = root
 			}}
-		}}
-
-		immediate = {{
-			province_definition:{geography} = {{
-				save_scope_as = geo
-			}}
-		}}
-		
-
-		option = {{
-			name = htc.options.take
-			historical_option = yes
-
-			create_colonial_charter = {{
-				target = province_definition:{geography}
-			}}
-		}}
-		option = {{
-			name = htc.options.no
+			not = {{ has_colonial_charter = root }}
 		}}
 	}}
-	'''
+
+	immediate = {{
+		province_definition:{geography} = {{
+			save_scope_as = geo
+		}}
+	}}
+	
+
+	option = {{
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {{
+			target = province_definition:{geography}
+		}}
+	}}
+	option = {{
+		name = htc.options.no
+	}}
+}}
+'''

@@ -1,4 +1,4 @@
-historical_colonisation_rule = {
+historical_colonization_rule = {
 	default = strict_historical_colonization
 	
 	strict_historical_colonization = {

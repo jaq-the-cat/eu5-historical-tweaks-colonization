@@ -1,0 +1,662 @@
+﻿namespace = htc_colonize_location_portugal
+
+htc_colonize_location_portugal.1 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1434.1.1
+		to = 1450.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:bojador = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:bojador = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:bojador.development
+				multiply = -10
+			}
+		}
+		
+		location:bojador = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.2 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1440.1.1
+		to = 1450.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:arguin = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:arguin = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:arguin.development
+				multiply = -10
+			}
+		}
+		
+		location:arguin = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.3 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1468.1.1
+		to = 1520.1.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:sao_tome = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:sao_tome = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:sao_tome.development
+				multiply = -10
+			}
+		}
+		
+		location:sao_tome = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.4 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1471.1.1
+		to = 1520.1.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:fernando_po = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:fernando_po = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:fernando_po.development
+				multiply = -10
+			}
+		}
+		
+		location:fernando_po = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.5 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1480.1.1
+		to = 1485.1.1
+		monthly_chance = 20
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:cabo_corso = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:cabo_corso = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:cabo_corso.development
+				multiply = -10
+			}
+		}
+		
+		location:cabo_corso = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.6 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1478.1.1
+		to = 1500.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:soyo = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:soyo = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:soyo.development
+				multiply = -10
+			}
+		}
+		
+		location:soyo = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.7 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1572.1.1
+		to = 1836.1.1
+		monthly_chance = 15
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:luanda = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:luanda = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:luanda.development
+				multiply = -10
+			}
+		}
+		
+		location:luanda = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.8 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1480.1.1
+		to = 1520.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:mbegela = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:mbegela = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:mbegela.development
+				multiply = -10
+			}
+		}
+		
+		location:mbegela = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.9 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1500.1.1
+		to = 1515.1.1
+		monthly_chance = 15
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:sada = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:sada = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:sada.development
+				multiply = -10
+			}
+		}
+		
+		location:sada = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.10 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1500.1.1
+		to = 1505.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:st_helena = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:st_helena = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:st_helena.development
+				multiply = -10
+			}
+		}
+		
+		location:st_helena = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.11 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1495.1.1
+		to = 1505.1.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:natsitok = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:natsitok = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:natsitok.development
+				multiply = -10
+			}
+		}
+		
+		location:natsitok = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_location_portugal.12 = {
+	type = country_event
+	title = htc_colonize_location.title
+	desc = htc_colonize_location.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1470.1.1
+		to = 1475.1.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		location:cape_spear = {
+			has_owner = no
+			is_ownable = yes
+			within_colonial_range_of = root
+			is_discovered_by = root
+		}
+	}		
+
+	immediate = {
+		location:cape_spear = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+		
+		add_gold = {
+			value = -50
+			add = {
+				value = location:cape_spear.development
+				multiply = -10
+			}
+		}
+		
+		location:cape_spear = {
+			change_location_owner = root
+			change_integration_level = colonized
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}

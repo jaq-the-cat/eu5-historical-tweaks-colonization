@@ -11,26 +11,42 @@ class ColonizeInArea(TemplateData):
 '''[1:]
 
 	EVENT_TEMPLATE = '''htc_colonize_in_area_{name}.{n} = {{
-		type = country_event
-		title = htc_colonize_in_area.title
-		desc = htc_colonize_in_area.desc
-		fire_only_once = yes
-		
-		dynamic_historical_event = {{
+	type = country_event
+	title = htc_colonize_in_area.title
+	desc = htc_colonize_in_area.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {{
 {tags}
-			from = {from_year}.1.1
-			to = {to_year}.1.1
-			monthly_chance = 10
-		}}
+		from = {from_year}.1.1
+		to = {to_year}.1.1
+		monthly_chance = {chance}
+	}}
 
-		illustration_tags = {{
-			10 = happy
-			10 = exterior
-		}}
+	illustration_tags = {{
+		10 = happy
+		10 = exterior
+	}}
 
-		trigger = {{
-			area:{geography} = {{
-				any_province_definition_in_area = {{
+	trigger = {{
+		area:{geography} = {{
+			any_province_definition_in_area = {{
+				not = {{ has_colonial_charter = root }}
+				any_location_in_province_definition = {{
+					within_colonial_range_of = root
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}}
+			}}
+		}}
+	}}
+	
+	immediate = {{
+		area:{geography} = {{
+			save_scope_as = source
+			random_province_definition_in_area = {{
+				limit = {{
 					not = {{ has_colonial_charter = root }}
 					any_location_in_province_definition = {{
 						within_colonial_range_of = root
@@ -39,37 +55,21 @@ class ColonizeInArea(TemplateData):
 						is_discovered_by = root
 					}}
 				}}
+				save_scope_as = geo
 			}}
-		}}
-		
-		immediate = {{
-			area:{geography} = {{
-				save_scope_as = source
-				random_province_definition_in_area = {{
-					limit = {{
-						not = {{ has_colonial_charter = root }}
-						any_location_in_province_definition = {{
-							within_colonial_range_of = root
-							has_owner = no
-							is_ownable = yes
-							is_discovered_by = root
-						}}
-					}}
-					save_scope_as = geo
-				}}
-			}}
-		}}
-
-		option = {{
-			name = htc.options.take
-			historical_option = yes
-
-			create_colonial_charter = {{
-				target = scope:geo
-			}}
-		}}
-		option = {{
-			name = htc.options.no
 		}}
 	}}
-	'''
+
+	option = {{
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {{
+			target = scope:geo
+		}}
+	}}
+	option = {{
+		name = htc.options.no
+	}}
+}}
+'''

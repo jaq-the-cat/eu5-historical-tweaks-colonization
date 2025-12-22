@@ -1,0 +1,52 @@
+﻿overseas_fort = {
+	max_levels = 1
+	pop_type = soldiers
+	category = defense_category
+	employment_size = stockade_employment
+	rural_settlement = yes
+	town = yes
+	city = yes
+	
+	build_time = small_fort_building
+	expensive = yes
+	
+	unique_production_methods = {
+		overseas_fort_maintenance = {
+			lumber = 0.1
+			category = building_maintenance
+		}
+	}
+	construction_demand = stockade_construction
+	
+	location_potential = {
+		is_capital = yes
+		is_coastal = yes
+		owner ?= {
+			is_subject_type = overseas_territory
+		}
+	}
+	remove_if = {
+		is_no_longer_capital = yes
+		owner ?= {
+			not = { is_subject_type = overseas_territory }
+		}
+	}
+
+	capital_country_modifier = { monthly_gold_income = 20 }
+
+	capital_modifier = {
+		local_manpower = 0.05
+		local_sailors = 0.05
+	}
+
+	modifier = {
+		# fort
+		fort_level = 2
+		local_garrison_size = 0.5
+		local_defensive = 0.25
+		local_unrest = -0.05
+		# naval
+		can_build_ships_in_this_location = yes
+		local_maritime_presence = 1
+	}
+}

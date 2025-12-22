@@ -1,0 +1,18 @@
+﻿overseas_outpost_construction = {
+	lumber = 0.5
+	masonry = 0.5
+	paper = 0.25
+	naval_supplies = 0.15
+	category = building_construction
+}
+
+asian_colonial_outpost_construction = {
+	firearms = 1.0
+	cannons = 2.0
+	naval_supplies = 1.0
+	paper = 0.5
+	stone = 2.0
+	lumber = 1.0
+	masonry = 1.0
+	category = building_construction
+}

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-_TAG_TEMPLATE = '''            tag = {tag}'''
+_TAG_TEMPLATE = '''        tag = {tag}'''
 
 def make_tags(tags: list[str]) -> str:
     return '\n'.join(_TAG_TEMPLATE.format(tag=tag) for tag in tags)

@@ -1,0 +1,52 @@
+﻿namespace = htc_colonize_province_england
+
+htc_colonize_province_england.1 = {
+	type = country_event
+	title = htc_colonize_province.title
+	desc = htc_colonize_province.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1500.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		province_definition:bahamas_province = {
+			any_location_in_province_definition = {
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+				within_colonial_range_of = root
+			}
+			not = { has_colonial_charter = root }
+		}
+	}
+
+	immediate = {
+		province_definition:bahamas_province = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = province_definition:bahamas_province
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}

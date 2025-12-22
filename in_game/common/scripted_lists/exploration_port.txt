@@ -1,0 +1,43 @@
+﻿exploration_port = {
+	base = location_in_the_world
+	conditions = {
+		is_coastal = yes
+		has_owner = no
+		is_ownable = yes
+		or = {
+			# americas
+			this = location:natsitok
+			this = location:cape_spear
+			this = location:bermuda
+			area = area:lesser_antilles_area
+			# maghreb
+			this = location:bojador
+			this = location:arguin
+			# atlantic
+			this = location:st_helena
+			# west africa
+			this = location:bissagos
+			this = location:madina
+			# gulf of guinea
+			this = location:sao_tome
+			this = location:fernando_po
+			this = location:calabar
+			# kongo and angola
+			this = location:cabinda_kongo
+			this = location:luanda
+			this = location:mbegela
+			# south africa
+			this = location:ezorongondo
+			this = location:uri_ae_ona
+			this = location:goringhaikona
+			# madagascar
+			this = location:al_khadra
+			this = location:sada
+			# east asia/oceania
+			region = region:indonesia_region
+			region = region:melanesia_region
+			region = region:new_zealand_region
+			sub_continent = sub_continent:pacific_islands
+		}
+	}
+}

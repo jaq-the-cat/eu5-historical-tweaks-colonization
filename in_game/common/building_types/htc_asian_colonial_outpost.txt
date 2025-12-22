@@ -1,0 +1,53 @@
+# asian_colonial_outpost = {
+# 	is_foreign = yes
+# 	max_levels = 1
+# 	pop_type = burghers
+# 	category = trade_category
+# 	employment_size = 1
+# 	rural_settlement = yes
+# 	town = yes
+# 	city = yes
+# 	expensive = yes
+# 	need_good_relation = yes
+
+# 	country_potential = {
+# 		num_relations_above_limit <= 0
+# 	}
+
+# 	location_potential = {
+# 		or = {
+# 			sub_continent = sub_continent:south_asia
+# 			sub_continent = sub_continent:east_asia
+# 			region = region:indonesia_region
+# 			region = region:melanesia_region
+# 		}
+# 	}
+
+# 	allow = {
+# 		within_colonial_range_of = scope:actor
+# 	}
+	
+# 	build_time = 1095
+# 	construction_demand = asian_colonial_outpost_construction
+# 	possible_production_methods = { overseas_outpost_maintenance }
+
+# 	modifier = {
+# 		# will never actually do anything, just used to manipulate AI
+# 		local_proximity_source = 50
+# 		local_maritime_presence = 1
+# 		gold_to_building_owner = 20
+# 	}
+# 	important_for_AI = yes
+
+# 	on_construction_started = {}
+# 	on_construction_ended = {}
+	
+# 	on_built = {
+# 		owner = { save_scope_as = colonizer }
+# 		location = {
+# 			change_location_owner = scope:colonizer
+# 			change_integration_level = integrated
+# 			destroy_building = root
+# 		}
+# 	}
+# }

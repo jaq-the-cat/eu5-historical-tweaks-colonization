@@ -1,0 +1,12 @@
+﻿l_english:
+  estabilish_trade_post: "Estabilish Trade Post"
+  estabilish_trade_post_desc: "Estabilish an overseas Trade Post"
+  estabilish_trade_post_action: "Estabilish a Trade Post in [SCOPE.sProvinceDefinition('target').GetNameWithNoTooltip]"
+  estabilish_trade_post_select_province_definition: "Select a [province|e] to estabilish a Trade Post"
+  estabilish_trade_post_no_provinces: "$no_valid_provinces$"
+  estabilish_trade_post_select_location: "Select a [location|e] to estabilish a Trade Post"
+  estabilish_trade_post_no_locations: "$no_valid_locations$"
+  estabilish_trade_post_active: "Estabilishing a Trade Post in [SCOPE.sLocation('target_1').GetNameWithNoTooltip]"
+  estabilish_trade_post_action_progress: "[Cabinet.GetActionNumProgress|%]"
+  estabilish_trade_post_action_progress_wordier: "Trade Post will be estabilished in [SCOPE.sCountry('actor').GetGovernment.GetCabinetActionImplementationDate('estabilish_trade_post')]"
+  estabilish_trade_post_action_progress_tooltip: "Estabilishment progress of [SCOPE.sLocation('target_1').GetName]: [SCOPE.sCountry('actor').GetGovernment.GetCabinetActionImplementationProgress('estabilish_trade_post')|2%]"

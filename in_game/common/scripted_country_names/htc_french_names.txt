@@ -1,0 +1,47 @@
+﻿caribbean_french_scripted_country_name = {
+	# regular old country trigger
+	country_trigger = {
+		any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }
+	}
+	
+	# trigger to check country's capital against, has to pass
+	capital_trigger = {
+		region = region:caribbean_region
+	}
+	
+	# trigger to check all the country locations against, all have to pass
+	location_trigger = {
+	}
+}
+
+great_plains_french_scripted_country_name = {
+	# regular old country trigger
+	country_trigger = {
+		any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }
+	}
+	
+	# trigger to check country's capital against, has to pass
+	capital_trigger = {
+		region = region:great_plains_region
+	}
+	
+	# trigger to check all the country locations against, all have to pass
+	location_trigger = {
+	}
+}
+
+east_coast_french_scripted_country_name = {
+	# regular old country trigger
+	country_trigger = {
+		any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }
+	}
+	
+	# trigger to check country's capital against, has to pass
+	capital_trigger = {
+		region = region:east_coast_region
+	}
+	
+	# trigger to check all the country locations against, all have to pass
+	location_trigger = {
+	}
+}

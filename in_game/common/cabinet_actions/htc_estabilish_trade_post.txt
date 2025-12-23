@@ -7,7 +7,7 @@
 	allow = {
 		or = {
 			is_ai = no
-			# reneissance
+			# renaissance
 			has_advance = por_pursuing_waves
 			has_advance = route_to_the_indies_advance
 			# discovery

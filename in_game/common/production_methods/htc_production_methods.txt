@@ -1,7 +1,8 @@
-﻿overseas_outpost_maintenance = {
-	naval_supplies = 0.1
-	lumber = 0.1
-	tar = 0.05
-	tools = 0.01
+﻿overseas_fort_maintenance = {
+	stone = 0.1
+	firearms = 0.2
+	cannons = 0.5
+	naval_supplies = 0.25
+	tools = 0.1
 	category = building_maintenance
 }

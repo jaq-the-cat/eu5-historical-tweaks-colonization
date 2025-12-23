@@ -1,0 +1,129 @@
+﻿conquer_overseas_port = {
+	type = diplomacy
+	category = CATEGORY_HOSTILE_ACTIONS
+
+	ai_tick = daily
+	ai_tick_frequency = 360
+
+	potential = {
+		scope:actor = {
+			or = {
+				is_ai = no
+				has_or_had_tag = POR
+				has_or_had_tag = CAS
+				has_or_had_tag = SPA
+				has_or_had_tag = FRA
+				has_or_had_tag = ENG
+				has_or_had_tag = GBR
+				has_or_had_tag = NED
+			}
+		}
+	}
+
+	cooldown = { 
+		type = conquer_overseas_port
+		years = 5
+	}
+
+	allow = {}
+	
+	select_trigger = {
+		looking_for_a = country
+		target_flag = target_country
+		ai_interaction_source_list = {
+			every_country = {
+				capital = {
+					or = {
+						sub_continent = sub_continent:south_asia
+						sub_continent = sub_continent:east_asia
+						region = region:indonesia_region
+						region = region:melanesia_region
+					}
+				}
+				add_to_list = source
+			}
+		}
+		name = "choose_country"
+		column = {
+			data = name
+		}
+		column = {
+			data = army_size
+		}
+		column = {
+			data = regular_army_size
+		}
+		column = {
+			data = navy_size
+		}
+		visible = {
+			scope:target_country = {
+				capital = {
+					or = {
+						sub_continent = sub_continent:south_asia
+						sub_continent = sub_continent:east_asia
+						region = region:indonesia_region
+						region = region:melanesia_region
+					}
+				}
+			}
+		}
+        enabled = {
+			scope:target_country = {
+				at_war = no
+				not = {
+					any_neighbor_location = {
+						owner = scope:actor
+					}
+				}
+			}
+		}
+	}
+
+	select_trigger = {
+		looking_for_a = location
+		source = target_country
+		target_flag = target_location
+		name = "conquer_overseas_port_select_location"
+		none_available_msg_key = "conquer_overseas_port_no_locations"
+		column = { data = name }
+		column = { data = market }
+		column = { data = development }
+		default_sort = development
+		visible = {
+			is_coastal = yes
+		}
+		enabled = {}
+	}
+
+	ai_will_do = {
+		if = {
+			limit = {
+				scope:actor = {	
+					power_projection > scope:target_country.power_projection
+					military_strength > scope:target_country.military_strength
+					navy_size > root.navy_size
+					num_of_advances_researched > scope:target_country.num_of_advances_researched
+				}
+			}
+			add = {
+				value = 100
+			}
+		}
+	}
+	
+	effect = {
+		scope:target_location = {
+			add_location_modifier = {
+				modifier = port_conquest_target_location
+				mode = replace
+				years = 10
+			}
+		}
+		declare_war_with_cb = {
+			target = scope:target_country
+			type = casus_belli:cb_port_conquest
+			province = scope:target_location.province
+		}
+	}
+}

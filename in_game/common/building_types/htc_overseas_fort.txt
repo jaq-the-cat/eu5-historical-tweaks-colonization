@@ -6,7 +6,7 @@
 	rural_settlement = yes
 	town = yes
 	city = yes
-	
+
 	build_time = medium_fort_building
 	expensive = yes
 

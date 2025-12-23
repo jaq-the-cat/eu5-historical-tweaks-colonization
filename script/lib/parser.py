@@ -18,6 +18,7 @@ class ColonyEventGenerator:
             self.tags = self.parsed.get('tags') or []
     
     def write_events(self, event_out: str, file_data: list[dict[str, str]]):
+        print(f'writing events...')
         # write events
         for data in file_data:
             if not data: continue
@@ -27,16 +28,28 @@ class ColonyEventGenerator:
     def write_all(self, event_out: str | None = None, localization_out: str | None = None):
         file_data = []
 
+        print(f'loading data for `{self.name}` using the following tags: {', '.join(self.tags)}...')
+
         if self.parsed.get('take'):
             take: dict[str, dict[str, str]] = self.parsed['take']
-            file_data.append(self._generate_files(TakeLocation, take.get('locations')))
+            if (locations := take.get('locations')):
+                print(f'- take locations: {', '.join(locations)}')
+                file_data.append(self._generate_files(TakeLocation, locations))
 
         if self.parsed.get('colonize'):
             colonize: dict[str, dict[str, str]] = self.parsed['colonize']
-            file_data.append(self._generate_files(ColonizeLocation, colonize.get('locations')))
-            file_data.append(self._generate_files(ColonizeProvince, colonize.get('provinces')))
-            file_data.append(self._generate_files(ColonizeInArea, colonize.get('areas')))
-            file_data.append(self._generate_files(ColonizeInRegion, colonize.get('regions')))
+            if (locations := colonize.get('locations')):
+                print(f'- colonize locations: {', '.join(locations)}')
+                file_data.append(self._generate_files(ColonizeLocation, colonize.get('locations')))
+            if (provinces := colonize.get('provinces')):
+                print(f'- colonize provinces: {', '.join(provinces)}')
+                file_data.append(self._generate_files(ColonizeProvince, provinces))
+            if (areas := colonize.get('areas')):
+                print(f'- colonize areas: {', '.join(areas)}')
+                file_data.append(self._generate_files(ColonizeInArea, areas))
+            if (regions := colonize.get('regions')):
+                print(f'- colonize regions: {', '.join(regions)}')
+                file_data.append(self._generate_files(ColonizeInRegion, regions))
 
         if event_out:
             self.write_events(event_out, file_data)

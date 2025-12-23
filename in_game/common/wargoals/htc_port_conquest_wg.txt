@@ -1,0 +1,19 @@
+﻿port_conquest = {
+	type = take_province
+	war_name = "PORT_CONQUEST_WAR_NAME" #uses first and second
+
+	attacker = {
+		conquer_cost = 2.0
+		allowed_subjugation = {
+			always = no
+		}
+	}
+	defender = {
+		conquer_cost = 0.5
+		allowed_subjugation = {
+			always = no
+		}
+	}
+
+	ticking_war_score = 0.2
+}

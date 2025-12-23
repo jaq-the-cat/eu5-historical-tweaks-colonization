@@ -33,7 +33,10 @@ class ColonizeInArea(TemplateData):
 			any_province_definition_in_area = {{
 				not = {{ has_colonial_charter = root }}
 				any_location_in_province_definition = {{
-					within_colonial_range_of = root
+					or = {{
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -49,7 +52,10 @@ class ColonizeInArea(TemplateData):
 				limit = {{
 					not = {{ has_colonial_charter = root }}
 					any_location_in_province_definition = {{
-						within_colonial_range_of = root
+						or = {{
+							is_adjacent_to_owned_or_subject_owns = yes
+							within_colonial_range_of = root
+						}}
 						has_owner = no
 						is_ownable = yes
 						is_discovered_by = root

@@ -13,7 +13,7 @@ htc_colonize_in_region_western.1 = {
         tag = ENG
         tag = GBR
         tag = FRA
-		from = 1600.1.1
+		from = 1650.1.1
 		to = 1836.1.1
 		monthly_chance = 10
 	}
@@ -28,7 +28,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:brazil_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -45,7 +48,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:brazil_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -80,7 +86,7 @@ htc_colonize_in_region_western.1 = {
         tag = ENG
         tag = GBR
         tag = FRA
-		from = 1600.1.1
+		from = 1650.1.1
 		to = 1836.1.1
 		monthly_chance = 10
 	}
@@ -95,7 +101,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:caribbean_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -112,7 +121,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:caribbean_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -147,7 +159,7 @@ htc_colonize_in_region_western.1 = {
         tag = ENG
         tag = GBR
         tag = FRA
-		from = 1600.1.1
+		from = 1700.1.1
 		to = 1836.1.1
 		monthly_chance = 10
 	}
@@ -162,7 +174,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:mesoamerica_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -179,7 +194,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:mesoamerica_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -214,7 +232,7 @@ htc_colonize_in_region_western.1 = {
         tag = ENG
         tag = GBR
         tag = FRA
-		from = 1600.1.1
+		from = 1700.1.1
 		to = 1836.1.1
 		monthly_chance = 10
 	}
@@ -229,7 +247,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:central_america_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -246,7 +267,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:central_america_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -296,7 +320,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:colombia_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -313,7 +340,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:colombia_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -363,7 +393,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:andes_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -380,7 +413,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:andes_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -430,7 +466,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:la_plata_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -447,7 +486,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:la_plata_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -497,7 +539,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:chaco_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -514,7 +559,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:chaco_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -564,7 +612,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:great_plains_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -581,7 +632,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:great_plains_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -631,7 +685,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:aridoamerica_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -648,7 +705,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:aridoamerica_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -698,7 +758,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:west_coast_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -715,7 +778,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:west_coast_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root
@@ -765,7 +831,10 @@ htc_colonize_in_region_western.1 = {
 			filter = { region = region:southern_africa_region }
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
-				within_colonial_range_of = root
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
@@ -782,7 +851,10 @@ htc_colonize_in_region_western.1 = {
 				region = region:southern_africa_region
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
-					within_colonial_range_of = root
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
 					has_owner = no
 					is_ownable = yes
 					is_discovered_by = root

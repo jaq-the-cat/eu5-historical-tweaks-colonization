@@ -21,10 +21,13 @@ htc_colonize_province_portugal.1 = {
 	trigger = {
 		province_definition:madeira_province = {
 			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
-				within_colonial_range_of = root
 			}
 			not = { has_colonial_charter = root }
 		}
@@ -70,10 +73,13 @@ htc_colonize_province_portugal.2 = {
 	trigger = {
 		province_definition:azores_province = {
 			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
-				within_colonial_range_of = root
 			}
 			not = { has_colonial_charter = root }
 		}
@@ -119,10 +125,13 @@ htc_colonize_province_portugal.3 = {
 	trigger = {
 		province_definition:cape_verde_province = {
 			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
-				within_colonial_range_of = root
 			}
 			not = { has_colonial_charter = root }
 		}
@@ -168,10 +177,13 @@ htc_colonize_province_portugal.4 = {
 	trigger = {
 		province_definition:mascarene_islands_province = {
 			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
 				has_owner = no
 				is_ownable = yes
 				is_discovered_by = root
-				within_colonial_range_of = root
 			}
 			not = { has_colonial_charter = root }
 		}

@@ -11,11 +11,11 @@
 	level = 2
 
 	creation_visible = {
-		always = no
+		is_ai = no
 	}
 
 	subject_creation_enabled = {
-		always = no
+		is_ai = no
 	}
 
 	release_country_enabled = {
@@ -46,12 +46,12 @@
 		}
 	}
 	allow_declaring_wars = {
-		always = no
+		always = yes
 	}
 	
 	diplomatic_capacity_cost_scale = 0.1
 	
-	strength_vs_overlord = -0.25
+	strength_vs_overlord = -0.5
 	
 	can_be_annexed = yes
 	annexation_speed = 1
@@ -73,7 +73,7 @@
 	food_access = yes
 
 	can_change_rank = yes
-	can_change_heir_selection = yes
+	can_change_heir_selection = no
 	great_power_score_transfer = 0.75 # the amount of Great Power Score that is transferred from the Subject to the Overlord
 	
 	institution_spread_to_overlord = monthly_institution_spread_mild

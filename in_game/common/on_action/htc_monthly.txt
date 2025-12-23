@@ -1,0 +1,28 @@
+﻿monthly_country_pulse = {
+	on_actions = {
+		port_conquest_check_expired
+	}
+}
+
+port_conquest_check_expired =  {
+	if = {
+		limit = {
+			any_current_war = {
+				casus_belli ?= casus_belli:cb_port_conquest
+				defender_leader = root
+			}
+			not = {
+				any_owned_location = {
+					has_location_modifier = port_conquest_target_location
+				}
+			}
+		}
+		every_current_war = {
+			limit = {
+				casus_belli ?= casus_belli:cb_port_conquest
+				defender_leader = root
+			}
+			white_peace = this
+		}
+	}
+}

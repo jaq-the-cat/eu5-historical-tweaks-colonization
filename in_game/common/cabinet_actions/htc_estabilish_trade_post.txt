@@ -6,7 +6,6 @@
 	}
 	allow = {
 		or = {
-			is_ai = no
 			# renaissance
 			has_advance = por_pursuing_waves
 			has_advance = route_to_the_indies_advance
@@ -18,47 +17,47 @@
 	}
 
 	select_trigger = {
-		looking_for_a = province_definition
+		looking_for_a = region
 		interaction_source_list = {
-			every_province_definition = {
+			every_region = {
 				limit = {
-					any_location_in_province_definition = {
+					not = {
+						any_location_in_region = {
+							owner ?= scope:actor
+						}
+					}
+					any_location_in_region = {
 						has_owner = no
 						is_ownable = yes
 						is_coastal = yes
-					}
-					region = {
-						not = {
-							any_location_in_region = {
-								owner ?= scope:actor
-							}
-						}
+						is_discovered_by = scope:actor
 					}
 				}
 				add_to_list = source
 			}
 		}
-		target_flag = target
-		name = "estabilish_trade_post_select_province_definition"
-		none_available_msg_key = "estabilish_trade_post_no_provinces"
+		target_flag = target_region
+		name = "estabilish_trade_post_select_region"
+		none_available_msg_key = "estabilish_trade_post_no_regions"
 		column = { data = name }
 		column = { data = population }
 		visible = {
-			not = { cabinet_already_performing_same_task_on_target = { cabinet_action = estabilish_trade_post interaction_target = target } }
+			not = { cabinet_already_performing_same_task_on_target = { cabinet_action = estabilish_trade_post interaction_target = target_region } }
 		}
 		enabled = {}
 	}
 
 	select_trigger = {
 		looking_for_a = location
-		source = target
-		target_flag = target_1
+		source = target_region
+		target_flag = target_location
 		name = "estabilish_trade_post_select_location"
 		none_available_msg_key = "estabilish_trade_post_no_locations"
 		column = { data = name }
 		column = { data = population }
 		visible = {
-			not = { cabinet_already_performing_same_task_on_target = { cabinet_action = estabilish_trade_post interaction_target = target_1 } }
+			not = { cabinet_already_performing_same_task_on_target = { cabinet_action = estabilish_trade_post interaction_target = target_location } }
+			is_discovered_by = scope:actor
 			has_owner = no
 			is_ownable = yes
 			is_coastal = yes
@@ -69,7 +68,7 @@
 	years = 1
 
 	on_fully_activated = {
-		scope:target_1 = {
+		scope:target_location = {
 			change_location_owner = scope:actor
 			change_integration_level = colonized
 		}
@@ -84,12 +83,10 @@
 			cabinet_action:estabilish_trade_post = {
 				is_fully_implemented_in = root
 			}
-			# we already own a province in that region
-			scope:target = {
-				region = {
-					any_location_in_region = {
-						owner ?= scope:actor
-					}
+			# we already own a location in that region
+			scope:target_region = {
+				any_location_in_region = {
+					owner ?= scope:actor
 				}
 			}
 		}
@@ -128,18 +125,16 @@
 						}
 					}
 				}
-				scope:target = {
+				scope:target_region = {
 					or = {
+						this = region:indonesia_region
+						this = region:melanesia_region
+						this = region:new_zealand_region
 						continent = continent:africa
-						region = region:indonesia_region
-						region = region:melanesia_region
-						region = region:new_zealand_region
 						sub_continent = sub_continent:pacific_islands
 					}
-					region = {
-						any_location_in_region = {
-							not = { owner ?= scope:actor }
-						}
+					any_location_in_region = {
+						not = { owner ?= scope:actor }
 					}
 				}
 			}

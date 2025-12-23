@@ -1,0 +1,43 @@
+# root = country, scope:target = location, scope:character = leading general character
+on_siege_won = {
+	on_actions = {
+		port_conquest_occupied
+	}
+}
+
+# root = country, scope:target = location, scope:character = leading general character
+on_location_occupied = {
+	on_actions = {
+		port_conquest_occupied
+	}
+}
+
+# root = country, scope:target = location, scope:character = leading general character
+port_conquest_occupied = {
+	effect = {
+		if = {
+			limit = {
+				scope:target = {
+					has_location_modifier = port_conquest_target_location
+				}
+				any_current_war = {
+					casus_belli ?= casus_belli:cb_port_conquest
+					is_an_attacker = root
+					is_a_defender = scope:target.owner
+					scope:target.owner = {
+						is_war_leader_of = prev
+					}
+				}
+			}
+			scope:target = {
+				remove_location_modifier = port_conquest_target_location
+				create_country_from_location = {
+					set_capital = prev
+					make_subject_of = { target = root type = subject_type:overseas_territory }
+					set_new_foreign_ruler = root.ruler
+					change_government_type = root.government_type
+				}
+			}
+		}
+	}
+}

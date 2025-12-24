@@ -1,0 +1,11 @@
+﻿l_english:
+  PORT_CONQUEST_WAR_NAME: "$NUM$$ORDER$ $FIRST$ Conquest of $SECOND$ Treaty Port"
+  conquer_overseas_port: "Conquer Overseas Port"
+  conquer_overseas_port_act: "Take a Treaty Port from [SCOPE.sCountry('recipient').GetName]"
+  conquer_overseas_port_desc: "We will take a Treaty Port from the target country."
+  cb_port_conquest: "Treaty Port Conquest"
+  cb_port_conquest_PROV: "Take Treaty Port on [PROVINCE.GetName]"
+  cb_port_conquest_desc: "Take a Treaty Port to expand our influence across the oceans!"
+  war_goal_port_conquest: "Take [PROVINCE.GetNameWithNoTooltip]"
+  war_goal_port_conquest_desc: "[war_goal|e] is to occupy the target [province|e]. It will be automatically conquered and the war will end."
+  STATIC_MODIFIER_NAME_port_conquest_target_location: "Treaty Port Conquest Target"

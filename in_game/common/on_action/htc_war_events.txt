@@ -15,6 +15,7 @@ on_location_occupied = {
 # root = country, scope:target = location, scope:character = leading general character
 port_conquest_occupied = {
 	effect = {
+		# conquer from native
 		if = {
 			limit = {
 				scope:target = {
@@ -23,20 +24,21 @@ port_conquest_occupied = {
 				any_current_war = {
 					casus_belli ?= casus_belli:cb_port_conquest
 					is_an_attacker = root
-					is_a_defender = scope:target.owner
-					scope:target.owner = {
-						is_war_leader_of = prev
-					}
+					defender_leader = scope:target.owner
 				}
+			}
+			every_current_war = {
+				limit = {
+					casus_belli ?= casus_belli:cb_port_conquest
+					is_an_attacker = root
+					defender_leader = scope:target.owner
+				}
+				white_peace = this
 			}
 			scope:target = {
 				remove_location_modifier = port_conquest_target_location
-				create_country_from_location = {
-					set_capital = prev
-					make_subject_of = { target = root type = subject_type:overseas_territory }
-					set_new_foreign_ruler = root.ruler
-					change_government_type = root.government_type
-				}
+				change_location_owner = root
+				change_integration_level = colonized
 			}
 		}
 	}

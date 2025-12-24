@@ -6,6 +6,16 @@
 	}
 	allow = {
 		or = {
+			is_ai = no
+			has_or_had_tag = POR
+			has_or_had_tag = CAS
+			has_or_had_tag = SPA
+			has_or_had_tag = FRA
+			has_or_had_tag = ENG
+			has_or_had_tag = GBR
+			has_or_had_tag = NED
+		}
+		or = {
 			# renaissance
 			has_advance = por_pursuing_waves
 			has_advance = route_to_the_indies_advance
@@ -21,6 +31,9 @@
 		interaction_source_list = {
 			every_region = {
 				limit = {
+					not = {
+						continent = continent:america
+					}
 					not = {
 						any_location_in_region = {
 							owner ?= scope:actor

@@ -1,8 +1,9 @@
 ﻿overseas_fort_construction = {
-	lumber = 0.1
-	# lumber = 0.5
-	# masonry = 0.5
-	# paper = 0.25
-	# naval_supplies = 0.15
+	stone = 2
+	cannons = 2
+	firearms = 0.5
+	lumber = 1
+	masonry = 0.5
+	tools = 0.5
 	category = building_construction
 }

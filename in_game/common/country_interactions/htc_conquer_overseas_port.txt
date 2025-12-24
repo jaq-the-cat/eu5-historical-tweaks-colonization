@@ -17,6 +17,15 @@
 				has_or_had_tag = GBR
 				has_or_had_tag = NED
 			}
+			or = {
+				# renaissance
+				has_advance = por_pursuing_waves
+				has_advance = route_to_the_indies_advance
+				# discovery
+				has_advance = coastal_trade_routes_advance
+				# reformation
+				has_advance = global_trade_routes_advance
+			}
 		}
 	}
 
@@ -26,18 +35,32 @@
 	}
 
 	allow = {}
-	
+
 	select_trigger = {
 		looking_for_a = country
-		target_flag = target_country
-		ai_interaction_source_list = {
+		target_flag = recipient
+		interaction_source_list = {
 			every_country = {
-				capital = {
-					or = {
-						sub_continent = sub_continent:south_asia
-						sub_continent = sub_continent:east_asia
-						region = region:indonesia_region
-						region = region:melanesia_region
+				limit = {
+					not = { is_subject_type = colonial_nation }
+					capital = {
+						or = {
+							# africa
+							sub_continent = sub_continent:west_africa
+							sub_continent = sub_continent:central_africa
+							sub_continent = sub_continent:east_africa
+							region = region:swahili_coast_region
+							region = region:zimbabwe_region
+							region = region:southern_africa_islands_region
+							region = region:madagascar_region
+							# middle east
+							region = region:arabia_region
+							# asia
+							sub_continent = sub_continent:south_asia
+							sub_continent = sub_continent:east_asia
+							region = region:indonesia_region
+							region = region:melanesia_region
+						}
 					}
 				}
 				add_to_list = source
@@ -57,33 +80,19 @@
 			data = navy_size
 		}
 		visible = {
-			scope:target_country = {
-				capital = {
-					or = {
-						sub_continent = sub_continent:south_asia
-						sub_continent = sub_continent:east_asia
-						region = region:indonesia_region
-						region = region:melanesia_region
-					}
-				}
-			}
+			always = yes
 		}
         enabled = {
-			scope:target_country = {
-				at_war = no
-				not = {
-					any_neighbor_location = {
-						owner = scope:actor
-					}
-				}
-			}
+			at_war = no
 		}
+		show_why_not_visible = yes
+		show_why_not_enabled = yes
 	}
 
 	select_trigger = {
 		looking_for_a = location
-		source = target_country
-		target_flag = target_location
+		source = recipient
+		target_flag = target
 		name = "conquer_overseas_port_select_location"
 		none_available_msg_key = "conquer_overseas_port_no_locations"
 		column = { data = name }
@@ -93,17 +102,21 @@
 		visible = {
 			is_coastal = yes
 		}
-		enabled = {}
+		enabled = {
+			always = yes
+		}
+		show_why_not_visible = yes
+		show_why_not_enabled = yes
 	}
 
 	ai_will_do = {
 		if = {
 			limit = {
 				scope:actor = {	
-					power_projection > scope:target_country.power_projection
-					military_strength > scope:target_country.military_strength
+					power_projection > scope:recipient.power_projection
+					military_strength > scope:recipient.military_strength
 					navy_size > root.navy_size
-					num_of_advances_researched > scope:target_country.num_of_advances_researched
+					num_of_advances_researched > scope:recipient.num_of_advances_researched
 				}
 			}
 			add = {
@@ -113,17 +126,22 @@
 	}
 	
 	effect = {
-		scope:target_location = {
-			add_location_modifier = {
-				modifier = port_conquest_target_location
-				mode = replace
-				years = 10
+		if = {
+			limit = { exists = scope:target }
+			scope:target = {
+				add_location_modifier = {
+					modifier = port_conquest_target_location
+					mode = replace
+					years = 10
+				}
 			}
-		}
-		declare_war_with_cb = {
-			target = scope:target_country
-			type = casus_belli:cb_port_conquest
-			province = scope:target_location.province
+			scope:actor = {
+				declare_war_with_cb = {
+					target = scope:recipient
+					type = casus_belli:cb_port_conquest
+					province = scope:target.province
+				}
+			}
 		}
 	}
 }

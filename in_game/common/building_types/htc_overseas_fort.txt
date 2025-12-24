@@ -1,46 +1,80 @@
 ﻿overseas_fort = {
 	max_levels = 1
 	pop_type = soldiers
-	category = government_category
-	employment_size = stockade_employment
-	rural_settlement = yes
+	category = defense_category
+	employment_size = dock_employment
 	town = yes
 	city = yes
 
-	build_time = medium_fort_building
+	build_time = large_port_building_time
 	expensive = yes
 
-	possible_production_methods = { overseas_outpost_maintenance }
+	possible_production_methods = { overseas_fort_maintenance }
 	construction_demand = overseas_fort_construction
 
+	country_potential = {
+		or = {
+			is_ai = no
+			has_or_had_tag = POR
+			has_or_had_tag = CAS
+			has_or_had_tag = SPA
+			has_or_had_tag = FRA
+			has_or_had_tag = ENG
+			has_or_had_tag = GBR
+			has_or_had_tag = NED
+		}
+		has_advance = naval_battery_advance
+	}
+
 	location_potential = {
-		is_capital = yes
-		is_coastal = yes
-		owner ?= {
-			is_subject_type = overseas_territory
+		is_port = yes
+		scope:actor.capital.continent != root.continent
+		not = { integration_level = core }
+		region = {
+			not = {
+				any_location_in_region = {
+					owner ?= scope:actor
+					has_building = building_type:overseas_fort
+				}	
+			}
+		}
+		or = {
+			# africa
+			sub_continent = sub_continent:west_africa
+			sub_continent = sub_continent:central_africa
+			sub_continent = sub_continent:east_africa
+			region = region:swahili_coast_region
+			region = region:zimbabwe_region
+			region = region:southern_africa_islands_region
+			region = region:madagascar_region
+			# middle east
+			region = region:arabia_region
+			# asia
+			sub_continent = sub_continent:south_asia
+			sub_continent = sub_continent:east_asia
+			region = region:indonesia_region
+			region = region:melanesia_region
 		}
 	}
+	
 	remove_if = {
-		is_no_longer_capital = yes
-		owner ?= {
-			not = { is_subject_type = overseas_territory }
+		location = {
+			or = {
+				integration_level = core
+				owner ?= {
+					capital.sub_continent = prev.sub_continent
+				}
+			}
 		}
-	}
-
-	capital_country_modifier = { monthly_gold_income = 20 }
-
-	capital_modifier = {
-		local_defensive = 1
-		local_manpower = 0.1
-		local_sailors = 0.075
 	}
 
 	modifier = {
 		# fort
 		fort_level = 2
+		local_defensive = 1
 		# naval
-		local_maritime_presence = 1
+		hostile_disembark_time_modifier = 2
 		hostile_fleet_attrition = 2
-		blocks_privateer_raids = yes
+		local_maritime_presence = 0.5
 	}
 }

@@ -1,0 +1,64 @@
+tags:
+  - POR
+# sources for most of these:
+# https://en.wikipedia.org/wiki/Portuguese_Empire
+take:
+  locations:
+    # india
+    goa: 1500-1550, 25
+    # west africa
+    cacheu: 1580-1595, 25
+    # east africa
+    malindi: 1495-1510, 25
+    mombasa: 1585-1595, 25
+    # asia
+    nishisonogi: 1565-1580, 5
+    # zanzibar
+    zanzibar: 1498-1510, 25
+    # arabia
+    hormuz: 1500-1530, 5
+colonize:
+  locations:
+    # african/atlantic trading ports
+    bojador: 1434-1450, 10
+    arguin: 1440-1450, 10
+    sao_tome: 1468-1520, 5
+    fernando_po: 1471-1520, 5
+
+    cabo_corso: 1480-1485, 20 # elmina
+
+    # kongo and angola
+    soyo: 1478-1500
+    luanda: 1572, 1582
+    mbegela: 1480-1520
+
+    # madagascar
+    sada: 1500-1515, 15
+
+    st_helena: 1500-1505
+
+    # north america
+    natsitok: 1495-1505, 5 # labrador
+    cape_spear: 1470-1475, 5 # newfoundland
+
+  provinces:
+    madeira_province: 1419-1500, 15
+    azores_province: 1427-1500, 15
+    cape_verde_province: 1458-1500, 30
+    mascarene_islands_province: 1495-1510, 10
+
+  areas:
+    # west africa
+    gold_coast_area: 1480-1520
+    # mozambique
+    mozambique_area: 1500-1515
+    # kongo
+    west_kongo_area: 1600, 5
+
+    # brazil
+    pindorama_area: 1495-1836, 25
+    janeiro_area: 1510-1836, 15
+    pampa_area: 1550-1836, 2
+
+  regions:
+    brazil_region: 1530-1836

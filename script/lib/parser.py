@@ -100,18 +100,7 @@ class ColonyEventGenerator:
             )
         return (1337, 1836, DEFAULT_MONTHLY_CHANCE)
 
-    def _generate_files(self, template: type[TemplateData], geo: dict[str, str] | None) -> dict[str, str]:
-        '''
-        Docstring for _generate_files
-        
-        :param self: Description
-        :param template: Description
-        :type template: type[TemplateData]
-        :param geo: Description
-        :type geo: dict[str, str] | None
-        :return: Description
-        :rtype: dict[str, str]
-        '''
+    def _generate_files(self, template: type[TemplateData], geo: dict[str, str] | None) -> dict[str, str]:  
         if not geo or len(geo) == 0: return {}
         namespace = template.NAMESPACE.format(name=self.name)
 

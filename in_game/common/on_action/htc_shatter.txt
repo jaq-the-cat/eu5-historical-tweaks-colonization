@@ -1,0 +1,46 @@
+# root = country; scope:old_ruler and scope:new_ruler are supplied
+on_new_ruler = {
+	on_actions = {
+		new_ruler_shatter_country	
+	}
+}
+
+new_ruler_shatter_country = {
+	effect = {
+		if = {
+			limit = {
+				current_year < 1650
+				is_ai = yes
+				is_subject = no
+				root.capital ?= {
+					sub_continent = sub_continent:west_africa
+					sub_continent = sub_continent:east_africa
+					sub_continent = sub_continent:central_africa
+					region = region:arabia_region
+				}
+				or = {
+					scope:old_ruler.dynasty != scope:new_ruler.dynasty
+					scope:new_ruler.total_abilities < 70
+				}
+			}
+			release_non_cores = {}
+			every_province = {
+				limit = { not = { province = root.capital.province } }
+				if = {
+					limit = {
+						any_location_in_province = { any_core_in_location = { not = { country_exists = this } } }
+					}
+					every_location_in_province = {
+						every_core_in_location = {
+							limit = { not = { country_exists = this } }
+							root = { create_country_from_cores_in_our_locations = prev }
+						}
+					}
+				}
+				else = {
+					create_location_country_from_province = {}
+				}
+			}
+		}
+	}
+}

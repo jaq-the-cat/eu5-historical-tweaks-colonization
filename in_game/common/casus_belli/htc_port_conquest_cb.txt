@@ -5,7 +5,9 @@
 	allow_creation = {
 		always = no
 	}
-
+	province = {
+		always = yes # the province is assigned via the conquer_overseas_port interaction
+	}
 	additional_war_enthusiasm_attacker = 0.5
 	allow_ports_for_reach_ai = yes
 	war_goal_type = port_conquest

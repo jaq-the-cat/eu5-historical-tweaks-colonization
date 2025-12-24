@@ -1,0 +1,15 @@
+tags:
+  - ENG
+  - GBR
+colonize:
+  locations:
+    bermuda: 1510, 10
+  provinces:
+    bahamas_province: 1500, 10
+  areas:
+    florida_area: 1525, 5
+  regions:
+    southern_africa_region: 1600, 5
+    east_coast_region: 1550, 10
+    canada_region: 1550, 10
+    great_plains_region: 1600, 1

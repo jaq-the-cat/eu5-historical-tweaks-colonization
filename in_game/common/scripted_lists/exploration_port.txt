@@ -24,7 +24,6 @@
 			this = location:calabar
 			# kongo and angola
 			this = location:cabinda_kongo
-			this = location:luanda
 			this = location:mbegela
 			# south africa
 			this = location:ezorongondo

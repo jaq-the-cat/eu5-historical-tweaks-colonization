@@ -1,0 +1,21 @@
+tags:
+  - FRA
+take:
+  locations:
+    ndar: 1655, 1665, 25
+    rosso: 1655, 1665, 25
+    beer_dun: 1670-1687, 25
+colonize:
+  locations:
+    bermuda: 1510, 10
+    fort_dauphin: 1638-1648, 20
+  provinces:
+    # western caribbean
+    marien_province: 1500, 10
+    jaragua_province: 1500, 10
+  areas:
+    quebec_area: 1550, 10
+  regions:
+    east_coast_region: 1680, 2
+    canada_region: 1640, 2
+    great_plains_region: 1600, 2

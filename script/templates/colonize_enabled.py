@@ -6,7 +6,7 @@ class ColonizeEnabled:
                                 '''
     GEO_FILTER_TEMPLATE = '''and = {{
                                         current_year > {year}
-                                        {geography_type} = {geography_type}:{geography}
+                                        {geography_select} = {geography_type}:{geography}
                                     }}
                                     '''
     FILTER_TEMPLATE = '''# {comment}

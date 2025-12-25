@@ -77,6 +77,54 @@ REPLACE:create_colonial_charter = {{
                             country_tax_base > 50
                             root.region = scope:actor.capital.region
                         }}
+                        # pre-columbians
+                        and = {{
+                            or = {{
+                                has_or_had_tag = MAY
+                                has_or_had_tag = AZT
+                                religion = religion:inti
+                            }}
+                            root.continent = continent:america
+                        }}
+                        # manchuria
+                        and = {{
+                            has_or_had_tag = MCH
+                            root.region = region:manchuria_region
+                        }}
+                        # japan
+                        and = {{
+                            or = {{
+                                has_or_had_tag = YMT
+                                has_or_had_tag = JAP
+                            }}
+                            root.continent = continent:asia
+                        }}
+                        # russia
+                        and = {{
+                            or = {{
+                                has_or_had_tag = MOS
+                                has_or_had_tag = NOV
+                                has_or_had_tag = RUS
+                            }}
+                            or = {{
+                                root.sub_continent = sub_continent:eastern_europe
+                                root.sub_continent = sub_continent:north_asia
+                                root.sub_continent = sub_continent:central_asia
+                            }}
+                        }}
+                        # natives
+                        and = {{
+                            not = {{ is_subject_type = colonial_nation }}
+                            or = {{
+                                # africa
+                                has_or_had_tag = ETH
+                                 # kongo
+                                and = {{
+                        		    religion = religion:bantu_religion
+                                    capital.region = region:kongo_region
+                                }}
+                            }}
+                        }}
                         # scandinavia
                         and = {{
                             or = {{

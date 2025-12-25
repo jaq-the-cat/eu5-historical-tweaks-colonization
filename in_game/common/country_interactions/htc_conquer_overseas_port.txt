@@ -101,6 +101,7 @@
 		default_sort = development
 		visible = {
 			is_coastal = yes
+			within_colonial_range_of = root
 		}
 		enabled = {
 			always = yes
@@ -115,12 +116,12 @@
 				scope:actor = {	
 					power_projection > scope:recipient.power_projection
 					military_strength > scope:recipient.military_strength
-					navy_size > root.navy_size
+					navy_size > scope:recipient.navy_size
 					num_of_advances_researched > scope:recipient.num_of_advances_researched
 				}
 			}
 			add = {
-				value = 100
+				value = 15
 			}
 		}
 	}

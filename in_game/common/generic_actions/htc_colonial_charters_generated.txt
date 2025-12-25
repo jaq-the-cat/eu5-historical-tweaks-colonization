@@ -73,6 +73,54 @@ REPLACE:create_colonial_charter = {
                             country_tax_base > 50
                             root.region = scope:actor.capital.region
                         }
+                        # pre-columbians
+                        and = {
+                            or = {
+                                has_or_had_tag = MAY
+                                has_or_had_tag = AZT
+                                religion = religion:inti
+                            }
+                            root.continent = continent:america
+                        }
+                        # manchuria
+                        and = {
+                            has_or_had_tag = MCH
+                            root.region = region:manchuria_region
+                        }
+                        # japan
+                        and = {
+                            or = {
+                                has_or_had_tag = YMT
+                                has_or_had_tag = JAP
+                            }
+                            root.continent = continent:asia
+                        }
+                        # russia
+                        and = {
+                            or = {
+                                has_or_had_tag = MOS
+                                has_or_had_tag = NOV
+                                has_or_had_tag = RUS
+                            }
+                            or = {
+                                root.sub_continent = sub_continent:eastern_europe
+                                root.sub_continent = sub_continent:north_asia
+                                root.sub_continent = sub_continent:central_asia
+                            }
+                        }
+                        # natives
+                        and = {
+                            not = { is_subject_type = colonial_nation }
+                            or = {
+                                # africa
+                                has_or_had_tag = ETH
+                                 # kongo
+                                and = {
+                        		    religion = religion:bantu_religion
+                                    capital.region = region:kongo_region
+                                }
+                            }
+                        }
                         # scandinavia
                         and = {
                             or = {
@@ -131,7 +179,7 @@ REPLACE:create_colonial_charter = {
                                     }
                                     and = {
                                         current_year > 1500
-                                        province_definition = province_definition:higuey_province
+                                        this = province_definition:higuey_province
                                     }
                                     and = {
                                         current_year > 1540
@@ -162,19 +210,19 @@ REPLACE:create_colonial_charter = {
                                 or = {
                                     and = {
                                         current_year > 1419
-                                        province_definition = province_definition:madeira_province
+                                        this = province_definition:madeira_province
                                     }
                                     and = {
                                         current_year > 1427
-                                        province_definition = province_definition:azores_province
+                                        this = province_definition:azores_province
                                     }
                                     and = {
                                         current_year > 1458
-                                        province_definition = province_definition:cape_verde_province
+                                        this = province_definition:cape_verde_province
                                     }
                                     and = {
                                         current_year > 1490
-                                        province_definition = province_definition:mascarene_islands_province
+                                        this = province_definition:mascarene_islands_province
                                     }
                                     and = {
                                         current_year > 1500
@@ -218,7 +266,7 @@ REPLACE:create_colonial_charter = {
                                 or = {
                                     and = {
                                         current_year > 1400
-                                        province_definition = province_definition:canary_islands_province
+                                        this = province_definition:canary_islands_province
                                     }
                                     and = {
                                         current_year > 1500
@@ -226,23 +274,23 @@ REPLACE:create_colonial_charter = {
                                     }
                                     and = {
                                         current_year > 1500
-                                        province_definition = province_definition:marien_province
+                                        this = province_definition:marien_province
                                     }
                                     and = {
                                         current_year > 1500
-                                        province_definition = province_definition:jaragua_province
+                                        this = province_definition:jaragua_province
                                     }
                                     and = {
                                         current_year > 1500
-                                        province_definition = province_definition:magua_province
+                                        this = province_definition:magua_province
                                     }
                                     and = {
                                         current_year > 1500
-                                        province_definition = province_definition:maguana_province
+                                        this = province_definition:maguana_province
                                     }
                                     and = {
                                         current_year > 1500
-                                        province_definition = province_definition:boriken_province
+                                        this = province_definition:boriken_province
                                     }
                                     and = {
                                         current_year > 1520
@@ -388,7 +436,6 @@ REPLACE:create_colonial_charter = {
     }
 
     ai_will_do = {
-        add = "scope:actor.colonial_charter_utility(scope:target)"
         if = {
             limit = {
                 scope:actor = {
@@ -398,7 +445,10 @@ REPLACE:create_colonial_charter = {
                     }
                 }
             }
-            multiply = 10
+			add = "scope:actor.colonial_charter_utility(scope:target)"
         }
+		else = {
+			add = -1000
+		}
     }
 }

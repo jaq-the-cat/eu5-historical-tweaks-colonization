@@ -3,6 +3,17 @@ from os import path
 from templates import *
 from templates.colonize_enabled import ColonizeEnabled
 
+def get_geography_select(s: str) -> str:
+    if s.endswith('_province'):
+        return 'this'
+    if s.endswith('_area'):
+        return 'area'
+    if s.endswith('_region'):
+        return 'region'
+    if s.endswith('_sub_continent'):
+        return 'sub_continent'
+    return 'continent'
+
 def get_geography_type(s: str) -> str:
     if s.endswith('_province'):
         return 'province_definition'
@@ -48,6 +59,7 @@ class CharterFilterGenerator:
             for geography in geographies:
                 data += ColonizeEnabled.GEO_FILTER_TEMPLATE.format(
                     year = year,
+                    geography_select = get_geography_select(geography),
                     geography_type = get_geography_type(geography),
                     geography = geography
                 )

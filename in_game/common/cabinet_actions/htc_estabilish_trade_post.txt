@@ -74,6 +74,7 @@
 			has_owner = no
 			is_ownable = yes
 			is_coastal = yes
+			within_colonial_range_of = root
 		}
 		enabled = {}
 	}
@@ -151,7 +152,7 @@
 					}
 				}
 			}
-			add = 1000
+			add = 15
 		}
 		else = {
 			add = -1000

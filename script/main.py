@@ -1,4 +1,4 @@
-from lib.parser_charter import CharterFilterGenerator
+from lib.enable_generator import CharterFilterGenerator
 from templates.colonize_action import ColonizeAction
 import os
 

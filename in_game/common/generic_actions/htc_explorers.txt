@@ -3,7 +3,6 @@ REPLACE:start_exploration = {
 	type = owncountry
 	#we don't execute the price for this action because it creates a construction, which needs its own price information in order to be able to restore the price if it is cancelled. We leave the price in here though for display
 	should_execute_price = no
-	
 	potential = {
 		scope:actor = {
 			modifier:may_explore = yes

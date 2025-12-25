@@ -1,10 +1,11 @@
-﻿tags:
+tags:
   - POR
   - CAS
   - SPA
   - ENG
   - GBR
-# source:
+  - FRA
+  - NED
 charters:
   1500:
     - east_african_island_area
@@ -12,6 +13,7 @@ charters:
     - goringhaikona_area
     - mascarene_islands_area
     - indonesia_region
+    - indochina_region
   1600:
     - oceania
   1700:
@@ -24,3 +26,4 @@ charters:
     - southern_africa_region
     - zimbabwe_region
     - swahili_coast_region
+    - madagascar_region

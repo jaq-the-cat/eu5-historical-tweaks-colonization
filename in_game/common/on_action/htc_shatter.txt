@@ -13,10 +13,12 @@ new_ruler_shatter_country = {
 				is_ai = yes
 				is_subject = no
 				root.capital ?= {
-					sub_continent = sub_continent:west_africa
-					sub_continent = sub_continent:east_africa
-					sub_continent = sub_continent:central_africa
-					region = region:arabia_region
+					or = {
+						sub_continent = sub_continent:west_africa
+						sub_continent = sub_continent:east_africa
+						sub_continent = sub_continent:central_africa
+						region = region:arabia_region
+					}
 				}
 				or = {
 					scope:old_ruler.dynasty != scope:new_ruler.dynasty

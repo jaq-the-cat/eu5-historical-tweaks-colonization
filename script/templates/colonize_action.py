@@ -106,33 +106,17 @@ REPLACE:create_colonial_charter = {{
     }}
 
     ai_will_do = {{
+        add = "scope:actor.colonial_charter_utility(scope:target)"
         if = {{
             limit = {{
-                or = {{
-                    scope:actor = {{
-                        or = {{
-                            has_or_had_tag = POR
-                            has_or_had_tag = CAS
-                            has_or_had_tag = SPA
-                            has_or_had_tag = ENG
-                            has_or_had_tag = GBR
-                            has_or_had_tag = FRA
-                            has_or_had_tag = NED
-                            has_or_had_tag = SWE
-                            has_or_had_tag = NOR
-                            and = {{
-                                is_subject_type = colonial_nation
-                                country_tax_base > 50
-                            }}
-                        }}
+                scope:actor = {{
+                    or = {{
+                        capital.continent = continent:europe
+                        is_subject_type = colonial_nation
                     }}
                 }}
             }}
-            add = "scope:actor.colonial_charter_utility(scope:target)"
             multiply = 10
-        }}
-        else = {{
-            add = -1000
         }}
     }}
 }}

@@ -9,7 +9,7 @@ class ColonizeEnabled:
                                         {geography_type} = {geography_type}:{geography}
                                     }}
                                     '''
-    FILTER_TEMPLATE = '''#{comment}
+    FILTER_TEMPLATE = '''# {comment}
                         and = {{
                             or = {{
                                 is_ai = no

@@ -7,7 +7,7 @@ take:
     beer_dun: 1670-1687, 25
 colonize:
   provinces:
-    # eastern caribbean
+    # eastern hispaniola
     higuey_province: 1500, 10
   areas:
     quebec_area: 1500, 10

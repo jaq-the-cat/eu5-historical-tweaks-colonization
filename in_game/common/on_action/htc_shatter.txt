@@ -9,6 +9,7 @@ new_ruler_shatter_country = {
 	effect = {
 		if = {
 			limit = {
+				current_year > 1400
 				current_year < 1650
 				is_ai = yes
 				num_provinces > 2
@@ -24,7 +25,7 @@ new_ruler_shatter_country = {
 						region = region:arabia_region
 					}
 				}
-				scope:new_ruler.total_abilities < 75 # 25 25 25
+				scope:new_ruler.total_abilities <= 60 # 20 20 20
 			}
 			release_non_cores = {}
 			every_province = {

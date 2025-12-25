@@ -69,7 +69,11 @@ REPLACE:create_colonial_charter = {{
                         # player
                         and = {{
                             is_ai = no
-                            capital.sub_continent = root.sub_continent
+                            root = {{
+                                any_location_in_province_definition = {{
+                                    adjacent_to_owned_by = scope:actor
+                                }}
+                            }}
                         }}
                         # CNs
                         and = {{
@@ -77,14 +81,18 @@ REPLACE:create_colonial_charter = {{
                             country_tax_base > 50
                             root.region = scope:actor.capital.region
                         }}
-                        # pre-columbians
+                        # mesoamericans
                         and = {{
+                            religion.group = religion_group:tonal_group
                             or = {{
-                                has_or_had_tag = MAY
-                                has_or_had_tag = AZT
-                                religion = religion:inti
+                                root.region = region:mesoamerica_region
+                                root.region = region:central_america_region
                             }}
-                            root.continent = continent:america
+                        }}
+                        # incans
+                        and = {{
+                            religion = religion:inti
+                            root.region = region:andes_region
                         }}
                         # manchuria
                         and = {{
@@ -99,15 +107,18 @@ REPLACE:create_colonial_charter = {{
                             }}
                             root.continent = continent:asia
                         }}
-                        # russia
+                        # russia early
                         and = {{
-                            or = {{
-                                has_or_had_tag = MOS
-                                has_or_had_tag = NOV
-                                has_or_had_tag = RUS
-                            }}
+                            culture = {{ has_culture_group = culture_group:russian_group }}
                             or = {{
                                 root.sub_continent = sub_continent:eastern_europe
+                            }}
+                        }}
+                        # russia late
+                        and = {{
+                            current_year > 1500
+                            culture = {{ has_culture_group = culture_group:russian_group }}
+                            or = {{
                                 root.sub_continent = sub_continent:north_asia
                                 root.sub_continent = sub_continent:central_asia
                             }}
@@ -118,6 +129,15 @@ REPLACE:create_colonial_charter = {{
                             or = {{
                                 # africa
                                 has_or_had_tag = ETH
+                                has_or_had_tag = KIT
+                                and = {{
+                                    has_or_had_tag = ZMW
+                                    tax_base > 40
+                                }}
+                                and = {{
+                                    has_or_had_tag = ZAN
+                                    tax_base > 40
+                                }}
                                  # kongo
                                 and = {{
                         		    religion = religion:bantu_religion

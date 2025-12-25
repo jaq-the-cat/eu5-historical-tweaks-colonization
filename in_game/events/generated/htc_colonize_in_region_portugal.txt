@@ -1,0 +1,71 @@
+﻿namespace = htc_colonize_in_region_portugal
+
+htc_colonize_in_region_portugal.1 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = POR
+		from = 1530.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		any_province_definition = {
+			filter = { region = region:brazil_region }
+			not = { has_colonial_charter = root }
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:brazil_region = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:brazil_region
+				not = { has_colonial_charter = root }
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	

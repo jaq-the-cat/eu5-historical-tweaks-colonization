@@ -182,15 +182,15 @@ REPLACE:create_colonial_charter = {
                                         this = province_definition:higuey_province
                                     }
                                     and = {
-                                        current_year > 1540
+                                        current_year > 1560
                                         region = region:east_coast_region
                                     }
                                     and = {
-                                        current_year > 1540
+                                        current_year > 1560
                                         region = region:canada_region
                                     }
                                     and = {
-                                        current_year > 1540
+                                        current_year > 1560
                                         region = region:caribbean_region
                                     }
                                     and = {
@@ -374,6 +374,10 @@ REPLACE:create_colonial_charter = {
                                         continent = continent:oceania
                                     }
                                     and = {
+                                        current_year > 1650
+                                        continent = continent:america
+                                    }
+                                    and = {
                                         current_year > 1700
                                         area = area:gold_coast_area
                                     }
@@ -436,6 +440,7 @@ REPLACE:create_colonial_charter = {
     }
 
     ai_will_do = {
+        add = "scope:actor.colonial_charter_utility(scope:target)"
         if = {
             limit = {
                 scope:actor = {
@@ -445,10 +450,7 @@ REPLACE:create_colonial_charter = {
                     }
                 }
             }
-			add = "scope:actor.colonial_charter_utility(scope:target)"
+            multiply = 10
         }
-		else = {
-			add = -1000
-		}
     }
 }

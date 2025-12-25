@@ -18,29 +18,6 @@ take:
     # arabia
     hormuz: 1500-1530, 5
 colonize:
-  locations:
-    # african/atlantic trading ports
-    bojador: 1434-1450, 10
-    arguin: 1440-1450, 10
-    sao_tome: 1468-1520, 5
-    fernando_po: 1471-1520, 5
-
-    cabo_corso: 1480-1485, 20 # elmina
-
-    # kongo and angola
-    soyo: 1478-1500
-    luanda: 1572, 1582
-    mbegela: 1480-1520
-
-    # madagascar
-    sada: 1500-1515, 15
-
-    st_helena: 1500-1505
-
-    # north america
-    natsitok: 1495-1505, 5 # labrador
-    cape_spear: 1470-1475, 5 # newfoundland
-
   provinces:
     madeira_province: 1419-1500, 15
     azores_province: 1427-1500, 15

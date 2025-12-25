@@ -6,7 +6,7 @@
 	
 	# trigger to check country's capital against, has to pass
 	capital_trigger = {
-		region = region:south_africa_region
+		region = region:southern_africa_region
 	}
 	
 	# trigger to check all the country locations against, all have to pass

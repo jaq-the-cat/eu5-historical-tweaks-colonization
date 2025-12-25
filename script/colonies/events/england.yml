@@ -2,8 +2,6 @@ tags:
   - ENG
   - GBR
 colonize:
-  locations:
-    bermuda: 1510, 10
   provinces:
     bahamas_province: 1500, 10
   areas:

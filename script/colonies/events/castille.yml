@@ -2,26 +2,23 @@ tags:
   - CAS
   - SPA
 colonize:
-  locations:
-    bermuda: 1470-1510
   provinces:
     canary_islands_province: 1400-1500
-    # eastern caribbean
-    higuey_province: 1500, 2
-    xaymaca_province: 1500, 2
+    # west caribbean
+    marien_province: 1500, 2
+    jaragua_province: 1500, 2
     magua_province: 1500, 2
     maguana_province: 1500, 2
-    boriken_province: 1500, 21
+    boriken_province: 1500, 2
   areas:
-    cuba_area: 1500, 10
-    florida_area: 1520-1530, 1
+    cuba_area: 1500, 5
   regions:
     caribbean_region: 1510-1836, 2
     mesoamerica_region: 1520-1836, 10
     central_america_region: 1520-1836, 10
     colombia_region: 1508-1836, 15
     andes_region: 1530-1836, 15
-    la_plata_region: 1530-1836, 15
+    la_plata_region: 1530-1836, 5
     chaco_region: 1540-1836, 1
     great_plains_region: 1650-1836, 1
     aridoamerica_region: 1650-1836, 1

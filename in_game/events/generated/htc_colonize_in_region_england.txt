@@ -1,0 +1,279 @@
+﻿namespace = htc_colonize_in_region_england
+
+htc_colonize_in_region_england.1 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1600.1.1
+		to = 1836.1.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		any_province_definition = {
+			filter = { region = region:southern_africa_region }
+			not = { has_colonial_charter = root }
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:southern_africa_region = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:southern_africa_region
+				not = { has_colonial_charter = root }
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_england.2 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1550.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		any_province_definition = {
+			filter = { region = region:east_coast_region }
+			not = { has_colonial_charter = root }
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:east_coast_region = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:east_coast_region
+				not = { has_colonial_charter = root }
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_england.3 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1550.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		any_province_definition = {
+			filter = { region = region:canada_region }
+			not = { has_colonial_charter = root }
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:canada_region = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:canada_region
+				not = { has_colonial_charter = root }
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_england.4 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1600.1.1
+		to = 1836.1.1
+		monthly_chance = 1
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		any_province_definition = {
+			filter = { region = region:great_plains_region }
+			not = { has_colonial_charter = root }
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:great_plains_region = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:great_plains_region
+				not = { has_colonial_charter = root }
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	

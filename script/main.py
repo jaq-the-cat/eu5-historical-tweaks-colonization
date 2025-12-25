@@ -2,7 +2,7 @@ from lib.parser_charter import CharterFilterGenerator
 from templates.colonize_action import ColonizeAction
 import os
 
-for dirpath, dirnames, filenames in os.walk('colonies'):
+for dirpath, dirnames, filenames in os.walk('colonies/enable'):
     filters = []
     for file in filenames:
         g = CharterFilterGenerator(os.path.join(dirpath, file))

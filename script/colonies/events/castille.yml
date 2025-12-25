@@ -13,13 +13,8 @@ colonize:
   areas:
     cuba_area: 1500, 5
   regions:
-    caribbean_region: 1510-1836, 2
-    mesoamerica_region: 1520-1836, 10
-    central_america_region: 1520-1836, 10
-    colombia_region: 1508-1836, 15
-    andes_region: 1530-1836, 15
-    la_plata_region: 1530-1836, 5
-    chaco_region: 1540-1836, 1
-    great_plains_region: 1650-1836, 1
-    aridoamerica_region: 1650-1836, 1
-    west_coast_region: 1650-1836, 5
+    mesoamerica_region: 1520, 10
+    central_america_region: 1520, 10
+    colombia_region: 1508, 15
+    andes_region: 1530, 15
+    la_plata_region: 1530, 5

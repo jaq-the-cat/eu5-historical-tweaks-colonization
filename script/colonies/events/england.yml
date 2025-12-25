@@ -2,12 +2,7 @@ tags:
   - ENG
   - GBR
 colonize:
-  provinces:
-    bahamas_province: 1500, 10
-  areas:
-    florida_area: 1525, 5
   regions:
+    east_coast_region: 1540, 10
+    canada_region: 1540, 10
     southern_africa_region: 1600, 5
-    east_coast_region: 1550, 10
-    canada_region: 1550, 10
-    great_plains_region: 1600, 1

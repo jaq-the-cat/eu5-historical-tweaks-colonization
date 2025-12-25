@@ -10,8 +10,4 @@ colonize:
     # eastern hispaniola
     higuey_province: 1500, 10
   areas:
-    quebec_area: 1500, 10
-  regions:
-    east_coast_region: 1660, 2
-    canada_region: 1600, 2
-    great_plains_region: 1600, 2
+    quebec_area: 1520, 10

@@ -23,7 +23,6 @@ colonize:
     azores_province: 1427-1500, 15
     cape_verde_province: 1458-1500, 30
     mascarene_islands_province: 1495-1510, 10
-
   areas:
     # west africa
     gold_coast_area: 1480-1520

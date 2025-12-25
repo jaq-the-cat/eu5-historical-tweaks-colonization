@@ -2,14 +2,15 @@ tags:
   - FRA
 # source:
 charters:
-  1490:
+  1500:
     - quebec_area
   1500:
     # eastern hispaniola
     - higuey_province
-  1560:
+  1550:
     - east_coast_region
     - canada_region
     - caribbean_region
   1600:
     - great_plains_region
+    - west_coast_region

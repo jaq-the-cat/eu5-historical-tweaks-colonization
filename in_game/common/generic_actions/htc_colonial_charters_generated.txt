@@ -101,7 +101,7 @@ REPLACE:create_colonial_charter = {
                                 has_or_had_tag = YMT
                                 has_or_had_tag = JAP
                             }
-                            root.continent = continent:asia
+                            root.region = region:japan_region
                         }
                         # russia early
                         and = {

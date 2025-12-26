@@ -8,6 +8,10 @@ tags:
   - NED
 charters:
   1500:
+    - azores_province
+    - madeira_province
+    - canary_islands_province
+    - cape_verde_province
     - east_african_island_area
   1550:
     - goringhaikona_area
@@ -15,6 +19,14 @@ charters:
     - indonesia_region
     - indochina_region
   1600:
+    # allow everyone else to colonize south america
+    - caribbean_region
+    - mesoamerica_region
+    - central_america_region
+    - colombia_region
+    - brazil_region
+    - la_plata_region
+    - east_coast_region
     - oceania
   1650:
     - america

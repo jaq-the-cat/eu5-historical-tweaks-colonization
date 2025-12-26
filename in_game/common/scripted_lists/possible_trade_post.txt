@@ -4,34 +4,32 @@
 		is_coastal = yes
 		is_ownable = yes
 		or = {
-			# maghreb
 			this = location:bojador
 			this = location:arguin
-			# atlantic
 			this = location:bermuda
 			this = location:st_helena
-			# west africa
+
 			this = location:bissagos
 			this = location:madina
 			this = location:cape_mount
 			this = location:cabo_corso
 			this = location:cabo_formoso
-			# gulf of guinea
+
 			this = location:sao_tome
 			this = location:fernando_po
-			# kongo and angola
+
 			this = location:cabinda_kongo
 			this = location:luanda
 			this = location:mbegela
-			# south africa
+
 			this = location:ezorongondo
 			this = location:uri_ae_ona
 			this = location:goringhaikona
-			# madagascar
+
 			this = location:al_khadra
 			this = location:sada
 			this = location:fort_dauphin
-			# east asia/oceania
+
 			region = region:indonesia_region
 			region = region:melanesia_region
 			region = region:new_zealand_region

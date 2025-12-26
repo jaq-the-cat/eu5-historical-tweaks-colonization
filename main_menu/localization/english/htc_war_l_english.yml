@@ -1,5 +1,6 @@
 ﻿l_english:
   PORT_CONQUEST_WAR_NAME: "$NUM$$ORDER$ $FIRST$ Conquest of $SECOND$ Treaty Port"
+  UNIFY_INCA_WAR_NAME: "$NUM$$ORDER$ $FIRST$ War for Incan Unification against $SECONDNAME$"
   conquer_overseas_port: "Conquer Overseas Port"
   conquer_overseas_port_act: "Take a Treaty Port from [SCOPE.sCountry('recipient').GetName]"
   conquer_overseas_port_desc: "We will take a Treaty Port from the target country."

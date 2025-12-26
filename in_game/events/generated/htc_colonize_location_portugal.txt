@@ -19,6 +19,7 @@ htc_colonize_location_portugal.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		location:bojador = {
 			has_owner = no
 			is_ownable = yes
@@ -74,6 +75,7 @@ htc_colonize_location_portugal.2 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		location:arguin = {
 			has_owner = no
 			is_ownable = yes
@@ -129,6 +131,7 @@ htc_colonize_location_portugal.3 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		location:sao_tome = {
 			has_owner = no
 			is_ownable = yes
@@ -184,6 +187,7 @@ htc_colonize_location_portugal.4 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		location:fernando_po = {
 			has_owner = no
 			is_ownable = yes

@@ -19,6 +19,7 @@ htc_colonize_in_region_portugal.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		any_province_definition = {
 			filter = { region = region:brazil_region }
 			not = { has_colonial_charter = root }

@@ -20,6 +20,7 @@ htc_colonize_in_region_castille.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		any_province_definition = {
 			filter = { region = region:mesoamerica_region }
 			not = { has_colonial_charter = root }
@@ -89,6 +90,7 @@ htc_colonize_in_region_castille.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		any_province_definition = {
 			filter = { region = region:central_america_region }
 			not = { has_colonial_charter = root }
@@ -158,6 +160,7 @@ htc_colonize_in_region_castille.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		any_province_definition = {
 			filter = { region = region:colombia_region }
 			not = { has_colonial_charter = root }
@@ -227,6 +230,7 @@ htc_colonize_in_region_castille.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		any_province_definition = {
 			filter = { region = region:andes_region }
 			not = { has_colonial_charter = root }
@@ -296,6 +300,7 @@ htc_colonize_in_region_castille.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		any_province_definition = {
 			filter = { region = region:la_plata_region }
 			not = { has_colonial_charter = root }

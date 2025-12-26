@@ -10,9 +10,9 @@ charters:
   1458:
     - cape_verde_province
   1490:
+    - gold_coast_area
     - mascarene_islands_province
   1500:
-    - gold_coast_area
     - mozambique_area
     - pindorama_area
     - janeiro_area
@@ -21,4 +21,5 @@ charters:
   1540:
     - pampa_area
   1550:
+    - west_kongo_area
     - zimbabwe_region

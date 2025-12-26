@@ -19,6 +19,7 @@ htc_colonize_province_france.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:higuey_province = {
 			any_location_in_province_definition = {
 				or = {

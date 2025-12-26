@@ -19,6 +19,7 @@ htc_colonize_in_area_france.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		area:quebec_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }

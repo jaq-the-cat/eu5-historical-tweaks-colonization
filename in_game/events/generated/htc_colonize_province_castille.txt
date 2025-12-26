@@ -20,6 +20,7 @@ htc_colonize_province_castille.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:canary_islands_province = {
 			any_location_in_province_definition = {
 				or = {
@@ -73,6 +74,7 @@ htc_colonize_province_castille.2 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:marien_province = {
 			any_location_in_province_definition = {
 				or = {
@@ -126,6 +128,7 @@ htc_colonize_province_castille.3 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:jaragua_province = {
 			any_location_in_province_definition = {
 				or = {
@@ -179,6 +182,7 @@ htc_colonize_province_castille.4 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:magua_province = {
 			any_location_in_province_definition = {
 				or = {
@@ -232,6 +236,7 @@ htc_colonize_province_castille.5 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:maguana_province = {
 			any_location_in_province_definition = {
 				or = {
@@ -285,6 +290,7 @@ htc_colonize_province_castille.6 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:boriken_province = {
 			any_location_in_province_definition = {
 				or = {

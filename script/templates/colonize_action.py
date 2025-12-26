@@ -132,12 +132,12 @@ REPLACE:create_colonial_charter = {{
                                 has_or_had_tag = ETH
                                 has_or_had_tag = KIT
                                 and = {{
+                                    current_year > 1550
                                     has_or_had_tag = ZMW
-                                    tax_base > 40
                                 }}
                                 and = {{
+                                    current_year > 1500
                                     has_or_had_tag = ZAN
-                                    tax_base > 40
                                 }}
                                  # kongo
                                 and = {{
@@ -179,6 +179,7 @@ REPLACE:create_colonial_charter = {{
         if = {{
             limit = {{
                 scope:actor = {{
+				    monthly_balance > 25
                     or = {{
                         capital.continent = continent:europe
                         is_subject_type = colonial_nation

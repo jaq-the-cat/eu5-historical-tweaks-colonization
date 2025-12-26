@@ -29,6 +29,7 @@ class ColonizeInRegion(TemplateData):
 	}}
 
 	trigger = {{
+		monthly_balance > 25
 		any_province_definition = {{
 			filter = {{ region = region:{geography} }}
 			not = {{ has_colonial_charter = root }}

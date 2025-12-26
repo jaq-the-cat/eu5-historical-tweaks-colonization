@@ -20,6 +20,7 @@ htc_colonize_in_area_castille.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		area:cuba_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }

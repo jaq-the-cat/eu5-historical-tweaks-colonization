@@ -19,6 +19,7 @@ htc_colonize_province_portugal.1 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:madeira_province = {
 			any_location_in_province_definition = {
 				or = {
@@ -71,6 +72,7 @@ htc_colonize_province_portugal.2 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:azores_province = {
 			any_location_in_province_definition = {
 				or = {
@@ -123,6 +125,7 @@ htc_colonize_province_portugal.3 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:cape_verde_province = {
 			any_location_in_province_definition = {
 				or = {
@@ -175,6 +178,7 @@ htc_colonize_province_portugal.4 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		province_definition:mascarene_islands_province = {
 			any_location_in_province_definition = {
 				or = {

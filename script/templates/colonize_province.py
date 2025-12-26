@@ -29,6 +29,7 @@ class ColonizeProvince(TemplateData):
 	}}
 
 	trigger = {{
+		monthly_balance > 25
 		province_definition:{geography} = {{
 			any_location_in_province_definition = {{
 				or = {{

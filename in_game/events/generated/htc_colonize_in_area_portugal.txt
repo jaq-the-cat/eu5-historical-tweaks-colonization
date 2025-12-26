@@ -8,8 +8,8 @@ htc_colonize_in_area_portugal.1 = {
 	
 	dynamic_historical_event = {
         tag = POR
-		from = 1480.1.1
-		to = 1520.1.1
+		from = 1500.1.1
+		to = 1515.1.1
 		monthly_chance = 10
 	}
 
@@ -19,7 +19,8 @@ htc_colonize_in_area_portugal.1 = {
 	}
 
 	trigger = {
-		area:gold_coast_area = {
+		monthly_balance > 25
+		area:mozambique_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
@@ -36,7 +37,7 @@ htc_colonize_in_area_portugal.1 = {
 	}
 	
 	immediate = {
-		area:gold_coast_area = {
+		area:mozambique_area = {
 			save_scope_as = source
 			random_province_definition_in_area = {
 				limit = {
@@ -76,9 +77,9 @@ htc_colonize_in_area_portugal.2 = {
 	
 	dynamic_historical_event = {
         tag = POR
-		from = 1500.1.1
-		to = 1515.1.1
-		monthly_chance = 10
+		from = 1495.1.1
+		to = 1836.1.1
+		monthly_chance = 25
 	}
 
 	illustration_tags = {
@@ -87,7 +88,8 @@ htc_colonize_in_area_portugal.2 = {
 	}
 
 	trigger = {
-		area:mozambique_area = {
+		monthly_balance > 25
+		area:pindorama_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
@@ -104,7 +106,7 @@ htc_colonize_in_area_portugal.2 = {
 	}
 	
 	immediate = {
-		area:mozambique_area = {
+		area:pindorama_area = {
 			save_scope_as = source
 			random_province_definition_in_area = {
 				limit = {
@@ -144,9 +146,9 @@ htc_colonize_in_area_portugal.3 = {
 	
 	dynamic_historical_event = {
         tag = POR
-		from = 1600.1.1
+		from = 1510.1.1
 		to = 1836.1.1
-		monthly_chance = 5
+		monthly_chance = 15
 	}
 
 	illustration_tags = {
@@ -155,7 +157,8 @@ htc_colonize_in_area_portugal.3 = {
 	}
 
 	trigger = {
-		area:west_kongo_area = {
+		monthly_balance > 25
+		area:janeiro_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
 				any_location_in_province_definition = {
@@ -172,7 +175,7 @@ htc_colonize_in_area_portugal.3 = {
 	}
 	
 	immediate = {
-		area:west_kongo_area = {
+		area:janeiro_area = {
 			save_scope_as = source
 			random_province_definition_in_area = {
 				limit = {
@@ -212,142 +215,6 @@ htc_colonize_in_area_portugal.4 = {
 	
 	dynamic_historical_event = {
         tag = POR
-		from = 1495.1.1
-		to = 1836.1.1
-		monthly_chance = 25
-	}
-
-	illustration_tags = {
-		10 = happy
-		10 = exterior
-	}
-
-	trigger = {
-		area:pindorama_area = {
-			any_province_definition_in_area = {
-				not = { has_colonial_charter = root }
-				any_location_in_province_definition = {
-					or = {
-						is_adjacent_to_owned_or_subject_owns = yes
-						within_colonial_range_of = root
-					}
-					has_owner = no
-					is_ownable = yes
-					is_discovered_by = root
-				}
-			}
-		}
-	}
-	
-	immediate = {
-		area:pindorama_area = {
-			save_scope_as = source
-			random_province_definition_in_area = {
-				limit = {
-					not = { has_colonial_charter = root }
-					any_location_in_province_definition = {
-						or = {
-							is_adjacent_to_owned_or_subject_owns = yes
-							within_colonial_range_of = root
-						}
-						has_owner = no
-						is_ownable = yes
-						is_discovered_by = root
-					}
-				}
-				save_scope_as = geo
-			}
-		}
-	}
-
-	option = {
-		name = htc.options.take
-		historical_option = yes
-
-		create_colonial_charter = {
-			target = scope:geo
-		}
-	}
-	option = {
-		name = htc.options.no
-	}
-}
-htc_colonize_in_area_portugal.5 = {
-	type = country_event
-	title = htc_colonize_in_area.title
-	desc = htc_colonize_in_area.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = POR
-		from = 1510.1.1
-		to = 1836.1.1
-		monthly_chance = 15
-	}
-
-	illustration_tags = {
-		10 = happy
-		10 = exterior
-	}
-
-	trigger = {
-		area:janeiro_area = {
-			any_province_definition_in_area = {
-				not = { has_colonial_charter = root }
-				any_location_in_province_definition = {
-					or = {
-						is_adjacent_to_owned_or_subject_owns = yes
-						within_colonial_range_of = root
-					}
-					has_owner = no
-					is_ownable = yes
-					is_discovered_by = root
-				}
-			}
-		}
-	}
-	
-	immediate = {
-		area:janeiro_area = {
-			save_scope_as = source
-			random_province_definition_in_area = {
-				limit = {
-					not = { has_colonial_charter = root }
-					any_location_in_province_definition = {
-						or = {
-							is_adjacent_to_owned_or_subject_owns = yes
-							within_colonial_range_of = root
-						}
-						has_owner = no
-						is_ownable = yes
-						is_discovered_by = root
-					}
-				}
-				save_scope_as = geo
-			}
-		}
-	}
-
-	option = {
-		name = htc.options.take
-		historical_option = yes
-
-		create_colonial_charter = {
-			target = scope:geo
-		}
-	}
-	option = {
-		name = htc.options.no
-	}
-}
-htc_colonize_in_area_portugal.6 = {
-	type = country_event
-	title = htc_colonize_in_area.title
-	desc = htc_colonize_in_area.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = POR
 		from = 1550.1.1
 		to = 1836.1.1
 		monthly_chance = 2
@@ -359,6 +226,7 @@ htc_colonize_in_area_portugal.6 = {
 	}
 
 	trigger = {
+		monthly_balance > 25
 		area:pampa_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }

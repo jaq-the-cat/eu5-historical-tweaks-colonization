@@ -137,10 +137,14 @@
 				}
 			}
 			scope:actor = {
-				declare_war_with_cb = {
+				add_casus_belli = {	
 					target = scope:recipient
 					type = casus_belli:cb_port_conquest
 					province = scope:target.province
+				}
+				declare_war_with_cb = {
+					target = scope:recipient
+					type = casus_belli:cb_port_conquest
 				}
 			}
 		}

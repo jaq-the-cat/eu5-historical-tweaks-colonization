@@ -101,7 +101,7 @@ REPLACE:create_colonial_charter = {
                                 has_or_had_tag = YMT
                                 has_or_had_tag = JAP
                             }
-                            root.region = region:japan_region
+                            root.continent = continent:asia
                         }
                         # russia early
                         and = {
@@ -159,11 +159,11 @@ REPLACE:create_colonial_charter = {
                             root = {
                                 or = {
                                     and = {
-                                        current_year > 1500
+                                        current_year > 1520
                                         region = region:east_coast_region
                                     }
                                     and = {
-                                        current_year > 1500
+                                        current_year > 1520
                                         region = region:canada_region
                                     }
                                     and = {
@@ -194,28 +194,28 @@ REPLACE:create_colonial_charter = {
                             root = {
                                 or = {
                                     and = {
-                                        current_year > 1490
-                                        area = area:quebec_area
-                                    }
-                                    and = {
                                         current_year > 1500
                                         this = province_definition:higuey_province
                                     }
                                     and = {
-                                        current_year > 1560
+                                        current_year > 1550
                                         region = region:east_coast_region
                                     }
                                     and = {
-                                        current_year > 1560
+                                        current_year > 1550
                                         region = region:canada_region
                                     }
                                     and = {
-                                        current_year > 1560
+                                        current_year > 1550
                                         region = region:caribbean_region
                                     }
                                     and = {
                                         current_year > 1600
                                         region = region:great_plains_region
+                                    }
+                                    and = {
+                                        current_year > 1600
+                                        region = region:west_coast_region
                                     }
                                 }
                             }
@@ -470,7 +470,7 @@ REPLACE:create_colonial_charter = {
                     }
                 }
             }
-            multiply = 2
+            multiply = 10
         }
     }
 }

@@ -18,6 +18,11 @@ take:
     # arabia
     hormuz: 1500-1530, 5
 colonize:
+  locations:
+    bojador: 1380-1440
+    arguin: 1400-1460
+    sao_tome: 1420-1500
+    fernando_po: 1440-1520
   provinces:
     madeira_province: 1419-1500, 15
     azores_province: 1427-1500, 15

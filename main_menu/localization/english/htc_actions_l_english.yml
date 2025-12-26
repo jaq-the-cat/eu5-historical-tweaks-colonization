@@ -1,15 +1,13 @@
 ﻿l_english:
   estabilish_trade_post: "Estabilish Trade Post"
   estabilish_trade_post_desc: "Estabilish an overseas Trade Post"
-  estabilish_trade_post_action: "Estabilish a Trade Post in [SCOPE.sRegion('target_region').GetNameWithNoTooltip]"
-  estabilish_trade_post_select_region: "Select a [region|e] to estabilish a Trade Post"
-  estabilish_trade_post_no_regions: "$no_valid_regions$"
+  estabilish_trade_post_action: "Estabilish a Trade Post in [SCOPE.sLocation('target').GetNameWithNoTooltip]"
   estabilish_trade_post_select_location: "Select a [location|e] to estabilish a Trade Post"
   estabilish_trade_post_no_locations: "$no_valid_locations$"
-  estabilish_trade_post_active: "Estabilishing a Trade Post in [SCOPE.sLocation('target_location').GetNameWithNoTooltip]"
+  estabilish_trade_post_active: "Estabilishing a Trade Post in [SCOPE.sLocation('target').GetNameWithNoTooltip]"
   estabilish_trade_post_action_progress: "[Cabinet.GetActionNumProgress|%]"
   estabilish_trade_post_action_progress_wordier: "Trade Post will be estabilished in [SCOPE.sCountry('actor').GetGovernment.GetCabinetActionImplementationDate('estabilish_trade_post')]"
-  estabilish_trade_post_action_progress_tooltip: "Estabilishment progress of [SCOPE.sLocation('target_location').GetName]: [SCOPE.sCountry('actor').GetGovernment.GetCabinetActionImplementationProgress('estabilish_trade_post')|2%]"
+  estabilish_trade_post_action_progress_tooltip: "Estabilishment progress of [SCOPE.sLocation('target').GetName]: [SCOPE.sCountry('actor').GetGovernment.GetCabinetActionImplementationProgress('estabilish_trade_post')|2%]"
 
   purchase_trade_port: "Purchase Trade Port"
   purchase_trade_port_desc: "Estabilish a mutually beneficial trade partnership with the target country by purchasing one of their ports."

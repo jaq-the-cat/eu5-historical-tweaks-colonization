@@ -8,7 +8,7 @@ htc_colonize_in_area_france.1 = {
 	
 	dynamic_historical_event = {
         tag = FRA
-		from = 1500.1.1
+		from = 1520.1.1
 		to = 1836.1.1
 		monthly_chance = 10
 	}

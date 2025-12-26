@@ -84,9 +84,10 @@ REPLACE:create_colonial_charter = {{
                         # mesoamericans
                         and = {{
                             religion.group = religion_group:tonal_group
-                            or = {{
-                                root.region = region:mesoamerica_region
-                                root.region = region:central_america_region
+                            root = {{
+                                any_location_in_province_definition = {{
+                                    adjacent_to_owned_by = scope:actor
+                                }}
                             }}
                         }}
                         # incans

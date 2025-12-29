@@ -39,7 +39,7 @@
 						this = location:bermuda
 						this = location:st_helena
 						this = location:bissagos
-						this = location:madina
+						this = location:banana_islands # madina, west africa
 						this = location:cape_mount
 						this = location:cabo_corso
 						this = location:cabo_formoso

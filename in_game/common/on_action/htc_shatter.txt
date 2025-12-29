@@ -1,75 +1,75 @@
-# root = country; scope:old_ruler and scope:new_ruler are supplied
-on_new_ruler = {
-	on_actions = {
-		new_ruler_shatter_country	
-	}
-}
+# # root = country; scope:old_ruler and scope:new_ruler are supplied
+# on_new_ruler = {
+# 	on_actions = {
+# 		new_ruler_shatter_country	
+# 	}
+# }
 
-new_ruler_shatter_country = {
-	effect = {
-		if = {
-			limit = {
-				current_year > 1400
-				current_year < 1650
-				is_ai = yes
-				num_provinces > 2
-				and = {
-					is_subject = no
-					not = { is_subject_type = tributary }
-				}
-				root.capital ?= {
-					or = {
-						sub_continent = sub_continent:west_africa
-						sub_continent = sub_continent:east_africa
-						sub_continent = sub_continent:central_africa
-						region = region:arabia_region
-					}
-				}
-				scope:new_ruler.total_abilities <= 60 # 20 20 20
-			}
-			release_non_cores = {}
-			every_province = {
-				limit = { not = { this = root.capital.province } }
-				if = {
-					limit = {
-						any_location_in_province = {
-							any_core_in_location = {
-								not = { country_exists = this }
-								not = { country_type = pop }
-							}
-						}
-					}
-					every_location_in_province = {
-						every_core_in_location = {
-							limit = {
-								not = { country_exists = this }
-								not = { country_type = pop }
-							}
-							root = { create_country_from_cores_in_our_locations = prev }
-							if = {
-								limit = { country_type = pop }
-								change_country_type = location
-							}
-							if = {
-								limit = {
-									not = { tag = YEM }
-									not = { tag = ETH }
-									not = { tag = ORM }
-									not = { tag = OMA }
-									not = { tag = ZAN }
-									not = { tag = ZMW }
-								}
-						 		change_government_type = government_type:tribe
-							}
-						}
-					}
-				}
-				else = {
-					create_location_country_from_province = {
-						change_government_type = government_type:tribe
-					}
-				}
-			}
-		}
-	}
-}
+# new_ruler_shatter_country = {
+# 	effect = {
+# 		if = {
+# 			limit = {
+# 				current_year > 1400
+# 				current_year < 1650
+# 				is_ai = yes
+# 				num_provinces > 2
+# 				and = {
+# 					is_subject = no
+# 					not = { is_subject_type = tributary }
+# 				}
+# 				root.capital ?= {
+# 					or = {
+# 						sub_continent = sub_continent:west_africa
+# 						sub_continent = sub_continent:east_africa
+# 						sub_continent = sub_continent:central_africa
+# 						region = region:arabia_region
+# 					}
+# 				}
+# 				scope:new_ruler.total_abilities <= 60 # 20 20 20
+# 			}
+# 			release_non_cores = {}
+# 			every_province = {
+# 				limit = { not = { this = root.capital.province } }
+# 				if = {
+# 					limit = {
+# 						any_location_in_province = {
+# 							any_core_in_location = {
+# 								not = { country_exists = this }
+# 								not = { country_type = pop }
+# 							}
+# 						}
+# 					}
+# 					every_location_in_province = {
+# 						every_core_in_location = {
+# 							limit = {
+# 								not = { country_exists = this }
+# 								not = { country_type = pop }
+# 							}
+# 							root = { create_country_from_cores_in_our_locations = prev }
+# 							if = {
+# 								limit = { country_type = pop }
+# 								change_country_type = location
+# 							}
+# 							if = {
+# 								limit = {
+# 									not = { tag = YEM }
+# 									not = { tag = ETH }
+# 									not = { tag = ORM }
+# 									not = { tag = OMA }
+# 									not = { tag = ZAN }
+# 									not = { tag = ZMW }
+# 								}
+# 						 		change_government_type = government_type:tribe
+# 							}
+# 						}
+# 					}
+# 				}
+# 				else = {
+# 					create_location_country_from_province = {
+# 						change_government_type = government_type:tribe
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# }

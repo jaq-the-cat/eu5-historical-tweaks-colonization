@@ -29,12 +29,42 @@
 	select_trigger = {
 		looking_for_a = location
 		interaction_source_list = {
-			every_possible_trade_post = {
-				limit = { has_owner = no }
+			every_location_in_the_world = {
+				limit = {
+					is_coastal = yes
+					is_ownable = yes
+					or = {
+						this = location:bojador
+						this = location:arguin
+						this = location:bermuda
+						this = location:st_helena
+						this = location:bissagos
+						this = location:madina
+						this = location:cape_mount
+						this = location:cabo_corso
+						this = location:cabo_formoso
+						this = location:sao_tome
+						this = location:fernando_po
+						this = location:cabinda_kongo
+						this = location:luanda
+						this = location:mbegela
+						this = location:ezorongondo
+						this = location:uri_ae_ona
+						this = location:goringhaikona
+						this = location:al_khadra
+						this = location:sada
+						this = location:fort_dauphin
+						region = region:indonesia_region
+						region = region:melanesia_region
+						region = region:new_zealand_region
+						sub_continent = sub_continent:pacific_islands
+					}
+				}
 				add_to_list = source
 			}
 		}
 		target_flag = target
+		cache_targets = yes
 		name = "estabilish_trade_post_select_location"
 		none_available_msg_key = "estabilish_trade_post_no_locations"
 		column = { data = name }
@@ -42,6 +72,7 @@
 		visible = {
 			not = { cabinet_already_performing_same_task_on_target = { cabinet_action = estabilish_trade_post interaction_target = target } }
 			is_discovered_by = scope:actor
+			has_owner = no
 		}
 		enabled = {
 			within_colonial_range_of = scope:actor

@@ -40,30 +40,32 @@
 		looking_for_a = country
 		target_flag = recipient
 		interaction_source_list = {
-			every_country = {
-				limit = {
-					not = { is_subject_type = colonial_nation }
-					capital = {
-						or = {
-							# africa
-							sub_continent = sub_continent:west_africa
-							sub_continent = sub_continent:central_africa
-							sub_continent = sub_continent:east_africa
-							region = region:swahili_coast_region
-							region = region:zimbabwe_region
-							region = region:southern_africa_islands_region
-							region = region:madagascar_region
-							# middle east
-							region = region:arabia_region
-							# asia
-							sub_continent = sub_continent:south_asia
-							sub_continent = sub_continent:east_asia
-							region = region:indonesia_region
-							region = region:melanesia_region
+			scope:actor = {
+				every_country_in_diplomatic_range = {
+					limit = {
+						not = { is_subject_type = colonial_nation }
+						capital = {
+							or = {
+								# africa
+								sub_continent = sub_continent:west_africa
+								sub_continent = sub_continent:central_africa
+								sub_continent = sub_continent:east_africa
+								region = region:swahili_coast_region
+								region = region:zimbabwe_region
+								region = region:southern_africa_islands_region
+								region = region:madagascar_region
+								# middle east
+								region = region:arabia_region
+								# asia
+								sub_continent = sub_continent:south_asia
+								sub_continent = sub_continent:east_asia
+								region = region:indonesia_region
+								region = region:melanesia_region
+							}
 						}
 					}
+					add_to_list = source
 				}
-				add_to_list = source
 			}
 		}
 		name = "choose_country"

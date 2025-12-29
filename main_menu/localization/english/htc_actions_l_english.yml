@@ -10,6 +10,8 @@
   estabilish_trade_post_action_progress_tooltip: "Estabilishment progress of [SCOPE.sLocation('target').GetName]: [SCOPE.sCountry('actor').GetGovernment.GetCabinetActionImplementationProgress('estabilish_trade_post')|2%]"
 
   purchase_trade_port: "Purchase Trade Port"
-  purchase_trade_port_desc: "Estabilish a mutually beneficial trade partnership with the target country by purchasing one of their ports."
+  purchase_trade_port_desc: "Estabilish a mutually beneficial trade partnership with the target country by purchasing one of their ports"
+  purchase_trade_port_select_location: "Select a port to purchase"
+  purchase_trade_port_no_locations: "No available ports to purchase"
 
   htc_colonial_charter_why: "Historical restrictions"

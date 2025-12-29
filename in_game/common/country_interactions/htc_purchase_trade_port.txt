@@ -94,9 +94,10 @@
 		default_sort = development
 		visible = {
 			is_coastal = yes
-			within_colonial_range_of = root
 		}
-		enabled = {}
+		enabled = {
+			within_colonial_range_of = scope:actor
+		}
 	}
 
 	ai_will_do = {

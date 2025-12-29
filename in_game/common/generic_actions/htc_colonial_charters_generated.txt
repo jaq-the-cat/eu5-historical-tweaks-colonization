@@ -243,10 +243,6 @@ REPLACE:create_colonial_charter = {
                                     }
                                     and = {
                                         current_year > 1490
-                                        area = area:gold_coast_area
-                                    }
-                                    and = {
-                                        current_year > 1490
                                         this = province_definition:mascarene_islands_province
                                     }
                                     and = {
@@ -375,6 +371,26 @@ REPLACE:create_colonial_charter = {
                             root = {
                                 or = {
                                     and = {
+                                        current_year > 1490
+                                        area = area:gold_coast_area
+                                    }
+                                    and = {
+                                        current_year > 1500
+                                        this = province_definition:azores_province
+                                    }
+                                    and = {
+                                        current_year > 1500
+                                        this = province_definition:madeira_province
+                                    }
+                                    and = {
+                                        current_year > 1500
+                                        this = province_definition:canary_islands_province
+                                    }
+                                    and = {
+                                        current_year > 1500
+                                        this = province_definition:cape_verde_province
+                                    }
+                                    and = {
                                         current_year > 1500
                                         area = area:east_african_island_area
                                     }
@@ -396,19 +412,43 @@ REPLACE:create_colonial_charter = {
                                     }
                                     and = {
                                         current_year > 1600
+                                        region = region:caribbean_region
+                                    }
+                                    and = {
+                                        current_year > 1600
+                                        region = region:mesoamerica_region
+                                    }
+                                    and = {
+                                        current_year > 1600
+                                        region = region:central_america_region
+                                    }
+                                    and = {
+                                        current_year > 1600
+                                        region = region:colombia_region
+                                    }
+                                    and = {
+                                        current_year > 1600
+                                        region = region:brazil_region
+                                    }
+                                    and = {
+                                        current_year > 1600
+                                        region = region:la_plata_region
+                                    }
+                                    and = {
+                                        current_year > 1600
+                                        region = region:east_coast_region
+                                    }
+                                    and = {
+                                        current_year > 1600
                                         continent = continent:oceania
+                                    }
+                                    and = {
+                                        current_year > 1600
+                                        area = area:kru_area
                                     }
                                     and = {
                                         current_year > 1650
                                         continent = continent:america
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        area = area:gold_coast_area
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        area = area:kru_area
                                     }
                                     and = {
                                         current_year > 1700

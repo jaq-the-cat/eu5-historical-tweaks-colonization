@@ -46,12 +46,8 @@ htc_take_location_france.1 = {
 		}
 
 		location:ndar = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -66,13 +62,10 @@ htc_take_location_france.1 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:ndar = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -126,12 +119,8 @@ htc_take_location_france.2 = {
 		}
 
 		location:rosso = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -146,13 +135,10 @@ htc_take_location_france.2 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:rosso = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -206,12 +192,8 @@ htc_take_location_france.3 = {
 		}
 
 		location:beer_dun = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -226,13 +208,10 @@ htc_take_location_france.3 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:beer_dun = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 

@@ -46,12 +46,8 @@ htc_take_location_portugal.1 = {
 		}
 
 		location:goa = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -66,13 +62,10 @@ htc_take_location_portugal.1 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:goa = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -126,12 +119,8 @@ htc_take_location_portugal.2 = {
 		}
 
 		location:cacheu = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -146,13 +135,10 @@ htc_take_location_portugal.2 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:cacheu = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -206,12 +192,8 @@ htc_take_location_portugal.3 = {
 		}
 
 		location:malindi = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -226,13 +208,10 @@ htc_take_location_portugal.3 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:malindi = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -286,12 +265,8 @@ htc_take_location_portugal.4 = {
 		}
 
 		location:mombasa = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -306,13 +281,10 @@ htc_take_location_portugal.4 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:mombasa = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -366,12 +338,8 @@ htc_take_location_portugal.5 = {
 		}
 
 		location:nishisonogi = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -386,13 +354,10 @@ htc_take_location_portugal.5 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:nishisonogi = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -446,12 +411,8 @@ htc_take_location_portugal.6 = {
 		}
 
 		location:zanzibar = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -466,13 +427,10 @@ htc_take_location_portugal.6 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:zanzibar = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -526,12 +484,8 @@ htc_take_location_portugal.7 = {
 		}
 
 		location:hormuz = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 
@@ -546,13 +500,10 @@ htc_take_location_portugal.7 = {
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}
+
 		location:hormuz = {
-			create_country_from_location = {
-				set_capital = prev
-				make_subject_of = { target = root type = subject_type:overseas_territory }
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}
+			change_location_owner = root
+			change_integration_level = colonized
 		}
 	}
 

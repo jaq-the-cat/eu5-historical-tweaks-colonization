@@ -7,6 +7,8 @@ tags:
   - FRA
   - NED
 charters:
+  1490:
+    - gold_coast_area
   1500:
     - azores_province
     - madeira_province
@@ -28,11 +30,10 @@ charters:
     - la_plata_region
     - east_coast_region
     - oceania
+    - kru_area
   1650:
     - america
   1700:
-    - gold_coast_area
-    - kru_area
     - upper_guinea_area
     - yoruba_area
     - benin_area

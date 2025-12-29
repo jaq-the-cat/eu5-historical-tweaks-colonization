@@ -22,7 +22,7 @@ htc_colonize_in_region_england.1 = {
 	trigger = {
 		monthly_balance > 25
 		any_province_definition = {
-			filter = { region = region:east_coast_region }
+			region = region:east_coast_region
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
 				or = {
@@ -92,7 +92,7 @@ htc_colonize_in_region_england.1 = {
 	trigger = {
 		monthly_balance > 25
 		any_province_definition = {
-			filter = { region = region:canada_region }
+			region = region:canada_region
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
 				or = {
@@ -162,7 +162,7 @@ htc_colonize_in_region_england.1 = {
 	trigger = {
 		monthly_balance > 25
 		any_province_definition = {
-			filter = { region = region:southern_africa_region }
+			region = region:southern_africa_region
 			not = { has_colonial_charter = root }
 			any_location_in_province_definition = {
 				or = {

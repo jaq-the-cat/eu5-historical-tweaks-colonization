@@ -56,12 +56,8 @@ class TakeLocation(TemplateData):
 		}}
 
 		location:{geography} = {{
-			create_country_from_location = {{
-				set_capital = prev
-				make_subject_of = {{ target = root type = subject_type:overseas_territory }}
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}}
+			change_location_owner = root
+			change_integration_level = colonized
 		}}
 	}}
 
@@ -76,13 +72,10 @@ class TakeLocation(TemplateData):
 			second = scope:prev_owner
 			type = relation_type:guarantee
 		}}
+
 		location:{geography} = {{
-			create_country_from_location = {{
-				set_capital = prev
-				make_subject_of = {{ target = root type = subject_type:overseas_territory }}
-				set_new_foreign_ruler = root.ruler
-				change_government_type = root.government_type
-			}}
+			change_location_owner = root
+			change_integration_level = colonized
 		}}
 	}}
 

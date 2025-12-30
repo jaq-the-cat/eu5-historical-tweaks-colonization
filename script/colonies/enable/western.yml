@@ -17,6 +17,7 @@ charters:
     - east_african_island_area
   1550:
     - goringhaikona_area
+    - zimbabwe_region
     - mascarene_islands_area
     - indonesia_region
     - indochina_region
@@ -31,6 +32,7 @@ charters:
     - east_coast_region
     - oceania
     - kru_area
+    - southern_africa_region
   1650:
     - america
   1700:
@@ -38,7 +40,5 @@ charters:
     - yoruba_area
     - benin_area
     - gulf_of_guinea_area
-    - southern_africa_region
-    - zimbabwe_region
     - swahili_coast_region
     - madagascar_region

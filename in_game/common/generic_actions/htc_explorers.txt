@@ -158,14 +158,16 @@ REPLACE:start_exploration = {
 		if = {
 			limit = {
 				current_year > 1550
-				or = {
-					has_or_had_tag = POR
-					has_or_had_tag = CAS
-					has_or_had_tag = SPA
-					has_or_had_tag = FRA
-					has_or_had_tag = ENG
-					has_or_had_tag = GBR
-					has_or_had_tag = NED
+				scope:actor = {
+					or = {
+						has_or_had_tag = POR
+						has_or_had_tag = CAS
+						has_or_had_tag = SPA
+						has_or_had_tag = FRA
+						has_or_had_tag = ENG
+						has_or_had_tag = GBR
+						has_or_had_tag = NED
+					}
 				}
 			}
 			add = 50

@@ -1,4 +1,4 @@
-port_conquest_target_location = {
+﻿port_conquest_target_location = {
 	game_data = {
 		category = location
 	}

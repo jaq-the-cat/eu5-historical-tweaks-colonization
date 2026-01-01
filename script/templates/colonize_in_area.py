@@ -29,10 +29,17 @@ class ColonizeInArea(TemplateData):
 	}}
 
 	trigger = {{
+		is_ai = yes
 		monthly_balance > 25
 		area:{geography} = {{
 			any_province_definition_in_area = {{
 				not = {{ has_colonial_charter = root }}
+				not = {{
+					any_location_in_province_definition = {{
+						has_owner = yes
+						owner = {{ is_ai = no }}
+					}}
+				}}
 				any_location_in_province_definition = {{
 					or = {{
 						is_adjacent_to_owned_or_subject_owns = yes
@@ -52,6 +59,12 @@ class ColonizeInArea(TemplateData):
 			random_province_definition_in_area = {{
 				limit = {{
 					not = {{ has_colonial_charter = root }}
+					not = {{
+						any_location_in_province_definition = {{
+							has_owner = yes
+							owner = {{ is_ai = no }}
+						}}
+					}}
 					any_location_in_province_definition = {{
 						or = {{
 							is_adjacent_to_owned_or_subject_owns = yes

@@ -3,6 +3,13 @@ from os import path
 from templates import *
 from templates.colonize_enabled import ColonizeEnabled
 
+def get_geography(s: str) -> str:
+    if s.endswith('_sub_continent'):
+        return s[:-14]
+    if s.endswith('_continent'):
+        return s[:-10]
+    return s
+
 def get_geography_select(s: str) -> str:
     if s.endswith('_province'):
         return 'this'
@@ -30,37 +37,25 @@ class CharterFilterGenerator:
         with open(filepath) as file:
             self.parsed: dict = yaml.safe_load(file)
             self.name = path.basename(filepath)[:-4]
-            self.tags = self.parsed.get('tags') or []
 
     def get_enabled_filter(self):
-        tag_filters = []
-        geo_filters = []
-        print(f'loading data for `{self.name}` using the following tags: {', '.join(self.tags)}...')
-
-        for tag in self.tags:
-            tag_filters.append(ColonizeEnabled.TAG_TEMPLATE.format(tag=tag))
+        year_filters = []
+        print(f'loading enable data for `{self.name}`...')
 
         if self.parsed.get('charters'):
             charters: dict[int, list[str]] = self.parsed['charters']
-            geo_filters.append(self._generate_filters(charters))
-
-        enabled = ColonizeEnabled.FILTER_TEMPLATE.format(
-            comment=self.name,
-            tags = ''.join(tag_filters).rstrip(),
-            geo_filters = ''.join(geo_filters).rstrip()
-        )
-
-        return enabled
-    
-    def _generate_filters(self, charters: dict[int, list[str]] | None) -> str:
-        if not charters or len(charters) == 0: return ''
-        data = ''
-        for year, geographies in charters.items():
-            for geography in geographies:
-                data += ColonizeEnabled.GEO_FILTER_TEMPLATE.format(
+            if not charters or len(charters) == 0: return ''
+            for year, geographies in charters.items():
+                geo_filters = []
+                for geography in geographies:
+                    geo_filters.append(ColonizeEnabled.GEO_TEMPLATE.format(
+                        select = get_geography_select(geography),
+                        type = get_geography_type(geography),
+                        identifier = get_geography(geography),
+                    ))
+                year_filters.append(ColonizeEnabled.FILTER_TEMPLATE.format(
                     year = year,
-                    geography_select = get_geography_select(geography),
-                    geography_type = get_geography_type(geography),
-                    geography = geography
-                )
-        return data
+                    geo_filters = ''.join(geo_filters).rstrip()
+                ))
+
+        return ''.join(year_filters).rstrip()

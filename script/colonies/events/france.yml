@@ -1,13 +1,8 @@
 tags:
   - FRA
-take:
-  locations:
-    ndar: 1655, 1665, 25
-    rosso: 1655, 1665, 25
-    beer_dun: 1670-1687, 25
 colonize:
   provinces:
-    # eastern hispaniola
-    higuey_province: 1500, 10
+    # haiti
+    higuey_province: 1500, 5
   areas:
-    quebec_area: 1520, 10
+    quebec_area: 1500, 10

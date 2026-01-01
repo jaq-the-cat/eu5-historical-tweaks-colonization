@@ -4,9 +4,7 @@
   htc.options.take_for_guarantee: "Take it and offer them a diplomatic guarantee!"
   htc.options.no: "It's not worth the effort."
   htc.options.claim: "Claim it!"
-
   htc_claim_reason_historical: "is a Historical Colony"
-
   htc_take_location.title: "Take Location"
   htc_take_location.desc: "Take [SCOPE.sLocation('geo').GetName]"
   htc_colonize_location.title: "Colonize Location"

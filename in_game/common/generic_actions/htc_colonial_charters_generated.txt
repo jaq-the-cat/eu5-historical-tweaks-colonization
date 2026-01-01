@@ -58,434 +58,207 @@ REPLACE:create_colonial_charter = {
                     }
                 }
             }
-            custom_tooltip = {
-                text = htc_colonial_charter_why
-                scope:actor = {
-                    or = {
-                        # player
-                        and = {
-                            is_ai = no
-                            root = {
-                                any_location_in_province_definition = {
-                                    adjacent_to_owned_by = scope:actor
-                                }
-                            }
-                        }
-                        # CNs
-                        and = {
+            
+            or = {
+                custom_tooltip = {
+                    text = htc_player_no_restrictions_why
+                    and = {
+                        scope:actor = { is_ai = no }
+                        has_game_rule = htc_player_no_restrictions
+                    }
+                }
+                ### country restrictions
+                trigger_if = {
+                    limit = {
+                        scope:actor = {
                             is_subject_type = colonial_nation
-                            country_tax_base > 50
-                            root.region = scope:actor.capital.region
-                        }
-                        # mesoamericans
-                        and = {
-                            religion.group = religion_group:tonal_group
-                            root = {
-                                any_location_in_province_definition = {
-                                    adjacent_to_owned_by = scope:actor
-                                }
-                            }
-                        }
-                        # incans
-                        and = {
-                            religion = religion:inti
-                            root.region = region:andes_region
-                        }
-                        # manchuria
-                        and = {
-                            has_or_had_tag = MCH
-                            root.region = region:manchuria_region
-                        }
-                        # japan
-                        and = {
-                            or = {
-                                has_or_had_tag = YMT
-                                has_or_had_tag = JAP
-                            }
-                            root.continent = continent:asia
-                        }
-                        # russia early
-                        and = {
-                            culture = { has_culture_group = culture_group:russian_group }
-                            or = {
-                                root.sub_continent = sub_continent:eastern_europe
-                            }
-                        }
-                        # russia late
-                        and = {
-                            current_year > 1500
-                            culture = { has_culture_group = culture_group:russian_group }
-                            or = {
-                                root.sub_continent = sub_continent:north_asia
-                                root.sub_continent = sub_continent:central_asia
-                            }
-                        }
-                        # natives
-                        and = {
-                            not = { is_subject_type = colonial_nation }
-                            or = {
-                                # africa
-                                has_or_had_tag = ETH
-                                has_or_had_tag = KIT
-                                and = {
-                                    current_year > 1550
-                                    has_or_had_tag = ZMW
-                                }
-                                and = {
-                                    current_year > 1500
-                                    has_or_had_tag = ZAN
-                                }
-                                 # kongo
-                                and = {
-                        		    religion = religion:bantu_religion
-                                    capital.region = region:kongo_region
-                                }
-                            }
-                        }
-                        # scandinavia
-                        and = {
-                            or = {
-                                has_or_had_tag = SWE
-                                has_or_had_tag = NOR
-                            }
-                            root.region = region:scandinavian_region
-                        }
-                        # england
-                        and = {
                             or = {
                                 is_ai = no
-                                has_or_had_tag = ENG
-                                has_or_had_tag = GBR
-                            }
-                            root = {
-                                or = {
-                                    and = {
-                                        current_year > 1520
-                                        region = region:east_coast_region
-                                    }
-                                    and = {
-                                        current_year > 1520
-                                        region = region:canada_region
-                                    }
-                                    and = {
-                                        current_year > 1540
-                                        region = region:caribbean_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:aridoamerica_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:great_plains_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:west_coast_region
-                                    }
-                                }
-                            }
-                        }
-                        # france
-                        and = {
-                            or = {
-                                is_ai = no
-                                has_or_had_tag = FRA
-                            }
-                            root = {
-                                or = {
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:higuey_province
-                                    }
-                                    and = {
-                                        current_year > 1550
-                                        region = region:east_coast_region
-                                    }
-                                    and = {
-                                        current_year > 1550
-                                        region = region:canada_region
-                                    }
-                                    and = {
-                                        current_year > 1550
-                                        region = region:caribbean_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:great_plains_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:west_coast_region
-                                    }
-                                }
-                            }
-                        }
-                        # portugal
-                        and = {
-                            or = {
-                                is_ai = no
-                                has_or_had_tag = POR
-                            }
-                            root = {
-                                or = {
-                                    and = {
-                                        current_year > 1419
-                                        this = province_definition:madeira_province
-                                    }
-                                    and = {
-                                        current_year > 1427
-                                        this = province_definition:azores_province
-                                    }
-                                    and = {
-                                        current_year > 1458
-                                        this = province_definition:cape_verde_province
-                                    }
-                                    and = {
-                                        current_year > 1490
-                                        this = province_definition:mascarene_islands_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        area = area:mozambique_area
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        area = area:pindorama_area
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        area = area:janeiro_area
-                                    }
-                                    and = {
-                                        current_year > 1520
-                                        region = region:brazil_region
-                                    }
-                                    and = {
-                                        current_year > 1540
-                                        area = area:pampa_area
-                                    }
-                                    and = {
-                                        current_year > 1550
-                                        area = area:west_kongo_area
-                                    }
-                                    and = {
-                                        current_year > 1550
-                                        region = region:zimbabwe_region
-                                    }
-                                }
-                            }
-                        }
-                        # spain
-                        and = {
-                            or = {
-                                is_ai = no
-                                has_or_had_tag = CAS
-                                has_or_had_tag = SPA
-                            }
-                            root = {
-                                or = {
-                                    and = {
-                                        current_year > 1400
-                                        this = province_definition:canary_islands_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        area = area:cuba_area
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:marien_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:jaragua_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:magua_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:maguana_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:boriken_province
-                                    }
-                                    and = {
-                                        current_year > 1520
-                                        region = region:mesoamerica_region
-                                    }
-                                    and = {
-                                        current_year > 1520
-                                        region = region:colombia_region
-                                    }
-                                    and = {
-                                        current_year > 1520
-                                        region = region:la_plata_region
-                                    }
-                                    and = {
-                                        current_year > 1520
-                                        region = region:andes_region
-                                    }
-                                    and = {
-                                        current_year > 1540
-                                        area = area:florida_area
-                                    }
-                                    and = {
-                                        current_year > 1540
-                                        region = region:caribbean_region
-                                    }
-                                    and = {
-                                        current_year > 1540
-                                        region = region:central_america_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:chaco_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:aridoamerica_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:west_coast_region
-                                    }
-                                }
-                            }
-                        }
-                        # western
-                        and = {
-                            or = {
-                                is_ai = no
-                                has_or_had_tag = POR
-                                has_or_had_tag = CAS
-                                has_or_had_tag = SPA
-                                has_or_had_tag = ENG
-                                has_or_had_tag = GBR
-                                has_or_had_tag = FRA
-                                has_or_had_tag = NED
-                            }
-                            root = {
-                                or = {
-                                    and = {
-                                        current_year > 1490
-                                        area = area:gold_coast_area
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:azores_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:madeira_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:canary_islands_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        this = province_definition:cape_verde_province
-                                    }
-                                    and = {
-                                        current_year > 1500
-                                        area = area:east_african_island_area
-                                    }
-                                    and = {
-                                        current_year > 1550
-                                        area = area:goringhaikona_area
-                                    }
-                                    and = {
-                                        current_year > 1550
-                                        area = area:mascarene_islands_area
-                                    }
-                                    and = {
-                                        current_year > 1550
-                                        region = region:indonesia_region
-                                    }
-                                    and = {
-                                        current_year > 1550
-                                        region = region:indochina_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:caribbean_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:mesoamerica_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:central_america_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:colombia_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:brazil_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:la_plata_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        region = region:east_coast_region
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        continent = continent:oceania
-                                    }
-                                    and = {
-                                        current_year > 1600
-                                        area = area:kru_area
-                                    }
-                                    and = {
-                                        current_year > 1650
-                                        continent = continent:america
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        area = area:upper_guinea_area
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        area = area:yoruba_area
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        area = area:benin_area
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        area = area:gulf_of_guinea_area
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        region = region:southern_africa_region
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        region = region:zimbabwe_region
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        region = region:swahili_coast_region
-                                    }
-                                    and = {
-                                        current_year > 1700
-                                        region = region:madagascar_region
-                                    }
-                                }
+                                country_tax_base > 50
                             }
                         }
                     }
+                    or = {
+                        region = scope:actor.capital.region
+                        any_location_in_province_definition = {
+                            adjacent_to_owned_by = scope:actor
+                        }
+                    }
+                }
+                trigger_else_if = {
+                    limit = {
+                        scope:actor.religion.group = religion_group:tonal_group
+                    }
+                    root = {
+                        any_location_in_province_definition = {
+                            adjacent_to_owned_by = scope:actor
+                        }
+                    }
+                }
+                trigger_else_if = {
+                    limit = { scope:actor.religion = religion:inti }
+                    region = region:andes_region
+                }
+                trigger_else_if = {
+                    limit = {
+                        scope:actor = {
+                            or = {
+                                has_or_had_tag = ETH
+                                has_or_had_tag = KIT
+                                religion = religion:bantu_religion
+                            }
+                        }
+                    }
+                    region = scope:actor.capital.region
+                }
+                trigger_else_if = {
+                    limit = {
+                        scope:actor = {
+                            has_or_had_tag = ZAN
+                            has_or_had_tag = ZMW
+                        }
+                    }
+                    trigger_if = {
+                        limit = { scope:actor = { is_ai = yes } }
+                        current_year > 1550
+                    }
+                    sub_continent = capital.sub_continent
+                }
+                ### regional restrictions
+                trigger_if = {
+                    limit = {
+                        region = region:scandinavian_region
+                    }
+                    scope:actor = {
+                        or = {
+                            current_year > 1500
+                            has_or_had_tag = SWE
+                            has_or_had_tag = NOR
+                            has_or_had_tag = FIN
+                            has_or_had_tag = DEN
+                        }
+                    }
+                }
+                trigger_else_if = {
+                    limit = {
+                        region = region:manchuria_region
+                    }
+                    scope:actor = {
+                        or = {
+                            current_year > 1600
+                            has_or_had_tag = MCH
+                        }
+                    }
+                }
+                trigger_else_if = {
+                    limit = {
+                        region = region:japan_region
+                    }
+                    scope:actor = {
+                        or = {
+                            current_year > 1600
+                            has_or_had_tag = YMT
+                            has_or_had_tag = JAP
+                        }
+                    }
+                }
+                ### autogenerated restrictions
+                trigger_else_if = {
+                    limit = {
+                        or = {
+                            region = region:macaronesia_region
+                        }
+                    }
+                    current_year > 1400
+                }
+                trigger_else_if = {
+                    limit = {
+                        or = {
+                            this = province_definition:cape_verde_province
+                            area = area:mascarene_islands_area
+                            area = area:east_african_island_area
+                        }
+                    }
+                    current_year > 1450
+                }
+                trigger_else_if = {
+                    limit = {
+                        or = {
+                            area = area:gold_coast_area
+                            area = area:mozambique_area
+                        }
+                    }
+                    current_year > 1475
+                }
+                trigger_else_if = {
+                    limit = {
+                        or = {
+                            area = area:goringhaikona_area
+                            region = region:caribbean_region
+                            region = region:mesoamerica_region
+                            region = region:central_america_region
+                            region = region:colombia_region
+                            region = region:brazil_region
+                            sub_continent = sub_continent:eastern_europe
+                        }
+                    }
+                    current_year > 1500
+                }
+                trigger_else_if = {
+                    limit = {
+                        or = {
+                            region = region:east_coast_region
+                            region = region:canada_region
+                            region = region:andes_region
+                            region = region:chaco_region
+                        }
+                    }
+                    current_year > 1520
+                }
+                trigger_else_if = {
+                    limit = {
+                        or = {
+                            area = area:pampa_area
+                        }
+                    }
+                    current_year > 1540
+                }
+                trigger_else_if = {
+                    limit = {
+                        or = {
+                            area = area:west_kongo_area
+                            region = region:zimbabwe_region
+                            region = region:indonesia_region
+                            region = region:indochina_region
+                            region = region:west_siberia_region
+                        }
+                    }
+                    current_year > 1560
+                }
+                trigger_else_if = {
+                    limit = {
+                        or = {
+                            continent = continent:oceania
+                            area = area:upper_guinea_area
+                            area = area:kru_area
+                            region = region:southern_africa_region
+                            sub_continent = sub_continent:north_asia
+                        }
+                    }
+                    current_year > 1600
+                }
+                trigger_else_if = {
+                    limit = {
+                        or = {
+                            continent = continent:asia
+                            area = area:yoruba_area
+                            area = area:benin_area
+                            area = area:gulf_of_guinea_area
+                            region = region:swahili_coast_region
+                            region = region:madagascar_region
+                        }
+                    }
+                    current_year > 1700
                 }
             }
         }
@@ -505,18 +278,16 @@ REPLACE:create_colonial_charter = {
     }
 
     ai_will_do = {
-        add = "scope:actor.colonial_charter_utility(scope:target)"
         if = {
             limit = {
                 scope:actor = {
-				    monthly_balance > 25
-                    or = {
-                        capital.continent = continent:europe
-                        is_subject_type = colonial_nation
-                    }
+				    monthly_balance > 1
                 }
             }
-            multiply = 10
+            add = "scope:actor.colonial_charter_utility(scope:target)"
+        }
+        else = {
+            add = -1000
         }
     }
 }

@@ -1,16 +1,17 @@
-﻿namespace = htc_colonize_in_area_france
+﻿namespace = htc_colonize_in_area_spain
 
-htc_colonize_in_area_france.1 = {
+htc_colonize_in_area_spain.1 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
 	fire_only_once = no
 	
 	dynamic_historical_event = {
-        tag = FRA
-		from = 1500.1.1
+        tag = CAS
+        tag = SPA
+		from = 1510.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 15
 	}
 
 	illustration_tags = {
@@ -21,7 +22,7 @@ htc_colonize_in_area_france.1 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
-		area:quebec_area = {
+		area:cuba_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
 				not = {
@@ -44,7 +45,7 @@ htc_colonize_in_area_france.1 = {
 	}
 	
 	immediate = {
-		area:quebec_area = {
+		area:cuba_area = {
 			save_scope_as = source
 			random_province_definition_in_area = {
 				limit = {

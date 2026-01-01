@@ -19,10 +19,17 @@ htc_colonize_in_area_portugal.1 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
 		area:mozambique_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+						has_owner = yes
+						owner = { is_ai = no }
+					}
+				}
 				any_location_in_province_definition = {
 					or = {
 						is_adjacent_to_owned_or_subject_owns = yes
@@ -42,6 +49,12 @@ htc_colonize_in_area_portugal.1 = {
 			random_province_definition_in_area = {
 				limit = {
 					not = { has_colonial_charter = root }
+					not = {
+						any_location_in_province_definition = {
+							has_owner = yes
+							owner = { is_ai = no }
+						}
+					}
 					any_location_in_province_definition = {
 						or = {
 							is_adjacent_to_owned_or_subject_owns = yes
@@ -77,9 +90,9 @@ htc_colonize_in_area_portugal.2 = {
 	
 	dynamic_historical_event = {
         tag = POR
-		from = 1495.1.1
+		from = 1500.1.1
 		to = 1836.1.1
-		monthly_chance = 25
+		monthly_chance = 20
 	}
 
 	illustration_tags = {
@@ -88,10 +101,17 @@ htc_colonize_in_area_portugal.2 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
 		area:pindorama_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+						has_owner = yes
+						owner = { is_ai = no }
+					}
+				}
 				any_location_in_province_definition = {
 					or = {
 						is_adjacent_to_owned_or_subject_owns = yes
@@ -111,6 +131,12 @@ htc_colonize_in_area_portugal.2 = {
 			random_province_definition_in_area = {
 				limit = {
 					not = { has_colonial_charter = root }
+					not = {
+						any_location_in_province_definition = {
+							has_owner = yes
+							owner = { is_ai = no }
+						}
+					}
 					any_location_in_province_definition = {
 						or = {
 							is_adjacent_to_owned_or_subject_owns = yes
@@ -148,7 +174,7 @@ htc_colonize_in_area_portugal.3 = {
         tag = POR
 		from = 1510.1.1
 		to = 1836.1.1
-		monthly_chance = 15
+		monthly_chance = 20
 	}
 
 	illustration_tags = {
@@ -157,10 +183,17 @@ htc_colonize_in_area_portugal.3 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
 		area:janeiro_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+						has_owner = yes
+						owner = { is_ai = no }
+					}
+				}
 				any_location_in_province_definition = {
 					or = {
 						is_adjacent_to_owned_or_subject_owns = yes
@@ -180,6 +213,12 @@ htc_colonize_in_area_portugal.3 = {
 			random_province_definition_in_area = {
 				limit = {
 					not = { has_colonial_charter = root }
+					not = {
+						any_location_in_province_definition = {
+							has_owner = yes
+							owner = { is_ai = no }
+						}
+					}
 					any_location_in_province_definition = {
 						or = {
 							is_adjacent_to_owned_or_subject_owns = yes
@@ -217,7 +256,7 @@ htc_colonize_in_area_portugal.4 = {
         tag = POR
 		from = 1550.1.1
 		to = 1836.1.1
-		monthly_chance = 2
+		monthly_chance = 20
 	}
 
 	illustration_tags = {
@@ -226,10 +265,17 @@ htc_colonize_in_area_portugal.4 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
 		area:pampa_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+						has_owner = yes
+						owner = { is_ai = no }
+					}
+				}
 				any_location_in_province_definition = {
 					or = {
 						is_adjacent_to_owned_or_subject_owns = yes
@@ -249,6 +295,12 @@ htc_colonize_in_area_portugal.4 = {
 			random_province_definition_in_area = {
 				limit = {
 					not = { has_colonial_charter = root }
+					not = {
+						any_location_in_province_definition = {
+							has_owner = yes
+							owner = { is_ai = no }
+						}
+					}
 					any_location_in_province_definition = {
 						or = {
 							is_adjacent_to_owned_or_subject_owns = yes

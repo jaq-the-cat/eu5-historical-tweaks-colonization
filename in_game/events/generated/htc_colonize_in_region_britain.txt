@@ -1,6 +1,6 @@
-﻿namespace = htc_colonize_in_region_england
+﻿namespace = htc_colonize_in_region_britain
 
-htc_colonize_in_region_england.1 = {
+htc_colonize_in_region_britain.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
@@ -11,7 +11,7 @@ htc_colonize_in_region_england.1 = {
         tag = GBR
 		from = 1540.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 15
 	}
 
 	illustration_tags = {
@@ -20,10 +20,17 @@ htc_colonize_in_region_england.1 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
 		any_province_definition = {
 			region = region:east_coast_region
 			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
 			any_location_in_province_definition = {
 				or = {
 					is_adjacent_to_owned_or_subject_owns = yes
@@ -44,6 +51,12 @@ htc_colonize_in_region_england.1 = {
 			limit = {
 				region = region:east_coast_region
 				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
 				any_location_in_province_definition = {
 					or = {
 						is_adjacent_to_owned_or_subject_owns = yes
@@ -70,7 +83,7 @@ htc_colonize_in_region_england.1 = {
 		name = htc.options.no
 	}
 }
-	htc_colonize_in_region_england.2 = {
+	htc_colonize_in_region_britain.2 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
@@ -81,7 +94,7 @@ htc_colonize_in_region_england.1 = {
         tag = GBR
 		from = 1540.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 15
 	}
 
 	illustration_tags = {
@@ -90,10 +103,17 @@ htc_colonize_in_region_england.1 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
 		any_province_definition = {
 			region = region:canada_region
 			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
 			any_location_in_province_definition = {
 				or = {
 					is_adjacent_to_owned_or_subject_owns = yes
@@ -114,6 +134,12 @@ htc_colonize_in_region_england.1 = {
 			limit = {
 				region = region:canada_region
 				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
 				any_location_in_province_definition = {
 					or = {
 						is_adjacent_to_owned_or_subject_owns = yes
@@ -140,7 +166,7 @@ htc_colonize_in_region_england.1 = {
 		name = htc.options.no
 	}
 }
-	htc_colonize_in_region_england.3 = {
+	htc_colonize_in_region_britain.3 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
@@ -149,9 +175,9 @@ htc_colonize_in_region_england.1 = {
 	dynamic_historical_event = {
         tag = ENG
         tag = GBR
-		from = 1600.1.1
+		from = 1620.1.1
 		to = 1836.1.1
-		monthly_chance = 5
+		monthly_chance = 15
 	}
 
 	illustration_tags = {
@@ -160,10 +186,17 @@ htc_colonize_in_region_england.1 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
 		any_province_definition = {
 			region = region:southern_africa_region
 			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
 			any_location_in_province_definition = {
 				or = {
 					is_adjacent_to_owned_or_subject_owns = yes
@@ -184,6 +217,12 @@ htc_colonize_in_region_england.1 = {
 			limit = {
 				region = region:southern_africa_region
 				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
 				any_location_in_province_definition = {
 					or = {
 						is_adjacent_to_owned_or_subject_owns = yes

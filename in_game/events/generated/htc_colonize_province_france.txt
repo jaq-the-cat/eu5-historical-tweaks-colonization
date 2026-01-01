@@ -10,7 +10,7 @@ htc_colonize_province_france.1 = {
         tag = FRA
 		from = 1500.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 5
 	}
 
 	illustration_tags = {
@@ -19,8 +19,15 @@ htc_colonize_province_france.1 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
 		province_definition:higuey_province = {
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
 			any_location_in_province_definition = {
 				or = {
 					is_adjacent_to_owned_or_subject_owns = yes

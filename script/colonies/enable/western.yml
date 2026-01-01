@@ -1,44 +1,63 @@
-tags:
-  - POR
-  - CAS
-  - SPA
-  - ENG
-  - GBR
-  - FRA
-  - NED
 charters:
-  1490:
-    - gold_coast_area
-  1500:
-    - azores_province
-    - madeira_province
-    - canary_islands_province
+  1400:
+    # macronesia
+    - macaronesia_region
+  1450:
+    # atlantic
     - cape_verde_province
-    - east_african_island_area
-  1550:
-    - goringhaikona_area
-    - zimbabwe_region
+    # east africa
     - mascarene_islands_area
-    - indonesia_region
-    - indochina_region
-  1600:
-    # allow everyone else to colonize south america
+    - east_african_island_area
+  1475:
+    # west africa
+    - gold_coast_area 
+    # east africa
+    - mozambique_area
+  1500:
+    # south africa
+    - goringhaikona_area
+    # central america
     - caribbean_region
     - mesoamerica_region
     - central_america_region
+    # south america
     - colombia_region
     - brazil_region
-    - la_plata_region
+    # europe
+    - eastern_europe_sub_continent
+  1520:
+    # north america
     - east_coast_region
-    - oceania
+    - canada_region
+    # south america
+    - andes_region
+    - chaco_region
+  1540:
+    # south america
+    - pampa_area
+  1560:
+    # central africa
+    - west_kongo_area
+    # east africa
+    - zimbabwe_region
+    # south east asia
+    - indonesia_region
+    - indochina_region
+    # europe
+    - west_siberia_region
+  1600:
+    - oceania_continent
+    # some more african land
+    - upper_guinea_area
     - kru_area
     - southern_africa_region
-  1650:
-    - america
+    - north_asia_sub_continent
   1700:
-    - upper_guinea_area
+    - asia_continent
+    # west africa
     - yoruba_area
     - benin_area
     - gulf_of_guinea_area
+    # east africa
     - swahili_coast_region
     - madagascar_region

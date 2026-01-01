@@ -1,9 +1,0 @@
-﻿overseas_fort_construction = {
-	stone = 2
-	cannons = 2
-	firearms = 0.5
-	lumber = 1
-	masonry = 0.5
-	tools = 0.5
-	category = building_construction
-}

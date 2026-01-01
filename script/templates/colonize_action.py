@@ -62,101 +62,112 @@ REPLACE:create_colonial_charter = {{
                     }}
                 }}
             }}
-            custom_tooltip = {{
-                text = htc_colonial_charter_why
-                scope:actor = {{
-                    or = {{
-                        # player
-                        and = {{
-                            is_ai = no
-                            root = {{
-                                any_location_in_province_definition = {{
-                                    adjacent_to_owned_by = scope:actor
-                                }}
-                            }}
-                        }}
-                        # CNs
-                        and = {{
-                            is_subject_type = colonial_nation
-                            country_tax_base > 50
-                            root.region = scope:actor.capital.region
-                        }}
-                        # mesoamericans
-                        and = {{
-                            religion.group = religion_group:tonal_group
-                            root = {{
-                                any_location_in_province_definition = {{
-                                    adjacent_to_owned_by = scope:actor
-                                }}
-                            }}
-                        }}
-                        # incans
-                        and = {{
-                            religion = religion:inti
-                            root.region = region:andes_region
-                        }}
-                        # manchuria
-                        and = {{
-                            has_or_had_tag = MCH
-                            root.region = region:manchuria_region
-                        }}
-                        # japan
-                        and = {{
-                            or = {{
-                                has_or_had_tag = YMT
-                                has_or_had_tag = JAP
-                            }}
-                            root.continent = continent:asia
-                        }}
-                        # russia early
-                        and = {{
-                            culture = {{ has_culture_group = culture_group:russian_group }}
-                            or = {{
-                                root.sub_continent = sub_continent:eastern_europe
-                            }}
-                        }}
-                        # russia late
-                        and = {{
-                            current_year > 1500
-                            culture = {{ has_culture_group = culture_group:russian_group }}
-                            or = {{
-                                root.sub_continent = sub_continent:north_asia
-                                root.sub_continent = sub_continent:central_asia
-                            }}
-                        }}
-                        # natives
-                        and = {{
-                            not = {{ is_subject_type = colonial_nation }}
-                            or = {{
-                                # africa
-                                has_or_had_tag = ETH
-                                has_or_had_tag = KIT
-                                and = {{
-                                    current_year > 1550
-                                    has_or_had_tag = ZMW
-                                }}
-                                and = {{
-                                    current_year > 1500
-                                    has_or_had_tag = ZAN
-                                }}
-                                 # kongo
-                                and = {{
-                        		    religion = religion:bantu_religion
-                                    capital.region = region:kongo_region
-                                }}
-                            }}
-                        }}
-                        # scandinavia
-                        and = {{
-                            or = {{
-                                has_or_had_tag = SWE
-                                has_or_had_tag = NOR
-                            }}
-                            root.region = region:scandinavian_region
-                        }}
-                        {filters}
+            
+            or = {{
+                custom_tooltip = {{
+                    text = htc_player_no_restrictions_why
+                    and = {{
+                        scope:actor = {{ is_ai = no }}
+                        has_game_rule = htc_player_no_restrictions
                     }}
                 }}
+                ### country restrictions
+                trigger_if = {{
+                    limit = {{
+                        scope:actor = {{
+                            is_subject_type = colonial_nation
+                            or = {{
+                                is_ai = no
+                                country_tax_base > 50
+                            }}
+                        }}
+                    }}
+                    or = {{
+                        region = scope:actor.capital.region
+                        any_location_in_province_definition = {{
+                            adjacent_to_owned_by = scope:actor
+                        }}
+                    }}
+                }}
+                trigger_else_if = {{
+                    limit = {{
+                        scope:actor.religion.group = religion_group:tonal_group
+                    }}
+                    root = {{
+                        any_location_in_province_definition = {{
+                            adjacent_to_owned_by = scope:actor
+                        }}
+                    }}
+                }}
+                trigger_else_if = {{
+                    limit = {{ scope:actor.religion = religion:inti }}
+                    region = region:andes_region
+                }}
+                trigger_else_if = {{
+                    limit = {{
+                        scope:actor = {{
+                            or = {{
+                                has_or_had_tag = ETH
+                                has_or_had_tag = KIT
+                                religion = religion:bantu_religion
+                            }}
+                        }}
+                    }}
+                    region = scope:actor.capital.region
+                }}
+                trigger_else_if = {{
+                    limit = {{
+                        scope:actor = {{
+                            has_or_had_tag = ZAN
+                            has_or_had_tag = ZMW
+                        }}
+                    }}
+                    trigger_if = {{
+                        limit = {{ scope:actor = {{ is_ai = yes }} }}
+                        current_year > 1550
+                    }}
+                    sub_continent = capital.sub_continent
+                }}
+                ### regional restrictions
+                trigger_if = {{
+                    limit = {{
+                        region = region:scandinavian_region
+                    }}
+                    scope:actor = {{
+                        or = {{
+                            current_year > 1500
+                            has_or_had_tag = SWE
+                            has_or_had_tag = NOR
+                            has_or_had_tag = FIN
+                            has_or_had_tag = DEN
+                        }}
+                    }}
+                }}
+                trigger_else_if = {{
+                    limit = {{
+                        region = region:manchuria_region
+                    }}
+                    scope:actor = {{
+                        or = {{
+                            current_year > 1600
+                            has_or_had_tag = MCH
+                        }}
+                    }}
+                }}
+                trigger_else_if = {{
+                    limit = {{
+                        region = region:japan_region
+                    }}
+                    scope:actor = {{
+                        or = {{
+                            current_year > 1600
+                            has_or_had_tag = YMT
+                            has_or_had_tag = JAP
+                        }}
+                    }}
+                }}
+                ### autogenerated restrictions
+                {filters}
             }}
         }}
     }}
@@ -175,18 +186,16 @@ REPLACE:create_colonial_charter = {{
     }}
 
     ai_will_do = {{
-        add = "scope:actor.colonial_charter_utility(scope:target)"
         if = {{
             limit = {{
                 scope:actor = {{
-				    monthly_balance > 25
-                    or = {{
-                        capital.continent = continent:europe
-                        is_subject_type = colonial_nation
-                    }}
+				    monthly_balance > 1
                 }}
             }}
-            multiply = 10
+            add = "scope:actor.colonial_charter_utility(scope:target)"
+        }}
+        else = {{
+            add = -1000
         }}
     }}
 }}

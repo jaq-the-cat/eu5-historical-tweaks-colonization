@@ -8,9 +8,9 @@ htc_colonize_in_region_portugal.1 = {
 	
 	dynamic_historical_event = {
         tag = POR
-		from = 1530.1.1
+		from = 1525.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 25
 	}
 
 	illustration_tags = {
@@ -19,10 +19,17 @@ htc_colonize_in_region_portugal.1 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
 		any_province_definition = {
 			region = region:brazil_region
 			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
 			any_location_in_province_definition = {
 				or = {
 					is_adjacent_to_owned_or_subject_owns = yes
@@ -43,6 +50,12 @@ htc_colonize_in_region_portugal.1 = {
 			limit = {
 				region = region:brazil_region
 				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
 				any_location_in_province_definition = {
 					or = {
 						is_adjacent_to_owned_or_subject_owns = yes

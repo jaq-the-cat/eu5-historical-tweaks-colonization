@@ -8,10 +8,11 @@
   estabilish_trade_post_action_progress: "[Cabinet.GetActionNumProgress|%]"
   estabilish_trade_post_action_progress_wordier: "Trade Post will be estabilished in [SCOPE.sCountry('actor').GetGovernment.GetCabinetActionImplementationDate('estabilish_trade_post')]"
   estabilish_trade_post_action_progress_tooltip: "Estabilishment progress of [SCOPE.sLocation('target').GetName]: [SCOPE.sCountry('actor').GetGovernment.GetCabinetActionImplementationProgress('estabilish_trade_post')|2%]"
+  # TODO: Make these two better
+  WE_PERFORM_purchase_trade_port_ACTION: "We purchased a trade port"
+  ACTION_purchase_trade_port_PERFORMED_ON_US: "Our trade port was purchased"
 
   purchase_trade_port: "Purchase Trade Port"
   purchase_trade_port_desc: "Estabilish a mutually beneficial trade partnership with the target country by purchasing one of their ports"
   purchase_trade_port_select_location: "Select a port to purchase"
   purchase_trade_port_no_locations: "No available ports to purchase"
-
-  htc_colonial_charter_why: "Historical restrictions"

@@ -1,17 +1,17 @@
-﻿namespace = htc_colonize_in_area_castille
+﻿namespace = htc_colonize_in_area_britain
 
-htc_colonize_in_area_castille.1 = {
+htc_colonize_in_area_britain.1 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
 	fire_only_once = no
 	
 	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1500.1.1
+        tag = ENG
+        tag = GBR
+		from = 1520.1.1
 		to = 1836.1.1
-		monthly_chance = 5
+		monthly_chance = 15
 	}
 
 	illustration_tags = {
@@ -20,10 +20,17 @@ htc_colonize_in_area_castille.1 = {
 	}
 
 	trigger = {
+		is_ai = yes
 		monthly_balance > 25
-		area:cuba_area = {
+		area:goringhaikona_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+						has_owner = yes
+						owner = { is_ai = no }
+					}
+				}
 				any_location_in_province_definition = {
 					or = {
 						is_adjacent_to_owned_or_subject_owns = yes
@@ -38,11 +45,17 @@ htc_colonize_in_area_castille.1 = {
 	}
 	
 	immediate = {
-		area:cuba_area = {
+		area:goringhaikona_area = {
 			save_scope_as = source
 			random_province_definition_in_area = {
 				limit = {
 					not = { has_colonial_charter = root }
+					not = {
+						any_location_in_province_definition = {
+							has_owner = yes
+							owner = { is_ai = no }
+						}
+					}
 					any_location_in_province_definition = {
 						or = {
 							is_adjacent_to_owned_or_subject_owns = yes

@@ -106,12 +106,3 @@ platina_scripted_country_name = {
     
     location_trigger = {}
 }
-south_africa_scripted_country_name = {
-    country_trigger = {
-        and = { is_subject_of_type=colonial_nation overlord ?= { or = { tag=POR tag=CAS tag=SPA tag=FRA tag=ENG tag=GBR tag=NED } }
-    }
-    
-    capital_trigger = { region = region:southern_africa_region }
-    
-    location_trigger = {}
-}

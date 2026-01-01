@@ -34,10 +34,12 @@
 					is_coastal = yes
 					is_ownable = yes
 					or = {
-						this = location:bojador
-						this = location:arguin
+						# atlantic
 						this = location:bermuda
 						this = location:st_helena
+						# africa
+						this = location:bojador
+						this = location:arguin
 						this = location:bissagos
 						this = location:banana_islands # madina, west africa
 						this = location:cape_mount
@@ -54,10 +56,10 @@
 						this = location:al_khadra
 						this = location:sada
 						this = location:fort_dauphin
+						# indonesia
 						region = region:indonesia_region
-						region = region:melanesia_region
-						region = region:new_zealand_region
-						sub_continent = sub_continent:pacific_islands
+						# oceania
+						continent = continent:oceania
 					}
 				}
 				add_to_list = source
@@ -76,7 +78,10 @@
 			within_colonial_range_of = scope:actor
 		}
 		enabled = {
-			not = { region = { any_location_in_region = { owner ?= scope:actor } } }
+			or = {
+				continent = continent:africa
+				not = { area = { any_location_in_area = { owner ?= scope:actor } } }
+			}
 		}
 	}
 	
@@ -101,12 +106,7 @@
 			cabinet_action:estabilish_trade_post = {
 				is_fully_implemented_in = root
 			}
-			# we already own a location in that region
-			scope:target.region = {
-				any_location_in_region = {
-					owner ?= scope:actor
-				}
-			}
+			root = { has_owner = yes }
 		}
 	}
 	progress = {

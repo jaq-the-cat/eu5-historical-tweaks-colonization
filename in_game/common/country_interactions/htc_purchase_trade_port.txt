@@ -73,9 +73,10 @@
 			data = name
 		}
 		visible = {
-			always = yes
+			is_real_country = yes
 		}
         enabled = {
+			power_projection < source:actor.power_projection
 			at_war = no
 		}
 		show_why_not_visible = yes
@@ -93,7 +94,7 @@
 		column = { data = development }
 		default_sort = development
 		visible = {
-			is_coastal = yes
+			is_port = yes
 		}
 		enabled = {
 			within_colonial_range_of = scope:actor

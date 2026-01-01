@@ -29,8 +29,15 @@ class ColonizeProvince(TemplateData):
 	}}
 
 	trigger = {{
+		is_ai = yes
 		monthly_balance > 25
 		province_definition:{geography} = {{
+			not = {{
+				any_location_in_province_definition = {{
+					has_owner = yes
+					owner = {{ is_ai = no }}
+				}}
+			}}
 			any_location_in_province_definition = {{
 				or = {{
 					is_adjacent_to_owned_or_subject_owns = yes

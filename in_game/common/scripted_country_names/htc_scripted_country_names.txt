@@ -18,7 +18,7 @@ quebec_scripted_country_name = {
 }
 new_england_scripted_country_name = {
     country_trigger = {
-        any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group }
+        overlord ?= { or = { tag = ENG tag = GBR } }
     }
     
     capital_trigger = { region = region:east_coast_region }
@@ -27,7 +27,7 @@ new_england_scripted_country_name = {
 }
 new_france_scripted_country_name = {
     country_trigger = {
-        any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }
+        overlord ?= { tag = FRA }
     }
     
     capital_trigger = { region = region:east_coast_region }
@@ -108,7 +108,7 @@ platina_scripted_country_name = {
 }
 south_africa_scripted_country_name = {
     country_trigger = {
-        any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group }
+        and = { is_subject_of_type=colonial_nation overlord ?= { or = { tag=POR tag=CAS tag=SPA tag=FRA tag=ENG tag=GBR tag=NED } }
     }
     
     capital_trigger = { region = region:southern_africa_region }

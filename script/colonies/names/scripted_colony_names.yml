@@ -13,11 +13,11 @@ east_coast_region:
   new_england:
     name: "New England"
     adjective: "New English"
-    country_trigger: "any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group }"
+    country_trigger: "overlord ?= { or = { tag = ENG tag = GBR } }"
   new_france:
     name: "New France"
     adjective: "New French"
-    country_trigger: "any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }"
+    country_trigger: "overlord ?= { tag = FRA }"
 
 great_plains_region:
   louisiana:

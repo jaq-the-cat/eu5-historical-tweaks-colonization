@@ -28,6 +28,6 @@ def scripted_names():
             g = ScriptedNamesGenerator(os.path.join(dirpath, file))
             g.write_all('../in_game/common/scripted_country_names/htc_scripted_country_names.txt', '../main_menu/localization/english/htc_scripted_country_names_l_english.yml')
 
-# enable_charters()
-# charter_events()
-scripted_names()
+enable_charters()
+charter_events()
+# scripted_names()

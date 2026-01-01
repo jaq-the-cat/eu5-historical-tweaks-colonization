@@ -37,22 +37,34 @@
 						# atlantic
 						this = location:bermuda
 						this = location:st_helena
-						# africa
+						# north africa
 						this = location:bojador
 						this = location:arguin
+						# west africa
 						this = location:bissagos
-						this = location:banana_islands # madina, west africa
+						trigger_if = {
+							limit = { current_year > 1600 }
+							or = {
+								this = location:rio_grande # bolola
+								this = location:rio_nunez # cacino
+							}
+						}
+						this = location:banana_islands # madina
 						this = location:cape_mount
 						this = location:cabo_corso
 						this = location:cabo_formoso
+						# gulf of guinea
 						this = location:sao_tome
 						this = location:fernando_po
+						# kongo
 						this = location:cabinda_kongo
 						this = location:luanda
 						this = location:mbegela
+						# south africa
 						this = location:ezorongondo
 						this = location:uri_ae_ona
 						this = location:goringhaikona
+						# east africa
 						this = location:al_khadra
 						this = location:sada
 						this = location:fort_dauphin

@@ -9,8 +9,6 @@ charters:
     - mascarene_islands_area
     - east_african_island_area
   1475:
-    # west africa
-    - gold_coast_area 
     # east africa
     - mozambique_area
   1500:
@@ -33,11 +31,22 @@ charters:
     - andes_region
     - chaco_region
   1540:
+    # south africa
+    - ai_ais_province
+    - nama_province
+    - trakamma_province
+    - kai_karoo_province
+    - umgungundlovu_area
     # south america
     - pampa_area
   1560:
     # central africa
-    - west_kongo_area
+    - nzere_province
+    - mbamba_province
+    - kisama_province
+    - seles_province
+    - mbegela_province
+    - namibe_province
     # east africa
     - zimbabwe_region
     # south east asia
@@ -47,17 +56,14 @@ charters:
     - west_siberia_region
   1600:
     - oceania_continent
-    # some more african land
-    - upper_guinea_area
-    - kru_area
-    - southern_africa_region
+    # guinea
+    - mende_province
+    - bassa_province
+    - grebo_province
+    # siberia
     - north_asia_sub_continent
   1700:
     - asia_continent
-    # west africa
-    - yoruba_area
-    - benin_area
-    - gulf_of_guinea_area
     # east africa
     - swahili_coast_region
     - madagascar_region

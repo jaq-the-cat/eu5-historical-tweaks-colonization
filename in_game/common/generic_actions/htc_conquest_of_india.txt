@@ -1,0 +1,68 @@
+﻿htc_coi_test_action = {
+    type = situation
+    show_message = no
+    potential = {}
+
+    allow = {
+        scope:actor = {
+            at_war = no
+        }
+    }
+
+    automation_tick = never
+    automation_tick_frequency = 12
+    ai_tick = monthly
+    ai_tick_frequency = 3
+    price = price:rto_press_claims_price
+
+    cooldown = {
+        type = htc_coi_test_action_key
+        days = 10
+    }
+
+    select_trigger = {
+        looking_for_a = situation
+        interaction_source_list = {
+            situation:conquest_of_india = {
+                add_to_list = source
+            }
+        }
+        target_flag = recipient
+        name = "choose_situation"
+        column = {
+            data = name
+        }
+        visible = {
+            situation:conquest_of_india = this
+            situation_is_active = yes
+            # var:strongest_european_power = scope:actor
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = province
+        target_flag = target
+        name = "choose_province"
+        none_available_msg_key = "no_provinces_available"
+        column = { data = owner_flag }
+        column = { data = name }
+        column = { data = population }
+        visible = {
+            any_location_in_province = { is_port = yes }
+            root.owner = {
+                culture = { has_culture_group = culture_group:indian_group }
+            }
+        }
+    }
+    effect = {
+        scope:target = {
+            every_location_in_province = {
+                change_location_owner = scope:actor
+            }
+        }
+    }
+
+    ai_will_do = {
+        value = -1000
+    }
+}

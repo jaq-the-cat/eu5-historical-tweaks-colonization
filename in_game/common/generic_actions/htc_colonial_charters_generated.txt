@@ -1,4 +1,5 @@
-﻿REPLACE:create_colonial_charter = {
+﻿
+REPLACE:create_colonial_charter = {
     type = owncountry
     
     potential = {
@@ -183,7 +184,6 @@
                 trigger_else_if = {
                     limit = {
                         or = {
-                            area = area:gold_coast_area
                             area = area:mozambique_area
                         }
                     }
@@ -217,6 +217,11 @@
                 trigger_else_if = {
                     limit = {
                         or = {
+                            this = province_definition:ai_ais_province
+                            this = province_definition:nama_province
+                            this = province_definition:trakamma_province
+                            this = province_definition:kai_karoo_province
+                            area = area:umgungundlovu_area
                             area = area:pampa_area
                         }
                     }
@@ -225,7 +230,12 @@
                 trigger_else_if = {
                     limit = {
                         or = {
-                            area = area:west_kongo_area
+                            this = province_definition:nzere_province
+                            this = province_definition:mbamba_province
+                            this = province_definition:kisama_province
+                            this = province_definition:seles_province
+                            this = province_definition:mbegela_province
+                            this = province_definition:namibe_province
                             region = region:zimbabwe_region
                             region = region:indonesia_region
                             region = region:indochina_region
@@ -238,9 +248,9 @@
                     limit = {
                         or = {
                             continent = continent:oceania
-                            area = area:upper_guinea_area
-                            area = area:kru_area
-                            region = region:southern_africa_region
+                            this = province_definition:mende_province
+                            this = province_definition:bassa_province
+                            this = province_definition:grebo_province
                             sub_continent = sub_continent:north_asia
                         }
                     }
@@ -250,9 +260,6 @@
                     limit = {
                         or = {
                             continent = continent:asia
-                            area = area:yoruba_area
-                            area = area:benin_area
-                            area = area:gulf_of_guinea_area
                             region = region:swahili_coast_region
                             region = region:madagascar_region
                         }

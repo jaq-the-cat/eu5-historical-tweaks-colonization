@@ -50,7 +50,6 @@
 								sub_continent = sub_continent:west_africa
 								sub_continent = sub_continent:central_africa
 								sub_continent = sub_continent:east_africa
-								region = region:swahili_coast_region
 								region = region:zimbabwe_region
 								region = region:southern_africa_islands_region
 								region = region:madagascar_region

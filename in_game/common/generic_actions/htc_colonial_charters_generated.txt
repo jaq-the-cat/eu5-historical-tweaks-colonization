@@ -68,27 +68,8 @@ REPLACE:create_colonial_charter = {
                     }
                 }
                 ### country restrictions
-                trigger_if = {
-                    limit = {
-                        scope:actor = {
-                            is_subject_type = colonial_nation
-                            or = {
-                                is_ai = no
-                                country_tax_base > 50
-                            }
-                        }
-                    }
-                    or = {
-                        region = scope:actor.capital.region
-                        any_location_in_province_definition = {
-                            adjacent_to_owned_by = scope:actor
-                        }
-                    }
-                }
                 trigger_else_if = {
-                    limit = {
-                        scope:actor.religion.group = religion_group:tonal_group
-                    }
+                    limit = { scope:actor.religion.group = religion_group:tonal_group }
                     root = {
                         any_location_in_province_definition = {
                             adjacent_to_owned_by = scope:actor
@@ -100,16 +81,8 @@ REPLACE:create_colonial_charter = {
                     region = region:andes_region
                 }
                 trigger_else_if = {
-                    limit = {
-                        scope:actor = {
-                            or = {
-                                has_or_had_tag = ETH
-                                has_or_had_tag = KIT
-                                religion = religion:bantu_religion
-                            }
-                        }
-                    }
-                    region = scope:actor.capital.region
+                    limit = { scope:actor = { culture.language = language:kongo_language } }
+                    region = region:kongo_region
                 }
                 trigger_else_if = {
                     limit = {
@@ -120,33 +93,26 @@ REPLACE:create_colonial_charter = {
                     }
                     trigger_if = {
                         limit = { scope:actor = { is_ai = yes } }
-                        current_year > 1550
+                        current_year > 1600
                     }
-                    sub_continent = capital.sub_continent
+                    region = scope:actor.capital.region
                 }
                 ### regional restrictions
                 trigger_if = {
-                    limit = {
-                        region = region:scandinavian_region
-                    }
+                    limit = { region = region:scandinavian_region }
                     scope:actor = {
                         or = {
                             current_year > 1500
-                            has_or_had_tag = SWE
-                            has_or_had_tag = NOR
-                            has_or_had_tag = FIN
-                            has_or_had_tag = DEN
+			                culture = { has_culture_group = culture_group:scandinavian_group }
                         }
                     }
                 }
                 trigger_else_if = {
-                    limit = {
-                        region = region:manchuria_region
-                    }
+                    limit = { region = region:manchuria_region }
                     scope:actor = {
                         or = {
                             current_year > 1600
-                            has_or_had_tag = MCH
+                            culture = { has_culture_group = culture_group:jurchen_group }
                         }
                     }
                 }
@@ -157,8 +123,7 @@ REPLACE:create_colonial_charter = {
                     scope:actor = {
                         or = {
                             current_year > 1600
-                            has_or_had_tag = YMT
-                            has_or_had_tag = JAP
+                            culture = { has_culture_group = culture_group:japanese_group }
                         }
                     }
                 }

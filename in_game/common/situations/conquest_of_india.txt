@@ -3,7 +3,7 @@
     hint_tag = hint_conquest_of_india
     
     can_start = {
-        # current_age_or_later = { age = age_3_discovery }
+        current_age_or_later = { age = age_5_absolutism }
         any_country = {
             capital ?= { continent = continent:europe }
             has_presence_in = sub_continent:south_asia
@@ -11,7 +11,6 @@
     }
     
     can_end = {
-        current_year > 1600
         not = {
             any_country = {
                 capital ?= { continent = continent:europe }

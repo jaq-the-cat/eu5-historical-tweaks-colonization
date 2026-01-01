@@ -157,7 +157,6 @@ REPLACE:start_exploration = {
 		}
 		if = {
 			limit = {
-				current_year > 1550
 				scope:actor = {
 					or = {
 						has_or_had_tag = POR

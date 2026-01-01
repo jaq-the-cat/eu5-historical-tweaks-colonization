@@ -1,6 +1,0 @@
-﻿port_conquest_target_location = {
-	game_data = {
-		category = location
-	}
-	local_defensive = 1
-}

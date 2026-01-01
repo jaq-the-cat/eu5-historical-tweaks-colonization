@@ -1,5 +1,4 @@
-﻿
-REPLACE:create_colonial_charter = {
+﻿REPLACE:create_colonial_charter = {
     type = owncountry
     
     potential = {

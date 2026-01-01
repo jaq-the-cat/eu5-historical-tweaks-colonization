@@ -1,4 +1,4 @@
-﻿estabilish_trade_post = {
+﻿REPLACE_OR_CREATE:estabilish_trade_post = {
 	ability = dip
 	potential = {
 		is_rebel_country = no

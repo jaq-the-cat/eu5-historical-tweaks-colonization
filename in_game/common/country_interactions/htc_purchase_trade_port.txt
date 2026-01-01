@@ -1,4 +1,4 @@
-﻿purchase_trade_port = {
+﻿REPLACE_OR_CREATE:purchase_trade_port = {
 	type = diplomacy
 	category = CATEGORY_ECONOMY_ACTIONS
 

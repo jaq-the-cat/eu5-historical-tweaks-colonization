@@ -75,7 +75,7 @@
 			is_real_country = yes
 		}
         enabled = {
-			power_projection < source:actor.power_projection
+			power_projection < scope:actor.power_projection
 			at_war = no
 		}
 		show_why_not_visible = yes
@@ -103,7 +103,7 @@
 	ai_will_do = {
 		if = {
 			limit = {
-				scope:actor = {	
+				scope:actor = {
 					gold > {
 						value = scope:recipient.country_tax_base
 						add = {

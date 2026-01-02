@@ -1,4 +1,5 @@
-﻿REPLACE:create_colonial_charter = {
+﻿
+REPLACE:create_colonial_charter = {
     type = owncountry
     
     potential = {
@@ -35,7 +36,7 @@
         source = actor
         source_flags = possible_colonial_charters
         target_flag = target
-        cache_targets = yes # these are the same no matter where we're coming from
+        cache_targets = yes #these are the same no matter where we're coming from
         name = "create_colonial_charter_select_province_definition"
         none_available_msg_key = "create_colonial_charter_no_provinces"
         column = {
@@ -57,6 +58,7 @@
                     }
                 }
             }
+            
             or = {
                 custom_tooltip = {
                     text = htc_player_no_restrictions_why
@@ -66,7 +68,7 @@
                     }
                 }
                 ### country restrictions
-                trigger_else_if = {
+                trigger_if = {
                     limit = { scope:actor.religion.group = religion_group:tonal_group }
                     root = {
                         any_location_in_province_definition = {
@@ -229,6 +231,7 @@
                     }
                     current_year > 1700
                 }
+                trigger_else = { }
             }
         }
     }

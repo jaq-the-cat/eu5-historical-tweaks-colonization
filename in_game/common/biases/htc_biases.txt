@@ -1,4 +1,4 @@
-opinion_historical_ally = {
+﻿opinion_historical_ally = {
 	value = 100
 }
 

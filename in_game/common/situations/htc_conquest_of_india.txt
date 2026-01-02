@@ -3,7 +3,7 @@
     hint_tag = hint_conquest_of_india
     
     can_start = {
-        current_age_or_later = { age = age_5_absolutism }
+        # current_age_or_later = { age = age_5_absolutism }
         any_country = {
             capital ?= { continent = continent:europe }
             has_presence_in = sub_continent:south_asia
@@ -32,13 +32,13 @@
                 capital ?= { continent = continent:europe }
                 has_presence_in = sub_continent:south_asia
             }
-            trigger_event_non_silently = conquest_of_india.1
+            trigger_event_non_silently = htc_conquest_of_india.1
         }
 
         # indians
         every_country = {
             limit = { culture = { has_culture_group = culture_group:indian_group } }
-            trigger_event_non_silently = conquest_of_india.2
+            trigger_event_non_silently = htc_conquest_of_india.2
         }
     }
 
@@ -52,7 +52,7 @@
                     limit = {
                         culture = { has_culture_group = culture_group:indian_group }
                     }
-                    trigger_event_non_silently = conquest_of_india.3
+                    trigger_event_non_silently = htc_conquest_of_india.3
                 }
             }
             95 = {}
@@ -98,59 +98,25 @@
     }
 
     map_color = {
+        # native indian powers are grey
         if = {
             limit = {
+                sub_continent = sub_continent:south_asia
                 owner ?= {
-                    capital ?= { continent = continent:europe }
-                    has_presence_in = sub_continent:south_asia
-                    is_subject = no
+                    top_overlord_or_this ?= {
+                        capital ?= { continent = continent:europe }
+                    }
                 }
             }
-            value = owner.country_color
+            value = owner.top_overlord_or_this.country_color
         }
         else_if = {
             limit = {
-                owner ?= {
-                    culture = { has_culture_group = culture_group:indian_group }
-                    is_subject = no
-                }
+                sub_continent = sub_continent:south_asia
             }
-			value = situation:conquest_of_india.var:strongest_indian_power.country_color
+            value = color_rank_duchy
         }
-    }
-    
-    overlord = {
-        capital ?= { continent = continent:europe }
-        has_presence_in = sub_continent:south_asia
     }
 
-    secondary_map_color = {
-        # european subject in india
-        if = {
-            limit = {
-                owner ?= {
-                    is_subject = yes
-                    capital ?= { sub_continent = sub_continent:south_asia }
-                    overlord ?= {
-                        capital ?= { continent = continent:europe }
-                        has_presence_in = sub_continent:south_asia
-                    }
-                }
-            }
-            value = owner.overlord.country_color
-        }
-        # indian subject in india
-        else_if = {
-            limit = {
-                owner ?= {
-                    is_subject = yes
-                    capital ?= { sub_continent = sub_continent:south_asia }
-                    overlord = {
-                        culture = { has_culture_group = culture_group:indian_group }
-                    }
-                }
-            }
-            value = situation:conquest_of_india.var:strongest_indian_power.country_color
-        }
-    }
+    secondary_map_color = {}
 }

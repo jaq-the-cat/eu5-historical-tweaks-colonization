@@ -1,5 +1,4 @@
-﻿
-REPLACE:create_colonial_charter = {
+﻿REPLACE:create_colonial_charter = {
     type = owncountry
     
     potential = {
@@ -36,7 +35,7 @@ REPLACE:create_colonial_charter = {
         source = actor
         source_flags = possible_colonial_charters
         target_flag = target
-        cache_targets = yes #these are the same no matter where we're coming from
+        cache_targets = yes # these are the same no matter where we're coming from
         name = "create_colonial_charter_select_province_definition"
         none_available_msg_key = "create_colonial_charter_no_provinces"
         column = {
@@ -58,7 +57,6 @@ REPLACE:create_colonial_charter = {
                     }
                 }
             }
-            
             or = {
                 custom_tooltip = {
                     text = htc_player_no_restrictions_why

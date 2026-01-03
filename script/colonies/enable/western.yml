@@ -1,9 +1,7 @@
 charters:
-  1400:
-    # macronesia
-    - macaronesia_region
   1450:
     # atlantic
+    - macaronesia_region
     - cape_verde_province
     # east africa
     - mascarene_islands_area

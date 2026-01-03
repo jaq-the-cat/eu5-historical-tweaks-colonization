@@ -165,6 +165,24 @@ class ColonizeAction:
                         limit = { region = region:scandinavian_region }
                         scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
                     }
+                    trigger_else_if = {
+                        limit = {
+                            or = {
+                                this = province_definition:madeira_province
+                                this = province_definition:azores_province
+                            }
+                        }
+                        scope:actor = { has_or_had_tag = POR }
+                    }
+                    trigger_else_if = {
+                        limit = { this = province_definition:canary_islands_province }
+                        scope:actor = {
+                            or = {
+                                has_or_had_tag = CAS
+                                has_or_had_tag = SPA
+                            }
+                        }
+                    }
                     ### year restrictions
                     ## siberia
                     trigger_if = {

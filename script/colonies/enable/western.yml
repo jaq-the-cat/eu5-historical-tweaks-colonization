@@ -52,16 +52,12 @@ charters:
     # south east asia
     - indonesia_region
     - indochina_region
-    # europe
-    - west_siberia_region
   1600:
     - oceania_continent
     # guinea
     - mende_province
     - bassa_province
     - grebo_province
-    # siberia
-    - north_asia_sub_continent
   1700:
     - asia_continent
     # east africa

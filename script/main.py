@@ -12,8 +12,10 @@ def enable_charters():
             filters.append(g.get_enabled_filter())
 
         with open(os.path.join('../in_game/common/generic_actions/htc_colonial_charters_generated.txt'), 'w', encoding='utf-8-sig') as file:
-            action = ColonizeAction.TEMPLATE.format(filters=''.join(filters).rstrip())
-            file.write(action)
+            file.write(
+                ColonizeAction.TEMPLATE_TOP +
+                ''.join(filters).rstrip() +
+                ColonizeAction.TEMPLATE_BOTTOM)
 
 def charter_events():
     for dirpath, dirnames, filenames in os.walk('colonies/events'):

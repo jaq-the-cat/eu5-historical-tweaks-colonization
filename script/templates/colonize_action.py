@@ -67,7 +67,39 @@ class ColonizeAction:
                     scope:actor = { is_ai = no }
                     has_game_rule = htc_player_no_restrictions
                 }
-                always = yes
+                has_game_rule = htc_player_no_restrictions
+            }
+            ### strict AI limits, can't use year unlocks
+            trigger_else_if = {
+                limit = {
+                    scope:actor = {
+                        is_ai = yes
+                        or = {
+                            has_or_had_tag = ZAN
+                            has_or_had_tag = ZMW
+                        }
+                    }
+                }
+                and = {
+                    current_year >= 1600
+                    region = scope:actor.capital.region
+                }
+            }
+            trigger_else_if = {
+                limit = {
+                    scope:actor = {
+                        is_ai = yes
+                        is_subject_type = colonial_nation
+                    }
+                }
+                and = {
+                    region = scope:actor.capital.region
+                    or = {
+                        is_ai = no
+                        tax_base >= 100
+                        monthly_balance >= 50
+                    }
+                }
             }
             trigger_else_if = {
                 limit = {
@@ -82,10 +114,10 @@ class ColonizeAction:
                             has_or_had_tag = TUR
                             has_or_had_tag = OMA
                             has_or_had_tag = CHI
-                            has_or_had_tag = INC
                             culture = { has_culture_group = culture_group:japanese_group }
                             # natives
                             religion.group = religion_group:tonal_group
+                            religion = religion:inti
                             culture.language = language:kongo_language
                             has_or_had_tag = ZAN
                             has_or_had_tag = ZMW
@@ -101,68 +133,79 @@ class ColonizeAction:
                             has_game_rule = htc_player_no_restrictions
                         }
                     }
-                    ### natives
+                    ### early colonies for natives
                     trigger_if = {
-                        limit = { scope:actor.religion.group = religion_group:tonal_group }
-                        or = {
-                            region = region:aridoamerica_region
-                            region = region:mesoamerica_region
-                            region = region:central_america_region
-                        }
-                        any_location_in_province_definition = {
-                            adjacent_to_owned_by = scope:actor
-                        }
-                    }
-                    trigger_else_if = {
-                        limit = { scope:actor.religion = religion:inti }
-                        region = region:andes_region
-                    }
-                    trigger_else_if = {
-                        limit = { scope:actor.culture.language = language:kongo_language }
-                        region = region:kongo_region
+                        limit = { region = region:kongo_region }
+                        scope:actor.culture.language = language:kongo_language
                     }
                     trigger_else_if = {
                         limit = {
-                            scope:actor = {
-                                has_or_had_tag = ZAN
-                                has_or_had_tag = ZMW
+                            or = {
+                                region = region:aridoamerica_region
+                                region = region:mesoamerica_region
+                                region = region:central_america_region
                             }
                         }
-                        current_year >= 1600
-                        region = scope:actor.capital.region
-                    }
-                    ### region restrictions
-                    trigger_if = {
-                        limit = { region = region:japan_region }
-                        or = {
-                            current_year >= 1500
-                            scope:actor.culture = { has_culture_group = culture_group:japanese_group }
+                        and = {
+                            scope:actor.religion.group = religion_group:tonal_group
+                            any_location_in_province_definition = {
+                                adjacent_to_owned_by = scope:actor
+                            }
                         }
+                    }
+                    trigger_else_if = {
+                        limit = { region = region:andes_region }
+                        scope:actor.religion = religion:inti
+                    }
+                    trigger_else_if = {
+                        limit = { region = region:japan_region }
+                        scope:actor.culture = { has_culture_group = culture_group:japanese_group }
                     }
                     trigger_else_if = {
                         limit = { region = region:scandinavian_region }
-                        or = {
-                            current_year >= 1500
-                            scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
-                        }
-                        
+                        scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
                     }
-                    ### siberia
                     trigger_else_if = {
+                        limit = {
+                            or = {
+                                this = province_definition:madeira_province
+                                this = province_definition:azores_province
+                            }
+                        }
+                        scope:actor = { has_or_had_tag = POR }
+                    }
+                    trigger_else_if = {
+                        limit = { this = province_definition:canary_islands_province }
+                        scope:actor = {
+                            or = {
+                                has_or_had_tag = CAS
+                                has_or_had_tag = SPA
+                            }
+                        }
+                    }
+                    ### year restrictions
+                    ## siberia
+                    trigger_if = {
                         limit = { region = region:west_siberia_region }
-                        current_year >= 1560
-                        or = {
-                            culture = { has_culture_group = culture_group:russian_group }
+                        and = {
+                            current_year >= 1560
+                            trigger_if = {
+                                limit = { is_ai = yes }
+                                culture = { has_culture_group = culture_group:russian_group }
+                            }
                         }
                     }
                     trigger_else_if = {
                         limit = { sub_continent = sub_continent:north_asia }
-                        current_year >= 1600
-                        or = {
-                            culture = { has_culture_group = culture_group:russian_group }
+                        and = {
+                            current_year >= 1600
+                            trigger_if = {
+                                limit = { is_ai = yes }
+                                culture = { has_culture_group = culture_group:russian_group }
+                            }
                         }
                     }
-                    ### autogenerated restrictions
+                    ## autogenerated restrictions
                     '''
 
     TEMPLATE_BOTTOM = '''

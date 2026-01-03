@@ -3,8 +3,6 @@
 	potential = {
 		is_rebel_country = no
 		num_locations > 0
-	}
-	allow = {
 		or = {
 			is_ai = no
 			has_or_had_tag = POR
@@ -15,6 +13,8 @@
 			has_or_had_tag = GBR
 			has_or_had_tag = NED
 		}
+	}
+	allow = {
 		or = {
 			# renaissance
 			has_advance = por_pursuing_waves
@@ -84,7 +84,13 @@
 		column = { data = name }
 		column = { data = population }
 		visible = {
-			not = { cabinet_already_performing_same_task_on_target = { cabinet_action = estabilish_trade_post interaction_target = target } }
+			not = {
+				any_cabinet = {
+					has_cabinet_action = yes
+					cabinet_action = cabinet_action:estabilish_trade_post
+					interaction_target:target = root
+				}
+			}
 			has_owner = no
 			is_discovered_by = scope:actor
 			within_colonial_range_of = scope:actor
@@ -97,7 +103,7 @@
 		}
 	}
 	
-	years = 1
+	years = 2
 
 	on_fully_activated = {
 		if = {

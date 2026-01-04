@@ -30,6 +30,9 @@ charters:
   1540:
     # canada
     - newfoundland_area
+    - acadia_area
+    - prince_edward_island_area
+    - new_brunswick_area
     - quebec_area
     # south africa
     - ai_ais_province

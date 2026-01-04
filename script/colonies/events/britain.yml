@@ -8,10 +8,10 @@ colonize:
     east_coast_region: 1520, 15
     # early british canada
     newfoundland_area: 1540, 20
+    acadia_area: 1540, 10
+    prince_edward_island_area: 1540, 10
+    new_brunswick_area: 1540, 10
     # late british canada
-    acadia_area: 1580, 15
-    prince_edward_island_area: 1580, 15
-    new_brunswick_area: 1580, 15
     labrador_area: 1580, 15
     nunavik_area: 1580, 15
     jamesie_area: 1580, 15

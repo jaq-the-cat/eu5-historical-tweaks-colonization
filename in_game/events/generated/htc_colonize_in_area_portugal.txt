@@ -9,7 +9,7 @@ htc_colonize_in_area_portugal.1 = {
 	dynamic_historical_event = {
         tag = POR
 		from = 1500.1.1
-		to = 1515.1.1
+		to = 1836.1.1
 		monthly_chance = 10
 	}
 

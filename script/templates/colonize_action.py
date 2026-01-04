@@ -211,6 +211,9 @@ class ColonizeAction:
     TEMPLATE_BOTTOM = '''
                 }
             }
+            trigger_else = {
+                always = no
+            }
         }
     }
 

@@ -9,7 +9,7 @@ htc_colonize_province_portugal.1 = {
 	dynamic_historical_event = {
         tag = POR
 		from = 1410.1.1
-		to = 1500.1.1
+		to = 1836.1.1
 		monthly_chance = 10
 	}
 
@@ -69,7 +69,7 @@ htc_colonize_province_portugal.2 = {
 	dynamic_historical_event = {
         tag = POR
 		from = 1410.1.1
-		to = 1500.1.1
+		to = 1836.1.1
 		monthly_chance = 10
 	}
 
@@ -129,7 +129,7 @@ htc_colonize_province_portugal.3 = {
 	dynamic_historical_event = {
         tag = POR
 		from = 1455.1.1
-		to = 1500.1.1
+		to = 1836.1.1
 		monthly_chance = 10
 	}
 
@@ -189,7 +189,7 @@ htc_colonize_province_portugal.4 = {
 	dynamic_historical_event = {
         tag = POR
 		from = 1460.1.1
-		to = 1510.1.1
+		to = 1836.1.1
 		monthly_chance = 5
 	}
 

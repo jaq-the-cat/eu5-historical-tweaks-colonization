@@ -10,7 +10,7 @@ htc_colonize_province_portugal.1 = {
         tag = POR
 		from = 1410.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 25
 	}
 
 	illustration_tags = {
@@ -70,7 +70,7 @@ htc_colonize_province_portugal.2 = {
         tag = POR
 		from = 1410.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 25
 	}
 
 	illustration_tags = {
@@ -130,7 +130,7 @@ htc_colonize_province_portugal.3 = {
         tag = POR
 		from = 1455.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 25
 	}
 
 	illustration_tags = {

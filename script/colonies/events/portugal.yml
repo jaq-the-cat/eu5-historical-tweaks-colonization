@@ -4,11 +4,11 @@ colonize:
   locations:
     bojador: 1380, 5
     arguin: 1400, 5
-    sao_tome: 1420, 10
+    sao_tome: 1420, 15
   provinces:
-    madeira_province: 1410, 10
-    azores_province: 1410, 10
-    cape_verde_province: 1455, 10
+    madeira_province: 1410, 25
+    azores_province: 1410, 25
+    cape_verde_province: 1455, 25
     mascarene_islands_province: 1460, 5
   areas:
     # mozambique
@@ -18,4 +18,4 @@ colonize:
     janeiro_area: 1510, 20
     pampa_area: 1550, 20
   regions:
-    brazil_region: 1525, 25
+    brazil_region: 1525, 25s

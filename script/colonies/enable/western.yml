@@ -24,11 +24,13 @@ charters:
   1520:
     # north america
     - east_coast_region
-    - canada_region
     # south america
     - andes_region
     - chaco_region
   1540:
+    # canada
+    - newfoundland_area
+    - quebec_area
     # south africa
     - ai_ais_province
     - nama_province
@@ -50,6 +52,8 @@ charters:
     # south east asia
     - indonesia_region
     - indochina_region
+  1580:
+    - canada_region
   1600:
     - oceania_continent
     # guinea

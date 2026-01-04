@@ -11,7 +11,7 @@ htc_colonize_province_spain.1 = {
         tag = SPA
 		from = 1400.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 25
 	}
 
 	illustration_tags = {

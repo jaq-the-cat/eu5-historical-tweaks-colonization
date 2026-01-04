@@ -11,7 +11,7 @@ htc_colonize_in_area_britain.1 = {
         tag = GBR
 		from = 1520.1.1
 		to = 1836.1.1
-		monthly_chance = 15
+		monthly_chance = 1
 	}
 
 	illustration_tags = {

@@ -3,7 +3,16 @@ tags:
   - GBR
 colonize:
   areas:
-    goringhaikona_area: 1520, 15
+    goringhaikona_area: 1520, 1
   regions:
-    east_coast_region: 1540, 15
-    canada_region: 1540, 15
+    east_coast_region: 1520, 15
+    # early british canada
+    newfoundland_area: 1540, 20
+    # late british canada
+    acadia_area: 1580, 15
+    prince_edward_island_area: 1580, 15
+    new_brunswick_area: 1580, 15
+    labrador_area: 1580, 15
+    nunavik_area: 1580, 15
+    jamesie_area: 1580, 15
+    james_bay_lowlands_area: 1580, 15

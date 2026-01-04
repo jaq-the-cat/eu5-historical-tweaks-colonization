@@ -97,6 +97,7 @@
                     }
                 }
             }
+            ### other limits & year unlocks
             trigger_else_if = {
                 limit = {
                     scope:actor = {
@@ -160,6 +161,10 @@
                     trigger_else_if = {
                         limit = { region = region:scandinavian_region }
                         scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
+                    }
+                    trigger_else_if = {
+                        limit = { area = area:greenland_area }
+                        capital.area = area:greenland_area
                     }
                     trigger_else_if = {
                         limit = {
@@ -239,7 +244,6 @@
                         limit = {
                             or = {
                                 region = region:east_coast_region
-                                region = region:canada_region
                                 region = region:andes_region
                                 region = region:chaco_region
                             }
@@ -249,6 +253,8 @@
                     trigger_else_if = {
                         limit = {
                             or = {
+                                area = area:newfoundland_area
+                                area = area:quebec_area
                                 this = province_definition:ai_ais_province
                                 this = province_definition:nama_province
                                 this = province_definition:trakamma_province
@@ -274,6 +280,14 @@
                             }
                         }
                         current_year > 1560
+                    }
+                    trigger_else_if = {
+                        limit = {
+                            or = {
+                                region = region:canada_region
+                            }
+                        }
+                        current_year > 1580
                     }
                     trigger_else_if = {
                         limit = {
@@ -318,7 +332,19 @@
     }
 
     ai_will_do = {
+        ### special cases for certain provinces we want to be player & event only
         if = {
+            limit = {
+                or = {
+                    not = { exists = scope:target }
+                    # keep french colonies safe so they can actually get there in time
+                    scope:target = province_definition:higuey_province
+                    scope:target.area = area:quebec_area
+                }
+            }
+            add = -1000
+        }
+        else_if = {
             limit = {
                 scope:actor = {
 				    monthly_balance > 1

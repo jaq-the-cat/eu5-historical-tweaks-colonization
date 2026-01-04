@@ -101,6 +101,7 @@ class ColonizeAction:
                     }
                 }
             }
+            ### other limits & year unlocks
             trigger_else_if = {
                 limit = {
                     scope:actor = {
@@ -164,6 +165,10 @@ class ColonizeAction:
                     trigger_else_if = {
                         limit = { region = region:scandinavian_region }
                         scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
+                    }
+                    trigger_else_if = {
+                        limit = { area = area:greenland_area }
+                        capital.area = area:greenland_area
                     }
                     trigger_else_if = {
                         limit = {
@@ -231,7 +236,19 @@ class ColonizeAction:
     }
 
     ai_will_do = {
+        ### special cases for certain provinces we want to be player & event only
         if = {
+            limit = {
+                or = {
+                    not = { exists = scope:target }
+                    # keep french colonies safe so they can actually get there in time
+                    scope:target = province_definition:higuey_province
+                    scope:target.area = area:quebec_area
+                }
+            }
+            add = -1000
+        }
+        else_if = {
             limit = {
                 scope:actor = {
 				    monthly_balance > 1

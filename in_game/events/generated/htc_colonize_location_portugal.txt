@@ -122,7 +122,7 @@ htc_colonize_location_portugal.3 = {
         tag = POR
 		from = 1420.1.1
 		to = 1836.1.1
-		monthly_chance = 10
+		monthly_chance = 15
 	}
 
 	illustration_tags = {

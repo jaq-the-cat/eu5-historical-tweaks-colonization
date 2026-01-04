@@ -84,7 +84,7 @@
             limit = { exists = scope:target }
             scope:actor = {
                 add_gold = {
-                    value = 0
+                    value = 100
                     scope:target = {
                         every_location_in_province = {
                             add = development
@@ -100,7 +100,7 @@
             }
             scope:target.owner = {
                 add_gold = {
-                    value = 0
+                    value = 100
                     scope:target = {
                         every_location_in_province = {
                             add = development
@@ -139,7 +139,7 @@
             limit = {
                 scope:actor = {    
                     gold > {
-                        value = 0
+                        value = 100
                         scope:target = {
                             every_location_in_province = {
                                 add = development
@@ -177,6 +177,9 @@
                 }
                 add = -200
             }
+			every_subject_or_below = {
+				limit = { is_subject_type = colonial_nation }
+			}
         }
     }
 }

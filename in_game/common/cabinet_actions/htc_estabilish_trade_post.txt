@@ -130,6 +130,7 @@
 	ai_will_do = {
 		if = {
 			limit = {
+				not = { region = { any_location_in_region = { owner ?= scope:actor } } }
 				scope:actor = {
 					or = {
 						# portugal and castille explore pre-1500

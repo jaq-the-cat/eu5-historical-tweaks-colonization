@@ -1,10 +1,15 @@
-﻿htc_player_rule = {
-	default = htc_player_same_restrictions
-	
-	htc_player_same_restrictions = {
-		flag = flavour_rule
+﻿htc_mod_rule = {
+	default = htc_mod_enable
+
+	htc_mod_enable = {
+		flag = general_rule
 	}
-	htc_player_no_restrictions = {
-		flag = flavour_rule
+
+	htc_mod_disable_player = {
+		flag = general_rule
+	}
+
+	htc_mod_disable = {
+		flag = general_rule
 	}
 }

@@ -1,3 +1,3 @@
 ﻿l_english:
-  AUTO_MODIFIER_NAME_eastern_institutions_from_west_cost: "[ShowSocietyDirectionName('inward')] [societal_value|e]"
-  AUTO_MODIFIER_NAME_eastern_institutions_from_west_spread: "[ShowSocietyDirectionName('inward')] [societal_value|e]"
+  AUTO_MODIFIER_NAME_eastern_institutions_from_west_cost: "[ShowSocietyDirectionName('inward')] in Asia"
+  AUTO_MODIFIER_NAME_eastern_institutions_from_west_spread: "[ShowSocietyDirectionName('inward')] in Asia"

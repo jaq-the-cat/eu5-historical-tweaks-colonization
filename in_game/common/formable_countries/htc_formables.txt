@@ -1,0 +1,34 @@
+﻿REPLACE_OR_CREATE:KON_f = {
+	level = 3
+	required_locations_fraction = 0.2
+	rule = historical
+
+	potential = {
+		capital.region = region:kongo_region
+		culture.language = language:kongo_language
+	}
+
+	allow = {
+		not = {
+			any_known_country = {
+				and = {
+					capital.region = region:kongo_region
+					not = { country_type = pop }
+				}
+			}
+		}
+	}
+
+	name = KON
+	flag = KON
+	adjective = KON_ADJ
+	tag = KON
+	color = map_KON
+
+	areas = {
+		west_kongo_area
+		kongo_area		
+	}
+
+	form_effect = {}
+}

@@ -241,9 +241,15 @@ class ColonizeAction:
             limit = {
                 or = {
                     not = { exists = scope:target }
-                    # keep french colonies safe so they can actually get there in time
-                    scope:target = province_definition:higuey_province
-                    scope:target.area = area:quebec_area
+                    and = {
+                        current_year < 1600
+                        # keep french colonies safe so they can actually get there in time
+                        # france will colonize through event anyway
+                        or = {
+                            scope:target = province_definition:higuey_province
+                            scope:target.area = area:quebec_area
+                        }
+                    }
                 }
             }
             add = -1000

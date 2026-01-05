@@ -31,6 +31,7 @@ class ColonizeInArea(TemplateData):
 	trigger = {{
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		area:{geography} = {{
 			any_province_definition_in_area = {{
 				not = {{ has_colonial_charter = root }}

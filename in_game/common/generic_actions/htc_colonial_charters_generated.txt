@@ -70,15 +70,24 @@
                 limit = {
                     scope:actor = {
                         is_ai = yes
-                        or = {
-                            has_or_had_tag = ZAN
-                            has_or_had_tag = ZMW
-                        }
+                        has_or_had_tag = ZAN
+                    }
+                }
+                and = {
+                    current_year >= 1550
+                    region = region:swahili_coast_region
+                }
+            }
+            trigger_else_if = {
+                limit = {
+                    scope:actor = {
+                        is_ai = yes
+                        has_or_had_tag = ZMW
                     }
                 }
                 and = {
                     current_year >= 1600
-                    region = scope:actor.capital.region
+                    region = region:zimbabwe_region
                 }
             }
             trigger_else_if = {
@@ -89,6 +98,7 @@
                     }
                 }
                 and = {
+                    not = { scope:actor.continent = continent:africa }
                     region = scope:actor.capital.region
                     or = {
                         is_ai = no
@@ -216,7 +226,7 @@
                                 area = area:east_african_island_area
                             }
                         }
-                        current_year > 1450
+                        current_year >= 1450
                     }
                     trigger_else_if = {
                         limit = {
@@ -224,7 +234,7 @@
                                 area = area:mozambique_area
                             }
                         }
-                        current_year > 1475
+                        current_year >= 1475
                     }
                     trigger_else_if = {
                         limit = {
@@ -238,7 +248,7 @@
                                 sub_continent = sub_continent:eastern_europe
                             }
                         }
-                        current_year > 1500
+                        current_year >= 1500
                     }
                     trigger_else_if = {
                         limit = {
@@ -248,7 +258,7 @@
                                 region = region:chaco_region
                             }
                         }
-                        current_year > 1520
+                        current_year >= 1520
                     }
                     trigger_else_if = {
                         limit = {
@@ -266,7 +276,7 @@
                                 area = area:pampa_area
                             }
                         }
-                        current_year > 1540
+                        current_year >= 1540
                     }
                     trigger_else_if = {
                         limit = {
@@ -282,7 +292,7 @@
                                 region = region:indochina_region
                             }
                         }
-                        current_year > 1560
+                        current_year >= 1560
                     }
                     trigger_else_if = {
                         limit = {
@@ -290,7 +300,7 @@
                                 region = region:canada_region
                             }
                         }
-                        current_year > 1580
+                        current_year >= 1580
                     }
                     trigger_else_if = {
                         limit = {
@@ -301,7 +311,7 @@
                                 this = province_definition:grebo_province
                             }
                         }
-                        current_year > 1600
+                        current_year >= 1600
                     }
                     trigger_else_if = {
                         limit = {
@@ -311,7 +321,7 @@
                                 region = region:madagascar_region
                             }
                         }
-                        current_year > 1700
+                        current_year >= 1700
                     }
                 }
             }

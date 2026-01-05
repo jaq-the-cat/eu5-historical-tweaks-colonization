@@ -74,15 +74,24 @@ class ColonizeAction:
                 limit = {
                     scope:actor = {
                         is_ai = yes
-                        or = {
-                            has_or_had_tag = ZAN
-                            has_or_had_tag = ZMW
-                        }
+                        has_or_had_tag = ZAN
+                    }
+                }
+                and = {
+                    current_year >= 1550
+                    region = region:swahili_coast_region
+                }
+            }
+            trigger_else_if = {
+                limit = {
+                    scope:actor = {
+                        is_ai = yes
+                        has_or_had_tag = ZMW
                     }
                 }
                 and = {
                     current_year >= 1600
-                    region = scope:actor.capital.region
+                    region = region:zimbabwe_region
                 }
             }
             trigger_else_if = {
@@ -93,6 +102,7 @@ class ColonizeAction:
                     }
                 }
                 and = {
+                    not = { scope:actor.continent = continent:africa }
                     region = scope:actor.capital.region
                     or = {
                         is_ai = no

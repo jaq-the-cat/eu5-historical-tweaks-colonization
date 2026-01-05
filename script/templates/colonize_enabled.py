@@ -10,7 +10,7 @@ class ColonizeEnabled:
                                 {geo_filters}
                             }}
                         }}
-                        current_year > {year}
+                        current_year >= {year}
                     }}
                     '''
 

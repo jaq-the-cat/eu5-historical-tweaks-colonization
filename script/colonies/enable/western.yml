@@ -59,12 +59,12 @@ charters:
     - canada_region
   1600:
     - oceania_continent
+    # east africa
+    - swahili_coast_region
     # guinea
     - mende_province
     - bassa_province
     - grebo_province
   1700:
-    - asia_continent
-    # east africa
-    - swahili_coast_region
     - madagascar_region
+    - asia_continent

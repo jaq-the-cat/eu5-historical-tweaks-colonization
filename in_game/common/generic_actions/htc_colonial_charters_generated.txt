@@ -306,6 +306,7 @@
                         limit = {
                             or = {
                                 continent = continent:oceania
+                                region = region:swahili_coast_region
                                 this = province_definition:mende_province
                                 this = province_definition:bassa_province
                                 this = province_definition:grebo_province
@@ -316,9 +317,8 @@
                     trigger_else_if = {
                         limit = {
                             or = {
-                                continent = continent:asia
-                                region = region:swahili_coast_region
                                 region = region:madagascar_region
+                                continent = continent:asia
                             }
                         }
                         current_year >= 1700

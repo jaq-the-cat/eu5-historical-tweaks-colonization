@@ -16,24 +16,6 @@ quebec_scripted_country_name = {
     
     location_trigger = {}
 }
-new_england_scripted_country_name = {
-    country_trigger = {
-        overlord ?= { or = { tag = ENG tag = GBR } }
-    }
-    
-    capital_trigger = { region = region:east_coast_region }
-    
-    location_trigger = {}
-}
-new_france_scripted_country_name = {
-    country_trigger = {
-        overlord ?= { tag = FRA }
-    }
-    
-    capital_trigger = { region = region:east_coast_region }
-    
-    location_trigger = {}
-}
 louisiana_scripted_country_name = {
     country_trigger = {
         any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }
@@ -67,15 +49,6 @@ guatemala_scripted_country_name = {
     }
     
     capital_trigger = { region = region:central_america_region }
-    
-    location_trigger = {}
-}
-new_granada_scripted_country_name = {
-    country_trigger = {
-        overlord ?= { or = { tag = CAS tag = SPA } }
-    }
-    
-    capital_trigger = { region = region:colombia_region }
     
     location_trigger = {}
 }

@@ -22,6 +22,7 @@ htc_colonize_in_region_spain.1 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		any_province_definition = {
 			region = region:colombia_region
 			not = { has_colonial_charter = root }
@@ -105,6 +106,7 @@ htc_colonize_in_region_spain.1 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		any_province_definition = {
 			region = region:mesoamerica_region
 			not = { has_colonial_charter = root }
@@ -188,6 +190,7 @@ htc_colonize_in_region_spain.1 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		any_province_definition = {
 			region = region:central_america_region
 			not = { has_colonial_charter = root }
@@ -271,6 +274,7 @@ htc_colonize_in_region_spain.1 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		any_province_definition = {
 			region = region:andes_region
 			not = { has_colonial_charter = root }
@@ -354,6 +358,7 @@ htc_colonize_in_region_spain.1 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		any_province_definition = {
 			region = region:chaco_region
 			not = { has_colonial_charter = root }

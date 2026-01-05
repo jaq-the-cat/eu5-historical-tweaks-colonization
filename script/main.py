@@ -1,7 +1,6 @@
 from lib.enable_generator import CharterFilterGenerator
 from lib.events_generator import ColonyEventGenerator
-from lib.scripted_names_generator import ScriptedNamesGenerator
-from templates.colonize_action import ColonizeAction
+from templates.create_colonial_charter.colonize_action import ColonizeAction
 import os
 
 def enable_charters():
@@ -24,12 +23,5 @@ def charter_events():
             g = ColonyEventGenerator(os.path.join(dirpath, file))
             g.write_all('../in_game/events/generated')
 
-def scripted_names():
-    for dirpath, dirnames, filenames in os.walk('colonies/names'):
-        for file in filenames:
-            g = ScriptedNamesGenerator(os.path.join(dirpath, file))
-            g.write_all('../in_game/common/scripted_country_names/htc_scripted_country_names.txt', '../main_menu/localization/english/htc_scripted_country_names_l_english.yml')
-
 enable_charters()
 charter_events()
-# scripted_names()

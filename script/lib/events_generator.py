@@ -2,12 +2,12 @@ import yaml
 from os import path
 import re
 from lib import DEFAULT_MONTHLY_CHANCE
-from templates import *
-from templates.take_location import TakeLocation
-from templates.colonize_location import ColonizeLocation
-from templates.colonize_province import ColonizeProvince
-from templates.colonize_in_area import ColonizeInArea
-from templates.colonize_in_region import ColonizeInRegion
+from templates import make_tags
+from templates.events.take_location import TakeLocation
+from templates.events.colonize_location import ColonizeLocation
+from templates.events.colonize_province import ColonizeProvince
+from templates.events.colonize_in_area import ColonizeInArea
+from templates.events.colonize_in_region import ColonizeInRegion
 
 class ColonyEventGenerator:
     def __init__(self, filepath: str):

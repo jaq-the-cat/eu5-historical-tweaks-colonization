@@ -31,6 +31,7 @@ class ColonizeProvince(TemplateData):
 	trigger = {{
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		province_definition:{geography} = {{
 			not = {{
 				any_location_in_province_definition = {{

@@ -9,8 +9,8 @@ htc_colonize_province_portugal.1 = {
 	dynamic_historical_event = {
         tag = POR
 		from = 1410.1.1
-		to = 1500.1.1
-		monthly_chance = 10
+		to = 1836.1.1
+		monthly_chance = 25
 	}
 
 	illustration_tags = {
@@ -21,6 +21,7 @@ htc_colonize_province_portugal.1 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		province_definition:madeira_province = {
 			not = {
 				any_location_in_province_definition = {
@@ -69,8 +70,8 @@ htc_colonize_province_portugal.2 = {
 	dynamic_historical_event = {
         tag = POR
 		from = 1410.1.1
-		to = 1500.1.1
-		monthly_chance = 10
+		to = 1836.1.1
+		monthly_chance = 25
 	}
 
 	illustration_tags = {
@@ -81,6 +82,7 @@ htc_colonize_province_portugal.2 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		province_definition:azores_province = {
 			not = {
 				any_location_in_province_definition = {
@@ -129,8 +131,8 @@ htc_colonize_province_portugal.3 = {
 	dynamic_historical_event = {
         tag = POR
 		from = 1455.1.1
-		to = 1500.1.1
-		monthly_chance = 10
+		to = 1836.1.1
+		monthly_chance = 25
 	}
 
 	illustration_tags = {
@@ -141,6 +143,7 @@ htc_colonize_province_portugal.3 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		province_definition:cape_verde_province = {
 			not = {
 				any_location_in_province_definition = {
@@ -189,7 +192,7 @@ htc_colonize_province_portugal.4 = {
 	dynamic_historical_event = {
         tag = POR
 		from = 1460.1.1
-		to = 1510.1.1
+		to = 1836.1.1
 		monthly_chance = 5
 	}
 
@@ -201,6 +204,7 @@ htc_colonize_province_portugal.4 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		province_definition:mascarene_islands_province = {
 			not = {
 				any_location_in_province_definition = {

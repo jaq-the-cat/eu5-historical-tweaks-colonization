@@ -57,28 +57,40 @@
                     }
                 }
             }
-            ### check if player & no player restrictions is on
             trigger_if = {
+                limit = { has_game_rule = htc_mod_disable }
+            }
+            ### check if player & no player restrictions is on
+            trigger_else_if = {
                 limit = {
                     scope:actor = { is_ai = no }
-                    has_game_rule = htc_player_no_restrictions
+                    has_game_rule = htc_mod_disable_player
                 }
-                has_game_rule = htc_player_no_restrictions
+                has_game_rule = htc_mod_disable_player
             }
             ### strict AI limits, can't use year unlocks
             trigger_else_if = {
                 limit = {
                     scope:actor = {
                         is_ai = yes
-                        or = {
-                            has_or_had_tag = ZAN
-                            has_or_had_tag = ZMW
-                        }
+                        has_or_had_tag = ZAN
+                    }
+                }
+                and = {
+                    current_year >= 1550
+                    region = region:swahili_coast_region
+                }
+            }
+            trigger_else_if = {
+                limit = {
+                    scope:actor = {
+                        is_ai = yes
+                        has_or_had_tag = ZMW
                     }
                 }
                 and = {
                     current_year >= 1600
-                    region = scope:actor.capital.region
+                    region = region:zimbabwe_region
                 }
             }
             trigger_else_if = {
@@ -89,6 +101,7 @@
                     }
                 }
                 and = {
+                    not = { scope:actor.continent = continent:africa }
                     region = scope:actor.capital.region
                     or = {
                         is_ai = no
@@ -97,6 +110,7 @@
                     }
                 }
             }
+            ### other limits & year unlocks
             trigger_else_if = {
                 limit = {
                     scope:actor = {
@@ -126,7 +140,7 @@
                         text = htc_player_no_restrictions_why
                         and = {
                             scope:actor = { is_ai = no }
-                            has_game_rule = htc_player_no_restrictions
+                            has_game_rule = htc_mod_disable_player
                         }
                     }
                     ### early colonies for natives
@@ -160,6 +174,10 @@
                     trigger_else_if = {
                         limit = { region = region:scandinavian_region }
                         scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
+                    }
+                    trigger_else_if = {
+                        limit = { area = area:greenland_area }
+                        capital.area = area:greenland_area
                     }
                     trigger_else_if = {
                         limit = {
@@ -211,7 +229,7 @@
                                 area = area:east_african_island_area
                             }
                         }
-                        current_year > 1450
+                        current_year >= 1450
                     }
                     trigger_else_if = {
                         limit = {
@@ -219,7 +237,7 @@
                                 area = area:mozambique_area
                             }
                         }
-                        current_year > 1475
+                        current_year >= 1475
                     }
                     trigger_else_if = {
                         limit = {
@@ -233,22 +251,26 @@
                                 sub_continent = sub_continent:eastern_europe
                             }
                         }
-                        current_year > 1500
+                        current_year >= 1500
                     }
                     trigger_else_if = {
                         limit = {
                             or = {
                                 region = region:east_coast_region
-                                region = region:canada_region
                                 region = region:andes_region
                                 region = region:chaco_region
                             }
                         }
-                        current_year > 1520
+                        current_year >= 1520
                     }
                     trigger_else_if = {
                         limit = {
                             or = {
+                                area = area:newfoundland_area
+                                area = area:acadia_area
+                                area = area:prince_edward_island_area
+                                area = area:new_brunswick_area
+                                area = area:quebec_area
                                 this = province_definition:ai_ais_province
                                 this = province_definition:nama_province
                                 this = province_definition:trakamma_province
@@ -257,7 +279,7 @@
                                 area = area:pampa_area
                             }
                         }
-                        current_year > 1540
+                        current_year >= 1540
                     }
                     trigger_else_if = {
                         limit = {
@@ -273,30 +295,41 @@
                                 region = region:indochina_region
                             }
                         }
-                        current_year > 1560
+                        current_year >= 1560
+                    }
+                    trigger_else_if = {
+                        limit = {
+                            or = {
+                                region = region:canada_region
+                            }
+                        }
+                        current_year >= 1580
                     }
                     trigger_else_if = {
                         limit = {
                             or = {
                                 continent = continent:oceania
+                                region = region:swahili_coast_region
                                 this = province_definition:mende_province
                                 this = province_definition:bassa_province
                                 this = province_definition:grebo_province
                             }
                         }
-                        current_year > 1600
+                        current_year >= 1600
                     }
                     trigger_else_if = {
                         limit = {
                             or = {
-                                continent = continent:asia
-                                region = region:swahili_coast_region
                                 region = region:madagascar_region
+                                continent = continent:asia
                             }
                         }
-                        current_year > 1700
+                        current_year >= 1700
                     }
                 }
+            }
+            trigger_else = {
+                always = no
             }
         }
     }
@@ -315,7 +348,25 @@
     }
 
     ai_will_do = {
+        ### special cases for certain provinces we want to be player & event only
         if = {
+            limit = {
+                or = {
+                    not = { exists = scope:target }
+                    and = {
+                        current_year < 1600
+                        # keep french colonies safe so they can actually get there in time
+                        # france will colonize through event anyway
+                        or = {
+                            scope:target = province_definition:higuey_province
+                            scope:target.area = area:quebec_area
+                        }
+                    }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
             limit = {
                 scope:actor = {
 				    monthly_balance > 1

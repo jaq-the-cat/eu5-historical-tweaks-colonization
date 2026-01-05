@@ -1,0 +1,31 @@
+﻿eastern_institutions_from_west_cost = {
+	potential_trigger = {
+		exists = capital
+		capital.continent = continent:asia
+		not = { capital.sub_continent = sub_continent:middle_east }
+		societal_value:outward_vs_inward > 0
+	}
+	
+	scales_with = societal_value:outward_vs_inward
+
+	# 100 * 0.025 = 25 = +250%
+	embrace_institution_cost_modifier = 0.025
+}
+
+eastern_institutions_from_west_spread = {
+	potential_trigger = {
+		exists = capital
+		capital.continent = continent:asia
+		not = { capital.sub_continent = sub_continent:middle_east }
+	}
+
+	scales_with = {
+		value = societal_value:outward_vs_inward
+		min = 0
+		max = 100
+		divide = 10
+	}
+
+	# (Inward) 100 / 10 = 10 * -0.1 = -100% institution growth
+	global_institution_growth_modifier = -0.1
+}

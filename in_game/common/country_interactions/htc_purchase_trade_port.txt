@@ -7,16 +7,7 @@
 
 	potential = {
 		scope:actor = {
-			or = {
-				is_ai = no
-				has_or_had_tag = POR
-				has_or_had_tag = CAS
-				has_or_had_tag = SPA
-				has_or_had_tag = FRA
-				has_or_had_tag = ENG
-				has_or_had_tag = GBR
-				has_or_had_tag = NED
-			}
+			is_possible_colonial_empire = yes
 			or = {
 				# renaissance
 				has_advance = por_pursuing_waves

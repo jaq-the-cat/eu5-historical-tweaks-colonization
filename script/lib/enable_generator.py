@@ -1,7 +1,7 @@
 import yaml
 from os import path
 from templates import *
-from templates.colonize_enabled import ColonizeEnabled
+from templates.create_colonial_charter.colonize_enabled import ColonizeEnabled
 
 def get_geography(s: str) -> str:
     if s.endswith('_sub_continent'):

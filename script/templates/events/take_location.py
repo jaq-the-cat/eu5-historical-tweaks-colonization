@@ -29,11 +29,13 @@ class TakeLocation(TemplateData):
 	}}
 
 	trigger = {{
+		is_ai = yes
 		location:{geography} = {{
 			has_owner = yes
 			is_ownable = yes
 			within_colonial_range_of = root
 			is_discovered_by = root
+			owner = {{ is_ai = yes }}
 		}}
 	}}		
 
@@ -47,12 +49,23 @@ class TakeLocation(TemplateData):
 	option = {{
 		name = htc.options.purchase
 
+		location:{geography}.owner = {{
+			add_gold = {{
+				value = 50
+				add = {{
+					value = location:{geography}.development
+					multiply = 35
+				}}
+			}}
+		}}
+
 		add_gold = {{
-			value = -50
+			value = 50
 			add = {{
 				value = location:{geography}.development
-				multiply = -35
+				multiply = 35
 			}}
+			multiply = -1
 		}}
 
 		location:{geography} = {{

@@ -9,7 +9,7 @@ htc_colonize_in_region_britain.1 = {
 	dynamic_historical_event = {
         tag = ENG
         tag = GBR
-		from = 1540.1.1
+		from = 1520.1.1
 		to = 1836.1.1
 		monthly_chance = 15
 	}
@@ -22,6 +22,7 @@ htc_colonize_in_region_britain.1 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		any_province_definition = {
 			region = region:east_coast_region
 			not = { has_colonial_charter = root }
@@ -94,7 +95,7 @@ htc_colonize_in_region_britain.1 = {
         tag = GBR
 		from = 1540.1.1
 		to = 1836.1.1
-		monthly_chance = 15
+		monthly_chance = 20
 	}
 
 	illustration_tags = {
@@ -105,8 +106,9 @@ htc_colonize_in_region_britain.1 = {
 	trigger = {
 		is_ai = yes
 		monthly_balance > 25
+		num_colonial_charters <= 10
 		any_province_definition = {
-			region = region:canada_region
+			region = region:newfoundland_area
 			not = { has_colonial_charter = root }
 			not = {
 				any_location_in_province_definition = {
@@ -127,12 +129,600 @@ htc_colonize_in_region_britain.1 = {
 	}
 	
 	immediate = {
-		region:canada_region = {
+		region:newfoundland_area = {
 			save_scope_as = source
 		}
 		random_province_definition = {
 			limit = {
-				region = region:canada_region
+				region = region:newfoundland_area
+				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_britain.3 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1540.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 25
+		num_colonial_charters <= 10
+		any_province_definition = {
+			region = region:acadia_area
+			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:acadia_area = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:acadia_area
+				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_britain.4 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1540.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 25
+		num_colonial_charters <= 10
+		any_province_definition = {
+			region = region:prince_edward_island_area
+			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:prince_edward_island_area = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:prince_edward_island_area
+				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_britain.5 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1540.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 25
+		num_colonial_charters <= 10
+		any_province_definition = {
+			region = region:new_brunswick_area
+			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:new_brunswick_area = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:new_brunswick_area
+				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_britain.6 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1580.1.1
+		to = 1836.1.1
+		monthly_chance = 15
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 25
+		num_colonial_charters <= 10
+		any_province_definition = {
+			region = region:labrador_area
+			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:labrador_area = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:labrador_area
+				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_britain.7 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1580.1.1
+		to = 1836.1.1
+		monthly_chance = 15
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 25
+		num_colonial_charters <= 10
+		any_province_definition = {
+			region = region:nunavik_area
+			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:nunavik_area = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:nunavik_area
+				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_britain.8 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1580.1.1
+		to = 1836.1.1
+		monthly_chance = 15
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 25
+		num_colonial_charters <= 10
+		any_province_definition = {
+			region = region:jamesie_area
+			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:jamesie_area = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:jamesie_area
+				not = { has_colonial_charter = root }
+				not = {
+					any_location_in_province_definition = {
+    					has_owner = yes
+    					owner = { is_ai = no }
+					}
+				}
+				any_location_in_province_definition = {
+					or = {
+						is_adjacent_to_owned_or_subject_owns = yes
+						within_colonial_range_of = root
+					}
+					has_owner = no
+					is_ownable = yes
+					is_discovered_by = root
+				}
+			}
+			save_scope_as = geo
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = scope:geo
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+	htc_colonize_in_region_britain.9 = {
+	type = country_event
+	title = htc_colonize_in_region.title
+	desc = htc_colonize_in_region.desc
+	fire_only_once = no
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1580.1.1
+		to = 1836.1.1
+		monthly_chance = 15
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 25
+		num_colonial_charters <= 10
+		any_province_definition = {
+			region = region:james_bay_lowlands_area
+			not = { has_colonial_charter = root }
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+		}
+	}
+	
+	immediate = {
+		region:james_bay_lowlands_area = {
+			save_scope_as = source
+		}
+		random_province_definition = {
+			limit = {
+				region = region:james_bay_lowlands_area
 				not = { has_colonial_charter = root }
 				not = {
 					any_location_in_province_definition = {

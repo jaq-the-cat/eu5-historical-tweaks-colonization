@@ -3,6 +3,6 @@ tags:
 colonize:
   provinces:
     # haiti
-    higuey_province: 1500, 5
+    higuey_province: 1500, 40
   areas:
-    quebec_area: 1500, 10
+    quebec_area: 1540, 20

@@ -74,15 +74,24 @@ class ColonizeAction:
                 limit = {
                     scope:actor = {
                         is_ai = yes
-                        or = {
-                            has_or_had_tag = ZAN
-                            has_or_had_tag = ZMW
-                        }
+                        has_or_had_tag = ZAN
+                    }
+                }
+                and = {
+                    current_year >= 1550
+                    region = region:swahili_coast_region
+                }
+            }
+            trigger_else_if = {
+                limit = {
+                    scope:actor = {
+                        is_ai = yes
+                        has_or_had_tag = ZMW
                     }
                 }
                 and = {
                     current_year >= 1600
-                    region = scope:actor.capital.region
+                    region = region:zimbabwe_region
                 }
             }
             trigger_else_if = {
@@ -93,6 +102,7 @@ class ColonizeAction:
                     }
                 }
                 and = {
+                    not = { scope:actor.continent = continent:africa }
                     region = scope:actor.capital.region
                     or = {
                         is_ai = no
@@ -101,6 +111,7 @@ class ColonizeAction:
                     }
                 }
             }
+            ### other limits & year unlocks
             trigger_else_if = {
                 limit = {
                     scope:actor = {
@@ -166,6 +177,10 @@ class ColonizeAction:
                         scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
                     }
                     trigger_else_if = {
+                        limit = { area = area:greenland_area }
+                        capital.area = area:greenland_area
+                    }
+                    trigger_else_if = {
                         limit = {
                             or = {
                                 this = province_definition:madeira_province
@@ -211,6 +226,9 @@ class ColonizeAction:
     TEMPLATE_BOTTOM = '''
                 }
             }
+            trigger_else = {
+                always = no
+            }
         }
     }
 
@@ -228,7 +246,25 @@ class ColonizeAction:
     }
 
     ai_will_do = {
+        ### special cases for certain provinces we want to be player & event only
         if = {
+            limit = {
+                or = {
+                    not = { exists = scope:target }
+                    and = {
+                        current_year < 1600
+                        # keep french colonies safe so they can actually get there in time
+                        # france will colonize through event anyway
+                        or = {
+                            scope:target = province_definition:higuey_province
+                            scope:target.area = area:quebec_area
+                        }
+                    }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
             limit = {
                 scope:actor = {
 				    monthly_balance > 1

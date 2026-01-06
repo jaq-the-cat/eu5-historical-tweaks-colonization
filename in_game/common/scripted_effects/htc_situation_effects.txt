@@ -118,6 +118,13 @@ unification_of_inca_recalculate_strongest = {
 					name = strongest_incan
 					value = prev
 				}
+				set_variable = {
+					name = strongest_incan_score
+					value = {
+                        add = prev.military_strength
+                        add = prev.monthly_income_trade_and_tax
+                    }
+				}
 			}
 		}
 	}

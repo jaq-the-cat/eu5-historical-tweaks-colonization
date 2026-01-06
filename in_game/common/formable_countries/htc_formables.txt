@@ -32,3 +32,44 @@
 
 	form_effect = {}
 }
+
+REPLACE_OR_CREATE:INC_f = {
+	level = 3
+	required_locations_fraction = 0.2
+	rule = historical
+	potential = { capital ?= { region = region:andes_region } }
+
+	allow = { religion = religion:inti }
+	
+	name = INC
+	flag = INC
+	adjective = INC_ADJ
+	tag = INC
+	color = map_INC
+
+	regions = {
+		andes_region
+	}
+
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 4 }
+			set_country_rank_effect = { rank = country_rank:rank_empire }
+		}
+		if = { 
+			limit = { has_reform = government_reform:andean_monarchy }
+			remove_reform = government_reform:andean_monarchy
+		}
+		if = { 
+			limit = {
+				NOT = { has_reform = government_reform:reformed_tawantinsuyu_government }
+			}
+			if = {
+				limit = { NOT = { government_type = government_type:monarchy } }
+				change_government_type = government_type:monarchy
+				add_legitimacy = legitimacy_radical_bonus
+			}
+			add_reform = government_reform:tawantinsuyu_monarchy
+		}
+	}
+}

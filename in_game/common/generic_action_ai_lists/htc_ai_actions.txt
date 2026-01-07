@@ -8,3 +8,14 @@
 		htc_coi_assist_in_war_for_vassal
 	}
 }
+
+htc_unification_of_inca_list = {
+	potential = {
+		can_see_situation = situation:unification_of_inca
+	}
+	actions = {
+		htc_uoi_settle_province
+		htc_uoi_settle_location
+		htc_uoi_conquer_neighbor
+	}
+}

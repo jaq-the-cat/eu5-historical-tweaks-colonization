@@ -19,3 +19,6 @@
   UOI_LEADER_COUNTRY: "[SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('strongest_incan').GetCountry.GetLongName]: [SituationView.GetActiveSituation.GetSituation.MakeScope.GetVariable('strongest_incan_score').GetValue|2]"
   UOI_LEADER_COUNTRY_STRENGTH: "[military_strength|e]: [Country.GetMilitaryStrength]"
   UOI_LEADER_COUNTRY_INCOME: "[monthly_income_trade_and_tax|e]: [Country.GetEstimatedMonthlyIncomeTradeAndTax|2]"
+
+  settle_province: "Settle Province"
+  settle_location: "Settle Location"

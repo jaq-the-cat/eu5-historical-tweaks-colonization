@@ -2,9 +2,8 @@
     type = situation
     show_message = no
     potential = {
-        scope:actor = {
-            religion = religion:inti
-        }
+        scope:actor.religion = religion:inti
+        situation:unification_of_inca.var:strongest_incan ?= scope:actor
     }
 
     allow = {
@@ -18,7 +17,7 @@
 
     cooldown = {
         type = htc_uoi_settle_province_key
-        years = 5
+        years = 10
     }
 
     select_trigger = {
@@ -42,18 +41,18 @@
     select_trigger = {
         looking_for_a = province_definition
         interaction_source_list = {
-            region:andes_region = {
-                every_area_in_region = {
-                    every_province_definition_in_area = {
-                        add_to_list = source
-                    }
-                }
-			}
+            area:quitu_area = { every_province_definition_in_area = { add_to_list = source } }
+            area:chala_area = { every_province_definition_in_area = { add_to_list = source } }
+            area:suni_area = { every_province_definition_in_area = { add_to_list = source } }
+            area:puna_area = { every_province_definition_in_area = { add_to_list = source } }
+            area:rupa_rupa_area = { every_province_definition_in_area = { add_to_list = source } }
+            area:atacama_area = { every_province_definition_in_area = { add_to_list = source } }
+            area:qullaw_area = { every_province_definition_in_area = { add_to_list = source } }
 		}
         cache_interaction_source_list = yes
         target_flag = target
-        name = "choose_province"
-        none_available_msg_key = "no_provinces_available"
+        name = "settle_province"
+        none_available_msg_key = "no_province_available"
         column = { data = name }
         column = { data = population }
         visible = {
@@ -78,13 +77,14 @@
                     value = 10
                     scope:target = {
                         every_location_in_province_definition = {
-                            add = development
+                            limit = {
+                                is_ownable = yes
+                                has_owner = no
+                            }
+                            add = population
                         }
                     }
-                    max = {
-                        value = scope:actor.country_tax_base
-                        multiply = 10
-                    }
+                    max = 500
                     multiply = -1
                 }
             }
@@ -95,23 +95,13 @@
             }
         }
         scope:target ?= {
-            while = {
+            every_location_in_province_definition = {
                 limit = {
-                    any_location_in_province_definition = {
-                        is_ownable = yes
-                        has_owner = no
-                        adjacent_to_owned_or_owned_by_subject = scope:actor
-                    }
+                    is_ownable = yes
+                    has_owner = no
                 }
-                every_location_in_province_definition = {
-                    limit = {
-                        is_ownable = yes
-                        has_owner = no
-                        adjacent_to_owned_or_owned_by_subject = scope:actor
-                    }
-                    change_location_owner = scope:actor
-                    change_integration_level = colonized
-                }
+                change_location_owner = scope:actor
+                change_integration_level = integrated
             }
             # custom_tooltip = {
             #     text = htc_uoi_purchase_province_tt
@@ -125,24 +115,24 @@
     ai_will_do = {
         value = -1
         if = {
-            # has more than 3x the gold required to settle
             limit = {
                 scope:actor = {    
                     gold > {
                         value = 10
                         scope:target = {
                             every_location_in_province_definition = {
-                                add = development
+                                limit = {
+                                    is_ownable = yes
+                                    has_owner = no
+                                }
+                                add = population
                             }
                         }
-                        max = {
-                            value = scope:actor.country_tax_base
-                            multiply = 10
-                        }
-                        multiply = 3
+                        max = 600
                     }
                 }
             }
+            add = 50
         }
     }
 }
@@ -151,9 +141,7 @@ htc_uoi_settle_location = {
     type = situation
     show_message = no
     potential = {
-        scope:actor = {
-            religion = religion:inti
-        }
+        scope:actor.religion = religion:inti
     }
 
     allow = {
@@ -167,7 +155,7 @@ htc_uoi_settle_location = {
 
     cooldown = {
         type = htc_uoi_settle_location_key
-        years = 2
+        years = 1
     }
 
     select_trigger = {
@@ -200,8 +188,8 @@ htc_uoi_settle_location = {
 		}
         cache_interaction_source_list = yes
         target_flag = target
-        name = "choose_province"
-        none_available_msg_key = "no_provinces_available"
+        name = "settle_location"
+        none_available_msg_key = "no_locations_available"
         column = { data = name }
         column = { data = population }
         visible = {
@@ -217,8 +205,8 @@ htc_uoi_settle_location = {
             scope:actor = {
                 add_gold = {
                     value = 10
-                    add = population
-                    max = 500
+                    add = scope:target.population
+                    max = 100
                     multiply = -1
                 }
             }
@@ -230,24 +218,23 @@ htc_uoi_settle_location = {
         }
         scope:target ?= {
             change_location_owner = scope:actor
-            change_integration_level = colonized
+            change_integration_level = integrated
         }
     }
 
     ai_will_do = {
         value = -1
         if = {
-            # has more than 3x the gold required to settle
             limit = {
                 scope:actor = {    
                     gold > {
                         value = 10
-                        scope:target ?= { add = population }
-                        multiply = 3
-                        max = 1000
+                        add = scope:target.population
+                        max = 150
                     }
                 }
             }
+            add = 50
         }
     }
 }
@@ -256,7 +243,7 @@ htc_uoi_conquer_neighbor = {
     type = situation
     show_message = no
     potential = {
-        scope:actor = { religion = religion:inti }
+        scope:actor.religion = religion:inti
     }
 
     allow = {
@@ -303,6 +290,10 @@ htc_uoi_conquer_neighbor = {
         }
         enabled = {
 			is_neighbor_of = scope:actor
+            nor = {
+                is_allied_with = { target = scope:actor }
+                is_subject_or_below_of = scope:actor
+            }
         }
     }
 	
@@ -318,6 +309,16 @@ htc_uoi_conquer_neighbor = {
     ai_will_do = {
         value = -1
         if = {
+            limit = {
+                scope:actor = {
+                    any_owned_location = {
+                        integration_level = conquered
+                    }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
             limit = { current_year > 1340 }
             scope:actor = {
                 add = country_strength
@@ -330,6 +331,16 @@ htc_uoi_conquer_neighbor = {
                 every_country_that_can_be_called_defensively = {
                     subtract = country_strength
                 }
+                # scope:actor = {
+                #     subtract = {
+                #         value = this_opinion_of_prev
+                #         # multiply = 0.1
+                #     }
+                # }
+            }
+            if = {
+                limit = { scope:target = { is_rival_of = scope:actor } }
+                add = 15
             }
         }
     }

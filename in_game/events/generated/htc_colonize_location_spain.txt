@@ -50,7 +50,7 @@ htc_colonize_location_spain.1 = {
 		
 		location:fernando_po = {
 			change_location_owner = root
-			change_integration_level = colonized
+			change_integration_level = integrated
 		}
 	}
 	option = {

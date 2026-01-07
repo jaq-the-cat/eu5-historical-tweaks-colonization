@@ -147,7 +147,7 @@
 			}
 			scope:target = {
 				change_location_owner = scope:actor
-				change_integration_level = colonized
+				change_integration_level = integrated
 			}
 		}
 	}

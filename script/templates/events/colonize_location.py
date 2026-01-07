@@ -59,7 +59,7 @@ class ColonizeLocation(TemplateData):
 		
 		location:{geography} = {{
 			change_location_owner = root
-			change_integration_level = colonized
+			change_integration_level = integrated
 		}}
 	}}
 	option = {{

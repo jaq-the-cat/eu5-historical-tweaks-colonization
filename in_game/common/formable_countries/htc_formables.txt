@@ -35,7 +35,7 @@
 
 REPLACE_OR_CREATE:INC_f = {
 	level = 3
-	required_locations_fraction = 0.8
+	required_locations_fraction = 0.5333 # 200 locations
 	rule = historical
 	potential = { capital ?= { region = region:andes_region } }
 

@@ -132,7 +132,15 @@
                     }
                 }
             }
-            add = 50
+            scope:target = {
+                every_location_in_province_definition = {
+                    limit = {
+                        is_ownable = yes
+                        has_owner = no
+                    }
+                    add = population
+                }
+            }
         }
     }
 }
@@ -193,6 +201,7 @@ htc_uoi_settle_location = {
         column = { data = name }
         column = { data = population }
         visible = {
+            is_ownable = yes
             has_owner = no
         }
         enabled = {
@@ -234,7 +243,7 @@ htc_uoi_settle_location = {
                     }
                 }
             }
-            add = 50
+            add = scope:target.population
         }
     }
 }

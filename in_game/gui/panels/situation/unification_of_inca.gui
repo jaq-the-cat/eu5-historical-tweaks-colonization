@@ -63,7 +63,7 @@ situation_panel = {
 			blockoverride "onaction_hint" {
 				action_tooltip = {
 					title = "OPEN_HINT"
-					on_action = "[OpenLateralViewWithParams('hints', 'selected_hint = hint_conquest_of_india')]"
+					on_action = "[OpenLateralViewWithParams('hints', 'selected_hint = hint_unification_of_inca')]"
 				}
 			}
 			blockoverride "bottom_content_onclick" {

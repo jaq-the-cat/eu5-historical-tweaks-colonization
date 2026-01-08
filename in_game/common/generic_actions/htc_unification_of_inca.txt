@@ -3,7 +3,7 @@
     show_message = no
     potential = {
         scope:actor.religion = religion:inti
-        situation:unification_of_inca.var:strongest_incan ?= scope:actor
+        # situation:unification_of_inca.var:strongest_incan ?= scope:actor
     }
 
     allow = {
@@ -140,6 +140,34 @@
                     }
                     add = population
                 }
+            }
+            if = {
+                limit = { scope:target.area = area:quitu_area }
+                multiply = 2
+            }
+            else_if = {
+                limit = { scope:target.area = area:chala_area }
+                multiply = 3
+            }
+            else_if = {
+                limit = { scope:target.area = area:suni_area }
+                multiply = 6
+            }
+            else_if = {
+                limit = { scope:target.area = area:puna_area }
+                multiply = 6
+            }
+            else_if = {
+                limit = { scope:target.area = area:rupa_rupa_area }
+                multiply = 4
+            }
+            else_if = {
+                limit = { scope:target.area = area:qullaw_area }
+                multiply = 2
+            }
+            else_if = {
+                limit = { scope:target.area = area:atacama_area }
+                multiply = 1
             }
         }
     }

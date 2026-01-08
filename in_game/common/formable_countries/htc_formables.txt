@@ -35,11 +35,22 @@
 
 REPLACE_OR_CREATE:INC_f = {
 	level = 3
-	required_locations_fraction = 0.5333 # 200 locations
+	required_locations_fraction = 0.4 # 150
 	rule = historical
-	potential = { capital ?= { region = region:andes_region } }
+	potential = {
+		capital ?= { region = region:andes_region }
+	}
 
-	allow = { religion = religion:inti }
+	allow = {
+		religion = religion:inti
+		region:andes_region = {
+			any_location_in_region = {
+				is_ownable = yes
+				is_owned_or_owned_by_subjects_or_below_of = root
+				count >= 200
+			}
+		}
+	}
 	
 	name = INC
 	flag = INC

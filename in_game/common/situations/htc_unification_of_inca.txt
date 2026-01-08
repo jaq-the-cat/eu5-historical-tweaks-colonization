@@ -12,7 +12,10 @@
     
     can_end = {
 		or = {
-			country_exists = c:INC
+            custom_tooltip = {
+                text = uoi_inca_exists_tt
+			    country_exists = c:INC
+            }
 			current_year > 1500
 		}
     }

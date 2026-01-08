@@ -13,6 +13,8 @@
   htc_uoi_incan_tt: "Incan Unification Candidate"
   htc_uoi_other_tt: "Other Power"
 
+  uoi_inca_exists_tt: "$INC$ exists"
+
   UOI_GRAPH_TITLE_TT: "Details"
   UOI_LEADER_COUNTRY_SCORE_TITLE_TT: "Strongest Country"
   UOI_LEADER_COUNTRY_SCORE_FLAVOR_TT: "#italic Each month, the general score of each country in the [ShowSituationNameWithNoTooltip('unification_of_inca')] [situation|e] is calculated, and the top power is displayed here.#!"

@@ -10,6 +10,8 @@ charters:
     # east africa
     - mozambique_area
   1500:
+    # greenland
+    - greenland_area
     # south africa
     - goringhaikona_area
     # central america

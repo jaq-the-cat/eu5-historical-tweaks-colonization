@@ -61,13 +61,16 @@ class ColonizeAction:
                     }
                 }
             }
-            ### check if player & no player restrictions is on
             trigger_if = {
+                limit = { has_game_rule = htc_mod_disable }
+            }
+            ### check if player & no player restrictions is on
+            trigger_else_if = {
                 limit = {
                     scope:actor = { is_ai = no }
-                    has_game_rule = htc_player_no_restrictions
+                    has_game_rule = htc_mod_disable_player
                 }
-                has_game_rule = htc_player_no_restrictions
+                has_game_rule = htc_mod_disable_player
             }
             ### strict AI limits, can't use year unlocks
             trigger_else_if = {
@@ -141,7 +144,7 @@ class ColonizeAction:
                         text = htc_player_no_restrictions_why
                         and = {
                             scope:actor = { is_ai = no }
-                            has_game_rule = htc_player_no_restrictions
+                            has_game_rule = htc_mod_disable_player
                         }
                     }
                     ### early colonies for natives

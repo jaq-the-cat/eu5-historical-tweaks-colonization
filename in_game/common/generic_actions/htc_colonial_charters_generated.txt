@@ -242,6 +242,7 @@
                     trigger_else_if = {
                         limit = {
                             or = {
+                                area = area:greenland_area
                                 area = area:goringhaikona_area
                                 region = region:caribbean_region
                                 region = region:mesoamerica_region
@@ -325,9 +326,6 @@
                             }
                         }
                         current_year >= 1700
-                    }
-                    trigger_else = {
-                        always = no
                     }
                 }
             }

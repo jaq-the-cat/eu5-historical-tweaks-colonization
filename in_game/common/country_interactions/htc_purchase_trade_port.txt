@@ -85,6 +85,22 @@
 		default_sort = development
 		visible = {
 			is_port = yes
+			or = {
+				# africa
+				sub_continent = sub_continent:west_africa
+				sub_continent = sub_continent:central_africa
+				sub_continent = sub_continent:east_africa
+				region = region:zimbabwe_region
+				region = region:southern_africa_islands_region
+				region = region:madagascar_region
+				# middle east
+				region = region:arabia_region
+				# asia
+				sub_continent = sub_continent:south_asia
+				sub_continent = sub_continent:east_asia
+				region = region:indonesia_region
+				region = region:melanesia_region
+			}
 		}
 		enabled = {
 			within_colonial_range_of = scope:actor

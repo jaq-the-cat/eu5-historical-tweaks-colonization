@@ -10,7 +10,7 @@ htc_colonize_province_france.1 = {
         tag = FRA
 		from = 1500.1.1
 		to = 1836.1.1
-		monthly_chance = 40
+		monthly_chance = 50
 	}
 
 	illustration_tags = {

@@ -123,12 +123,9 @@
             every_location_in_province = {
                 change_location_owner = scope:actor
             }
-            # custom_tooltip = {
-            #     text = htc_coi_purchase_province_tt
-            #     scope:target = {
-            #         trigger_event_non_silently = htc_conquest_of_india.4
-            #     }
-            # }
+            scope:target = {
+                trigger_event = htc_conquest_of_india.4
+            }
         }
     }
 
@@ -266,39 +263,7 @@ htc_coi_offer_protection = {
     }
 
     effect = {
-        if = {
-            limit = { exists = scope:target }
-            scope:actor = {
-                add_gold = {
-                    value = scope:target.country_tax_base
-                    multiply = 10
-                    multiply = -1
-                }
-            }
-            scope:target = {
-                add_gold = {
-                    value = scope:target.country_tax_base
-                    multiply = 10
-                }
-            }
-            scope:target = {
-                make_subject_of = {
-                    target = scope:actor
-                    type = subject_type:indian_vassal
-                }   
-            }
-        }
-        else = {
-            custom_tooltip = {
-                text = htc_coi_offer_protection_effect_tt
-            }
-        }
-        # custom_tooltip = {
-        #     text = htc_coi_offer_protection_tt
-        #     scope:target = {
-        #         trigger_event_non_silently = htc_conquest_of_india.5
-        #     }
-        # }
+        scope:target = { trigger_event_non_silently = htc_conquest_of_india.5 }
     }
 
     ai_will_do = {
@@ -402,38 +367,7 @@ htc_coi_assist_in_war_for_vassal = {
     }
     
     effect = {
-        if = {
-            limit = { exists = scope:target }
-            scope:actor = {
-                add_manpower = {
-                    value = scope:actor.monthly_manpower
-                    multiply = -10
-                }
-            }
-            scope:target = {
-                add_manpower = {
-                    value = scope:actor.monthly_manpower
-                    multiply = 10
-                }
-            }
-            scope:target = {
-                make_subject_of = {
-                    target = scope:actor
-                    type = subject_type:indian_vassal
-                }
-            }
-        }
-        else = {
-            custom_tooltip = {
-                text = htc_coi_assist_in_war_for_vassal_effect_tt
-            }
-        }
-        # custom_tooltip = {
-        #     text = htc_coi_assist_in_war_for_vassal_tt
-        #     scope:target = {
-        #         trigger_event_non_silently = htc_conquest_of_india.6
-        #     }
-        # }
+        scope:target = { trigger_event_non_silently = htc_conquest_of_india.8 }
     }
 
     ai_will_do = {

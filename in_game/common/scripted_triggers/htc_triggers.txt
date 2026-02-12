@@ -1,11 +1,9 @@
 ﻿is_possible_colonial_empire = {
 	custom_tooltip = {
 		text = is_possible_colonial_empire_tt
+		has_ports = yes
 		or = {
-			and = {
-				is_ai = no
-				has_ports = yes
-			}
+			is_ai = no
 			has_or_had_tag = POR
 			has_or_had_tag = CAS
 			has_or_had_tag = SPA

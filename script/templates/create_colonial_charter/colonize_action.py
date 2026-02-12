@@ -181,7 +181,11 @@ class ColonizeAction:
                     }
                     trigger_else_if = {
                         limit = { area = area:greenland_area }
-                        capital.area = area:greenland_area
+                        area:greenland_area = {
+                            any_location_in_area = {
+                                is_owned_by_target_or_subject = { owner = scope:actor }
+                            }
+                        }
                     }
                     trigger_else_if = {
                         limit = {

@@ -154,22 +154,22 @@ REPLACE:start_exploration = {
 				exists = scope:launch_location
 			}
 			add = "scope:actor.exploration_utility(scope:target|scope:character|scope:launch_location)"
-		}
-		if = {
-			limit = {
-				scope:actor = {
-					or = {
-						has_or_had_tag = POR
-						has_or_had_tag = CAS
-						has_or_had_tag = SPA
-						has_or_had_tag = FRA
-						has_or_had_tag = ENG
-						has_or_had_tag = GBR
-						has_or_had_tag = NED
+			if = {
+				limit = {
+					scope:actor = {
+						or = {
+							has_or_had_tag = POR
+							has_or_had_tag = CAS
+							has_or_had_tag = SPA
+							has_or_had_tag = FRA
+							has_or_had_tag = ENG
+							has_or_had_tag = GBR
+							has_or_had_tag = NED
+						}
 					}
 				}
+				multiply = 2
 			}
-			add = 50
 		}
 	}
 }

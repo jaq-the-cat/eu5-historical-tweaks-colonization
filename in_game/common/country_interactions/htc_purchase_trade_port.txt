@@ -30,47 +30,36 @@
 	select_trigger = {
 		looking_for_a = country
 		target_flag = recipient
-		interaction_source_list = {
-			scope:actor = {
-				every_country_in_diplomatic_range = {
-					limit = {
-						not = { is_subject_type = colonial_nation }
-						capital = {
-							or = {
-								# africa
-								sub_continent = sub_continent:west_africa
-								sub_continent = sub_continent:central_africa
-								sub_continent = sub_continent:east_africa
-								region = region:zimbabwe_region
-								region = region:southern_africa_islands_region
-								region = region:madagascar_region
-								# middle east
-								region = region:arabia_region
-								# asia
-								sub_continent = sub_continent:south_asia
-								sub_continent = sub_continent:east_asia
-								region = region:indonesia_region
-								region = region:melanesia_region
-							}
-						}
-					}
-					add_to_list = source
-				}
-			}
-		}
 		name = "choose_country"
 		column = {
 			data = name
 		}
 		visible = {
 			is_real_country = yes
+			any_owned_location = {
+				is_port = yes
+				or = {
+					# africa
+					sub_continent = sub_continent:west_africa
+					sub_continent = sub_continent:central_africa
+					sub_continent = sub_continent:east_africa
+					region = region:zimbabwe_region
+					region = region:southern_africa_islands_region
+					region = region:madagascar_region
+					# middle east
+					region = region:arabia_region
+					# asia
+					sub_continent = sub_continent:south_asia
+					sub_continent = sub_continent:east_asia
+					region = region:indonesia_region
+					region = region:melanesia_region
+				}
+			}
 		}
         enabled = {
 			power_projection < scope:actor.power_projection
 			at_war = no
 		}
-		show_why_not_visible = yes
-		show_why_not_enabled = yes
 	}
 
 	select_trigger = {
@@ -168,9 +157,35 @@
 		}
 	}
 
+	accept = {
+		if = {
+			limit = { exists = scope:target }
+			add = scope:actor.power_projection
+			subtract = scope:recipient.power_projection
+		}
+	}
+
 	diplo_chance = {
-		base = -25
-		opinion = 0.5
-		in_debt = 100
+		base = -50
+		core = -50
+		location_value = -25
+		rank = -25
+		
+		actor_is_rival = -100
+		actor_overlord_is_rival = -100
+		recipient_is_rival = -100
+		recipient_overlord_is_rival = -100
+		competing_power = -100
+		capital = -99999
+
+		relative_strength = 50
+
+		opinion = 0.1
+		trust_in_actor = 0.5
+
+		in_debt = 2
+		negative_stability = 0.2
+
+		rank_difference = 10
 	}
 }

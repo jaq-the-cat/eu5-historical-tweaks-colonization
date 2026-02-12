@@ -43,7 +43,7 @@
 						# west africa
 						this = location:bissagos
 						trigger_if = {
-							limit = { current_year > 1600 }
+							limit = { current_year >= 1600 }
 							or = {
 								this = location:rio_grande # bolola
 								this = location:rio_nunez # cacino
@@ -70,15 +70,13 @@
 						this = location:fort_dauphin
 						# indonesia
 						region = region:indonesia_region
-						# oceania
-						continent = continent:oceania
 					}
 				}
 				add_to_list = source
 			}
 		}
+		cache_interaction_source_list = yes
 		target_flag = target
-		cache_targets = yes
 		name = "estabilish_trade_post_select_location"
 		none_available_msg_key = "estabilish_trade_post_no_locations"
 		column = { data = name }

@@ -20,8 +20,8 @@ htc_colonize_province_portugal.1 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		province_definition:madeira_province = {
 			not = {
 				any_location_in_province_definition = {
@@ -81,8 +81,8 @@ htc_colonize_province_portugal.2 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		province_definition:azores_province = {
 			not = {
 				any_location_in_province_definition = {
@@ -142,8 +142,8 @@ htc_colonize_province_portugal.3 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		province_definition:cape_verde_province = {
 			not = {
 				any_location_in_province_definition = {
@@ -203,8 +203,8 @@ htc_colonize_province_portugal.4 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		province_definition:mascarene_islands_province = {
 			not = {
 				any_location_in_province_definition = {

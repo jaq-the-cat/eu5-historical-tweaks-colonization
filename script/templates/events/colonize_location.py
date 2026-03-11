@@ -29,7 +29,7 @@ class ColonizeLocation(TemplateData):
 	}}
 
 	trigger = {{
-		monthly_balance > 25
+		monthly_balance > 50
 		location:{geography} = {{
 			has_owner = no
 			is_ownable = yes

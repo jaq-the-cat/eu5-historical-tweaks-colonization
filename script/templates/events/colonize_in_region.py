@@ -30,8 +30,8 @@ class ColonizeInRegion(TemplateData):
 
 	trigger = {{
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		any_province_definition = {{
 			region = region:{geography}
 			not = {{ has_colonial_charter = root }}

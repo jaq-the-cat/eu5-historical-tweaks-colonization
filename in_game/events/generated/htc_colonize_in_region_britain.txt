@@ -21,8 +21,8 @@ htc_colonize_in_region_britain.1 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		any_province_definition = {
 			region = region:east_coast_region
 			not = { has_colonial_charter = root }
@@ -105,8 +105,8 @@ htc_colonize_in_region_britain.1 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		any_province_definition = {
 			region = region:newfoundland_area
 			not = { has_colonial_charter = root }
@@ -189,8 +189,8 @@ htc_colonize_in_region_britain.1 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		any_province_definition = {
 			region = region:acadia_area
 			not = { has_colonial_charter = root }
@@ -273,8 +273,8 @@ htc_colonize_in_region_britain.1 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		any_province_definition = {
 			region = region:prince_edward_island_area
 			not = { has_colonial_charter = root }
@@ -357,8 +357,8 @@ htc_colonize_in_region_britain.1 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		any_province_definition = {
 			region = region:new_brunswick_area
 			not = { has_colonial_charter = root }

@@ -274,7 +274,7 @@ class ColonizeAction:
         else_if = {
             limit = {
                 scope:actor = {
-				    monthly_balance > 1
+				    monthly_balance > 50
                     or = {
                         has_colonial_charters = yes
                         is_colonial_top_overlord = yes

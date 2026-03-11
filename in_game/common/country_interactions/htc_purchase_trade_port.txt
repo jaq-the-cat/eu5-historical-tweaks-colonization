@@ -8,6 +8,16 @@
 	potential = {
 		scope:actor = {
 			is_possible_colonial_empire = yes
+		}
+	}
+
+	cooldown = { 
+		type = purchase_trade_port
+		years = 20
+	}
+
+	allow = {
+		scope:actor = {
 			or = {
 				# renaissance
 				has_advance = por_pursuing_waves
@@ -19,25 +29,22 @@
 			}
 		}
 	}
-
-	cooldown = { 
-		type = purchase_trade_port
-		years = 5
-	}
-
-	allow = {}
 	
 	select_trigger = {
 		looking_for_a = country
 		target_flag = recipient
 		name = "choose_country"
-		column = {
-			data = name
-		}
+
+		column = { data = name }
+		column = { data = population }
+
 		visible = {
 			is_real_country = yes
 			any_owned_location = {
 				is_port = yes
+				within_colonial_range_of = scope:actor
+			}
+			capital = {
 				or = {
 					# africa
 					sub_continent = sub_continent:west_africa
@@ -66,34 +73,13 @@
 		looking_for_a = location
 		source = recipient
 		target_flag = target
+		source_flags = only_actual_locations
 		name = "purchase_trade_port_select_location"
 		none_available_msg_key = "purchase_trade_port_no_locations"
 		column = { data = name }
-		column = { data = market }
-		column = { data = development }
-		default_sort = development
-		visible = {
-			is_port = yes
-			or = {
-				# africa
-				sub_continent = sub_continent:west_africa
-				sub_continent = sub_continent:central_africa
-				sub_continent = sub_continent:east_africa
-				region = region:zimbabwe_region
-				region = region:southern_africa_islands_region
-				region = region:madagascar_region
-				# middle east
-				region = region:arabia_region
-				# asia
-				sub_continent = sub_continent:south_asia
-				sub_continent = sub_continent:east_asia
-				region = region:indonesia_region
-				region = region:melanesia_region
-			}
-		}
-		enabled = {
-			within_colonial_range_of = scope:actor
-		}
+		column = { data = population }
+		visible = { is_port = yes }
+		enabled = { within_colonial_range_of = scope:actor }
 	}
 
 	ai_will_do = {
@@ -112,9 +98,22 @@
 						}
 					}
 				}
+				or = {
+					scope:target.sub_continent = sub_continent:south_asia
+					scope:target.sub_continent = sub_continent:east_asia
+				}
 			}
-			add = {
-				value = 100
+			add = 100
+			if = {
+				limit = {
+					scope:actor = {
+						has_or_had_tag = POR
+						scope:target = location:hormuz
+						scope:target = location:goa
+						scope:target = location:xiangshan_xinhui # macau
+					}
+				}
+				add = 500
 			}
 		}
 	}
@@ -122,7 +121,8 @@
 	effect = {
         scope:recipient = {
 			add_gold = {
-				value = scope:recipient.country_tax_base
+				value = 100
+				add = scope:recipient.country_tax_base
 				add = {
 					value = scope:target.development
 					multiply = 5
@@ -139,7 +139,8 @@
 		}
 		scope:actor = {
 			add_gold = {
-				value = scope:recipient.country_tax_base
+				value = 100
+				add = scope:recipient.country_tax_base
 				add = {
 					value = scope:target.development
 					multiply = 5

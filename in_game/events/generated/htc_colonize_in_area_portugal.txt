@@ -20,8 +20,8 @@ htc_colonize_in_area_portugal.1 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		area:mozambique_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
@@ -103,8 +103,8 @@ htc_colonize_in_area_portugal.2 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		area:pindorama_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
@@ -186,8 +186,8 @@ htc_colonize_in_area_portugal.3 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		area:janeiro_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
@@ -269,8 +269,8 @@ htc_colonize_in_area_portugal.4 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		area:pampa_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }

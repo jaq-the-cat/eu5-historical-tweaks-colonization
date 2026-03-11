@@ -20,7 +20,7 @@ htc_colonize_location_spain.1 = {
 	}
 
 	trigger = {
-		monthly_balance > 25
+		monthly_balance > 50
 		location:fernando_po = {
 			has_owner = no
 			is_ownable = yes

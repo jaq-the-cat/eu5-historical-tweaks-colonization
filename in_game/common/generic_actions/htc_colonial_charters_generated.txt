@@ -327,6 +327,7 @@
                             or = {
                                 region = region:madagascar_region
                                 continent = continent:asia
+                                continent = continent:america
                             }
                         }
                         current_year >= 1700

@@ -262,6 +262,7 @@
                         limit = {
                             or = {
                                 region = region:east_coast_region
+                                region = region:west_coast_region
                                 region = region:andes_region
                                 region = region:chaco_region
                             }
@@ -271,6 +272,7 @@
                     trigger_else_if = {
                         limit = {
                             or = {
+                                region = region:aridoamerica_region
                                 area = area:newfoundland_area
                                 area = area:acadia_area
                                 area = area:prince_edward_island_area
@@ -289,6 +291,7 @@
                     trigger_else_if = {
                         limit = {
                             or = {
+                                region = region:great_plains_region
                                 this = province_definition:nzere_province
                                 this = province_definition:mbamba_province
                                 this = province_definition:kisama_province

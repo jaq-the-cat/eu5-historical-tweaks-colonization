@@ -26,6 +26,7 @@ charters:
   1520:
     # north america
     - east_coast_region
+    - west_coast_region
     # south america
     - andes_region
     - chaco_region
@@ -36,6 +37,9 @@ charters:
     - prince_edward_island_area
     - new_brunswick_area
     - quebec_area
+    # north america
+    - aridoamerica_region
+    - great_plains_region
     # south africa
     - ai_ais_province
     - nama_province
@@ -44,6 +48,7 @@ charters:
     - umgungundlovu_area
     # south america
     - pampa_area
+    - falklands_area
   1560:
     # central africa
     - nzere_province

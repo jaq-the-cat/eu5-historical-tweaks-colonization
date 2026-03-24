@@ -16,7 +16,7 @@
                 text = uoi_inca_exists_tt
 			    country_exists = c:INC
             }
-			current_year > 1500
+			current_year > 1550
 		}
     }
     
@@ -40,7 +40,7 @@
                     limit = {
 						religion = religion:inti
 					}
-                    trigger_event_non_silently = htc_unification_of_inca.1
+                    # trigger_event_non_silently = htc_unification_of_inca.1
                 }
             }
             95 = {}

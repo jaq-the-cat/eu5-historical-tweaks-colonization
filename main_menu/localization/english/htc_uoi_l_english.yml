@@ -24,3 +24,6 @@
 
   settle_province: "Settle Province"
   settle_location: "Settle Location"
+
+  htc_uoi_integration_buff: "Inti Conquest"
+  AUTO_MODIFIER_NAME_htc_uoi_integration_buff: "Inti Conquest"

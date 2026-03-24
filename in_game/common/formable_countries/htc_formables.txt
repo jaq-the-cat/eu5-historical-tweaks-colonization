@@ -79,5 +79,14 @@ REPLACE_OR_CREATE:INC_f = {
 			}
 			add_reform = government_reform:tawantinsuyu_monarchy
 		}
+		every_subject = {
+			root = {
+				annex_country = {
+					country = prev
+					reason = Diplomatic
+					transfer = yes
+				}
+			}
+		}
 	}
 }

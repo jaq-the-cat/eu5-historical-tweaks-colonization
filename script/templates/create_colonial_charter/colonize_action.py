@@ -288,6 +288,41 @@ class ColonizeAction:
             }
             add = "scope:actor.colonial_charter_utility(scope:target)"
         }
+        else_if = {
+            # kongo
+            limit = {
+                scope:actor = {
+		            culture.language = language:kongo_language
+		            num_colonial_charters < 1
+                }
+                scope:target = {
+                    or = {
+                        area = area:kongo_area
+                        area = area:west_kongo_area
+                    }
+                }
+            }
+            add = 50
+        }
+        else_if = {
+            # zimbabwe
+            limit = {
+                scope:actor = {
+                    tag = ZAN
+		            num_colonial_charters < 2
+                }
+                scope:target = {
+                    or = {
+                        region = region:swahili_coast_region
+                        region = region:zimbabwe_region
+                    }
+                    any_location_in_province_definition = {
+                        is_coastal = yes
+                    }
+                }
+            }
+            add = 50
+        }
         else = {
             add = -1000
         }

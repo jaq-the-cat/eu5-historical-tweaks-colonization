@@ -12,11 +12,19 @@ REPLACE:start_exploration = {
 					country_tax_base > 30
 					OR = {
 						has_game_rule = all_countries_explore
-						capital.continent = continent:europe
-						and = {
-							is_subject = yes
-							overlord = {
+						trigger_if = {
+							limit = {
+								has_game_rule = western_exploration_only
+							}
+							this != c:PAP
+							OR = {
 								capital.continent = continent:europe
+								and = {
+									is_subject = yes
+									overlord = {
+										capital.continent = continent:europe
+									}
+								}
 							}
 						}
 					}
@@ -166,6 +174,10 @@ REPLACE:start_exploration = {
 							has_or_had_tag = GBR
 							has_or_had_tag = NED
 						}
+					}
+					scope:target = {
+						continent = continent:atlantic_ocean_continent
+						continent = continent:america
 					}
 				}
 				multiply = 2

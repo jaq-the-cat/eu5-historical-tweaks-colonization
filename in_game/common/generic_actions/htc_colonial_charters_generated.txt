@@ -377,6 +377,23 @@
             add = -1000
         }
         else_if = {
+            limit = {
+                scope:actor = {
+				    monthly_balance > 50
+                    or = {
+                        has_colonial_charters = yes
+                        is_colonial_top_overlord = yes
+                        scope:target = {
+                            any_location_in_province_definition = {
+                                adjacent_to_owned_by = scope:actor
+                            }
+                        }
+                    }
+                }
+            }
+            add = "scope:actor.colonial_charter_utility(scope:target)"
+        }
+        else_if = {
             # kongo
             limit = {
                 scope:actor = {
@@ -410,23 +427,6 @@
                 }
             }
             add = 50
-        }
-        else_if = {
-            limit = {
-                scope:actor = {
-				    monthly_balance > 50
-                    or = {
-                        has_colonial_charters = yes
-                        is_colonial_top_overlord = yes
-                        scope:target = {
-                            any_location_in_province_definition = {
-                                adjacent_to_owned_by = scope:actor
-                            }
-                        }
-                    }
-                }
-            }
-            add = "scope:actor.colonial_charter_utility(scope:target)"
         }
         else = {
             add = -1000

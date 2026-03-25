@@ -4,6 +4,7 @@ tags:
 colonize:
   regions:
     east_coast_region: 1520, 15
+  areas:
     # early british canada
     newfoundland_area: 1545, 10
     acadia_area: 1545, 10

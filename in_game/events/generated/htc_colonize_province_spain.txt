@@ -372,3 +372,313 @@ htc_colonize_province_spain.6 = {
 		name = htc.options.no
 	}
 }
+htc_colonize_province_spain.7 = {
+	type = country_event
+	title = htc_colonize_province.title
+	desc = htc_colonize_province.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = CAS
+        tag = SPA
+		from = 1530.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 50
+		num_colonial_charters <= 5
+		province_definition:havana_province = {
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+			not = { has_colonial_charter = root }
+		}
+	}
+
+	immediate = {
+		province_definition:havana_province = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = province_definition:havana_province
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_province_spain.8 = {
+	type = country_event
+	title = htc_colonize_province.title
+	desc = htc_colonize_province.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = CAS
+        tag = SPA
+		from = 1530.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 50
+		num_colonial_charters <= 5
+		province_definition:moron_province = {
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+			not = { has_colonial_charter = root }
+		}
+	}
+
+	immediate = {
+		province_definition:moron_province = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = province_definition:moron_province
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_province_spain.9 = {
+	type = country_event
+	title = htc_colonize_province.title
+	desc = htc_colonize_province.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = CAS
+        tag = SPA
+		from = 1530.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 50
+		num_colonial_charters <= 5
+		province_definition:camaguey_province = {
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+			not = { has_colonial_charter = root }
+		}
+	}
+
+	immediate = {
+		province_definition:camaguey_province = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = province_definition:camaguey_province
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_province_spain.10 = {
+	type = country_event
+	title = htc_colonize_province.title
+	desc = htc_colonize_province.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = CAS
+        tag = SPA
+		from = 1530.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 50
+		num_colonial_charters <= 5
+		province_definition:bayamo_province = {
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+			not = { has_colonial_charter = root }
+		}
+	}
+
+	immediate = {
+		province_definition:bayamo_province = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = province_definition:bayamo_province
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_province_spain.11 = {
+	type = country_event
+	title = htc_colonize_province.title
+	desc = htc_colonize_province.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = CAS
+        tag = SPA
+		from = 1530.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 50
+		num_colonial_charters <= 5
+		province_definition:baracoa_province = {
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+			not = { has_colonial_charter = root }
+		}
+	}
+
+	immediate = {
+		province_definition:baracoa_province = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = province_definition:baracoa_province
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}

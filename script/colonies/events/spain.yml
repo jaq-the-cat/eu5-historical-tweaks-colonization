@@ -12,6 +12,13 @@ colonize:
     magua_province: 1500
     maguana_province: 1500
     boriken_province: 1500
+    # cuba
+    havana_province: 1530
+    moron_province: 1530
+    camaguey_province: 1530
+    bayamo_province: 1530
+    baracoa_province: 1530
+    # excluded jamaica and bahamas
   regions:
     colombia_region: 1505, 5
     mesoamerica_region: 1505, 5

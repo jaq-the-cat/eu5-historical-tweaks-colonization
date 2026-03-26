@@ -18,3 +18,5 @@ colonize:
     central_america_region: 1505, 5
     andes_region: 1525, 5
     chaco_region: 1535, 5
+    aridoamerica_region: 1560, 5
+    west_coast_region: 1600, 5

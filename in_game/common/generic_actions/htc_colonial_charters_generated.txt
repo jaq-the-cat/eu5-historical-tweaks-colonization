@@ -118,6 +118,29 @@
                             is_ai = no
                             # europeans
                             capital ?= { sub_continent = sub_continent:western_europe }
+                            # independent colonial nations
+                            and = {
+                                is_subject = no
+                                or = {
+                                    tag = USA
+                                    tag = CAN
+                                    tag = MEX
+                                }
+                            }
+                            and = {
+                                is_subject = no
+                                capital ?= { continent = continent:america }
+                                culture ?= {
+                                    is_culture_native_american = no
+                                }
+                                or = {
+		                            religion.group = religion_group:christian
+		                            religion.group = religion_group:muslim
+		                            religion.group = religion_group:dharmic
+			                        religion.group = religion_group:buddhist
+				                    religion.group = religion_group:israelite_group
+                                }
+                            }
                             culture = { has_culture_group = culture_group:russian_group }
                             # other possible colonial powers
                             has_or_had_tag = MAL
@@ -150,21 +173,24 @@
                     }
                     trigger_else_if = {
                         limit = {
+                            scope:actor.religion.group = religion_group:tonal_group
+                        }
+                        and = {
                             or = {
                                 region = region:aridoamerica_region
                                 region = region:mesoamerica_region
                                 region = region:central_america_region
                             }
-                        }
-                        and = {
-                            scope:actor.religion.group = religion_group:tonal_group
                             any_location_in_province_definition = {
                                 adjacent_to_owned_by = scope:actor
                             }
                         }
                     }
                     trigger_else_if = {
-                        limit = { region = region:andes_region }
+                        limit = {
+                            scope:actor.religion = religion:inti
+                            region = region:andes_region
+                        }
                         scope:actor.religion = religion:inti
                     }
                     trigger_else_if = {

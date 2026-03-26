@@ -1,0 +1,107 @@
+namespace = htc_spain_wars
+
+# conquer mesoamerican country
+htc_spain_wars.1 = {
+	type = country_event
+	title = htc_spain_wars.1.title
+	desc = htc_spain_wars.1.desc
+	fire_only_once = yes
+
+	dynamic_historical_event = {
+        tag = CAS
+        tag = SPA
+		from = 1532.1.1
+		to = 1572.1.1
+		monthly_chance = 5
+	}
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 50
+		at_war = no
+		any_subject = {
+			is_subject_type = colonial_nation
+			capital ?= { region = region:andes_region }
+			at_war = no
+		}
+		region:andes_region = {
+			any_country_with_capital_in_geography = {
+				or = {
+					culture = { has_culture_with_tag = native_american_tag }
+
+					# incas and mesoamericans
+					religion.group = religion_group:folk_peruvian_group
+					religion.group = religion_group:tonal_group
+
+					# other native religions
+					religion.group = religion_group:folk_north_american_group
+					religion.group = religion_group:folk_south_american_group
+					religion.group = religion_group:folk_brazilian_group
+					religion.group = religion_group:folk_argentinian_group
+					religion.group = religion_group:folk_caribbean_group
+					religion.group = religion_group:folk_central_american_group
+					religion.group = religion_group:folk_aridoamerica_group
+				}
+				any_owned_location = {
+					adjacent_to_owned_or_owned_by_subject = root
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_subject = {
+			limit = {
+				is_subject_type = colonial_nation
+				capital ?= { region = region:andes_region }
+				at_war = no
+			}
+			save_scope_as = peru_subject
+		}
+		region:andes_region = {
+			random_country_with_capital_in_geography = {
+				limit = {
+					or = {
+						culture = { has_culture_with_tag = native_american_tag }
+
+						# incas and mesoamericans
+						religion.group = religion_group:folk_peruvian_group
+						religion.group = religion_group:tonal_group
+
+						# other native religions
+						religion.group = religion_group:folk_north_american_group
+						religion.group = religion_group:folk_south_american_group
+						religion.group = religion_group:folk_brazilian_group
+						religion.group = religion_group:folk_argentinian_group
+						religion.group = religion_group:folk_caribbean_group
+						religion.group = religion_group:folk_central_american_group
+						religion.group = religion_group:folk_aridoamerica_group
+					}
+					any_owned_location = {
+						adjacent_to_owned_or_owned_by_subject = root
+					}
+				}
+				save_scope_as = peru_native
+			}
+		}
+	}
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		
+		declare_war_with_cb = {
+			target = scope:peru_native
+			type = casus_belli:cb_htc_conquer_inca
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}

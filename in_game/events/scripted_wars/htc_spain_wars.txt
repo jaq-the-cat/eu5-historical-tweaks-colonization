@@ -12,7 +12,7 @@ htc_spain_wars.1 = {
         tag = SPA
 		from = 1532.1.1
 		to = 1572.1.1
-		monthly_chance = 5
+		monthly_chance = 10
 	}
 
 	illustration_tags = {
@@ -55,14 +55,14 @@ htc_spain_wars.1 = {
 	}
 
 	immediate = {
-		random_subject = {
-			limit = {
-				is_subject_type = colonial_nation
-				capital ?= { region = region:andes_region }
-				at_war = no
-			}
-			save_scope_as = peru_subject
-		}
+		# random_subject = {
+		# 	limit = {
+		# 		is_subject_type = colonial_nation
+		# 		capital ?= { region = region:andes_region }
+		# 		at_war = no
+		# 	}
+		# 	save_scope_as = peru_subject
+		# }
 		region:andes_region = {
 			random_country_with_capital_in_geography = {
 				limit = {
@@ -94,7 +94,6 @@ htc_spain_wars.1 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
-
 		
 		declare_war_with_cb = {
 			target = scope:peru_native

@@ -122,7 +122,7 @@
 			cabinet_action:estabilish_trade_post = {
 				is_fully_implemented_in = root
 			}
-			root = { has_owner = yes }
+			scope:target ?= { has_owner = yes }
 		}
 	}
 	progress = {

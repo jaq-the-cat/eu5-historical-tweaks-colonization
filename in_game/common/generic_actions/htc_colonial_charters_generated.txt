@@ -405,8 +405,22 @@
         else_if = {
             limit = {
                 scope:actor = {
-				    monthly_balance > 50
                     or = {
+				        monthly_balance > 50
+                        and = {
+                            is_subject = no
+                            monthly_balance > 10
+                            capital ?= { continent = continent:america }
+                        }
+                        and = {
+                            is_subject = yes
+                            is_subject_type = colonial_nation
+                            exists = capital
+                            capital.region = scope:target.region
+                        }
+                    }
+                    or = {
+                        is_subject_type = colonial_nation
                         has_colonial_charters = yes
                         is_colonial_top_overlord = yes
                         scope:target = {

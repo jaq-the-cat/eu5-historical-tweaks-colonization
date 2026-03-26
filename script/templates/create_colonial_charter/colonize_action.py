@@ -122,6 +122,29 @@ class ColonizeAction:
                             is_ai = no
                             # europeans
                             capital ?= { sub_continent = sub_continent:western_europe }
+                            # independent colonial nations
+                            and = {
+                                is_subject = no
+                                or = {
+                                    tag = USA
+                                    tag = CAN
+                                    tag = MEX
+                                }
+                            }
+                            and = {
+                                is_subject = no
+                                capital ?= { continent = continent:america }
+                                culture ?= {
+                                    is_culture_native_american = no
+                                }
+                                or = {
+		                            religion.group = religion_group:christian
+		                            religion.group = religion_group:muslim
+		                            religion.group = religion_group:dharmic
+			                        religion.group = religion_group:buddhist
+				                    religion.group = religion_group:israelite_group
+                                }
+                            }
                             culture = { has_culture_group = culture_group:russian_group }
                             # other possible colonial powers
                             has_or_had_tag = MAL
@@ -154,21 +177,24 @@ class ColonizeAction:
                     }
                     trigger_else_if = {
                         limit = {
+                            scope:actor.religion.group = religion_group:tonal_group
+                        }
+                        and = {
                             or = {
                                 region = region:aridoamerica_region
                                 region = region:mesoamerica_region
                                 region = region:central_america_region
                             }
-                        }
-                        and = {
-                            scope:actor.religion.group = religion_group:tonal_group
                             any_location_in_province_definition = {
                                 adjacent_to_owned_by = scope:actor
                             }
                         }
                     }
                     trigger_else_if = {
-                        limit = { region = region:andes_region }
+                        limit = {
+                            scope:actor.religion = religion:inti
+                            region = region:andes_region
+                        }
                         scope:actor.religion = religion:inti
                     }
                     trigger_else_if = {
@@ -274,8 +300,22 @@ class ColonizeAction:
         else_if = {
             limit = {
                 scope:actor = {
-				    monthly_balance > 1
                     or = {
+				        monthly_balance > 50
+                        and = {
+                            is_subject = no
+                            monthly_balance > 10
+                            capital ?= { continent = continent:america }
+                        }
+                        and = {
+                            is_subject = yes
+                            is_subject_type = colonial_nation
+                            exists = capital
+                            capital.region = scope:target.region
+                        }
+                    }
+                    or = {
+                        is_subject_type = colonial_nation
                         has_colonial_charters = yes
                         is_colonial_top_overlord = yes
                         scope:target = {
@@ -287,6 +327,41 @@ class ColonizeAction:
                 }
             }
             add = "scope:actor.colonial_charter_utility(scope:target)"
+        }
+        else_if = {
+            # kongo
+            limit = {
+                scope:actor = {
+		            culture.language = language:kongo_language
+		            num_colonial_charters < 1
+                }
+                scope:target = {
+                    or = {
+                        area = area:kongo_area
+                        area = area:west_kongo_area
+                    }
+                }
+            }
+            add = 50
+        }
+        else_if = {
+            # zimbabwe
+            limit = {
+                scope:actor = {
+                    tag = ZAN
+		            num_colonial_charters < 2
+                }
+                scope:target = {
+                    or = {
+                        region = region:swahili_coast_region
+                        region = region:zimbabwe_region
+                    }
+                    any_location_in_province_definition = {
+                        is_coastal = yes
+                    }
+                }
+            }
+            add = 50
         }
         else = {
             add = -1000

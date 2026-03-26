@@ -1,0 +1,33 @@
+﻿TRY_REPLACE:tawantinsuyu_monarchy = {
+	major = yes
+	potential = {
+		has_or_had_tag = INC
+		has_reform = government_reform:tawantinsuyu_monarchy
+	}
+	government = monarchy
+	allow = {
+        religion = religion:inti
+		# religion.group = religion_group:folk_peruvian_group
+	}
+	locked = {
+		is_locked_mechanic = {
+			mechanic = government_reform
+			type = tawantinsuyu_monarchy
+		}
+	}
+	country_modifier = {
+		has_panaqas = yes
+		can_use_nustas_marriages = yes
+		can_use_aclla_distribution = yes
+		global_monthly_development = 0.0025
+		monthly_legitimacy = 0.05
+		legislative_efficiency = 0.05
+		monthly_inflation = -0.005
+		
+		mountains_proximity_impact = -0.5
+		hills_proximity_impact = -0.5
+		plateau_proximity_impact = -0.5
+	
+		government_reform_slots = 1
+	}
+}

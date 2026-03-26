@@ -1,14 +1,15 @@
-﻿namespace = htc_colonize_in_area_portugal
+﻿namespace = htc_colonize_in_area_britain
 
-htc_colonize_in_area_portugal.1 = {
+htc_colonize_in_area_britain.1 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
 	fire_only_once = no
 	
 	dynamic_historical_event = {
-        tag = POR
-		from = 1500.1.1
+        tag = ENG
+        tag = GBR
+		from = 1545.1.1
 		to = 1836.1.1
 		monthly_chance = 10
 	}
@@ -22,7 +23,7 @@ htc_colonize_in_area_portugal.1 = {
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
-		area:mozambique_area = {
+		area:newfoundland_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
 				not = {
@@ -45,7 +46,7 @@ htc_colonize_in_area_portugal.1 = {
 	}
 	
 	immediate = {
-		area:mozambique_area = {
+		area:newfoundland_area = {
 			save_scope_as = source
 			random_province_definition_in_area = {
 				limit = {
@@ -83,17 +84,18 @@ htc_colonize_in_area_portugal.1 = {
 		name = htc.options.no
 	}
 }
-htc_colonize_in_area_portugal.2 = {
+htc_colonize_in_area_britain.2 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
 	fire_only_once = no
 	
 	dynamic_historical_event = {
-        tag = POR
-		from = 1500.1.1
+        tag = ENG
+        tag = GBR
+		from = 1545.1.1
 		to = 1836.1.1
-		monthly_chance = 20
+		monthly_chance = 10
 	}
 
 	illustration_tags = {
@@ -105,7 +107,7 @@ htc_colonize_in_area_portugal.2 = {
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
-		area:pindorama_area = {
+		area:acadia_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
 				not = {
@@ -128,7 +130,7 @@ htc_colonize_in_area_portugal.2 = {
 	}
 	
 	immediate = {
-		area:pindorama_area = {
+		area:acadia_area = {
 			save_scope_as = source
 			random_province_definition_in_area = {
 				limit = {
@@ -166,17 +168,18 @@ htc_colonize_in_area_portugal.2 = {
 		name = htc.options.no
 	}
 }
-htc_colonize_in_area_portugal.3 = {
+htc_colonize_in_area_britain.3 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
 	fire_only_once = no
 	
 	dynamic_historical_event = {
-        tag = POR
-		from = 1510.1.1
+        tag = ENG
+        tag = GBR
+		from = 1545.1.1
 		to = 1836.1.1
-		monthly_chance = 20
+		monthly_chance = 10
 	}
 
 	illustration_tags = {
@@ -188,7 +191,7 @@ htc_colonize_in_area_portugal.3 = {
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
-		area:janeiro_area = {
+		area:prince_edward_island_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
 				not = {
@@ -211,7 +214,7 @@ htc_colonize_in_area_portugal.3 = {
 	}
 	
 	immediate = {
-		area:janeiro_area = {
+		area:prince_edward_island_area = {
 			save_scope_as = source
 			random_province_definition_in_area = {
 				limit = {
@@ -249,17 +252,18 @@ htc_colonize_in_area_portugal.3 = {
 		name = htc.options.no
 	}
 }
-htc_colonize_in_area_portugal.4 = {
+htc_colonize_in_area_britain.4 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
 	fire_only_once = no
 	
 	dynamic_historical_event = {
-        tag = POR
-		from = 1550.1.1
+        tag = ENG
+        tag = GBR
+		from = 1545.1.1
 		to = 1836.1.1
-		monthly_chance = 20
+		monthly_chance = 10
 	}
 
 	illustration_tags = {
@@ -271,7 +275,7 @@ htc_colonize_in_area_portugal.4 = {
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
-		area:pampa_area = {
+		area:new_brunswick_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }
 				not = {
@@ -294,7 +298,7 @@ htc_colonize_in_area_portugal.4 = {
 	}
 	
 	immediate = {
-		area:pampa_area = {
+		area:new_brunswick_area = {
 			save_scope_as = source
 			random_province_definition_in_area = {
 				limit = {

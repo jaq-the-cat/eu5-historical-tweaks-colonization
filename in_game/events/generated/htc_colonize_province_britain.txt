@@ -1,0 +1,126 @@
+﻿namespace = htc_colonize_province_britain
+
+htc_colonize_province_britain.1 = {
+	type = country_event
+	title = htc_colonize_province.title
+	desc = htc_colonize_province.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1530.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 50
+		num_colonial_charters <= 5
+		province_definition:xaymaca_province = {
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+			not = { has_colonial_charter = root }
+		}
+	}
+
+	immediate = {
+		province_definition:xaymaca_province = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = province_definition:xaymaca_province
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}
+htc_colonize_province_britain.2 = {
+	type = country_event
+	title = htc_colonize_province.title
+	desc = htc_colonize_province.desc
+	fire_only_once = yes
+	
+	dynamic_historical_event = {
+        tag = ENG
+        tag = GBR
+		from = 1530.1.1
+		to = 1836.1.1
+		monthly_chance = 10
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		is_ai = yes
+		monthly_balance > 50
+		num_colonial_charters <= 5
+		province_definition:bahamas_province = {
+			not = {
+				any_location_in_province_definition = {
+					has_owner = yes
+					owner = { is_ai = no }
+				}
+			}
+			any_location_in_province_definition = {
+				or = {
+					is_adjacent_to_owned_or_subject_owns = yes
+					within_colonial_range_of = root
+				}
+				has_owner = no
+				is_ownable = yes
+				is_discovered_by = root
+			}
+			not = { has_colonial_charter = root }
+		}
+	}
+
+	immediate = {
+		province_definition:bahamas_province = {
+			save_scope_as = geo
+		}
+	}
+	
+
+	option = {
+		name = htc.options.take
+		historical_option = yes
+
+		create_colonial_charter = {
+			target = province_definition:bahamas_province
+		}
+	}
+	option = {
+		name = htc.options.no
+	}
+}

@@ -1,0 +1,12 @@
+﻿cb_htc_conquer_inca = {
+	visible = {
+		always = no
+	}
+
+	allow_creation = {
+		always = no
+	}
+
+	additional_war_enthusiasm_attacker = 0.5
+	war_goal_type = wg_htc_conquer_inca
+}

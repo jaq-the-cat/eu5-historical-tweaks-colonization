@@ -1,17 +1,16 @@
-﻿namespace = htc_colonize_in_region_britain
+﻿namespace = htc_colonize_in_region_france
 
-htc_colonize_in_region_britain.1 = {
+htc_colonize_in_region_france.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
 	fire_only_once = no
 	
 	dynamic_historical_event = {
-        tag = ENG
-        tag = GBR
-		from = 1520.1.1
+        tag = FRA
+		from = 1550.1.1
 		to = 1836.1.1
-		monthly_chance = 15
+		monthly_chance = 5
 	}
 
 	illustration_tags = {
@@ -24,7 +23,7 @@ htc_colonize_in_region_britain.1 = {
 		monthly_balance > 50
 		num_colonial_charters <= 5
 		any_province_definition = {
-			region = region:east_coast_region
+			region = region:great_plains_region
 			not = { has_colonial_charter = root }
 			not = {
 				any_location_in_province_definition = {
@@ -45,12 +44,12 @@ htc_colonize_in_region_britain.1 = {
 	}
 	
 	immediate = {
-		region:east_coast_region = {
+		region:great_plains_region = {
 			save_scope_as = source
 		}
 		random_province_definition = {
 			limit = {
-				region = region:east_coast_region
+				region = region:great_plains_region
 				not = { has_colonial_charter = root }
 				not = {
 					any_location_in_province_definition = {

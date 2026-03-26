@@ -1,0 +1,15 @@
+﻿monthly_country_pulse = {
+	on_actions = {
+		htc_monthly_country_pulse
+	}
+}
+
+htc_monthly_country_pulse = {
+	random_events = {
+		10 = htc_exploration_crutches.1 # North Atlantic
+		10 = htc_exploration_crutches.2 # South Atlantic
+		10 = htc_exploration_crutches.3 # North America
+		10 = htc_exploration_crutches.4 # South America
+		chance_to_happen = 25
+	}
+}

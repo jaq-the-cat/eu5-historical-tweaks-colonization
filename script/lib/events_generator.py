@@ -15,6 +15,8 @@ class ColonyEventGenerator:
             self.parsed: dict = yaml.safe_load(file)
 
             self.name = path.basename(filepath)[:-4]
+            print(self.parsed)
+            print(self.name)
             self.tags = self.parsed.get('tags') or []
     
     def write_events(self, event_out: str, file_data: list[dict[str, str]]):

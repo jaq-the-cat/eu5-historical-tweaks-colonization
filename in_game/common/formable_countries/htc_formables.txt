@@ -1,22 +1,14 @@
 ﻿REPLACE_OR_CREATE:KON_f = {
 	level = 3
-	required_locations_fraction = 0.2
+	required_locations_fraction = 0.18
 	rule = historical
 
 	potential = {
 		capital.region = region:kongo_region
-		culture.language = language:kongo_language
 	}
 
 	allow = {
-		not = {
-			any_known_country = {
-				and = {
-					capital.region = region:kongo_region
-					not = { country_type = pop }
-				}
-			}
-		}
+		culture.language = language:kongo_language
 	}
 
 	name = KON
@@ -30,7 +22,12 @@
 		kongo_area		
 	}
 
-	form_effect = {}
+	form_effect = {
+		if = {
+			limit = { country_rank_level < 3 }
+			set_country_rank_effect = { rank = country_rank:rank_kingdom }
+		}
+	}
 }
 
 REPLACE_OR_CREATE:INC_f = {
@@ -81,6 +78,15 @@ REPLACE_OR_CREATE:INC_f = {
 				add_legitimacy = legitimacy_radical_bonus
 			}
 			add_reform = government_reform:tawantinsuyu_monarchy
+		}
+		every_subject = {
+			root = {
+				annex_country = {
+					country = prev
+					reason = Diplomatic
+					transfer = yes
+				}
+			}
 		}
 	}
 }

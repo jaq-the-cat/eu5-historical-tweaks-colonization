@@ -10,7 +10,7 @@ htc_colonize_in_area_france.1 = {
         tag = FRA
 		from = 1542.1.1
 		to = 1836.1.1
-		monthly_chance = 20
+		monthly_chance = 25
 	}
 
 	illustration_tags = {
@@ -20,8 +20,8 @@ htc_colonize_in_area_france.1 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 25
-		num_colonial_charters <= 10
+		monthly_balance > 50
+		num_colonial_charters <= 5
 		area:quebec_area = {
 			any_province_definition_in_area = {
 				not = { has_colonial_charter = root }

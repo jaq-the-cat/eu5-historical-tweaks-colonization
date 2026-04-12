@@ -203,7 +203,10 @@ class ColonizeAction:
                     }
                     trigger_else_if = {
                         limit = { region = region:scandinavian_region }
-                        scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
+                        or = {
+                            scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
+                            scope:actor = c:NOV
+                        }
                     }
                     trigger_else_if = {
                         limit = { area = area:greenland_area }

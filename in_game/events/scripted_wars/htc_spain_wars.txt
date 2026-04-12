@@ -11,7 +11,7 @@ htc_spain_wars.1 = {
         tag = CAS
         tag = SPA
 		from = 1532.1.1
-		to = 1572.1.1
+		to = 1600.1.1
 		monthly_chance = 10
 	}
 

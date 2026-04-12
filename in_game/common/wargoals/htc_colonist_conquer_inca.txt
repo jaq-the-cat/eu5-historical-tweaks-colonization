@@ -1,4 +1,4 @@
-wg_htc_conquer_inca = {
+wg_htc_conquer_native = {
 	type = take_capital
 	war_name = "COLONIAL_WAR_NAME" # uses second
 	

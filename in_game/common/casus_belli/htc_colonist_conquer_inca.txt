@@ -1,4 +1,4 @@
-﻿cb_htc_conquer_inca = {
+﻿cb_htc_conquer_native = {
 	visible = {
 		always = no
 	}
@@ -8,5 +8,5 @@
 	}
 
 	additional_war_enthusiasm_attacker = 0.5
-	war_goal_type = wg_htc_conquer_inca
+	war_goal_type = wg_htc_conquer_native
 }

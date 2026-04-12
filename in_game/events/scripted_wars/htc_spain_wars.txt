@@ -11,8 +11,8 @@ htc_spain_wars.1 = {
         tag = CAS
         tag = SPA
 		from = 1532.1.1
-		to = 1600.1.1
-		monthly_chance = 10
+		to = 1650.1.1
+		monthly_chance = 5
 	}
 
 	illustration_tags = {
@@ -26,10 +26,10 @@ htc_spain_wars.1 = {
 		at_war = no
 		any_subject = {
 			is_subject_type = colonial_nation
-			capital ?= { region = region:andes_region }
+			capital ?= { continent = continent:america }
 			at_war = no
 		}
-		region:andes_region = {
+		continent:america = {
 			any_country_with_capital_in_geography = {
 				or = {
 					culture = { has_culture_with_tag = native_american_tag }
@@ -63,7 +63,7 @@ htc_spain_wars.1 = {
 		# 	}
 		# 	save_scope_as = peru_subject
 		# }
-		region:andes_region = {
+		continent:america = {
 			random_country_with_capital_in_geography = {
 				limit = {
 					or = {
@@ -86,7 +86,7 @@ htc_spain_wars.1 = {
 						adjacent_to_owned_or_owned_by_subject = root
 					}
 				}
-				save_scope_as = peru_native
+				save_scope_as = native_country
 			}
 		}
 	}
@@ -96,8 +96,8 @@ htc_spain_wars.1 = {
 		historical_option = yes
 		
 		declare_war_with_cb = {
-			target = scope:peru_native
-			type = casus_belli:cb_htc_conquer_inca
+			target = scope:native_country
+			type = casus_belli:cb_htc_conquer_native
 		}
 	}
 	option = {

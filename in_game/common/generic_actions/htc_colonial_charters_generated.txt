@@ -422,6 +422,29 @@
             limit = {
                 scope:actor = {
                     or = {
+                        has_or_had_tag = POR
+                        has_or_had_tag = ENG
+                        has_or_had_tag = GBR
+                        has_or_had_tag = FRA
+                    }
+                }
+                scope:target ?= {
+                    or = {
+                        region = region:colombia_region
+                        region = region:la_plata_region
+                        region = region:central_america_region
+                        region = region:mesoamerica_region
+                        region = region:aridoamerica_region
+                        region = region:east_coast_region
+                    }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
+                scope:actor = {
+                    or = {
 				        monthly_balance > 50
                         and = {
                             is_subject = no

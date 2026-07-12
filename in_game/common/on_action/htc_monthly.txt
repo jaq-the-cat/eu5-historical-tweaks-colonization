@@ -10,6 +10,8 @@ htc_monthly_country_pulse = {
 		10 = htc_exploration_crutches.2 # South Atlantic
 		10 = htc_exploration_crutches.3 # North America
 		10 = htc_exploration_crutches.4 # South America
+
+		10 = htc_merge_colonies.1 # Merge with other colonial subject
 		chance_to_happen = 25
 	}
 }

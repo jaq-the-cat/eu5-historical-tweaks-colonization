@@ -1,7 +1,7 @@
 namespace = colonial_charter
 
 #scope:target is the Province of the charter
-REPLACE:colonial_charter.100 = {
+colonial_charter.100 = {
 	hide_portraits = yes
 	type = country_event	
 
@@ -32,7 +32,7 @@ REPLACE:colonial_charter.100 = {
 			
 		}
 
-		#Get the most populous colonial nation vassal with capital in the same region, different from first and second neighboring
+		#Get the most populous colonial nation vassal with capital in the same region
 		ordered_subject = {
 			limit = {
 				is_subject_type = colonial_nation
@@ -52,7 +52,11 @@ REPLACE:colonial_charter.100 = {
 	option = { #Form a new Colonial Subject
 		name = colonial_charter.100.a
 		trigger = {
-			scope:target = { is_overseas_for_owner = yes  }
+			scope:target = { is_overseas_for_owner = yes }
+			and = {
+				is_ai = yes
+				not = { exists = scope:regional_subject }
+			}
 		}
 		
 		if = {
@@ -164,7 +168,7 @@ REPLACE:colonial_charter.100 = {
 		}
 	}
 
-	option = { #Join it to regional_subject
+	option = { # Join it to regional_subject
 		name = colonial_charter.100.f
 
 		trigger = {

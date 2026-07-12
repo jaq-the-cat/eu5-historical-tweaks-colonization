@@ -105,7 +105,7 @@ class ColonizeAction:
                     }
                 }
                 and = {
-                    not = { scope:actor.continent = continent:africa }
+                    not = { continent = scope:actor.capital.continent }
                     region = scope:actor.capital.region
                     or = {
                         is_ai = no
@@ -315,6 +315,17 @@ class ColonizeAction:
         }
         else_if = {
             limit = {
+                # if castille/spain exists and has above 50 income, prevent other colonizers from going into their territory
+                or = {
+                    and = {
+    		            country_exists = c:CAS
+                        c:CAS = { monthly_balance > 50 }
+                    }
+                    and = {
+    		            country_exists = c:SPA
+                        c:SPA = { monthly_balance > 50 }
+                    }
+                }
                 scope:actor = {
                     or = {
                         has_or_had_tag = POR
@@ -332,6 +343,19 @@ class ColonizeAction:
                         region = region:aridoamerica_region
                         region = region:east_coast_region
                     }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
+                scope:actor = {
+                    # spain doesn't colonize africa
+                    has_or_had_tag = CAS
+                    has_or_had_tag = SPA
+                }
+                scope:target ?= {
+                    or = { continent = continent:africa }
                 }
             }
             add = -1000

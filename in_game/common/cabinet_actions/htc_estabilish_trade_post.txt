@@ -6,12 +6,17 @@
 		or = {
 			is_ai = no
 			has_or_had_tag = POR
-			has_or_had_tag = CAS
-			has_or_had_tag = SPA
-			has_or_had_tag = FRA
-			has_or_had_tag = ENG
-			has_or_had_tag = GBR
-			has_or_had_tag = NED
+			and = {
+				current_year > 1525
+				or = {
+					has_or_had_tag = CAS
+					has_or_had_tag = SPA
+					has_or_had_tag = FRA
+					has_or_had_tag = ENG
+					has_or_had_tag = GBR
+					has_or_had_tag = NED
+				}
+			}
 		}
 	}
 	allow = {
@@ -25,7 +30,7 @@
 			has_advance = global_trade_routes_advance
 		}
 	}
-
+	
 	select_trigger = {
 		looking_for_a = location
 		interaction_source_list = {
@@ -102,7 +107,7 @@
 	}
 	
 	years = 2
-
+	
 	on_fully_activated = {
 		if = {
 			limit = { exists = scope:target }
@@ -112,10 +117,10 @@
 			}
 		}
 	}
-
+	
 	on_activate = {}
 	on_deactivate = {}
-
+	
 	is_finished = {
 		or = {
 			# finished implementing!
@@ -130,35 +135,22 @@
 			value = "implementation_progress_percentage(scope:actor)"
 		}
 	}
-
+	
 	ai_will_do = {
 		if = {
 			limit = {
 				scope:target ?= {
-					region = {
-						not = { any_location_in_region = { owner ?= scope:actor } }
-					}
-				}
-				scope:actor = {
-					or = {
-						# portugal and castille explore pre-1500
-						has_or_had_tag = POR
-						has_or_had_tag = CAS
-						has_or_had_tag = SPA
-						# france and england join in to explore post-1500
-						and = {
-							current_year >= 1500
-							or = {
-								has_or_had_tag = FRA
-								has_or_had_tag = ENG
-								has_or_had_tag = GBR
-								has_or_had_tag = NED
-							}
-						}
-					}
+					# prevent in southern africa for AI
+					not = { sub_continent = sub_continent:southern_africa }
+					region = { not = { any_location_in_region = { owner ?= scope:actor } } }
 				}
 			}
-			add = 30
+			add = 10
+			if = {
+				# portugal wants trade ports a lot more
+				limit = { scope:actor = { has_or_had_tag = POR } }
+				add = 90
+			}
 		}
 		else = {
 			add = -1000

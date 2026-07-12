@@ -5,6 +5,7 @@ colonize:
     bojador: 1380, 5
     arguin: 1400, 5
     sao_tome: 1420, 15
+    goringhaikona: 1550, 15
   provinces:
     madeira_province: 1410, 25
     azores_province: 1410, 25

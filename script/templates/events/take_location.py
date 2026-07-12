@@ -35,7 +35,7 @@ class TakeLocation(TemplateData):
 			is_ownable = yes
 			within_colonial_range_of = root
 			is_discovered_by = root
-			owner = {{ is_ai = yes }}
+			owner ?= {{ is_ai = yes }}
 		}}
 	}}		
 
@@ -70,7 +70,7 @@ class TakeLocation(TemplateData):
 
 		location:{geography} = {{
 			change_location_owner = root
-			change_integration_level = integrated
+		change_integration_level = integrated
 		}}
 	}}
 

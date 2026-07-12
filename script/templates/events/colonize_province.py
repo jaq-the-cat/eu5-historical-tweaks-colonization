@@ -36,13 +36,21 @@ class ColonizeProvince(TemplateData):
 			not = {{
 				any_location_in_province_definition = {{
 					has_owner = yes
-					owner = {{ is_ai = no }}
+					owner ?= {{ is_ai = no }}
 				}}
 			}}
 			any_location_in_province_definition = {{
 				or = {{
-					is_adjacent_to_owned_or_subject_owns = yes
 					within_colonial_range_of = root
+					any_neighbor_location = {{
+						OR = {{
+							owner ?= root
+							owner ?= {{
+								exists = overlord
+								overlord = root
+							}}
+						}}
+					}}
 				}}
 				has_owner = no
 				is_ownable = yes

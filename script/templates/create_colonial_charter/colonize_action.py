@@ -302,6 +302,19 @@ class ColonizeAction:
         }
         else_if = {
             limit = {
+                scope:target ?= {
+                    any_location_in_province_definition = {
+                        and = {
+                            has_owner = yes
+                            not = { owner ?= scope:actor }
+                        }
+                    }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
                 scope:actor = {
                     or = {
 				        monthly_balance > 50

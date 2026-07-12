@@ -12,16 +12,6 @@ REPLACE:abandon_colonial_charter = {
 	}
 
 	allow = {
-		trigger_if = {
-			limit = {
-				or = {
-					has_or_had_tag = POR
-					has_or_had_tag = CAS
-					has_or_had_tag = SPA
-				}
-			}
-			current_year >= 1500
-		}
 	}
 	
 	price = price:abandon_colonial_charter
@@ -50,14 +40,15 @@ REPLACE:abandon_colonial_charter = {
 	}
 
 	ai_will_do = {
-		if = {
-			limit = {
-				exists = scope:target.province_definition
-			}
-			subtract = "scope:actor.colonial_charter_utility(scope:target.province_definition)"
-		}
-		else = {
-			subtract = 1000
-		}
+		add = -1000
+		# if = {
+		# 	limit = {
+		# 		exists = scope:target.province_definition
+		# 	}
+		# 	subtract = "scope:actor.colonial_charter_utility(scope:target.province_definition)"
+		# }
+		# else = {
+		# 	subtract = 1000
+		# }
 	}
 }

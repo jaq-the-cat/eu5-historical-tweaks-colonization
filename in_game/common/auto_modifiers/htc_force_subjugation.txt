@@ -2,6 +2,7 @@ htc_force_subjugation = {
 	potential_trigger = {
 		is_ai = yes
 		current_year < 1700
+		
 		or = {
 			capital ?= { sub_continent = sub_continent:south_asia }
 			capital ?= { sub_continent = sub_continent:east_africa }
@@ -36,8 +37,8 @@ htc_force_subjugation = {
 			ruler ?= { total_abilities >= 220 }
 		}
 	}
-	hide_effects = no
 	alert = no
+	hide_effects = no
 	global_war_score_cost = -0.25
 	may_not_take_land_in_peace_treaties = yes
 	subjugation_preference_modifier = 1

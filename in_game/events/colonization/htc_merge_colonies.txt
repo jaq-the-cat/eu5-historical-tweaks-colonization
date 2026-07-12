@@ -18,9 +18,7 @@ htc_merge_colonies.1 = {
 		any_neighbor_country = {
 			is_colonial_subject = yes
 			overlord = root.overlord
-			capital ?= {
-				region = root.capital.region
-			}
+			capital ?= { region = root.capital.region }
 		}
 	}
 
@@ -29,9 +27,7 @@ htc_merge_colonies.1 = {
 			limit = {
 				is_colonial_subject = yes
 				overlord = root.overlord
-				capital ?= {
-					region = root.capital.region
-				}
+				capital ?= { region = root.capital.region }
 			}
 			save_scope_as = other
 		}

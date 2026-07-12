@@ -70,6 +70,91 @@ REPLACE:colonial_charter.100 = {
 			
 				hidden_effect = {
 					setup_colonial_nation = yes
+
+					if = {
+						limit = { capital ?= { region = region:brazil_region } }
+						change_country_name = COLONY_BRAZIL
+						change_country_adjective = COLONY_BRAZIL_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:colombia_region }
+							overlord ?= { has_or_had_tag = CAS }
+						}
+						change_country_name = COLONY_NEW_GRANADA
+						change_country_adjective = COLONY_NEW_GRANADA_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:colombia_region }
+						}
+						change_country_name = COLONY_COLOMBIA
+						change_country_adjective = COLONY_COLOMBIA_ADJ
+					}
+					else_if = {
+						limit = { capital ?= { region = region:andes_region } }
+						change_country_name = COLONY_PERU
+						change_country_adjective = COLONY_PERU_ADJ
+					}
+					else_if = {
+						limit = { capital ?= { region = region:central_america_region } }
+						change_country_name = COLONY_GUATEMALA
+						change_country_adjective = COLONY_GUATEMALA_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:caribbean_region }
+							overlord ?= { has_or_had_tag = CAS }
+						}
+						change_country_name = COLONY_CUBA
+						change_country_adjective = COLONY_CUBA_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:caribbean_region }
+							overlord ?= { has_or_had_tag = FRA }
+						}
+						change_country_name = COLONY_HAITI
+						change_country_adjective = COLONY_HAITI_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:aridoamerica_region }
+							overlord ?= { tag = CAS }
+						}
+						change_country_name = COLONY_NEW_CASTILLE
+						change_country_adjective = COLONY_NEW_CASTILLE_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:aridoamerica_region }
+							overlord ?= { tag = SPA }
+						}
+						change_country_name = COLONY_NEW_SPAIN
+						change_country_adjective = COLONY_NEW_SPAIN_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { area = region:canada_region }
+							overlord ?= { tag = FRA }
+						}
+						change_country_name = COLONY_QUEBEC
+						change_country_adjective = COLONY_QUEBEC_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:canada_region }
+						}
+						change_country_name = COLONY_CANADA
+						change_country_adjective = COLONY_CANADA_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:alaska_region }
+						}
+						change_country_name = COLONY_ALASKA
+						change_country_adjective = COLONY_ALASKA_ADJ
+					}
 				}
 			}
 		}

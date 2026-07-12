@@ -1,6 +1,7 @@
 htc_force_subjugation = {
 	potential_trigger = {
-		current_year < 1600
+		is_ai = yes
+		current_year < 1700
 		or = {
 			capital ?= { sub_continent = sub_continent:south_asia }
 			capital ?= { sub_continent = sub_continent:east_africa }
@@ -21,6 +22,7 @@ htc_force_subjugation = {
 					current_year >= 1425
 				}
 				# east africa
+				has_or_had_tag = KIT # kitara
 				has_or_had_tag = ETH # ethiopia
 				has_or_had_tag = SOI # somalia
 				has_or_had_tag = ZAN # kilwa
@@ -35,7 +37,7 @@ htc_force_subjugation = {
 		}
 	}
 	hide_effects = no
-	alert = yes
+	alert = no
 	global_war_score_cost = -0.25
 	may_not_take_land_in_peace_treaties = yes
 	subjugation_preference_modifier = 1

@@ -4,15 +4,6 @@ htc_colonize_location_spain.1 = {
 	type = country_event
 	title = htc_colonize_location.title
 	desc = htc_colonize_location.desc
-	fire_only_once = yes
-	
-	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1440.1.1
-		to = 1836.1.1
-		monthly_chance = 10
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -20,6 +11,11 @@ htc_colonize_location_spain.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = CAS
+        has_or_had_tag = SPA
+		current_date > 1440.1.1
+		current_date < 1836.1.1
+		is_ai = yes
 		monthly_balance > 50
 		location:fernando_po = {
 			has_owner = no

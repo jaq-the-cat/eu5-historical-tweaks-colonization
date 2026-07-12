@@ -4,15 +4,6 @@ htc_colonize_in_region_spain.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1505.1.1
-		to = 1836.1.1
-		monthly_chance = 5
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -20,6 +11,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = CAS
+        has_or_had_tag = SPA
+		current_date > 1505.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
@@ -105,15 +100,6 @@ htc_colonize_in_region_spain.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1505.1.1
-		to = 1836.1.1
-		monthly_chance = 5
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -121,6 +107,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = CAS
+        has_or_had_tag = SPA
+		current_date > 1505.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
@@ -206,15 +196,6 @@ htc_colonize_in_region_spain.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1505.1.1
-		to = 1836.1.1
-		monthly_chance = 5
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -222,6 +203,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = CAS
+        has_or_had_tag = SPA
+		current_date > 1505.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
@@ -307,15 +292,6 @@ htc_colonize_in_region_spain.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1525.1.1
-		to = 1836.1.1
-		monthly_chance = 5
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -323,6 +299,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = CAS
+        has_or_had_tag = SPA
+		current_date > 1525.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
@@ -408,15 +388,6 @@ htc_colonize_in_region_spain.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1535.1.1
-		to = 1836.1.1
-		monthly_chance = 5
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -424,6 +395,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = CAS
+        has_or_had_tag = SPA
+		current_date > 1535.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
@@ -509,15 +484,6 @@ htc_colonize_in_region_spain.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1560.1.1
-		to = 1836.1.1
-		monthly_chance = 5
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -525,6 +491,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = CAS
+        has_or_had_tag = SPA
+		current_date > 1560.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
@@ -610,15 +580,6 @@ htc_colonize_in_region_spain.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1600.1.1
-		to = 1836.1.1
-		monthly_chance = 5
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -626,6 +587,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = CAS
+        has_or_had_tag = SPA
+		current_date > 1600.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5

@@ -4,15 +4,6 @@ htc_colonize_in_region_britain.1 = {
 	type = country_event
 	title = htc_colonize_in_region.title
 	desc = htc_colonize_in_region.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = ENG
-        tag = GBR
-		from = 1520.1.1
-		to = 1836.1.1
-		monthly_chance = 15
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -20,6 +11,10 @@ htc_colonize_in_region_britain.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = ENG
+        has_or_had_tag = GBR
+		current_date > 1520.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5

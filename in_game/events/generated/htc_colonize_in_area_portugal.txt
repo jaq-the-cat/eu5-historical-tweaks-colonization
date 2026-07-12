@@ -4,14 +4,6 @@ htc_colonize_in_area_portugal.1 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = POR
-		from = 1500.1.1
-		to = 1836.1.1
-		monthly_chance = 10
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -19,6 +11,9 @@ htc_colonize_in_area_portugal.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = POR
+		current_date > 1500.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
@@ -104,14 +99,6 @@ htc_colonize_in_area_portugal.2 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = POR
-		from = 1500.1.1
-		to = 1836.1.1
-		monthly_chance = 20
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -119,6 +106,9 @@ htc_colonize_in_area_portugal.2 = {
 	}
 
 	trigger = {
+        has_or_had_tag = POR
+		current_date > 1500.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
@@ -204,14 +194,6 @@ htc_colonize_in_area_portugal.3 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = POR
-		from = 1510.1.1
-		to = 1836.1.1
-		monthly_chance = 20
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -219,6 +201,9 @@ htc_colonize_in_area_portugal.3 = {
 	}
 
 	trigger = {
+        has_or_had_tag = POR
+		current_date > 1510.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5
@@ -304,14 +289,6 @@ htc_colonize_in_area_portugal.4 = {
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {
-        tag = POR
-		from = 1550.1.1
-		to = 1836.1.1
-		monthly_chance = 20
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -319,6 +296,9 @@ htc_colonize_in_area_portugal.4 = {
 	}
 
 	trigger = {
+        has_or_had_tag = POR
+		current_date > 1550.1.1
+		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5

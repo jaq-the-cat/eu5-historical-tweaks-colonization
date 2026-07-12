@@ -14,14 +14,6 @@ class ColonizeInArea(TemplateData):
 	type = country_event
 	title = htc_colonize_in_area.title
 	desc = htc_colonize_in_area.desc
-	fire_only_once = no
-	
-	dynamic_historical_event = {{
-{tags}
-		from = {from_year}.1.1
-		to = {to_year}.1.1
-		monthly_chance = {chance}
-	}}
 
 	illustration_tags = {{
 		10 = happy
@@ -29,6 +21,9 @@ class ColonizeInArea(TemplateData):
 	}}
 
 	trigger = {{
+{tags}
+		current_date > {from_year}.1.1
+		current_date < {to_year}.1.1
 		is_ai = yes
 		monthly_balance > 50
 		num_colonial_charters <= 5

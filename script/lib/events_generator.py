@@ -28,7 +28,7 @@ class ColonyEventGenerator:
                 file.write(data['event'])
 
     def write_all(self, event_out: str | None = None, localization_out: str | None = None):
-        file_data = []
+        file_data: list[dict[str, str]] = []
 
         print(f'loading data for `{self.name}` using the following tags: {', '.join(self.tags)}...')
 
@@ -57,6 +57,11 @@ class ColonyEventGenerator:
             self.write_events(event_out, file_data)
         if localization_out:
             self.write_localization(localization_out, file_data)
+        
+        event_names = []
+        for ev in file_data:
+            event_names += ev['event_names']
+        return event_names
     
     def write_localization(self, localization_out: str, file_data: list[dict[str, str]]):
         # write localization
@@ -109,22 +114,22 @@ class ColonyEventGenerator:
         data = {
             'localization': '',
             'namespace': namespace,
+            'event_names': [],
             'event': f'namespace = {namespace}\n\n',
         }
         for index, (geography, year) in enumerate(geo.items()):
-            from_year, to_year, chance = self._parse_year(year)
+            from_year, to_year, _chance = self._parse_year(year)
             data['localization'] += template.LOCALIZATION_TEMPLATE.format(
                 n = index+1,
                 name = self.name.strip()
             )
+            data['event_names'].append(f'{namespace}.{index+1}')
             data['event'] += template.EVENT_TEMPLATE.format(
                 tags = make_tags(self.tags),
                 name = self.name.strip(),
                 n = index+1,
                 from_year = from_year,
                 to_year = to_year,
-                chance = chance,
-                once = 'yes' if len(self.tags) < 3 else 'no',
                 geography = geography.strip()
             )
         return data

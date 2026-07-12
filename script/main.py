@@ -1,5 +1,6 @@
 from lib.enable_generator import CharterFilterGenerator
 from lib.events_generator import ColonyEventGenerator
+from lib.monthly_event_generator import MonthlyPulseGenerator
 from templates.create_colonial_charter.colonize_action import ColonizeAction
 import os
 
@@ -17,11 +18,14 @@ def enable_charters():
                 ColonizeAction.TEMPLATE_BOTTOM)
 
 def charter_events():
+    events = []
     for dirpath, dirnames, filenames in os.walk('colonies/events'):
         filters = []
         for file in filenames:
             g = ColonyEventGenerator(os.path.join(dirpath, file))
-            g.write_all('../in_game/events/generated')
+            events += g.write_all('../in_game/events/generated')
+    p = MonthlyPulseGenerator(events)
+    p.write_on_action('../in_game/common/on_action/htc_ai_pulse.txt')
 
 enable_charters()
 charter_events()

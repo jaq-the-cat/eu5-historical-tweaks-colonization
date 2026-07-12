@@ -4,14 +4,6 @@ htc_colonize_location_portugal.1 = {
 	type = country_event
 	title = htc_colonize_location.title
 	desc = htc_colonize_location.desc
-	fire_only_once = yes
-	
-	dynamic_historical_event = {
-        tag = POR
-		from = 1380.1.1
-		to = 1836.1.1
-		monthly_chance = 5
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -19,6 +11,10 @@ htc_colonize_location_portugal.1 = {
 	}
 
 	trigger = {
+        has_or_had_tag = POR
+		current_date > 1380.1.1
+		current_date < 1836.1.1
+		is_ai = yes
 		monthly_balance > 50
 		location:bojador = {
 			has_owner = no
@@ -61,14 +57,6 @@ htc_colonize_location_portugal.2 = {
 	type = country_event
 	title = htc_colonize_location.title
 	desc = htc_colonize_location.desc
-	fire_only_once = yes
-	
-	dynamic_historical_event = {
-        tag = POR
-		from = 1400.1.1
-		to = 1836.1.1
-		monthly_chance = 5
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -76,6 +64,10 @@ htc_colonize_location_portugal.2 = {
 	}
 
 	trigger = {
+        has_or_had_tag = POR
+		current_date > 1400.1.1
+		current_date < 1836.1.1
+		is_ai = yes
 		monthly_balance > 50
 		location:arguin = {
 			has_owner = no
@@ -118,14 +110,6 @@ htc_colonize_location_portugal.3 = {
 	type = country_event
 	title = htc_colonize_location.title
 	desc = htc_colonize_location.desc
-	fire_only_once = yes
-	
-	dynamic_historical_event = {
-        tag = POR
-		from = 1420.1.1
-		to = 1836.1.1
-		monthly_chance = 15
-	}
 
 	illustration_tags = {
 		10 = happy
@@ -133,6 +117,10 @@ htc_colonize_location_portugal.3 = {
 	}
 
 	trigger = {
+        has_or_had_tag = POR
+		current_date > 1420.1.1
+		current_date < 1836.1.1
+		is_ai = yes
 		monthly_balance > 50
 		location:sao_tome = {
 			has_owner = no

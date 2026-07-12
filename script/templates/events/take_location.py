@@ -14,14 +14,6 @@ class TakeLocation(TemplateData):
 	type = country_event
 	title = htc_take_location.title
 	desc = htc_take_location.desc
-	fire_only_once = {once}
-	
-	dynamic_historical_event = {{
-{tags}
-		from = {from_year}.1.1
-		to = {to_year}.1.1
-		monthly_chance = {chance}
-	}}
 
 	illustration_tags = {{
 		10 = happy
@@ -29,6 +21,9 @@ class TakeLocation(TemplateData):
 	}}
 
 	trigger = {{
+{tags}
+		current_date > {from_year}.1.1
+		current_date < {to_year}.1.1
 		is_ai = yes
 		location:{geography} = {{
 			has_owner = yes

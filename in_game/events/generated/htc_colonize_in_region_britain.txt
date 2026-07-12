@@ -26,7 +26,6 @@ htc_colonize_in_region_britain.1 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -60,7 +59,6 @@ htc_colonize_in_region_britain.1 = {
 				not = {
 					any_location_in_province_definition = {
     					has_owner = yes
-    					owner ?= { is_ai = no }
 					}
 				}
 				any_location_in_province_definition = {

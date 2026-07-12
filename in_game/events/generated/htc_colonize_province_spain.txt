@@ -24,7 +24,6 @@ htc_colonize_province_spain.1 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -92,7 +91,6 @@ htc_colonize_province_spain.2 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -160,7 +158,6 @@ htc_colonize_province_spain.3 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -228,7 +225,6 @@ htc_colonize_province_spain.4 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -296,7 +292,6 @@ htc_colonize_province_spain.5 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -364,7 +359,6 @@ htc_colonize_province_spain.6 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -432,7 +426,6 @@ htc_colonize_province_spain.7 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -500,7 +493,6 @@ htc_colonize_province_spain.8 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -568,7 +560,6 @@ htc_colonize_province_spain.9 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -636,7 +627,6 @@ htc_colonize_province_spain.10 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {
@@ -704,7 +694,6 @@ htc_colonize_province_spain.11 = {
 			not = {
 				any_location_in_province_definition = {
 					has_owner = yes
-					owner ?= { is_ai = no }
 				}
 			}
 			any_location_in_province_definition = {

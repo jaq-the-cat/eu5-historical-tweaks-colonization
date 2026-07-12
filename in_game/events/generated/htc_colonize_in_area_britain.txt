@@ -26,7 +26,6 @@ htc_colonize_in_area_britain.1 = {
 				not = {
 					any_location_in_province_definition = {
 						has_owner = yes
-						owner ?= { is_ai = no }
 					}
 				}
 				any_location_in_province_definition = {
@@ -59,7 +58,6 @@ htc_colonize_in_area_britain.1 = {
 					not = {
 						any_location_in_province_definition = {
 							has_owner = yes
-							owner ?= { is_ai = no }
 						}
 					}
 					any_location_in_province_definition = {
@@ -124,7 +122,6 @@ htc_colonize_in_area_britain.2 = {
 				not = {
 					any_location_in_province_definition = {
 						has_owner = yes
-						owner ?= { is_ai = no }
 					}
 				}
 				any_location_in_province_definition = {
@@ -157,7 +154,6 @@ htc_colonize_in_area_britain.2 = {
 					not = {
 						any_location_in_province_definition = {
 							has_owner = yes
-							owner ?= { is_ai = no }
 						}
 					}
 					any_location_in_province_definition = {
@@ -222,7 +218,6 @@ htc_colonize_in_area_britain.3 = {
 				not = {
 					any_location_in_province_definition = {
 						has_owner = yes
-						owner ?= { is_ai = no }
 					}
 				}
 				any_location_in_province_definition = {
@@ -255,7 +250,6 @@ htc_colonize_in_area_britain.3 = {
 					not = {
 						any_location_in_province_definition = {
 							has_owner = yes
-							owner ?= { is_ai = no }
 						}
 					}
 					any_location_in_province_definition = {
@@ -320,7 +314,6 @@ htc_colonize_in_area_britain.4 = {
 				not = {
 					any_location_in_province_definition = {
 						has_owner = yes
-						owner ?= { is_ai = no }
 					}
 				}
 				any_location_in_province_definition = {
@@ -353,7 +346,6 @@ htc_colonize_in_area_britain.4 = {
 					not = {
 						any_location_in_province_definition = {
 							has_owner = yes
-							owner ?= { is_ai = no }
 						}
 					}
 					any_location_in_province_definition = {

@@ -24,7 +24,7 @@ htc_colonize_location_portugal.1 = {
 			within_colonial_range_of = root
 			is_discovered_by = root
 		}
-	}		
+	}
 
 	immediate = {
 		location:bojador = {
@@ -79,7 +79,7 @@ htc_colonize_location_portugal.2 = {
 			within_colonial_range_of = root
 			is_discovered_by = root
 		}
-	}		
+	}
 
 	immediate = {
 		location:arguin = {
@@ -134,7 +134,7 @@ htc_colonize_location_portugal.3 = {
 			within_colonial_range_of = root
 			is_discovered_by = root
 		}
-	}		
+	}
 
 	immediate = {
 		location:sao_tome = {

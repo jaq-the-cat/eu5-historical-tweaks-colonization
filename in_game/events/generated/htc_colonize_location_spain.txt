@@ -25,7 +25,7 @@ htc_colonize_location_spain.1 = {
 			within_colonial_range_of = root
 			is_discovered_by = root
 		}
-	}		
+	}
 
 	immediate = {
 		location:fernando_po = {

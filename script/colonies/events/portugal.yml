@@ -10,12 +10,18 @@ colonize:
     azores_province: 1410, 25
     cape_verde_province: 1455, 25
     mascarene_islands_province: 1460, 5
+    jacui_province: 1540, 5
+    taquari_province: 1550, 5
+    nandeva_province: 1550, 5
+    icabaqua_province: 1550, 5
+    ibicui_province: 1550, 5
+    guenoa_province: 1560, 5
+
   areas:
     # mozambique
     mozambique_area: 1500
     # brazil
     pindorama_area: 1500, 20
-    janeiro_area: 1510, 20
     pampa_area: 1550, 20
   regions:
     brazil_region: 1525, 25

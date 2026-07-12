@@ -75,6 +75,7 @@ htc_colonize_in_area_britain.1 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = scope:geo
@@ -159,6 +160,7 @@ htc_colonize_in_area_britain.2 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = scope:geo
@@ -243,6 +245,7 @@ htc_colonize_in_area_britain.3 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = scope:geo
@@ -327,6 +330,7 @@ htc_colonize_in_area_britain.4 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = scope:geo

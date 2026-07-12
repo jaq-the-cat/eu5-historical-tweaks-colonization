@@ -38,6 +38,7 @@ htc_colonize_location_portugal.1 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 		
 		add_gold = {
 			value = -50
@@ -94,6 +95,7 @@ htc_colonize_location_portugal.2 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 		
 		add_gold = {
 			value = -50
@@ -150,6 +152,7 @@ htc_colonize_location_portugal.3 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 		
 		add_gold = {
 			value = -50

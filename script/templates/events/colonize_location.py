@@ -48,6 +48,7 @@ class ColonizeLocation(TemplateData):
 	option = {{
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 		
 		add_gold = {{
 			value = -50

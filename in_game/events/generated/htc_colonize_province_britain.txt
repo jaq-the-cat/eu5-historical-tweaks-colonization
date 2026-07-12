@@ -53,6 +53,7 @@ htc_colonize_province_britain.1 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:xaymaca_province
@@ -115,6 +116,7 @@ htc_colonize_province_britain.2 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:bahamas_province

@@ -52,6 +52,7 @@ htc_colonize_province_portugal.1 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:madeira_province
@@ -113,6 +114,7 @@ htc_colonize_province_portugal.2 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:azores_province
@@ -174,6 +176,7 @@ htc_colonize_province_portugal.3 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:cape_verde_province
@@ -235,6 +238,7 @@ htc_colonize_province_portugal.4 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:mascarene_islands_province

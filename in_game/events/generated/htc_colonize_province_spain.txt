@@ -53,6 +53,7 @@ htc_colonize_province_spain.1 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:canary_islands_province
@@ -115,6 +116,7 @@ htc_colonize_province_spain.2 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:marien_province
@@ -177,6 +179,7 @@ htc_colonize_province_spain.3 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:jaragua_province
@@ -239,6 +242,7 @@ htc_colonize_province_spain.4 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:magua_province
@@ -301,6 +305,7 @@ htc_colonize_province_spain.5 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:maguana_province
@@ -363,6 +368,7 @@ htc_colonize_province_spain.6 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:boriken_province
@@ -425,6 +431,7 @@ htc_colonize_province_spain.7 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:havana_province
@@ -487,6 +494,7 @@ htc_colonize_province_spain.8 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:moron_province
@@ -549,6 +557,7 @@ htc_colonize_province_spain.9 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:camaguey_province
@@ -611,6 +620,7 @@ htc_colonize_province_spain.10 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:bayamo_province
@@ -673,6 +683,7 @@ htc_colonize_province_spain.11 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = province_definition:baracoa_province

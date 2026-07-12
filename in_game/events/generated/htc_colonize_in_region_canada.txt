@@ -74,6 +74,7 @@ htc_colonize_in_region_canada.1 = {
 	option = {
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {
 			target = scope:geo

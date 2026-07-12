@@ -62,6 +62,7 @@ class ColonizeProvince(TemplateData):
 	option = {{
 		name = htc.options.take
 		historical_option = yes
+		ai_will_do = 1000
 
 		create_colonial_charter = {{
 			target = province_definition:{geography}

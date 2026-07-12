@@ -77,6 +77,7 @@ class TakeLocation(TemplateData):
 	option = {{
 		name = htc.options.take_for_guarantee
 		historical_option = yes
+		ai_will_do = 1000
 
 		trigger = {{ great_power_score > scope:prev_owner.great_power_score }}
 

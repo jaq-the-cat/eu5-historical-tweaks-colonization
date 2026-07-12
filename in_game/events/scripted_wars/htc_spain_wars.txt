@@ -1,18 +1,19 @@
 namespace = htc_spain_wars
 
-# conquer mesoamerican country
+# conquer native american country
 htc_spain_wars.1 = {
 	type = country_event
 	title = htc_spain_wars.1.title
 	desc = htc_spain_wars.1.desc
-	fire_only_once = yes
+	fire_only_once = no
 
 	dynamic_historical_event = {
         tag = CAS
         tag = SPA
-		from = 1532.1.1
+		from = 1337.1.1
+		# from = 1532.1.1
 		to = 1650.1.1
-		monthly_chance = 5
+		monthly_chance = 10
 	}
 
 	illustration_tags = {
@@ -22,15 +23,14 @@ htc_spain_wars.1 = {
 
 	trigger = {
 		is_ai = yes
-		monthly_balance > 50
+		monthly_balance > 10
 		at_war = no
-		any_subject = {
-			is_subject_type = colonial_nation
-			capital ?= { continent = continent:america }
-			at_war = no
-		}
 		continent:america = {
 			any_country_with_capital_in_geography = {
+				is_ai = yes
+				any_owned_location = {
+					adjacent_to_owned_or_owned_by_subject = root
+				}
 				or = {
 					culture = { has_culture_with_tag = native_american_tag }
 
@@ -47,25 +47,18 @@ htc_spain_wars.1 = {
 					religion.group = religion_group:folk_central_american_group
 					religion.group = religion_group:folk_aridoamerica_group
 				}
-				any_owned_location = {
-					adjacent_to_owned_or_owned_by_subject = root
-				}
 			}
 		}
 	}
 
 	immediate = {
-		# random_subject = {
-		# 	limit = {
-		# 		is_subject_type = colonial_nation
-		# 		capital ?= { region = region:andes_region }
-		# 		at_war = no
-		# 	}
-		# 	save_scope_as = peru_subject
-		# }
 		continent:america = {
 			random_country_with_capital_in_geography = {
+				is_ai = yes
 				limit = {
+					any_owned_location = {
+						adjacent_to_owned_or_owned_by_subject = root
+					}
 					or = {
 						culture = { has_culture_with_tag = native_american_tag }
 
@@ -81,9 +74,6 @@ htc_spain_wars.1 = {
 						religion.group = religion_group:folk_caribbean_group
 						religion.group = religion_group:folk_central_american_group
 						religion.group = religion_group:folk_aridoamerica_group
-					}
-					any_owned_location = {
-						adjacent_to_owned_or_owned_by_subject = root
 					}
 				}
 				save_scope_as = native_country

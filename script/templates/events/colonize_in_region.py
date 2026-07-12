@@ -21,7 +21,9 @@ class ColonizeInRegion(TemplateData):
 	}}
 
 	trigger = {{
+		OR = {{
 {tags}
+		}}
 		current_date > {from_year}.1.1
 		current_date < {to_year}.1.1
 		is_ai = yes
@@ -33,7 +35,6 @@ class ColonizeInRegion(TemplateData):
 			not = {{
 				any_location_in_province_definition = {{
 					has_owner = yes
-					owner ?= {{ is_ai = no }}
 				}}
 			}}
 			any_location_in_province_definition = {{
@@ -67,7 +68,6 @@ class ColonizeInRegion(TemplateData):
 				not = {{
 					any_location_in_province_definition = {{
     					has_owner = yes
-    					owner ?= {{ is_ai = no }}
 					}}
 				}}
 				any_location_in_province_definition = {{

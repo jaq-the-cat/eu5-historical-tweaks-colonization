@@ -11,7 +11,9 @@ htc_colonize_in_region_mexico.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = MEX
+		OR = {
+            has_or_had_tag = MEX
+		}
 		current_date > 1505.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -106,7 +108,9 @@ htc_colonize_in_region_mexico.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = MEX
+		OR = {
+            has_or_had_tag = MEX
+		}
 		current_date > 1505.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -201,7 +205,9 @@ htc_colonize_in_region_mexico.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = MEX
+		OR = {
+            has_or_had_tag = MEX
+		}
 		current_date > 1560.1.1
 		current_date < 1836.1.1
 		is_ai = yes

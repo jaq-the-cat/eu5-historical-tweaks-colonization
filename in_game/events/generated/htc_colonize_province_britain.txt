@@ -11,8 +11,10 @@ htc_colonize_province_britain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = ENG
-        has_or_had_tag = GBR
+		OR = {
+            has_or_had_tag = ENG
+            has_or_had_tag = GBR
+		}
 		current_date > 1530.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -77,8 +79,10 @@ htc_colonize_province_britain.2 = {
 	}
 
 	trigger = {
-        has_or_had_tag = ENG
-        has_or_had_tag = GBR
+		OR = {
+            has_or_had_tag = ENG
+            has_or_had_tag = GBR
+		}
 		current_date > 1530.1.1
 		current_date < 1836.1.1
 		is_ai = yes

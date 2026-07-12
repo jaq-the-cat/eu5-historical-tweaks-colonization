@@ -21,7 +21,9 @@ class TakeLocation(TemplateData):
 	}}
 
 	trigger = {{
+		OR = {{
 {tags}
+		}}
 		current_date > {from_year}.1.1
 		current_date < {to_year}.1.1
 		is_ai = yes

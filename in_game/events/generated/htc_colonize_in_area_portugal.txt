@@ -11,7 +11,9 @@ htc_colonize_in_area_portugal.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = POR
+		OR = {
+            has_or_had_tag = POR
+		}
 		current_date > 1500.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -106,7 +108,9 @@ htc_colonize_in_area_portugal.2 = {
 	}
 
 	trigger = {
-        has_or_had_tag = POR
+		OR = {
+            has_or_had_tag = POR
+		}
 		current_date > 1500.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -201,7 +205,9 @@ htc_colonize_in_area_portugal.3 = {
 	}
 
 	trigger = {
-        has_or_had_tag = POR
+		OR = {
+            has_or_had_tag = POR
+		}
 		current_date > 1510.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -296,7 +302,9 @@ htc_colonize_in_area_portugal.4 = {
 	}
 
 	trigger = {
-        has_or_had_tag = POR
+		OR = {
+            has_or_had_tag = POR
+		}
 		current_date > 1550.1.1
 		current_date < 1836.1.1
 		is_ai = yes

@@ -11,8 +11,10 @@ htc_colonize_location_spain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = CAS
-        has_or_had_tag = SPA
+		OR = {
+            has_or_had_tag = CAS
+            has_or_had_tag = SPA
+		}
 		current_date > 1440.1.1
 		current_date < 1836.1.1
 		is_ai = yes

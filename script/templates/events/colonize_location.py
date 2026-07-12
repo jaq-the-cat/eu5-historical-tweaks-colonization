@@ -21,7 +21,9 @@ class ColonizeLocation(TemplateData):
 	}}
 
 	trigger = {{
+		OR = {{
 {tags}
+		}}
 		current_date > {from_year}.1.1
 		current_date < {to_year}.1.1
 		is_ai = yes
@@ -32,7 +34,7 @@ class ColonizeLocation(TemplateData):
 			within_colonial_range_of = root
 			is_discovered_by = root
 		}}
-	}}		
+	}}
 
 	immediate = {{
 		location:{geography} = {{

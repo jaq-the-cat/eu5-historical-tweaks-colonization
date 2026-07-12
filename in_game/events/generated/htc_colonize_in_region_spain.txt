@@ -11,8 +11,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = CAS
-        has_or_had_tag = SPA
+		OR = {
+            has_or_had_tag = CAS
+            has_or_had_tag = SPA
+		}
 		current_date > 1505.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -107,8 +109,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = CAS
-        has_or_had_tag = SPA
+		OR = {
+            has_or_had_tag = CAS
+            has_or_had_tag = SPA
+		}
 		current_date > 1505.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -203,8 +207,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = CAS
-        has_or_had_tag = SPA
+		OR = {
+            has_or_had_tag = CAS
+            has_or_had_tag = SPA
+		}
 		current_date > 1505.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -299,8 +305,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = CAS
-        has_or_had_tag = SPA
+		OR = {
+            has_or_had_tag = CAS
+            has_or_had_tag = SPA
+		}
 		current_date > 1525.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -395,8 +403,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = CAS
-        has_or_had_tag = SPA
+		OR = {
+            has_or_had_tag = CAS
+            has_or_had_tag = SPA
+		}
 		current_date > 1535.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -491,8 +501,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = CAS
-        has_or_had_tag = SPA
+		OR = {
+            has_or_had_tag = CAS
+            has_or_had_tag = SPA
+		}
 		current_date > 1560.1.1
 		current_date < 1836.1.1
 		is_ai = yes
@@ -587,8 +599,10 @@ htc_colonize_in_region_spain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = CAS
-        has_or_had_tag = SPA
+		OR = {
+            has_or_had_tag = CAS
+            has_or_had_tag = SPA
+		}
 		current_date > 1600.1.1
 		current_date < 1836.1.1
 		is_ai = yes

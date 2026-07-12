@@ -11,7 +11,9 @@ htc_colonize_in_region_canada.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = CAN
+		OR = {
+            has_or_had_tag = CAN
+		}
 		current_date > 1580.1.1
 		current_date < 1836.1.1
 		is_ai = yes

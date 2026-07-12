@@ -11,7 +11,9 @@ htc_colonize_in_region_france.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = FRA
+		OR = {
+            has_or_had_tag = FRA
+		}
 		current_date > 1550.1.1
 		current_date < 1836.1.1
 		is_ai = yes

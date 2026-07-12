@@ -11,8 +11,10 @@ htc_colonize_in_region_britain.1 = {
 	}
 
 	trigger = {
-        has_or_had_tag = ENG
-        has_or_had_tag = GBR
+		OR = {
+            has_or_had_tag = ENG
+            has_or_had_tag = GBR
+		}
 		current_date > 1520.1.1
 		current_date < 1836.1.1
 		is_ai = yes

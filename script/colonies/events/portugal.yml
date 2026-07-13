@@ -23,6 +23,5 @@ colonize:
     mozambique_area: 1500
     # brazil
     pindorama_area: 1500, 20
-    pampa_area: 1550, 20
   regions:
     brazil_region: 1525, 25

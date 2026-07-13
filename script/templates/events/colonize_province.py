@@ -32,7 +32,13 @@ class ColonizeProvince(TemplateData):
 		province_definition:{geography} = {{
 			not = {{
 				any_location_in_province_definition = {{
-					has_owner = yes
+					or = {{
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= {{ is_ai = no }}
+						owner ?= {{ is_colonial_subject = yes }}
+						owner ?= {{ capital ?= {{ continent = continent:europe }} }}
+					}}
 				}}
 			}}
 			any_location_in_province_definition = {{

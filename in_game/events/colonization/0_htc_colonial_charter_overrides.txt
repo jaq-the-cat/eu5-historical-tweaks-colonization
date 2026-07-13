@@ -139,7 +139,15 @@ colonial_charter.100 = {
 					}
 					else_if = {
 						limit = {
-							capital ?= { area = region:canada_region }
+							capital ?= { region = region:great_plains_region }
+							overlord ?= { tag = FRA }
+						}
+						change_country_name = COLONY_LOUISIANA
+						change_country_adjective = COLONY_LOUISIANA_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:canada_region }
 							overlord ?= { tag = FRA }
 						}
 						change_country_name = COLONY_QUEBEC
@@ -158,6 +166,29 @@ colonial_charter.100 = {
 						}
 						change_country_name = COLONY_ALASKA
 						change_country_adjective = COLONY_ALASKA_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:chaco_region }
+							overlord ?= { has_or_had_tag = CAS }
+						}
+						change_country_name = COLONY_PARAGUAY
+						change_country_adjective = COLONY_PARAGUAY_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:la_plata_region }
+							overlord ?= { has_or_had_tag = CAS }
+						}
+						change_country_name = COLONY_LA_PLATA
+						change_country_adjective = COLONY_LA_PLATA_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:la_plata_region }
+						}
+						change_country_name = COLONY_PLATINA
+						change_country_adjective = COLONY_PLATINA_ADJ
 					}
 				}
 			}

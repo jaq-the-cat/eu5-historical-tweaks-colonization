@@ -23,7 +23,13 @@ htc_colonize_province_spain.1 = {
 		province_definition:canary_islands_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -90,7 +96,13 @@ htc_colonize_province_spain.2 = {
 		province_definition:marien_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -157,7 +169,13 @@ htc_colonize_province_spain.3 = {
 		province_definition:jaragua_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -224,7 +242,13 @@ htc_colonize_province_spain.4 = {
 		province_definition:magua_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -291,7 +315,13 @@ htc_colonize_province_spain.5 = {
 		province_definition:maguana_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -358,7 +388,13 @@ htc_colonize_province_spain.6 = {
 		province_definition:boriken_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -425,7 +461,13 @@ htc_colonize_province_spain.7 = {
 		province_definition:havana_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -492,7 +534,13 @@ htc_colonize_province_spain.8 = {
 		province_definition:moron_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -559,7 +607,13 @@ htc_colonize_province_spain.9 = {
 		province_definition:camaguey_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -626,7 +680,13 @@ htc_colonize_province_spain.10 = {
 		province_definition:bayamo_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -693,7 +753,13 @@ htc_colonize_province_spain.11 = {
 		province_definition:baracoa_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {

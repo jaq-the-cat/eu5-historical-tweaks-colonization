@@ -38,7 +38,6 @@ htc_ai_monthly_colonize_pulse = {
         10 = htc_colonize_province_portugal.7
         10 = htc_colonize_province_portugal.8
         10 = htc_colonize_province_portugal.9
-        10 = htc_colonize_province_portugal.10
         10 = htc_colonize_in_area_portugal.1
         10 = htc_colonize_in_area_portugal.2
         10 = htc_colonize_in_region_portugal.1

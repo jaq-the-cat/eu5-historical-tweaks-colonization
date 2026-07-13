@@ -22,7 +22,13 @@ htc_colonize_province_portugal.1 = {
 		province_definition:madeira_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -88,7 +94,13 @@ htc_colonize_province_portugal.2 = {
 		province_definition:azores_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -154,7 +166,13 @@ htc_colonize_province_portugal.3 = {
 		province_definition:cape_verde_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -220,7 +238,13 @@ htc_colonize_province_portugal.4 = {
 		province_definition:mascarene_islands_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -278,7 +302,7 @@ htc_colonize_province_portugal.5 = {
 		OR = {
             has_or_had_tag = POR
 		}
-		current_date > 1540.1.1
+		current_date > 1600.1.1
 		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
@@ -286,7 +310,13 @@ htc_colonize_province_portugal.5 = {
 		province_definition:jacui_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -344,7 +374,7 @@ htc_colonize_province_portugal.6 = {
 		OR = {
             has_or_had_tag = POR
 		}
-		current_date > 1550.1.1
+		current_date > 1600.1.1
 		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
@@ -352,7 +382,13 @@ htc_colonize_province_portugal.6 = {
 		province_definition:taquari_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -410,7 +446,7 @@ htc_colonize_province_portugal.7 = {
 		OR = {
             has_or_had_tag = POR
 		}
-		current_date > 1550.1.1
+		current_date > 1600.1.1
 		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
@@ -418,7 +454,13 @@ htc_colonize_province_portugal.7 = {
 		province_definition:nandeva_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -476,7 +518,7 @@ htc_colonize_province_portugal.8 = {
 		OR = {
             has_or_had_tag = POR
 		}
-		current_date > 1550.1.1
+		current_date > 1600.1.1
 		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
@@ -484,7 +526,13 @@ htc_colonize_province_portugal.8 = {
 		province_definition:icabaqua_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -542,7 +590,7 @@ htc_colonize_province_portugal.9 = {
 		OR = {
             has_or_had_tag = POR
 		}
-		current_date > 1550.1.1
+		current_date > 1600.1.1
 		current_date < 1836.1.1
 		is_ai = yes
 		monthly_balance > 50
@@ -550,7 +598,13 @@ htc_colonize_province_portugal.9 = {
 		province_definition:ibicui_province = {
 			not = {
 				any_location_in_province_definition = {
-					has_owner = yes
+					or = {
+						# prevent colonization if either:
+						# owner is a player, owner is a colonial nation, owner is european, doesn't have owner
+						owner ?= { is_ai = no }
+						owner ?= { is_colonial_subject = yes }
+						owner ?= { capital ?= { continent = continent:europe } }
+					}
 				}
 			}
 			any_location_in_province_definition = {
@@ -588,72 +642,6 @@ htc_colonize_province_portugal.9 = {
 
 		create_colonial_charter = {
 			target = province_definition:ibicui_province
-		}
-	}
-	option = {
-		name = htc.options.no
-	}
-}
-htc_colonize_province_portugal.10 = {
-	type = country_event
-	title = htc_colonize_province.title
-	desc = htc_colonize_province.desc
-
-	illustration_tags = {
-		10 = happy
-		10 = exterior
-	}
-
-	trigger = {
-		OR = {
-            has_or_had_tag = POR
-		}
-		current_date > 1560.1.1
-		current_date < 1836.1.1
-		is_ai = yes
-		monthly_balance > 50
-		num_colonial_charters <= 5
-		province_definition:guenoa_province = {
-			not = {
-				any_location_in_province_definition = {
-					has_owner = yes
-				}
-			}
-			any_location_in_province_definition = {
-				or = {
-					within_colonial_range_of = root
-					any_neighbor_location = {
-						OR = {
-							owner ?= root
-							owner ?= {
-								exists = overlord
-								overlord = root
-							}
-						}
-					}
-				}
-				has_owner = no
-				is_ownable = yes
-				is_discovered_by = root
-			}
-			not = { has_colonial_charter = root }
-		}
-	}
-
-	immediate = {
-		province_definition:guenoa_province = {
-			save_scope_as = geo
-		}
-	}
-	
-
-	option = {
-		name = htc.options.take
-		historical_option = yes
-		ai_will_do = 1000
-
-		create_colonial_charter = {
-			target = province_definition:guenoa_province
 		}
 	}
 	option = {

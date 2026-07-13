@@ -37,7 +37,7 @@ htc_force_subjugation = {
 			ruler ?= { total_abilities >= 220 }
 		}
 	}
-	alert = no
+	alert = yes
 	hide_effects = no
 	global_war_score_cost = -0.25
 	may_not_take_land_in_peace_treaties = yes

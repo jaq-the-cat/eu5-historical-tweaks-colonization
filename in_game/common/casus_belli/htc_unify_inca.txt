@@ -1,9 +1,9 @@
 ﻿cb_htc_unify_inca = {
-	visible = {
+	create_visible = {
 		religion = religion:inti
 	}
 
-	allow_creation = {
+	create_enabled = {
 		is_neighbor_of = scope:target
 		scope:target = {
 			any_owned_location = { region = region:andes_region }

@@ -190,6 +190,22 @@ colonial_charter.100 = {
 						change_country_name = COLONY_PLATINA
 						change_country_adjective = COLONY_PLATINA_ADJ
 					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:swahili_coast_region }
+							overlord ?= { has_or_had_tag = POR }
+						}
+						change_country_name = COLONY_MOZAMBIQUE
+						change_country_adjective = COLONY_MOZAMBIQUE_ADJ
+					}
+					else_if = {
+						limit = {
+							capital ?= { region = region:southern_africa_region }
+							overlord ?= { has_or_had_tag = ENG }
+						}
+						change_country_name = COLONY_SOUTH_AFRICA
+						change_country_adjective = COLONY_SOUTH_AFRICA_ADJ
+					}
 				}
 			}
 		}

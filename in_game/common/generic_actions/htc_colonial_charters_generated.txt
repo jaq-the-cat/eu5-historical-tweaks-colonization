@@ -397,8 +397,8 @@
                         # keep french colonies safe so they can actually get there in time
                         # france will colonize through event anyway
                         or = {
-                            scope:target = province_definition:higuey_province
-                            scope:target.area = area:quebec_area
+                            scope:target ?= { area = area:hispaniola_area }
+                            scope:target ?= { area = area:quebec_area }
                         }
                     }
                 }

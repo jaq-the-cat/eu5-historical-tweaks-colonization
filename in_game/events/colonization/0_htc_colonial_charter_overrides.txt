@@ -31,12 +31,53 @@ colonial_charter.100 = {
 			}
 			
 		}
+		
+		#Get a colonial nation vassal neighboring the target province
+		if = {
+			limit = {
+				scope:target = {
+					any_location_in_province = {
+						any_coast_border_location = {
+							has_owner = yes
+							owner = {
+								is_subject_of = ROOT
+								is_subject_type = colonial_nation
+							}
+						}
+					}
+				}
+			}
+			scope:target = {
+				random_location_in_province = {
+					limit = {
+						any_coast_border_location = {
+							has_owner = yes
+							owner = {
+								is_subject_of = ROOT
+								is_subject_type = colonial_nation
+							}
+						}
+					}
+					random_coast_border_location = {
+						limit = {
+							has_owner = yes
+							owner = {
+								is_subject_of = ROOT
+								is_subject_type = colonial_nation
+							}
+						}
+						owner = { save_scope_as = neighboring_colonial_subject }
+					}
+				}
+			}
+		}
 
 		#Get the most populous colonial nation vassal with capital in the same region
 		ordered_subject = {
 			limit = {
 				is_subject_type = colonial_nation
 				capital = { region = scope:target.region }
+				NAND = { exists = scope:neighboring_colonial_subject this = scope:neighboring_colonial_subject }
 			}
 			order_by = total_population
 			max = 1
@@ -53,9 +94,12 @@ colonial_charter.100 = {
 		name = colonial_charter.100.a
 		trigger = {
 			scope:target = { is_overseas_for_owner = yes }
-			and = {
-				is_ai = yes
-				not = { exists = scope:regional_subject }
+			or = {
+				is_ai = no
+				and = {
+					is_ai = yes
+					not = { exists = scope:regional_subject }
+				}
 			}
 		}
 		
@@ -241,14 +285,44 @@ colonial_charter.100 = {
 		}
 	}
 
+	option = { # Join it to neighboring_colonial_subject
+		name = colonial_charter.100.b
+
+		trigger = {
+			is_ai = no
+			exists = scope:neighboring_colonial_subject
+		}
+
+		if = {
+			limit = {
+				exists = scope:new_town
+			}
+			scope:new_town = {
+				change_location_rank_effect = { location_rank = location_rank:town }
+				cc_setup_new_town = yes
+			}
+		}
+
+		scope:target = {
+			change_province_owner = scope:neighboring_colonial_subject
+		}
+
+		ai_will_select = {
+			value = -1
+		}
+	}
+
 	option = { #Keep it as part of the Metropolis
 		name = colonial_charter.100.d
 		
+		trigger = {
+			not = { exists = scope:regional_subject }
+			scope:target = { is_overseas_for_owner = no }
+		}
+
 		scope:target = { 
 			every_location_in_province = {
-				limit = {
-					integration_level = colonized
-				}
+				limit = { integration_level = colonized }
 				change_integration_level = integrated
 			}
 		}
@@ -260,7 +334,7 @@ colonial_charter.100 = {
 				trigger = {
 					scope:target = { is_overseas_for_owner = yes }
 				}
-				add = -1000
+				add = -2000
 			}
 		}
 	}
@@ -270,7 +344,7 @@ colonial_charter.100 = {
 		high_risk_option = yes
 		trigger = {
 			is_human = yes
-			scope:target = { is_overseas_for_owner = yes  }
+			scope:target = { is_overseas_for_owner = yes }
 		}
 		if = {
 			limit = {

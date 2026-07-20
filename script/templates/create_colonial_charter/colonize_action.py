@@ -177,6 +177,18 @@ class ColonizeAction:
                     }
                     trigger_else_if = {
                         limit = {
+                            or = {
+                                region = region:sahel_region
+                                region = region:guinea_region
+                            }
+                        }
+                        scope:actor = {
+                            is_ai = no
+                            culture = { has_culture_group = culture_group:west_african_group }
+                        }
+                    }
+                    trigger_else_if = {
+                        limit = {
                             scope:actor.religion.group = religion_group:tonal_group
                         }
                         and = {

@@ -66,7 +66,7 @@ colonial_charter.100 = {
 								is_subject_type = colonial_nation
 							}
 						}
-						owner = { save_scope_as = neighboring_colonial_subject }
+						owner = { save_scope_as = scope_adjacent_area_subject }
 					}
 				}
 			}
@@ -77,7 +77,7 @@ colonial_charter.100 = {
 			limit = {
 				is_subject_type = colonial_nation
 				capital = { region = scope:target.region }
-				NAND = { exists = scope:neighboring_colonial_subject this = scope:neighboring_colonial_subject }
+				NAND = { exists = scope:scope_adjacent_area_subject this = scope:scope_adjacent_area_subject }
 			}
 			order_by = total_population
 			max = 1
@@ -285,12 +285,12 @@ colonial_charter.100 = {
 		}
 	}
 
-	option = { # Join it to neighboring_colonial_subject
+	option = { # Join it to scope_adjacent_area_subject
 		name = colonial_charter.100.b
 
 		trigger = {
 			is_ai = no
-			exists = scope:neighboring_colonial_subject
+			exists = scope:scope_adjacent_area_subject
 		}
 
 		if = {
@@ -304,7 +304,7 @@ colonial_charter.100 = {
 		}
 
 		scope:target = {
-			change_province_owner = scope:neighboring_colonial_subject
+			change_province_owner = scope:scope_adjacent_area_subject
 		}
 
 		ai_will_select = {

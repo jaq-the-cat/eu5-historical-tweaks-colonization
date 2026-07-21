@@ -1,96 +1,96 @@
-namespace = htc_spain_wars
+# namespace = htc_spain_wars
 
-# conquer native american country
-htc_spain_wars.1 = {
-	type = country_event
-	title = htc_spain_wars.1.title
-	desc = htc_spain_wars.1.desc
-	fire_only_once = no
+# # conquer native american country
+# htc_spain_wars.1 = {
+# 	type = country_event
+# 	title = htc_spain_wars.1.title
+# 	desc = htc_spain_wars.1.desc
+# 	fire_only_once = no
 
-	dynamic_historical_event = {
-        tag = CAS
-        tag = SPA
-		from = 1337.1.1
-		# from = 1532.1.1
-		to = 1650.1.1
-		monthly_chance = 10
-	}
+# 	dynamic_historical_event = {
+#         tag = CAS
+#         tag = SPA
+# 		from = 1337.1.1
+# 		# from = 1532.1.1
+# 		to = 1650.1.1
+# 		monthly_chance = 10
+# 	}
 
-	illustration_tags = {
-		10 = armed
-		10 = exterior
-	}
+# 	illustration_tags = {
+# 		10 = armed
+# 		10 = exterior
+# 	}
 
-	trigger = {
-		is_ai = yes
-		monthly_balance > 10
-		at_war = no
-		continent:america = {
-			any_country_with_capital_in_geography = {
-				is_ai = yes
-				any_owned_location = {
-					adjacent_to_owned_or_owned_by_subject = root
-				}
-				or = {
-					culture = { has_culture_with_tag = native_american_tag }
+# 	trigger = {
+# 		is_ai = yes
+# 		monthly_balance > 10
+# 		at_war = no
+# 		continent:america = {
+# 			any_country_with_capital_in_geography = {
+# 				is_ai = yes
+# 				any_owned_location = {
+# 					adjacent_to_owned_or_owned_by_subject = root
+# 				}
+# 				or = {
+# 					culture = { has_culture_with_tag = native_american_tag }
 
-					# incas and mesoamericans
-					religion.group = religion_group:folk_peruvian_group
-					religion.group = religion_group:tonal_group
+# 					# incas and mesoamericans
+# 					religion.group = religion_group:folk_peruvian_group
+# 					religion.group = religion_group:tonal_group
 
-					# other native religions
-					religion.group = religion_group:folk_north_american_group
-					religion.group = religion_group:folk_south_american_group
-					religion.group = religion_group:folk_brazilian_group
-					religion.group = religion_group:folk_argentinian_group
-					religion.group = religion_group:folk_caribbean_group
-					religion.group = religion_group:folk_central_american_group
-					religion.group = religion_group:folk_aridoamerica_group
-				}
-			}
-		}
-	}
+# 					# other native religions
+# 					religion.group = religion_group:folk_north_american_group
+# 					religion.group = religion_group:folk_south_american_group
+# 					religion.group = religion_group:folk_brazilian_group
+# 					religion.group = religion_group:folk_argentinian_group
+# 					religion.group = religion_group:folk_caribbean_group
+# 					religion.group = religion_group:folk_central_american_group
+# 					religion.group = religion_group:folk_aridoamerica_group
+# 				}
+# 			}
+# 		}
+# 	}
 
-	immediate = {
-		continent:america = {
-			random_country_with_capital_in_geography = {
-				is_ai = yes
-				limit = {
-					any_owned_location = {
-						adjacent_to_owned_or_owned_by_subject = root
-					}
-					or = {
-						culture = { has_culture_with_tag = native_american_tag }
+# 	immediate = {
+# 		continent:america = {
+# 			random_country_with_capital_in_geography = {
+# 				is_ai = yes
+# 				limit = {
+# 					any_owned_location = {
+# 						adjacent_to_owned_or_owned_by_subject = root
+# 					}
+# 					or = {
+# 						culture = { has_culture_with_tag = native_american_tag }
 
-						# incas and mesoamericans
-						religion.group = religion_group:folk_peruvian_group
-						religion.group = religion_group:tonal_group
+# 						# incas and mesoamericans
+# 						religion.group = religion_group:folk_peruvian_group
+# 						religion.group = religion_group:tonal_group
 
-						# other native religions
-						religion.group = religion_group:folk_north_american_group
-						religion.group = religion_group:folk_south_american_group
-						religion.group = religion_group:folk_brazilian_group
-						religion.group = religion_group:folk_argentinian_group
-						religion.group = religion_group:folk_caribbean_group
-						religion.group = religion_group:folk_central_american_group
-						religion.group = religion_group:folk_aridoamerica_group
-					}
-				}
-				save_scope_as = native_country
-			}
-		}
-	}
+# 						# other native religions
+# 						religion.group = religion_group:folk_north_american_group
+# 						religion.group = religion_group:folk_south_american_group
+# 						religion.group = religion_group:folk_brazilian_group
+# 						religion.group = religion_group:folk_argentinian_group
+# 						religion.group = religion_group:folk_caribbean_group
+# 						religion.group = religion_group:folk_central_american_group
+# 						religion.group = religion_group:folk_aridoamerica_group
+# 					}
+# 				}
+# 				save_scope_as = native_country
+# 			}
+# 		}
+# 	}
 
-	option = {
-		name = htc.options.take
-		historical_option = yes
+# 	option = {
+# 		name = htc.options.take
+# 		historical_option = yes
 		
-		declare_war_with_cb = {
-			target = scope:native_country
-			type = casus_belli:cb_htc_conquer_native
-		}
-	}
-	option = {
-		name = htc.options.no
-	}
-}
+# 		declare_war_with_cb = {
+# 			target = scope:native_country
+# 			type = casus_belli:cb_htc_conquer_native
+# 		}
+# 	}
+# 	option = {
+# 		name = htc.options.no
+# 	}
+# }

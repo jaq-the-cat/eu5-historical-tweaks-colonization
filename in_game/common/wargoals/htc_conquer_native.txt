@@ -4,9 +4,6 @@ wg_htc_conquer_native = {
 	
 	attacker = {
 		conquer_cost = 0.25
-		allowed_locations = {
-			region = region:andes_region
-		}
 		allowed_subjugation = { always = no }
 	}
 
@@ -16,3 +13,4 @@ wg_htc_conquer_native = {
 
 	ticking_war_score = 0.5
 }
+

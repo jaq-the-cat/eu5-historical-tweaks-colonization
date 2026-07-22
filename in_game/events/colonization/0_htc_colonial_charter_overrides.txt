@@ -99,6 +99,7 @@ colonial_charter.100 = {
 				and = {
 					is_ai = yes
 					not = { exists = scope:regional_subject }
+					not = { exists = scope:scope_adjacent_area_subject }
 				}
 			}
 		}
@@ -327,7 +328,7 @@ colonial_charter.100 = {
 		
 
 		ai_chance = {
-			value = 3000
+			value = 100
 		}
 	}
 

@@ -79,6 +79,24 @@ htc_spain_wars.1 = {
 			target = scope:native_country
 			type = casus_belli:cb_htc_conquer_native
 		}
+		every_current_war = {
+			limit = {
+				casus_belli ?= casus_belli:cb_htc_conquer_native
+				attacker_leader = root
+				defender_leader = scope:native_country
+			}
+			save_scope_as = this_war
+		}
+		every_subject = {
+			limit = { at_war = no }
+			join_war_with = {
+				target = root
+				war = scope:this_war
+				call_in_subjects = yes
+				ignore_rules = yes
+				notify_opposing_side = no
+			}
+		}
 	}
 	option = {
 		name = htc.options.no

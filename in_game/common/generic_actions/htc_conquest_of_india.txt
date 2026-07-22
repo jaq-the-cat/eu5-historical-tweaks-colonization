@@ -60,6 +60,7 @@
                     is_coastal = yes 
                 }
             }
+            owner = { is_ai = yes }
         }
         enabled = {
             or = {
@@ -74,7 +75,7 @@
             # province has low control and low satisfaction
             province_average_control < 0.5
             or = {
-                province_satisfaction < 0.5
+                province_satisfaction < 0.75
                 province_food_percentage < 0.5
             }
         }
@@ -93,7 +94,7 @@
                     }
                     max = {
                         value = scope:target.owner.country_tax_base
-                        multiply = 5
+                        divide = 2
                     }
                     multiply = -1
                 }
@@ -109,7 +110,7 @@
                     }
                     max = {
                         value = scope:target.owner.country_tax_base
-                        multiply = 5
+                        divide = 2
                     }
                 }
             }
@@ -145,12 +146,13 @@
                         }
                         max = {
                             value = scope:target.owner.country_tax_base
-                            multiply = 5
+                            divide = 2
                         }
                         multiply = 2
                     }
                 }
             }
+            add = scope:actor.gold
             add = scope:actor.societal_value:land_vs_naval
             add = {
                 value = {
@@ -162,21 +164,6 @@
                 limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
                 add = scope:actor.modifier:bias_for_colonialist_policies
             }
-            if = {
-                limit = {
-                    scope:target = {
-                        not = {
-                            any_location_in_province = {
-                                adjacent_to_owned_or_owned_by_subject = scope:actor
-                            }
-                        }
-                    }
-                }
-                add = -200
-            }
-			every_subject_or_below = {
-				limit = { is_subject_type = colonial_nation }
-			}
         }
     }
 }
@@ -268,34 +255,16 @@ htc_coi_offer_protection = {
 
     ai_will_do = {
         value = -1
+        add = scope:actor.societal_value:land_vs_naval
+        add = {
+            value = {
+                add = scope:actor.societal_value:outward_vs_inward
+                multiply = -1
+            }
+        }
         if = {
-            limit = {
-                scope:actor = {    
-                    country_tax_base > {
-                        value = scope:target.country_tax_base
-                        multiply = 10
-                    }
-                }
-            }
-            add = scope:actor.societal_value:land_vs_naval
-            add = {
-                value = {
-                    add = scope:actor.societal_value:outward_vs_inward
-                    multiply = -1
-                }
-            }
-            if = {
-                limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
-                add = scope:actor.modifier:bias_for_colonialist_policies
-            }
-            if = {
-                limit = {
-                    scope:target = {
-                        not = { is_neighbor_of = scope:actor }
-                    }
-                }
-                add = -200
-            }
+            limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
+            add = scope:actor.modifier:bias_for_colonialist_policies
         }
     }
 }
@@ -388,14 +357,6 @@ htc_coi_assist_in_war_for_vassal = {
             if = {
                 limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
                 add = scope:actor.modifier:bias_for_colonialist_policies
-            }
-            if = {
-                limit = {
-                    scope:target = {
-                        not = { is_neighbor_of = scope:actor }
-                    }
-                }
-                add = -200
             }
         }
     }

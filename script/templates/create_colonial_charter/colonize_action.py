@@ -206,6 +206,7 @@ class ColonizeAction:
                         limit = {
                             scope:actor.religion = religion:inti
                             region = region:andes_region
+                            not = { area = area:ngulumapu_area }
                         }
                         scope:actor.religion = religion:inti
                     }

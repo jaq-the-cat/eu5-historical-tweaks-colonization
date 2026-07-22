@@ -219,7 +219,13 @@ htc_uoi_settle_location = {
         interaction_source_list = {
             region:andes_region = {
                 every_location_in_region = {
-                    limit = { is_ownable = yes }
+                    limit = {
+                        is_ownable = yes
+                        nor = {
+                            area = area:cuyo_area
+                            area = area:ngulumapu_area
+                        }
+                    }
                     add_to_list = source
                 }
 			}

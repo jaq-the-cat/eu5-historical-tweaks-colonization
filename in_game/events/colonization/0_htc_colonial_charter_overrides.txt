@@ -259,6 +259,32 @@ colonial_charter.100 = {
 		}
 	}
 
+	option = { # Join it to scope_adjacent_area_subject
+		name = colonial_charter.100.b
+
+		trigger = {
+			exists = scope:scope_adjacent_area_subject
+		}
+
+		if = {
+			limit = {
+				exists = scope:new_town
+			}
+			scope:new_town = {
+				change_location_rank_effect = { location_rank = location_rank:town }
+				cc_setup_new_town = yes
+			}
+		}
+
+		scope:target = {
+			change_province_owner = scope:scope_adjacent_area_subject
+		}
+
+		ai_will_select = {
+			value = 1000
+		}
+	}
+
 	option = { # Join it to regional_subject
 		name = colonial_charter.100.f
 
@@ -281,34 +307,7 @@ colonial_charter.100 = {
 		}
 
 		ai_will_select = {
-			value = 1000
-		}
-	}
-
-	option = { # Join it to scope_adjacent_area_subject
-		name = colonial_charter.100.b
-
-		trigger = {
-			is_ai = no
-			exists = scope:scope_adjacent_area_subject
-		}
-
-		if = {
-			limit = {
-				exists = scope:new_town
-			}
-			scope:new_town = {
-				change_location_rank_effect = { location_rank = location_rank:town }
-				cc_setup_new_town = yes
-			}
-		}
-
-		scope:target = {
-			change_province_owner = scope:scope_adjacent_area_subject
-		}
-
-		ai_will_select = {
-			value = -1
+			value = 2000
 		}
 	}
 
@@ -316,7 +315,6 @@ colonial_charter.100 = {
 		name = colonial_charter.100.d
 		
 		trigger = {
-			not = { exists = scope:regional_subject }
 			scope:target = { is_overseas_for_owner = no }
 		}
 
@@ -329,13 +327,7 @@ colonial_charter.100 = {
 		
 
 		ai_chance = {
-			value = 100
-			modifier = {
-				trigger = {
-					scope:target = { is_overseas_for_owner = yes }
-				}
-				add = -2000
-			}
+			value = 3000
 		}
 	}
 

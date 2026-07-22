@@ -16,7 +16,7 @@ htc_monthly_country_pulse = {
 		100 = htc_exploration_crutches.3 # North America
 		100 = htc_exploration_crutches.4 # South America
 
-		chance_to_happen = 5
+		chance_to_happen = 10
 	}
 }
 

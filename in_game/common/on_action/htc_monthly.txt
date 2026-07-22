@@ -6,10 +6,6 @@
 }
 
 htc_monthly_country_pulse = {
-	events = {
-		htc_merge_colonies.1
-	}
-
 	random_events = {
 		100 = htc_exploration_crutches.1 # North Atlantic
 		100 = htc_exploration_crutches.2 # South Atlantic
@@ -23,6 +19,7 @@ htc_monthly_country_pulse = {
 htc_monthly_pulse_force_war = {
 	random_events = {
 		100 = htc_spain_wars.1 # Conquer native country
+		
 		chance_to_happen = 10
 	}
 }

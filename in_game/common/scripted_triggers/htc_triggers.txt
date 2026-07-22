@@ -19,16 +19,3 @@
 		}
 	}
 }
-
-is_possible_indian_colonizer = {
-	custom_tooltip = {
-		text = is_possible_indian_colonizer_tt
-		not = {
-			capital ?= { continent = continent:asia }
-			any_owned_location = {
-				sub_continent = sub_continent:south_asia
-				is_connected_to = root.capital
-			}
-		}
-	}
-}

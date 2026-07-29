@@ -1,4 +1,159 @@
-﻿htc_coi_purchase_province = {
+﻿htc_coi_purchase_location = {
+    type = situation
+    show_message = no
+    potential = {
+        scope:actor = {
+            capital ?= { continent = continent:europe }
+        }
+    }
+
+    allow = {
+        scope:actor = {
+            at_war = no
+        }
+    }
+
+    automation_tick = never
+    automation_tick_frequency = 12
+    ai_tick = monthly
+    ai_tick_frequency = 6
+
+    cooldown = {
+        type = htc_coi_purchase_location_key
+        years = 2
+    }
+
+    select_trigger = {
+        looking_for_a = situation
+        interaction_source_list = {
+            situation:conquest_of_india = {
+                add_to_list = source
+            }
+        }
+        target_flag = recipient
+        name = "choose_situation"
+        column = {
+            data = name
+        }
+        visible = {
+            situation:conquest_of_india = this
+            situation_is_active = yes
+            # var:strongest_european_power = scope:actor
+        }
+    }
+
+    select_trigger = {
+        looking_for_a = location
+        target_flag = target
+        name = "choose_location"
+        none_available_msg_key = "no_locations_available"
+        column = { data = owner_flag }
+        column = { data = name }
+        column = { data = population }
+        visible = {
+            # is in indian subcontinent
+            sub_continent = sub_continent:south_asia
+            is_coastal = yes 
+            owner = { is_ai = yes }
+        }
+        enabled = {
+            owner.culture = { has_culture_group = culture_group:indian_group }
+            or = {
+                local_control < 0.5
+                prosperity < 0.5
+                is_looted = yes
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = { exists = scope:target }
+            scope:actor = {
+                add_gold = {
+                    value = 100
+                    add = {
+                        value = scope:target.development
+                        multiply = 2
+                    }
+                    max = {
+                        value = scope:target.owner.country_tax_base
+                        divide = 4
+                    }
+                    multiply = -1
+                }
+            }
+            scope:target.owner = {
+                add_gold = {
+                    value = 100
+                    add = {
+                        value = scope:target.development
+                        multiply = 2
+                    }
+                    max = {
+                        value = scope:target.owner.country_tax_base
+                        divide = 4
+                    }
+                }
+            }
+        }
+        else = {
+            custom_tooltip = {
+                text = htc_coi_purchase_location_effect_tt
+            }
+        }
+        scope:target = {
+            change_location_owner = scope:actor
+            scope:target.owner = {
+                trigger_event = htc_conquest_of_india.4
+            }
+        }
+    }
+
+    ai_will_do = {
+        value = -1
+        if = {
+            # has more than twice the gold required to purchase
+            limit = {
+                scope:actor = {    
+                    gold > {
+                        value = 100
+                        add = {
+                            value = scope:target.development
+                            multiply = 2
+                        }
+                        max = {
+                            value = scope:target.owner.country_tax_base
+                            divide = 4
+                        }
+                        multiply = 2
+                    }
+                }
+            }
+            add = scope:actor.monthly_balance
+            add = scope:actor.societal_value:land_vs_naval
+            add = {
+                value = {
+                    add =  scope:actor.societal_value:outward_vs_inward
+                    multiply = -1
+                }
+            }
+            if = {
+                limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
+                add = scope:actor.modifier:bias_for_colonialist_policies
+            }
+            if = {
+                limit = {
+                    scope:target = {
+                        not = { is_neighbor_of = scope:actor }
+                    }
+                }
+                add = -500
+            }
+        }
+    }
+}
+
+htc_coi_purchase_province = {
     type = situation
     show_message = no
     potential = {
@@ -124,7 +279,7 @@
             every_location_in_province = {
                 change_location_owner = scope:actor
             }
-            scope:target = {
+            owner = {
                 trigger_event = htc_conquest_of_india.4
             }
         }
@@ -152,7 +307,7 @@
                     }
                 }
             }
-            add = scope:actor.gold
+            add = scope:actor.monthly_balance
             add = scope:actor.societal_value:land_vs_naval
             add = {
                 value = {
@@ -163,6 +318,14 @@
             if = {
                 limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
                 add = scope:actor.modifier:bias_for_colonialist_policies
+            }
+            if = {
+                limit = {
+                    scope:target = {
+                        not = { is_neighbor_of = scope:actor }
+                    }
+                }
+                add = -500
             }
         }
     }
@@ -266,6 +429,15 @@ htc_coi_offer_protection = {
             limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
             add = scope:actor.modifier:bias_for_colonialist_policies
         }
+        add = scope:actor.monthly_balance
+        if = {
+            limit = {
+                scope:target = {
+                    not = { is_neighbor_of = scope:actor }
+                }
+            }
+            add = -500
+        }
     }
 }
 
@@ -358,6 +530,14 @@ htc_coi_assist_in_war_for_vassal = {
                 limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
                 add = scope:actor.modifier:bias_for_colonialist_policies
             }
+        }
+        if = {
+            limit = {
+                scope:target = {
+                    not = { is_neighbor_of = scope:actor }
+                }
+            }
+            add = -500
         }
     }
 }

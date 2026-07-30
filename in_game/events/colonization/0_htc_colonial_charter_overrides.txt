@@ -316,7 +316,10 @@ colonial_charter.100 = {
 		name = colonial_charter.100.d
 		
 		trigger = {
-			scope:target = { is_overseas_for_owner = no }
+			or = {
+				is_ai = no
+				scope:target = { is_overseas_for_owner = no }
+			}
 		}
 
 		scope:target = { 
@@ -325,7 +328,6 @@ colonial_charter.100 = {
 				change_integration_level = integrated
 			}
 		}
-		
 
 		ai_chance = {
 			value = 100

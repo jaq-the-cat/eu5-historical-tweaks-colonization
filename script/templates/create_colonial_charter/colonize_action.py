@@ -207,6 +207,7 @@ class ColonizeAction:
                             scope:actor.religion = religion:inti
                             region = region:andes_region
                             not = { area = area:ngulumapu_area }
+                            not = { area = area:cuyo_area }
                         }
                         scope:actor.religion = religion:inti
                     }
@@ -369,6 +370,21 @@ class ColonizeAction:
                 }
                 scope:target ?= {
                     or = { continent = continent:africa }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
+                scope:actor = {
+                    # inca doesn't colonize southern andes
+                    has_or_had_tag = INC
+                }
+                scope:target ?= {
+                    or = {
+                        area = area:ngulumapu_area
+                        area = area:cuyo_area
+                    }
                 }
             }
             add = -1000

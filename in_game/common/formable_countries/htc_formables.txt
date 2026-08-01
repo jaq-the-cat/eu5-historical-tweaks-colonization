@@ -32,19 +32,19 @@
 
 REPLACE_OR_CREATE:INC_f = {
 	level = 3
-	required_locations_fraction = 0.373 # 140
+	required_locations_fraction = 0.2
 	rule = historical
 	potential = {
+		religion = religion:inti
 		capital ?= { region = region:andes_region }
 	}
 
 	allow = {
-		religion = religion:inti
 		region:andes_region = {
-			any_location_in_region = {
-				is_ownable = yes
-				is_owned_or_owned_by_subjects_or_below_of = root
-				count >= 200
+			any_owner_in_region = {
+				filter = { not = { this = root } }
+				count = all
+				is_subject_of = root
 			}
 		}
 	}

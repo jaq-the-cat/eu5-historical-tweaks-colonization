@@ -203,6 +203,7 @@
                             scope:actor.religion = religion:inti
                             region = region:andes_region
                             not = { area = area:ngulumapu_area }
+                            not = { area = area:cuyo_area }
                         }
                         scope:actor.religion = religion:inti
                     }
@@ -406,7 +407,7 @@
                 or = {
                     not = { exists = scope:target }
                     and = {
-                        current_year < 1600
+                        current_year < 1580
                         # keep french colonies safe so they can actually get there in time
                         # france will colonize through event anyway
                         or = {
@@ -469,8 +470,10 @@
             limit = {
                 scope:actor = {
                     # spain doesn't colonize africa
-                    has_or_had_tag = CAS
-                    has_or_had_tag = SPA
+                    or = {
+                        has_or_had_tag = CAS
+                        has_or_had_tag = SPA
+                    }
                 }
                 scope:target ?= {
                     or = { continent = continent:africa }
@@ -481,27 +484,65 @@
         else_if = {
             limit = {
                 scope:actor = {
+                    # inca doesn't colonize southern andes
+                    has_or_had_tag = INC
+                }
+                scope:target ?= {
                     or = {
-				        monthly_balance > 50
+                        area = area:ngulumapu_area
+                        area = area:cuyo_area
+                    }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
+                scope:actor = {
+                    or = {
+                        # non-american colonizer
+                        and = {
+                            is_subject = no
+    				        monthly_balance > 50
+                        }
+                        # independent colonial nation
                         and = {
                             is_subject = no
                             monthly_balance > 10
-                            capital ?= { continent = continent:america }
+                            or = {
+                                capital ?= { continent = continent:america }
+                                capital ?= { continent = continent:africa }
+                            }
                         }
+                        # colonial subject
                         and = {
                             is_subject = yes
                             is_subject_type = colonial_nation
-                            exists = capital
-                            capital.region = scope:target.region
+                            capital ?= { region = scope:target.region }
                         }
                     }
+                }
+                scope:target = {
                     or = {
-                        is_subject_type = colonial_nation
-                        has_colonial_charters = yes
-                        is_colonial_top_overlord = yes
-                        scope:target = {
-                            any_location_in_province_definition = {
-                                adjacent_to_owned_by = scope:actor
+                        # any location is adjacent to owned/owned by subject
+                        any_location_in_province_definition = {
+                            adjacent_to_owned_or_owned_by_subject = scope:actor
+                        }
+                        # there doesnt exist another colonial nation in that area
+                        not = {
+                            area = {
+                                any_location_in_area = {
+                                    filter = {
+                                        is_ownable = yes
+                                        not = { is_owned_or_owned_by_subjects_or_below_of = scope:actor }
+                                    }
+                                    owner ?= {
+                                        or = {
+                                            is_colonial_overlord = yes
+                                            is_colonial_subject = yes
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

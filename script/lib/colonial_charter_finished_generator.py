@@ -28,14 +28,14 @@ class ColonialCharterFinishedGenerator:
         
             print(f"adding unique colonial nation: {tag} ({name}, {adjective})")
             data["localization"].append(
-                ColonialCharterFinishedTemplate.COLONIAL_COUNTRY_LOCALIZATION_TEMPLATE.format(
+                ColonialCharterFinishedTemplate.UNIQUE_COLONY_LOCALIZATION_TEMPLATE.format(
                     TAG = tag.strip(),
                     NAME = name.strip(),
                     ADJECTIVE = adjective.strip(),
                 ).lstrip('\n').rstrip('\n')
             )
             data["join_checks"].append(
-                ColonialCharterFinishedTemplate.COLONIAL_COUNTRY_JOIN_TEMPLATE.format(
+                ColonialCharterFinishedTemplate.UNIQUE_COLONY_JOIN_TEMPLATE.format(
                     IF_OR_ELSE_IF = 'if' if i == 0 else 'else_if',
                     TAG = tag.strip(),
                     TRIGGERS = ColonialCharterFinishedTemplate.JOIN_TRIGGERS_JOIN.join(\
@@ -45,7 +45,7 @@ class ColonialCharterFinishedGenerator:
                 ).lstrip('\n').rstrip('\n')
             )
             data["form_checks"].append(
-                ColonialCharterFinishedTemplate.COLONIAL_COUNTRY_FORM_TEMPLATE.format(
+                ColonialCharterFinishedTemplate.UNIQUE_COLONY_FORM_TEMPLATE.format(
                     IF_OR_ELSE_IF = 'if' if i == 0 else 'else_if',
                     TAG = tag.strip(),
                     TRIGGERS = ColonialCharterFinishedTemplate.FORM_TRIGGERS_JOIN.join(\

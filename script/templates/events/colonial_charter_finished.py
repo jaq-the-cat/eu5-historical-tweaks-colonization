@@ -8,7 +8,7 @@ class ColonialCharterFinishedTemplate(TemplateData):
     FORM_TRIGGERS_JOIN = '''
                             '''
 
-    COLONIAL_COUNTRY_FORM_TEMPLATE = '''
+    UNIQUE_COLONY_FORM_TEMPLATE = '''
                     {IF_OR_ELSE_IF} = {{
                         limit = {{
                             NOT = {{ country_exists = c:{TAG} }}
@@ -27,7 +27,7 @@ class ColonialCharterFinishedTemplate(TemplateData):
     JOIN_TRIGGERS_JOIN = '''
                 '''
 
-    COLONIAL_COUNTRY_JOIN_TEMPLATE = '''
+    UNIQUE_COLONY_JOIN_TEMPLATE = '''
         {IF_OR_ELSE_IF} = {{
             limit = {{
                 {TRIGGERS}
@@ -70,6 +70,8 @@ class ColonialCharterFinishedTemplate(TemplateData):
                 }}
             }}       
         }}
+
+{UNIQUE_COLONY_JOIN_CHECKS}
         
         #Get a colonial nation vassal neighboring the target province
         if = {{
@@ -117,15 +119,13 @@ class ColonialCharterFinishedTemplate(TemplateData):
             limit = {{
                 is_subject_type = colonial_nation
                 capital = {{ region = scope:target.region }}
-                NAND = {{ exists = scope:scope_adjacent_area_subject this = scope:scope_adjacent_area_subject }}
                 NAND = {{ exists = scope:unique_colony this = scope:unique_colony }}
+                NAND = {{ exists = scope:scope_adjacent_area_subject this = scope:scope_adjacent_area_subject }}
             }}
             order_by = total_population
             max = 1
             save_scope_as = regional_subject
         }}
-
-{COLONIAL_COUNTRY_JOIN_CHECKS}
 
         #Save the Province Capital for the event image
         scope:target = {{
@@ -141,9 +141,9 @@ class ColonialCharterFinishedTemplate(TemplateData):
                 is_ai = no
                 and = {{
                     is_ai = yes
+                    not = {{ exists = scope:unique_colony }}
                     not = {{ exists = scope:regional_subject }}
                     not = {{ exists = scope:scope_adjacent_area_subject }}
-                    not = {{ exists = scope:unique_colony }}
                 }}
             }}
         }}
@@ -164,7 +164,7 @@ class ColonialCharterFinishedTemplate(TemplateData):
                 hidden_effect = {{
                     setup_colonial_nation = yes
 
-{COLONIAL_COUNTRY_FORM_CHECKS}
+{UNIQUE_COLONY_FORM_CHECKS}
 
                 }}
             }}
@@ -175,8 +175,9 @@ class ColonialCharterFinishedTemplate(TemplateData):
         }}
     }}
     
-    option = {{
+    option = {{ # Join it to unique_colony
         name = htc_unique_colonies.a
+        high_risk_option = yes
 
         trigger = {{
             exists = scope:unique_colony
@@ -192,11 +193,10 @@ class ColonialCharterFinishedTemplate(TemplateData):
     }}
 
     option = {{ # Join it to scope_adjacent_area_subject
-        name = colonial_charter.100.b
+        name = colonial_charter.100.g
 
         trigger = {{
             exists = scope:scope_adjacent_area_subject
-            not = {{ exists = scope:unique_colony }}
         }}
 
         if = {{
@@ -223,7 +223,6 @@ class ColonialCharterFinishedTemplate(TemplateData):
 
         trigger = {{
             exists = scope:regional_subject
-            not = {{ exists = scope:unique_colony }}
         }}
 
         if = {{
@@ -309,7 +308,7 @@ class ColonialCharterFinishedTemplate(TemplateData):
 '''
 
     
-    COLONIAL_COUNTRY_LOCALIZATION_TEMPLATE = '''
+    UNIQUE_COLONY_LOCALIZATION_TEMPLATE = '''
   {TAG}: "{NAME}"
   {TAG}_ADJ: "{ADJECTIVE}"
 '''

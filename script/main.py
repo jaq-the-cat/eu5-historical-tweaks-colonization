@@ -47,8 +47,8 @@ def colonial_tags():
         file.write(
             f'namespace = {ColonialCharterFinishedTemplate.NAMESPACE}\n\n' +
             ColonialCharterFinishedTemplate.EVENT_TEMPLATE.format(
-                COLONIAL_COUNTRY_JOIN_CHECKS = "\n".join(unique_cns["join_checks"]),
-                COLONIAL_COUNTRY_FORM_CHECKS = "\n".join(unique_cns["form_checks"])
+                UNIQUE_COLONY_JOIN_CHECKS = "\n".join(unique_cns["join_checks"]),
+                UNIQUE_COLONY_FORM_CHECKS = "\n".join(unique_cns["form_checks"])
             )
         )
     with open(OUT_LOCALIZATION, 'w', encoding='utf-8-sig') as file:

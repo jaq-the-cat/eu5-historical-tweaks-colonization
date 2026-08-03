@@ -137,6 +137,17 @@ C_NSP:
   overlord_triggers:
     - OR = { tag = SPA AND = { tag = CAS c:ARA ?= { is_subject_of = c:CAS } } }
 
+# east africa
+
+C_MOZ:
+  name: "Mozambique"
+  adjective: "Mozambiquean"
+  geography_triggers:
+    - region = region:swahili_coast_region
+    - region = region:zimbabwe_region
+  overlord_triggers:
+    - tag = POR
+
 # africa
 # CN_SOUTH_AFRICA:
 #   name: "South Africa"

@@ -16,4 +16,5 @@
   htc_colonize_in_region.title: "Colonize Province In [SCOPE.sRegion('source').GetName]"
   htc_colonize_in_region.desc: "Colonize [SCOPE.sProvinceDefinition('geo').GetName]"
 
-  htc_unique_colonies.a: "Let it join [SCOPE.sCountry('unique_colony').GetNameWithNoTooltip]."
+  htc_unique_colonies.a: "Form a special Colonial Subject."
+  htc_unique_colonies.b: "Let it join [SCOPE.sCountry('unique_colony').GetNameWithNoTooltip]."

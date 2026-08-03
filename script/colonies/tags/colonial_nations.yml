@@ -91,7 +91,7 @@ C_GUA:
 # south america
 C_NGN:
   name: "New Granada"
-  adjective: "Granadine"
+  adjective: "New Granadine"
   geography_triggers:
     - region = region:colombia_region
   overlord_triggers:
@@ -130,7 +130,7 @@ C_PER:
 
 C_NSP:
   name: "New Spain"
-  adjective: "New Spain"
+  adjective: "New Spanish"
   geography_triggers:
     - region = region:aridoamerica_region
     - region = region:mesoamerica_region

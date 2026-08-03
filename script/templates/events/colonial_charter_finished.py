@@ -31,13 +31,20 @@ class ColonialCharterFinishedTemplate(TemplateData):
         {IF_OR_ELSE_IF} = {{
             limit = {{
                 {TRIGGERS}
-                country_exists = c:{TAG}
-                c:{TAG} ?= {{
-                    is_subject = yes
-                    is_subject_of = scope:actor
-                }}
             }}
-            c:{TAG} = {{ save_scope_as = unique_colony }}
+            if = {{
+                limit = {{
+                    country_exists = c:{TAG}
+                    c:{TAG} ?= {{
+                        is_subject = yes
+                        is_subject_of = scope:actor
+                    }}
+                }}
+                c:{TAG} = {{ save_scope_as = unique_colony }}
+            }}
+            else = {{
+                set_local_variable = {{ name = can_be_unique_colony value = yes }}
+            }}
         }}
 '''
 
@@ -83,6 +90,7 @@ class ColonialCharterFinishedTemplate(TemplateData):
                             owner = {{
                                 is_subject_of = ROOT
                                 is_subject_type = colonial_nation
+                                NOT = {{ has_variable = htc_unique_colony }}
                                 NAND = {{ exists = scope:unique_colony this = scope:unique_colony }}
                             }}
                         }}
@@ -97,6 +105,8 @@ class ColonialCharterFinishedTemplate(TemplateData):
                             owner = {{
                                 is_subject_of = ROOT
                                 is_subject_type = colonial_nation
+                                NOT = {{ has_variable = htc_unique_colony }}
+                                NAND = {{ exists = scope:unique_colony this = scope:unique_colony }}
                             }}
                         }}
                     }}
@@ -106,6 +116,8 @@ class ColonialCharterFinishedTemplate(TemplateData):
                             owner = {{
                                 is_subject_of = ROOT
                                 is_subject_type = colonial_nation
+                                NOT = {{ has_variable = htc_unique_colony }}
+                                NAND = {{ exists = scope:unique_colony this = scope:unique_colony }}
                             }}
                         }}
                         owner = {{ save_scope_as = scope_adjacent_area_subject }}
@@ -119,6 +131,7 @@ class ColonialCharterFinishedTemplate(TemplateData):
             limit = {{
                 is_subject_type = colonial_nation
                 capital = {{ region = scope:target.region }}
+                NOT = {{ has_variable = htc_unique_colony }}
                 NAND = {{ exists = scope:unique_colony this = scope:unique_colony }}
                 NAND = {{ exists = scope:scope_adjacent_area_subject this = scope:scope_adjacent_area_subject }}
             }}
@@ -133,19 +146,13 @@ class ColonialCharterFinishedTemplate(TemplateData):
         }}
     }}
     
-    option = {{ #Form a new Colonial Subject
-        name = colonial_charter.100.a
+    option = {{ # Form a unique Colonial Subject
+        name = htc_unique_colonies.a
+        high_risk_option = yes
+
         trigger = {{
             scope:target = {{ is_overseas_for_owner = yes }}
-            or = {{
-                is_ai = no
-                and = {{
-                    is_ai = yes
-                    not = {{ exists = scope:unique_colony }}
-                    not = {{ exists = scope:regional_subject }}
-                    not = {{ exists = scope:scope_adjacent_area_subject }}
-                }}
-            }}
+            has_local_variable = can_be_unique_colony
         }}
         
         if = {{
@@ -171,12 +178,12 @@ class ColonialCharterFinishedTemplate(TemplateData):
         }}
         
         ai_will_select = {{
-            value = 50
+            value = 9999
         }}
     }}
     
     option = {{ # Join it to unique_colony
-        name = htc_unique_colonies.a
+        name = htc_unique_colonies.b
         high_risk_option = yes
 
         trigger = {{
@@ -188,7 +195,44 @@ class ColonialCharterFinishedTemplate(TemplateData):
         }}
 
         ai_will_select = {{
-            value = 9999
+            value = 4000
+        }}
+    }}
+
+    option = {{
+        name = colonial_charter.100.a
+        trigger = {{
+            scope:target = {{ is_overseas_for_owner = yes }}
+            or = {{
+                is_ai = no
+                and = {{
+                    is_ai = yes
+                    not = {{ exists = scope:unique_colony }}
+                }}
+            }}
+        }}
+        
+        if = {{
+            limit = {{
+                exists = scope:new_town
+            }}
+            scope:new_town = {{
+                change_location_rank_effect = {{ location_rank = location_rank:town }}
+            }}
+        }}
+        
+        scope:target = {{ 
+            create_location_country_from_province = {{
+                subject_type = subject_type:colonial_nation
+            
+                hidden_effect = {{
+                    setup_colonial_nation = yes
+                }}
+            }}
+        }}
+        
+        ai_will_select = {{
+            value = 50
         }}
     }}
 

@@ -497,60 +497,6 @@
             add = -1000
         }
         else_if = {
-            limit = {
-                scope:actor = {
-                    or = {
-                        # non-american colonizer
-                        and = {
-                            is_subject = no
-    				        monthly_balance > 50
-                        }
-                        # independent colonial nation
-                        and = {
-                            is_subject = no
-                            monthly_balance > 10
-                            or = {
-                                capital ?= { continent = continent:america }
-                                capital ?= { continent = continent:africa }
-                            }
-                        }
-                        # colonial subject
-                        and = {
-                            is_subject = yes
-                            is_subject_type = colonial_nation
-                            capital ?= { region = scope:target.region }
-                        }
-                    }
-                }
-                scope:target = {
-                    or = {
-                        # any location is adjacent to owned/owned by subject
-                        any_location_in_province_definition = {
-                            adjacent_to_owned_or_owned_by_subject = scope:actor
-                        }
-                        # there doesnt exist another colonial nation in that area
-                        not = {
-                            area = {
-                                any_location_in_area = {
-                                    filter = {
-                                        is_ownable = yes
-                                        not = { is_owned_or_owned_by_subjects_or_below_of = scope:actor }
-                                    }
-                                    owner ?= {
-                                        or = {
-                                            is_colonial_overlord = yes
-                                            is_colonial_subject = yes
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            add = "scope:actor.colonial_charter_utility(scope:target)"
-        }
-        else_if = {
             # kongo
             limit = {
                 scope:actor = {
@@ -584,6 +530,35 @@
                 }
             }
             add = 50
+        }
+        else_if = {
+            limit = {
+                scope:actor = {
+                    or = {
+                        # non-american colonizer
+                        and = {
+                            is_possible_colonial_empire = yes
+    				        monthly_balance > 50
+                        }
+                        # independent colonial nation
+                        and = {
+                            is_subject = no
+                            monthly_balance > 10
+                            or = {
+                                capital ?= { continent = continent:america }
+                                capital ?= { continent = continent:africa }
+                            }
+                        }
+                        # colonial subject
+                        and = {
+                            is_subject = yes
+                            is_subject_type = colonial_nation
+                            capital ?= { region = scope:target.region }
+                        }
+                    }
+                }
+            }
+            add = "scope:actor.colonial_charter_utility(scope:target)"
         }
         else = {
             add = -1000

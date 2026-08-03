@@ -14,7 +14,7 @@
 			is_colonial_top_overlord = yes
 			and = {
 				is_great_power = yes
-				current_year >= 1600
+				current_year >= 1650
 			}
 		}
 	}

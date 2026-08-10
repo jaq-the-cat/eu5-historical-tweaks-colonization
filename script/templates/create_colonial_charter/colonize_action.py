@@ -392,6 +392,89 @@ class ColonizeAction:
             add = -1000
         }
         else_if = {
+            limit = {
+                scope:actor = {
+                    # only allow brazil if portugal has < 200 tax base
+                    not = { tag = POR }
+                    country_exists = c:POR
+                    c:POR = {
+                        country_tax_base < 200
+                    }
+                }
+                scope:target = {
+                    or = {
+                        region = region:brazil_region
+                    }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
+                scope:actor = {
+                    # only allow hispanoamerica if castille or spain has < 200 tax base
+                    not = { has_or_had_tag = CAS }
+                    or = {
+                        country_exists = c:CAS
+                        country_exists = c:SPA
+                    }
+                    or = {
+                        c:CAS = {
+                            country_tax_base < 200
+                        }
+                        c:SPA = {
+                            country_tax_base < 200
+                        }
+                    }
+                }
+                scope:target = {
+                    not = { region = region:brazil_region }
+                    not = { area = area:guayana_area }
+                    or = {
+                        sub_continent = sub_continent:south_america
+                        region = region:mesoamerica_region
+                        region = region:central_america_region
+                        region = region:aridoamerica_region
+                        region = region:caribbean_region
+                    }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
+                scope:actor = {
+                    # only allow north america if england has < 200 tax base
+                    not = { has_or_had_tag = ENG has_or_had_tag = FRA }
+                    or = {
+                        and = {
+                            country_exists = c:ENG
+                            c:ENG = {
+                                country_tax_base < 200
+                            }
+                        }
+                        and = {
+                            country_exists = c:GBR
+                            c:GBR = {
+                                country_tax_base < 200
+                            }
+                        }
+                    }
+                }
+                scope:target = {
+                    or = {
+                        region = region:canada_region
+                        region = region:east_coast_region
+                        region = region:great_plains_region
+                    }
+                    not = {
+                        area = area:florida_area
+                    }
+                }
+            }
+            add = -1000
+        }
+        else_if = {
             # kongo
             limit = {
                 scope:actor = {

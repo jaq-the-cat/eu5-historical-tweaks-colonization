@@ -352,6 +352,25 @@ colonial_charter.100 = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
             }
         }
+        else_if = {
+            limit = {
+                scope:target ?= { OR = { region = region:swahili_coast_region region = region:zimbabwe_region } }
+                scope:actor ?= { tag = POR }
+            }
+            if = {
+                limit = {
+                    country_exists = c:C_MOZ
+                    c:C_MOZ ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
+                    }
+                }
+                c:C_MOZ = { save_scope_as = unique_colony }
+            }
+            else = {
+                set_local_variable = { name = can_be_unique_colony value = yes }
+            }
+        }
         
         #Get a colonial nation vassal neighboring the target province
         if = {
@@ -679,6 +698,20 @@ colonial_charter.100 = {
                         define_unique_country_tag = C_NSP
                         change_country_name = C_NSP
                         change_country_adjective = C_NSP_ADJ
+                        set_variable = { name = htc_unique_colony value = yes }
+                    }
+                    else_if = {
+                        limit = {
+                            NOT = { country_exists = c:C_MOZ }
+                            capital ?= { OR = { region = region:swahili_coast_region region = region:zimbabwe_region } }
+                            overlord ?= { tag = POR }
+                        }
+                        name = {
+                            name = C_MOZ
+                        }
+                        define_unique_country_tag = C_MOZ
+                        change_country_name = C_MOZ
+                        change_country_adjective = C_MOZ_ADJ
                         set_variable = { name = htc_unique_colony value = yes }
                     }
 

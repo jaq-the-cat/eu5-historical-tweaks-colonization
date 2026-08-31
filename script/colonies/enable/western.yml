@@ -21,8 +21,6 @@ charters:
     # south america
     - colombia_region
     - brazil_region
-    # europe
-    - eastern_europe_sub_continent
   1520:
     # north america
     - east_coast_region
@@ -72,7 +70,7 @@ charters:
     - mende_province
     - bassa_province
     - grebo_province
-  1700:
+  1750:
     - madagascar_region
     - asia_continent
     - america_continent

@@ -251,7 +251,13 @@ class ColonizeAction:
                     ### year restrictions
                     ## siberia
                     trigger_if = {
-                        limit = { region = region:west_siberia_region }
+                        limit = {
+                            or = {
+                                region = region:west_siberia_region
+                                region = region:russian_region
+                                region = region:ural_region
+                            }
+                        }
                         and = {
                             current_year >= 1560
                             trigger_if = {

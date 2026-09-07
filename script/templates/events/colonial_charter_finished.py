@@ -35,12 +35,19 @@ class ColonialCharterFinishedTemplate(TemplateData):
             if = {{
                 limit = {{
                     country_exists = c:{TAG}
-                    c:{TAG} ?= {{
-                        is_subject = yes
-                        is_subject_of = scope:actor
-                    }}
                 }}
-                c:{TAG} = {{ save_scope_as = unique_colony }}
+                if = {{
+                    limit = {{
+                        c:{TAG} ?= {{
+                            is_subject = yes
+                            is_subject_of = scope:actor
+                        }}
+                    }}
+                    c:{TAG} = {{ save_scope_as = unique_colony }}
+                }}
+                else = {{
+                    set_local_variable = {{ name = can_be_unique_colony value = no }}
+                }}
             }}
             else = {{
                 set_local_variable = {{ name = can_be_unique_colony value = yes }}
@@ -153,6 +160,7 @@ class ColonialCharterFinishedTemplate(TemplateData):
         trigger = {{
             scope:target = {{ is_overseas_for_owner = yes }}
             has_local_variable = can_be_unique_colony
+            local_var:can_be_unique_colony = yes
         }}
         
         if = {{
@@ -288,7 +296,7 @@ class ColonialCharterFinishedTemplate(TemplateData):
         }}
     }}
 
-    option = {{ #Keep it as part of the Metropolis
+    option = {{ # Keep it as part of the Metropolis
         name = colonial_charter.100.d
         
         trigger = {{
@@ -310,7 +318,7 @@ class ColonialCharterFinishedTemplate(TemplateData):
         }}
     }}
 
-    option = {{ #Play as the Colony
+    option = {{ # Play as the Colony
         name = colonial_charter.100.e
         high_risk_option = yes
         trigger = {{

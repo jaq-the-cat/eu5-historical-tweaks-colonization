@@ -335,24 +335,19 @@ class ColonizeAction:
         }
         else_if = {
             limit = {
-                # if castille/spain exists and has above 50 income, prevent other colonizers from going into their territory
+                # if castille/spain exists and has above 200 tax base, prevent other colonizers from going into their territory
                 or = {
                     and = {
     		            country_exists = c:CAS
-                        c:CAS = { monthly_balance > 50 }
+                        c:CAS = { country_tax_base > 200 }
                     }
                     and = {
     		            country_exists = c:SPA
-                        c:SPA = { monthly_balance > 50 }
+                        c:SPA = { country_tax_base > 200 }
                     }
                 }
                 scope:actor = {
-                    or = {
-                        has_or_had_tag = POR
-                        has_or_had_tag = ENG
-                        has_or_had_tag = GBR
-                        has_or_had_tag = FRA
-                    }
+                    not = { has_or_had_tag = CAS }
                 }
                 scope:target ?= {
                     or = {
@@ -399,50 +394,16 @@ class ColonizeAction:
         }
         else_if = {
             limit = {
-                scope:actor = {
-                    # only allow brazil if portugal has < 200 tax base
+                # only allow brazil if portugal has < 200 tax base
+                country_exists = c:POR
+                c:POR = {
+                    country_tax_base > 200
+                }
+                scope:actor ?= {
                     not = { tag = POR }
-                    country_exists = c:POR
-                    c:POR = {
-                        country_tax_base < 200
-                    }
                 }
-                scope:target = {
-                    or = {
-                        region = region:brazil_region
-                    }
-                }
-            }
-            add = -1000
-        }
-        else_if = {
-            limit = {
-                scope:actor = {
-                    # only allow hispanoamerica if castille or spain has < 200 tax base
-                    not = { has_or_had_tag = CAS }
-                    or = {
-                        country_exists = c:CAS
-                        country_exists = c:SPA
-                    }
-                    or = {
-                        c:CAS = {
-                            country_tax_base < 200
-                        }
-                        c:SPA = {
-                            country_tax_base < 200
-                        }
-                    }
-                }
-                scope:target = {
-                    not = { region = region:brazil_region }
-                    not = { area = area:guayana_area }
-                    or = {
-                        sub_continent = sub_continent:south_america
-                        region = region:mesoamerica_region
-                        region = region:central_america_region
-                        region = region:aridoamerica_region
-                        region = region:caribbean_region
-                    }
+                scope:target ?= {
+                    region = region:brazil_region
                 }
             }
             add = -1000
@@ -456,13 +417,13 @@ class ColonizeAction:
                         and = {
                             country_exists = c:ENG
                             c:ENG = {
-                                country_tax_base < 200
+                                country_tax_base > 200
                             }
                         }
                         and = {
                             country_exists = c:GBR
                             c:GBR = {
-                                country_tax_base < 200
+                                country_tax_base > 200
                             }
                         }
                     }

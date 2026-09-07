@@ -219,7 +219,7 @@ class ColonizeAction:
                         limit = { region = region:scandinavian_region }
                         or = {
                             scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
-                            scope:actor = c:NOV
+                            scope:actor.culture = { has_culture_group = culture_group:russian_group }
                         }
                     }
                     trigger_else_if = {
@@ -261,8 +261,8 @@ class ColonizeAction:
                         and = {
                             current_year >= 1560
                             trigger_if = {
-                                limit = { is_ai = yes }
-                                culture = { has_culture_group = culture_group:russian_group }
+                                limit = { scope:actor = { is_ai = yes } }
+                                scope:actor.culture = { has_culture_group = culture_group:russian_group }
                             }
                         }
                     }
@@ -271,8 +271,8 @@ class ColonizeAction:
                         and = {
                             current_year >= 1600
                             trigger_if = {
-                                limit = { is_ai = yes }
-                                culture = { has_culture_group = culture_group:russian_group }
+                                limit = { scope:actor = { is_ai = yes } }
+                                scope:actor.culture = { has_culture_group = culture_group:russian_group }
                             }
                         }
                     }
@@ -523,6 +523,31 @@ class ColonizeAction:
                         and = {
                             is_possible_colonial_empire = yes
     				        monthly_balance > 50
+                        }
+                        # scandinavia
+                        and = {
+                            culture ?= {
+                                or = {
+                                    has_culture_group = culture_group:scandinavian_group
+                                    has_culture_group = culture_group:russian_group
+                                }
+                            }
+                            scope:target = {
+                                region = region:scandinavian_region
+                            }
+                        }
+                        # russia
+                        and = {
+                            culture ?= {
+                                has_culture_group = culture_group:russian_group
+                            }
+                            scope:target = {
+                                or = {
+                                    sub_continent = sub_continent:eastern_europe
+                                    sub_continent = sub_continent:north_asia
+                                    sub_continent = sub_continent:central_asia
+                                }
+                            }
                         }
                         # independent colonial nation
                         and = {

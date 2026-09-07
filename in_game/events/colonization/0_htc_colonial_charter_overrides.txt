@@ -36,16 +36,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group } }
             }
             if = {
-                limit = { country_exists = c:C_CAN }
-                if = {
-                    limit = {
-                        c:C_CAN = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_CAN
+                    c:C_CAN ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_CAN = { save_scope_as = unique_colony }
                 }
+                c:C_CAN = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -57,16 +55,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group } }
             }
             if = {
-                limit = { country_exists = c:C_QBC }
-                if = {
-                    limit = {
-                        c:C_QBC = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_QBC
+                    c:C_QBC ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_QBC = { save_scope_as = unique_colony }
                 }
+                c:C_QBC = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -78,16 +74,14 @@ colonial_charter.100 = {
                 scope:actor ?= { or = { tag = ENG tag = GBR } }
             }
             if = {
-                limit = { country_exists = c:C_NWE }
-                if = {
-                    limit = {
-                        c:C_NWE = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_NWE
+                    c:C_NWE ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_NWE = { save_scope_as = unique_colony }
                 }
+                c:C_NWE = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -99,16 +93,14 @@ colonial_charter.100 = {
                 scope:actor ?= { tag = FRA }
             }
             if = {
-                limit = { country_exists = c:C_NWF }
-                if = {
-                    limit = {
-                        c:C_NWF = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_NWF
+                    c:C_NWF ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_NWF = { save_scope_as = unique_colony }
                 }
+                c:C_NWF = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -120,16 +112,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group } }
             }
             if = {
-                limit = { country_exists = c:C_LOU }
-                if = {
-                    limit = {
-                        c:C_LOU = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_LOU
+                    c:C_LOU ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_LOU = { save_scope_as = unique_colony }
                 }
+                c:C_LOU = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -141,16 +131,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
             }
             if = {
-                limit = { country_exists = c:C_CUB }
-                if = {
-                    limit = {
-                        c:C_CUB = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_CUB
+                    c:C_CUB ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_CUB = { save_scope_as = unique_colony }
                 }
+                c:C_CUB = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -162,16 +150,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group } }
             }
             if = {
-                limit = { country_exists = c:C_JAM }
-                if = {
-                    limit = {
-                        c:C_JAM = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_JAM
+                    c:C_JAM ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_JAM = { save_scope_as = unique_colony }
                 }
+                c:C_JAM = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -183,16 +169,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group } }
             }
             if = {
-                limit = { country_exists = c:C_BHM }
-                if = {
-                    limit = {
-                        c:C_BHM = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_BHM
+                    c:C_BHM ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_BHM = { save_scope_as = unique_colony }
                 }
+                c:C_BHM = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -204,16 +188,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
             }
             if = {
-                limit = { country_exists = c:C_HSP }
-                if = {
-                    limit = {
-                        c:C_HSP = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_HSP
+                    c:C_HSP ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_HSP = { save_scope_as = unique_colony }
                 }
+                c:C_HSP = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -225,16 +207,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group } }
             }
             if = {
-                limit = { country_exists = c:C_HAI }
-                if = {
-                    limit = {
-                        c:C_HAI = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_HAI
+                    c:C_HAI ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_HAI = { save_scope_as = unique_colony }
                 }
+                c:C_HAI = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -246,16 +226,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
             }
             if = {
-                limit = { country_exists = c:C_GUA }
-                if = {
-                    limit = {
-                        c:C_GUA = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_GUA
+                    c:C_GUA ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_GUA = { save_scope_as = unique_colony }
                 }
+                c:C_GUA = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -267,16 +245,14 @@ colonial_charter.100 = {
                 scope:actor ?= { has_or_had_tag = CAS }
             }
             if = {
-                limit = { country_exists = c:C_NGN }
-                if = {
-                    limit = {
-                        c:C_NGN = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_NGN
+                    c:C_NGN ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_NGN = { save_scope_as = unique_colony }
                 }
+                c:C_NGN = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -288,16 +264,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
             }
             if = {
-                limit = { country_exists = c:C_COL }
-                if = {
-                    limit = {
-                        c:C_COL = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_COL
+                    c:C_COL ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_COL = { save_scope_as = unique_colony }
                 }
+                c:C_COL = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -308,16 +282,14 @@ colonial_charter.100 = {
                 scope:target ?= { OR = { region = region:brazil_region } }
             }
             if = {
-                limit = { country_exists = c:C_BRA }
-                if = {
-                    limit = {
-                        c:C_BRA = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_BRA
+                    c:C_BRA ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_BRA = { save_scope_as = unique_colony }
                 }
+                c:C_BRA = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -329,16 +301,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
             }
             if = {
-                limit = { country_exists = c:C_PLA }
-                if = {
-                    limit = {
-                        c:C_PLA = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_PLA
+                    c:C_PLA ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_PLA = { save_scope_as = unique_colony }
                 }
+                c:C_PLA = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -350,16 +320,14 @@ colonial_charter.100 = {
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
             }
             if = {
-                limit = { country_exists = c:C_PER }
-                if = {
-                    limit = {
-                        c:C_PER = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_PER
+                    c:C_PER ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_PER = { save_scope_as = unique_colony }
                 }
+                c:C_PER = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -371,16 +339,14 @@ colonial_charter.100 = {
                 scope:actor ?= { OR = { tag = SPA AND = { tag = CAS c:ARA ?= { is_subject_of = c:CAS } } } }
             }
             if = {
-                limit = { country_exists = c:C_NSP }
-                if = {
-                    limit = {
-                        c:C_NSP = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_NSP
+                    c:C_NSP ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_NSP = { save_scope_as = unique_colony }
                 }
+                c:C_NSP = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }
@@ -392,16 +358,14 @@ colonial_charter.100 = {
                 scope:actor ?= { tag = POR }
             }
             if = {
-                limit = { country_exists = c:C_MOZ }
-                if = {
-                    limit = {
-                        c:C_MOZ = {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
+                limit = {
+                    country_exists = c:C_MOZ
+                    c:C_MOZ ?= {
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }
-                    c:C_MOZ = { save_scope_as = unique_colony }
                 }
+                c:C_MOZ = { save_scope_as = unique_colony }
             }
             else = {
                 set_local_variable = { name = can_be_unique_colony value = yes }

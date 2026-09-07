@@ -33,16 +33,14 @@ class ColonialCharterFinishedTemplate(TemplateData):
                 {TRIGGERS}
             }}
             if = {{
-                limit = {{ country_exists = c:{TAG} }}
-                if = {{
-                    limit = {{
-                        c:{TAG} = {{
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }}
+                limit = {{
+                    country_exists = c:{TAG}
+                    c:{TAG} ?= {{
+                        is_subject = yes
+                        is_subject_of = scope:actor
                     }}
-                    c:{TAG} = {{ save_scope_as = unique_colony }}
                 }}
+                c:{TAG} = {{ save_scope_as = unique_colony }}
             }}
             else = {{
                 set_local_variable = {{ name = can_be_unique_colony value = yes }}

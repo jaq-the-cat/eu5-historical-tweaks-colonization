@@ -1,0 +1,99 @@
+namespace = htc_conquistador_events
+
+# Peru
+htc_conquistador_events.1 = {
+	type = country_event
+	title = htc_conquistador_events.1.title
+	desc = htc_conquistador_events.1.desc
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	dynamic_historical_event = {
+        tag = C_PER
+		from = 1500.1.1
+		to = 1836.1.1
+		monthly_chance = 25
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		at_war = yes
+	}
+	
+	immediate = {
+		create_mercenary = {
+			name = htc_conquistador_mercs
+			home = root.capital
+			categories = {
+				army_heavy_infantry = 3
+				army_light_infantry = 6
+				army_heavy_cavalry = 3
+				army_light_cavalry = 6
+				army_artillery = 3
+			}
+			cost_multiplier = 0.05
+			save_scope_as = target_mercenary
+			months = 240 # 20 yrs
+		}
+		hire_mercenary = scope:target_mercenary
+	}
+
+	option = {
+		name = htc_conquistador_events.1.a
+	}
+}
+
+# Peru
+htc_conquistador_events.2 = {
+	type = country_event
+	title = htc_conquistador_events.2.title
+	desc = htc_conquistador_events.2.desc
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	dynamic_historical_event = {
+        tag = C_NSP
+		from = 1500.1.1
+		to = 1836.1.1
+		monthly_chance = 25
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	trigger = {
+		at_war = yes
+	}
+	
+	immediate = {
+		create_mercenary = {
+			name = htc_conquistador_mercs
+			home = root.capital
+			categories = {
+				army_heavy_infantry = 3
+				army_light_infantry = 6
+				army_heavy_cavalry = 3
+				army_light_cavalry = 6
+				army_artillery = 3
+			}
+			cost_multiplier = 0.05
+			save_scope_as = target_mercenary
+			months = 240 # 20 yrs
+		}
+		hire_mercenary = scope:target_mercenary
+	}
+
+	option = {
+		name = htc_conquistador_events.1.a
+	}
+}

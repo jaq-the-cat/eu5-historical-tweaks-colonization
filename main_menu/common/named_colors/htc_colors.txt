@@ -1,4 +1,8 @@
 colors = {
 	# map_lupijaki = rgb { 204 161 202 }
 	map_lupijaki = rgb { 217 154 214 }
+
+	# subject type colours - distinct from vanilla subject_vassal (51 204 204)
+	# and from the samanta oranges
+	subject_indian_vassal = rgb { 176 92 130 }
 }

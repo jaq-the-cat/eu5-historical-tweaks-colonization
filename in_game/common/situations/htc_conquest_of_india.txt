@@ -3,37 +3,51 @@
     hint_tag = hint_conquest_of_india
     
     can_start = {
-        # current_age_or_later = { age = age_5_absolutism }
         any_country = {
             capital ?= { continent = continent:europe }
             has_presence_in = sub_continent:south_asia
         }
     }
-    
+
     can_end = {
         custom_tooltip = {
             text = "htc_coi_europeans_kicked_out_of_india"
             not = {
                 any_country = {
-                    limit = { capital ?= { continent = continent:europe } }
+                    capital ?= { continent = continent:europe }
                     has_presence_in = sub_continent:south_asia
                 }
             }
         }
     }
     
+    # root = country. 
     visible = {
-        has_presence_in = sub_continent:south_asia
+        or = {
+            has_presence_in = sub_continent:south_asia
+            and = {
+                capital ?= { continent = continent:europe }
+                any_country_in_diplomatic_range = {
+                    capital ?= { sub_continent = sub_continent:south_asia }
+                }
+            }
+        }
     }
 
     on_start = {
+        set_variable = { name = recalculate_countdown value = 0 }
         conquest_of_india_recalculate_strongest = yes
 
         # europeans
         every_country = {
             limit = {
                 capital ?= { continent = continent:europe }
-                has_presence_in = sub_continent:south_asia
+                or = {
+                    has_presence_in = sub_continent:south_asia
+                    any_country_in_diplomatic_range = {
+                        capital ?= { sub_continent = sub_continent:south_asia }
+                    }
+                }
             }
             trigger_event_non_silently = htc_conquest_of_india.1
         }
@@ -45,21 +59,15 @@
         }
     }
 
+    # Recalculating sweeps every location in South Asia twice plus every country twice,
+    # so it runs quarterly rather than every month.
     on_monthly = {
-        conquest_of_india_recalculate_strongest = yes
-
-        # random_list = {
-        #     # reject european institutions
-        #     5 = { 
-        #         every_country = {
-        #             limit = {
-        #                 culture = { has_culture_group = culture_group:indian_group }
-        #             }
-        #             trigger_event_non_silently = htc_conquest_of_india.3
-        #         }
-        #     }
-        #     95 = {}
-        # }
+        change_variable = { name = recalculate_countdown add = 1 }
+        if = {
+            limit = { var:recalculate_countdown >= 3 }
+            set_variable = { name = recalculate_countdown value = 0 }
+            conquest_of_india_recalculate_strongest = yes
+        }
     }
 
     on_ended = {}
@@ -125,6 +133,9 @@
         if = {
             limit = {
                 sub_continent = sub_continent:south_asia
+                # the variable is cleared when no independent Indian power is left,
+                # so guard against dereferencing a dead country
+                exists = situation:conquest_of_india.var:strongest_indian_power
                 not = {
                     owner ?= {
                         top_overlord_or_this ?= {

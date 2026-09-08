@@ -43,7 +43,7 @@ htc_annex_native_on_capital_occupation = {
 					is_colonial_subject = yes
 					is_neighbor_of = scope:target.owner
 				}
-			}
+		}
 			ordered_subject = {
 				limit = { 
 					is_colonial_subject = yes

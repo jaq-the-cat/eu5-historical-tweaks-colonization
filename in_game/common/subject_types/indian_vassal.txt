@@ -1,6 +1,6 @@
 ﻿indian_vassal = {
     subject_pays = subject_pays_samanta
-    color = subject_vassal
+    color = subject_indian_vassal
     level = 1
 
     visible_through_diplomacy = {
@@ -51,7 +51,11 @@
     annexation_min_opinion = 100
     annexation_stall_opinion = 50
     overlord_can_cancel = yes
-    
+    subject_can_cancel = no
+    will_join_independence_wars = yes
+    fleet_basing_rights = yes
+
+
     can_overlord_build_roads = yes
     can_overlord_build_buildings = yes
     can_overlord_build_rgos = yes
@@ -109,14 +113,10 @@
 
     ai_wants_to_be_overlord = {
         scope:subject = {
-            add = {
+            every_country_with_coalition_grade_antagonism_against_us = {
                 desc = "COALITION_GRADE_ANTAGONISM_TOWARDS_THEM_SUBJECT"
-                value = {
-                    every_country_with_coalition_grade_antagonism_against_us = {                    
-                        add = {
-                            value = -10
-                        }
-                    }
+                add = {
+                    value = -10
                 }
             }
         }

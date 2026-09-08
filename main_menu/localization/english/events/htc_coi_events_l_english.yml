@@ -1,0 +1,38 @@
+﻿l_english:
+  htc_conquest_of_india.1.title: "A Foothold in India"
+  htc_conquest_of_india.1.desc: "India is not one realm but many. Its princes quarrel, its governors answer to their emperors only when it suits them, and its ports are open to any merchant with coin. What we cannot take by force, we may yet buy."
+  htc_conquest_of_india.1.a: "There is a fortune to be made."
+
+  htc_conquest_of_india.2.title: "The Europeans Arrive"
+  htc_conquest_of_india.2.desc: "Foreign merchants have settled along our coasts. They come with charters and coin rather than armies, buying land from our neighbours and offering their protection to our rivals. Their fleets are never far behind."
+  htc_conquest_of_india.2.a: "Let them keep to their warehouses."
+
+  htc_conquest_of_india.4.title: "Land Sold to Foreigners"
+  htc_conquest_of_india.4.desc: "[actor.GetName] has bought [target.GetName] from us. The coin will keep our armies paid a while longer, though our rivals will say we sold our own soil."
+  htc_conquest_of_india.4.a: "We needed the gold."
+
+  htc_conquest_of_india.5.title: "An Offer of Protection"
+  htc_conquest_of_india.5.desc: "An envoy of [actor.GetName] has come to court. Their fleets can shield us from the neighbours who covet our lands, and they offer gold besides - a great deal of it. In return they ask that we acknowledge them as our overlord."
+  htc_conquest_of_india.5.a: "Their gold and their guns will serve us."
+  htc_conquest_of_india.5.b: "We do not sell our sovereignty."
+
+  htc_conquest_of_india.6.title: "Protection Accepted"
+  htc_conquest_of_india.6.desc: "[target.GetName] has taken our terms. The subsidy is paid and their court now answers to ours."
+  htc_conquest_of_india.6.a: "Bought more cheaply than conquered."
+
+  htc_conquest_of_india.7.title: "Protection Refused"
+  htc_conquest_of_india.7.desc: "[target.GetName] has sent our envoy home. They would rather take their chances with their neighbours than with us."
+  htc_conquest_of_india.7.a: "They will regret it."
+
+  htc_conquest_of_india.8.title: "An Offer of Aid"
+  htc_conquest_of_india.8.desc: "The war goes badly and our levies are spent. [actor.GetName] offers muskets and men enough to turn it, on the condition that we bend the knee when the fighting ends."
+  htc_conquest_of_india.8.a: "Better a distant master than a neighbouring conqueror."
+  htc_conquest_of_india.8.b: "We will lose this war on our own terms."
+
+  htc_conquest_of_india.9.title: "Aid Accepted"
+  htc_conquest_of_india.9.desc: "[target.GetName] has taken our terms. Our muskets and levies are on their way, and their court is ours."
+  htc_conquest_of_india.9.a: "A cheap price for a vassal."
+
+  htc_conquest_of_india.10.title: "Aid Refused"
+  htc_conquest_of_india.10.desc: "[target.GetName] would rather lose their war than win it as our vassal."
+  htc_conquest_of_india.10.a: "Let them learn what defeat costs."

@@ -3,6 +3,7 @@
 		can_see_situation = situation:conquest_of_india
 	}
 	actions = {
+		htc_coi_purchase_location
 		htc_coi_purchase_province
 		htc_coi_offer_protection
 		htc_coi_assist_in_war_for_vassal

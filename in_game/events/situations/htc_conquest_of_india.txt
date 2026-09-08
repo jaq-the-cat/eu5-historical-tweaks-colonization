@@ -1,12 +1,18 @@
-﻿namespace = htc_conquest_of_india
+namespace = htc_conquest_of_india
 
 # start event for europeans
 htc_conquest_of_india.1 = {
 	type = country_event
 	category = situation_event
+	outcome = positive
 
 	title = htc_conquest_of_india.1.title
 	desc = htc_conquest_of_india.1.desc
+
+	illustration_tags = {
+		10 = exterior
+		10 = regular
+	}
 
 	option = {
 		name = htc_conquest_of_india.1.a
@@ -17,23 +23,35 @@ htc_conquest_of_india.1 = {
 htc_conquest_of_india.2 = {
 	type = country_event
 	category = situation_event
+	outcome = negative
 
 	title = htc_conquest_of_india.2.title
 	desc = htc_conquest_of_india.2.desc
+
+	illustration_tags = {
+		10 = exterior
+		10 = armed
+	}
 
 	option = {
 		name = htc_conquest_of_india.2.a
 	}
 }
 
-# purchased province
-# scope:actor = colonizer, scope:target = indian
+# a disloyal location / province was bought by a european
+# root = the seller, scope:actor = colonizer, scope:target = the location or province that was bought
 htc_conquest_of_india.4 = {
 	type = country_event
 	category = situation_event
+	outcome = negative
 
 	title = htc_conquest_of_india.4.title
 	desc = htc_conquest_of_india.4.desc
+
+	illustration_tags = {
+		10 = interior
+		10 = angry
+	}
 
 	option = {
 		name = htc_conquest_of_india.4.a
@@ -41,64 +59,95 @@ htc_conquest_of_india.4 = {
 }
 
 # offer protection
-# scope:actor = colonizer, scope:target = indian
+# root = indian, scope:actor = colonizer, scope:target = indian
 htc_conquest_of_india.5 = {
 	type = country_event
 	category = situation_event
+	outcome = neutral
 
 	title = htc_conquest_of_india.5.title
 	desc = htc_conquest_of_india.5.desc
 
+	illustration_tags = {
+		10 = interior
+		10 = regular
+	}
+
+	# accept
 	option = {
 		name = htc_conquest_of_india.5.a
-		add_gold = {
-			value = country_tax_base
-			multiply = 10
+
+		add_gold = htc_coi_protection_subsidy
+		scope:actor ?= {
+			add_gold = {
+				value = htc_coi_protection_subsidy
+				multiply = -1
+			}
 		}
+
+		if = {
+			limit = { is_subject = yes }
+			overlord ?= { cancel_subject = prev }
+		}
+
 		make_subject_of = {
 			target = scope:actor
 			type = subject_type:indian_vassal
 		}
-		scope:actor = {
+
+		scope:actor ?= {
 			trigger_event_non_silently = htc_conquest_of_india.6
 		}
 	}
 
+	# refuse
 	option = {
 		name = htc_conquest_of_india.5.b
-		scope:actor = {
+
+		scope:actor ?= {
+			add_opinion = {
+				target = root
+				modifier = declined_demands_modifier
+			}
 			trigger_event_non_silently = htc_conquest_of_india.7
 		}
 	}
 }
 
 # offer protection accepted
-# scope:actor = colonizer, scope:target = indian
+# root = colonizer, scope:actor = colonizer, scope:target = indian
 htc_conquest_of_india.6 = {
 	type = country_event
 	category = situation_event
+	outcome = positive
 
 	title = htc_conquest_of_india.6.title
 	desc = htc_conquest_of_india.6.desc
 
+	illustration_tags = {
+		10 = interior
+		10 = happy
+	}
+
 	option = {
 		name = htc_conquest_of_india.6.a
-		add_gold = {
-			value = scope:target.country_tax_base
-			multiply = 10
-			multiply = -1
-		}
 	}
 }
 
 # offer protection denied
-# scope:actor = colonizer, scope:target = indian
+# root = colonizer, scope:actor = colonizer, scope:target = indian
 htc_conquest_of_india.7 = {
 	type = country_event
 	category = situation_event
+	outcome = negative
 
 	title = htc_conquest_of_india.7.title
 	desc = htc_conquest_of_india.7.desc
+
+	illustration_tags = {
+		10 = interior
+		10 = angry
+	}
 
 	option = {
 		name = htc_conquest_of_india.7.a
@@ -106,63 +155,90 @@ htc_conquest_of_india.7 = {
 }
 
 # offer assist in war for vassalization
-# scope:actor = colonizer, scope:target = indian
+# root = indian, scope:actor = colonizer, scope:target = indian
 htc_conquest_of_india.8 = {
 	type = country_event
 	category = situation_event
+	outcome = neutral
 
 	title = htc_conquest_of_india.8.title
 	desc = htc_conquest_of_india.8.desc
 
+	illustration_tags = {
+		10 = armed
+		10 = regular
+	}
+
+	# accept
 	option = {
-		# accept
 		name = htc_conquest_of_india.8.a
+
 		add_manpower = {
-			value = scope:actor.monthly_manpower
-			multiply = 10
+			value = htc_coi_war_assistance_manpower
+		}
+		scope:actor ?= {
+			add_manpower = {
+				value = htc_coi_war_assistance_manpower
+				multiply = -1
+			}
 		}
 		make_subject_of = {
 			target = scope:actor
 			type = subject_type:indian_vassal
 		}
-		scope:actor = {
+		scope:actor ?= {
 			trigger_event_non_silently = htc_conquest_of_india.9
 		}
 	}
 
+	# deny
 	option = {
-		# deny
 		name = htc_conquest_of_india.8.b
-		scope:actor = {
+
+		scope:actor ?= {
+			add_opinion = {
+				target = root
+				modifier = declined_demands_modifier
+			}
 			trigger_event_non_silently = htc_conquest_of_india.10
 		}
 	}
 }
 
 # assist in war accepted
+# root = colonizer, scope:actor = colonizer, scope:target = indian
 htc_conquest_of_india.9 = {
 	type = country_event
 	category = situation_event
+	outcome = positive
 
 	title = htc_conquest_of_india.9.title
 	desc = htc_conquest_of_india.9.desc
 
+	illustration_tags = {
+		10 = armed
+		10 = happy
+	}
+
 	option = {
 		name = htc_conquest_of_india.9.a
-		add_manpower = {
-			value = monthly_manpower
-			multiply = -10
-		}
 	}
 }
 
 # assist in war denied
+# root = colonizer, scope:actor = colonizer, scope:target = indian
 htc_conquest_of_india.10 = {
 	type = country_event
 	category = situation_event
+	outcome = negative
 
 	title = htc_conquest_of_india.10.title
 	desc = htc_conquest_of_india.10.desc
+
+	illustration_tags = {
+		10 = interior
+		10 = angry
+	}
 
 	option = {
 		name = htc_conquest_of_india.10.a

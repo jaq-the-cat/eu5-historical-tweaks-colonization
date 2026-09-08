@@ -1,4 +1,12 @@
 ﻿conquest_of_india_recalculate_strongest = {
+    situation:conquest_of_india = {
+        remove_variable = strongest_indian_power
+        remove_variable = strongest_european_power
+        set_variable = { name = sip_locations value = 0 }
+        set_variable = { name = sep_locations value = 0 }
+        set_variable = { name = sip_location_percentage value = 0 }
+        set_variable = { name = sep_location_percentage value = 0 }
+    }
     culture_group:indian_group = {
         ordered_country_in_culture_group = {
             limit = { is_subject = no }
@@ -41,7 +49,7 @@
                     name = sip_location_percentage
                     value = {
                         value = var:sip_locations
-                        divide = 2587
+                        divide = htc_coi_south_asia_location_count
                     }
                 }
             }
@@ -94,14 +102,12 @@
                 name = sep_location_percentage
                 value = {
                     value = var:sep_locations
-                    divide = 2587
+                    divide = htc_coi_south_asia_location_count
                 }
             }
         }
     }
 }
-
-# total locations in south asia = 2587
 
 unification_of_inca_recalculate_strongest = {
 	religion:inti = {

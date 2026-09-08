@@ -1,4 +1,5 @@
-﻿htc_coi_purchase_location = {
+htc_coi_purchase_location = {
+    icon = tordesillas_demand_transfer_colony
     type = situation
     show_message = no
     potential = {
@@ -38,7 +39,6 @@
         visible = {
             situation:conquest_of_india = this
             situation_is_active = yes
-            # var:strongest_european_power = scope:actor
         }
     }
 
@@ -53,8 +53,9 @@
         visible = {
             # is in indian subcontinent
             sub_continent = sub_continent:south_asia
-            is_coastal = yes 
+            is_coastal = yes
             owner = { is_ai = yes }
+            not = { owner = scope:actor }
         }
         enabled = {
             owner.culture = { has_culture_group = culture_group:indian_group }
@@ -63,37 +64,25 @@
                 prosperity < 0.5
                 is_looted = yes
             }
+            # we must actually be able to pay for it
+            scope:actor = {
+                gold >= htc_coi_location_purchase_price
+            }
         }
     }
     effect = {
+        # the seller has to be captured before the transfer, or `owner` resolves to the buyer
+        scope:target.owner ?= { save_scope_as = htc_coi_seller }
         if = {
             limit = { exists = scope:target }
             scope:actor = {
                 add_gold = {
-                    value = 100
-                    add = {
-                        value = scope:target.development
-                        multiply = 2
-                    }
-                    max = {
-                        value = scope:target.owner.country_tax_base
-                        divide = 4
-                    }
+                    value = htc_coi_location_purchase_price
                     multiply = -1
                 }
             }
-            scope:target.owner = {
-                add_gold = {
-                    value = 100
-                    add = {
-                        value = scope:target.development
-                        multiply = 2
-                    }
-                    max = {
-                        value = scope:target.owner.country_tax_base
-                        divide = 4
-                    }
-                }
+            scope:htc_coi_seller ?= {
+                add_gold = htc_coi_location_purchase_price
             }
         }
         else = {
@@ -101,11 +90,11 @@
                 text = htc_coi_purchase_location_effect_tt
             }
         }
-        scope:target = {
+        scope:target ?= {
             change_location_owner = scope:actor
-            scope:target.owner = {
-                trigger_event = htc_conquest_of_india.4
-            }
+        }
+        scope:htc_coi_seller ?= {
+            trigger_event_non_silently = htc_conquest_of_india.4
         }
     }
 
@@ -114,17 +103,9 @@
         if = {
             # has more than twice the gold required to purchase
             limit = {
-                scope:actor = {    
+                scope:actor = {
                     gold > {
-                        value = 100
-                        add = {
-                            value = scope:target.development
-                            multiply = 2
-                        }
-                        max = {
-                            value = scope:target.owner.country_tax_base
-                            divide = 4
-                        }
+                        value = htc_coi_location_purchase_price
                         multiply = 2
                     }
                 }
@@ -154,6 +135,7 @@
 }
 
 htc_coi_purchase_province = {
+    icon = tordesillas_claim_area
     type = situation
     show_message = no
     potential = {
@@ -193,7 +175,6 @@ htc_coi_purchase_province = {
         visible = {
             situation:conquest_of_india = this
             situation_is_active = yes
-            # var:strongest_european_power = scope:actor
         }
     }
 
@@ -212,15 +193,17 @@ htc_coi_purchase_province = {
             any_location_in_province = {
                 or = {
                     adjacent_to_owned_or_owned_by_subject = scope:actor
-                    is_coastal = yes 
+                    is_coastal = yes
                 }
             }
             owner = { is_ai = yes }
+            # never buy from ourselves
+            not = { owner = scope:actor }
         }
         enabled = {
             or = {
                 # owner is indian
-                root.owner.culture = { has_culture_group = culture_group:indian_group }
+                owner.culture = { has_culture_group = culture_group:indian_group }
                 # we are the strongest european
                 custom_tooltip = {
                     text = htc_coi_we_are_strongest_european_tt
@@ -233,41 +216,24 @@ htc_coi_purchase_province = {
                 province_satisfaction < 0.75
                 province_food_percentage < 0.5
             }
+            # we must actually be able to pay for it
+            scope:actor = {
+                gold >= htc_coi_province_purchase_price
+            }
         }
     }
     effect = {
+        scope:target.owner ?= { save_scope_as = htc_coi_seller }
         if = {
             limit = { exists = scope:target }
             scope:actor = {
                 add_gold = {
-                    value = 100
-                    scope:target = {
-                        every_location_in_province = {
-                            add = development
-                            multiply = 2
-                        }
-                    }
-                    max = {
-                        value = scope:target.owner.country_tax_base
-                        divide = 2
-                    }
+                    value = htc_coi_province_purchase_price
                     multiply = -1
                 }
             }
-            scope:target.owner = {
-                add_gold = {
-                    value = 100
-                    scope:target = {
-                        every_location_in_province = {
-                            add = development
-                            multiply = 2
-                        }
-                    }
-                    max = {
-                        value = scope:target.owner.country_tax_base
-                        divide = 2
-                    }
-                }
+            scope:htc_coi_seller ?= {
+                add_gold = htc_coi_province_purchase_price
             }
         }
         else = {
@@ -275,13 +241,13 @@ htc_coi_purchase_province = {
                 text = htc_coi_purchase_province_effect_tt
             }
         }
-        scope:target = {
+        scope:target ?= {
             every_location_in_province = {
                 change_location_owner = scope:actor
             }
-            owner = {
-                trigger_event = htc_conquest_of_india.4
-            }
+        }
+        scope:htc_coi_seller ?= {
+            trigger_event_non_silently = htc_conquest_of_india.4
         }
     }
 
@@ -290,19 +256,9 @@ htc_coi_purchase_province = {
         if = {
             # has more than twice the gold required to purchase
             limit = {
-                scope:actor = {    
+                scope:actor = {
                     gold > {
-                        value = 100
-                        scope:target = {
-                            every_location_in_province = {
-                                add = development
-                                multiply = 2
-                            }
-                        }
-                        max = {
-                            value = scope:target.owner.country_tax_base
-                            divide = 2
-                        }
+                        value = htc_coi_province_purchase_price
                         multiply = 2
                     }
                 }
@@ -322,7 +278,11 @@ htc_coi_purchase_province = {
             if = {
                 limit = {
                     scope:target = {
-                        not = { is_neighbor_of = scope:actor }
+                        not = {
+                            any_location_in_province = {
+                                is_neighbor_of = scope:actor
+                            }
+                        }
                     }
                 }
                 add = -500
@@ -332,6 +292,7 @@ htc_coi_purchase_province = {
 }
 
 htc_coi_offer_protection = {
+    icon = offer_diplomatic_protection
     type = situation
     show_message = no
     potential = {
@@ -371,7 +332,6 @@ htc_coi_offer_protection = {
         visible = {
             situation:conquest_of_india = this
             situation_is_active = yes
-            # var:strongest_european_power = scope:actor
         }
     }
 
@@ -409,11 +369,14 @@ htc_coi_offer_protection = {
             any_neighbor_country = {
                 has_casus_belli_on = prev
             }
+            scope:actor = {
+                gold >= htc_coi_protection_subsidy
+            }
         }
     }
 
     effect = {
-        scope:target = { trigger_event_non_silently = htc_conquest_of_india.5 }
+        scope:target ?= { trigger_event_non_silently = htc_conquest_of_india.5 }
     }
 
     ai_will_do = {
@@ -442,6 +405,7 @@ htc_coi_offer_protection = {
 }
 
 htc_coi_assist_in_war_for_vassal = {
+    icon = aid_colonial_war
     type = situation
     show_message = no
     potential = {
@@ -481,7 +445,6 @@ htc_coi_assist_in_war_for_vassal = {
         visible = {
             situation:conquest_of_india = this
             situation_is_active = yes
-            # var:strongest_european_power = scope:actor
         }
     }
 
@@ -494,7 +457,7 @@ htc_coi_assist_in_war_for_vassal = {
         column = { data = population }
         visible = {
             culture = { has_culture_group = culture_group:indian_group }
-            is_at_war = yes
+            at_war = yes
             is_subject = no
             country_strength <= {
                 value = scope:actor.country_strength
@@ -504,22 +467,25 @@ htc_coi_assist_in_war_for_vassal = {
         enabled = {
             is_in_losing_war = yes
             manpower_percentage <= 0.2
+            scope:actor = {
+                manpower >= htc_coi_war_assistance_manpower
+            }
         }
     }
-    
+
     effect = {
-        scope:target = { trigger_event_non_silently = htc_conquest_of_india.8 }
+        scope:target ?= { trigger_event_non_silently = htc_conquest_of_india.8 }
     }
 
     ai_will_do = {
         value = -1
         if = {
             limit = {
-                scope:actor = {    
+                scope:actor = {
                     manpower_percentage >= 0.5
                 }
             }
-            add = scope:actor.country_strength
+            add = scope:actor.societal_value:land_vs_naval
             add = {
                 value = {
                     add = scope:actor.societal_value:outward_vs_inward

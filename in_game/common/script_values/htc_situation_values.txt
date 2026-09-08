@@ -1,0 +1,43 @@
+htc_coi_south_asia_location_count = 1452
+
+# scope:target = location
+htc_coi_location_purchase_price = {
+    value = 100
+    add = {
+        value = scope:target.development
+        multiply = 2
+    }
+    max = {
+        value = scope:target.owner.country_tax_base
+        divide = 4
+    }
+}
+
+# scope:target = province
+htc_coi_province_purchase_price = {
+    value = 100
+    scope:target = {
+        every_location_in_province = {
+            add = {
+                value = development
+                multiply = 2
+            }
+        }
+    }
+    max = {
+        value = scope:target.owner.country_tax_base
+        divide = 2
+    }
+}
+
+# scope:target = the Indian country being offered protection
+htc_coi_protection_subsidy = {
+    value = scope:target.country_tax_base
+    multiply = 10
+}
+
+# scope:actor = the European country sending troops
+htc_coi_war_assistance_manpower = {
+    value = scope:actor.monthly_manpower
+    multiply = 10
+}

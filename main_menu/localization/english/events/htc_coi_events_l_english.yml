@@ -7,9 +7,9 @@
   htc_conquest_of_india.2.desc: "Foreign merchants have settled along our coasts. They come with charters and coin rather than armies, buying land from our neighbours and offering their protection to our rivals. Their fleets are never far behind."
   htc_conquest_of_india.2.a: "Let them keep to their warehouses."
 
-  htc_conquest_of_india.4.title: "Land Sold to Foreigners"
-  htc_conquest_of_india.4.desc: "[actor.GetName] has bought [target.GetName] from us. The coin will keep our armies paid a while longer, though our rivals will say we sold our own soil."
-  htc_conquest_of_india.4.a: "We needed the gold."
+  htc_conquest_of_india.4.title: "A Lord Sells Our Land"
+  htc_conquest_of_india.4.desc: "[target.GetName] answered to us in name only. Its lord has taken [actor.GetName]'s coin and signed the land away without our leave, forwarding a share to our treasury as though that settled the matter."
+  htc_conquest_of_india.4.a: "Bought out from under us."
 
   htc_conquest_of_india.5.title: "An Offer of Protection"
   htc_conquest_of_india.5.desc: "An envoy of [actor.GetName] has come to court. Their fleets can shield us from the neighbours who covet our lands, and they offer gold besides - a great deal of it. In return they ask that we acknowledge them as our overlord."

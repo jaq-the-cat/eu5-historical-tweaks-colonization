@@ -5,7 +5,7 @@
   hint_conquest_of_india: "[GetSituationByKey('conquest_of_india').GetNameWithNoTooltip]"
 
   htc_coi_purchase_location: "Purchase Coastal Location"
-  htc_coi_purchase_location_desc: "Coastal towns whose rulers have lost their grip can be bought outright. Cheaper than an entire province, and enough to plant a trading post."
+  htc_coi_purchase_location_desc: "The local rulers of poorly held coastal towns answer to their overlords in name only, and can be bribed into handing over their land. Cheaper than buying a whole province, and enough to plant a trading post."
   htc_coi_purchase_location_effect_tt: "We purchase a [location|e] for an amount of [gold|e]"
 
   htc_coi_purchase_province: "Purchase Rebellious Province"

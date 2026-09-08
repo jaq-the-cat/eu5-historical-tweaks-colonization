@@ -235,14 +235,12 @@ class ColonizeAction:
                             or = {
                                 this = province_definition:madeira_province
                                 this = province_definition:azores_province
+                                this = province_definition:canary_islands_province
                             }
                         }
-                        scope:actor = { has_or_had_tag = POR }
-                    }
-                    trigger_else_if = {
-                        limit = { this = province_definition:canary_islands_province }
                         scope:actor = {
                             or = {
+                                has_or_had_tag = POR
                                 has_or_had_tag = CAS
                                 has_or_had_tag = SPA
                             }
@@ -305,23 +303,23 @@ class ColonizeAction:
         ### special cases for certain provinces we want to be player & event only
         if = {
             limit = {
-                or = {
-                    not = { exists = scope:target }
-                    and = {
-                        current_year < 1580
-                        # keep french colonies safe so they can actually get there in time
-                        # france will colonize through event anyway
-                        or = {
-                            scope:target ?= { area = area:hispaniola_area }
-                            scope:target ?= { area = area:quebec_area }
-                        }
+                # keep french colonies safe
+                scope:actor = {
+                    not = { has_or_had_tag = FRA }
+                }
+                scope:target ?= {
+                    or = {
+                        area = area:hispaniola_area
+                        area = area:quebec_area
                     }
                 }
+                current_year < 1580
             }
             add = -1000
         }
         else_if = {
             limit = {
+                # dont colonize if someone else owns a location in it
                 scope:target ?= {
                     any_location_in_province_definition = {
                         and = {
@@ -335,52 +333,20 @@ class ColonizeAction:
         }
         else_if = {
             limit = {
-                # if castille/spain exists and has above 200 tax base, prevent other colonizers from going into their territory
-                or = {
-                    and = {
-    		            country_exists = c:CAS
-                        c:CAS = { country_tax_base > 200 }
-                    }
-                    and = {
-    		            country_exists = c:SPA
-                        c:SPA = { country_tax_base > 200 }
-                    }
-                }
+                # spain doesn't colonize africa
                 scope:actor = {
-                    not = { has_or_had_tag = CAS }
+                    has_or_had_tag = CAS
                 }
                 scope:target ?= {
-                    or = {
-                        region = region:colombia_region
-                        region = region:la_plata_region
-                        region = region:central_america_region
-                        region = region:mesoamerica_region
-                        region = region:aridoamerica_region
-                        region = region:east_coast_region
-                    }
+                    continent = continent:africa
                 }
             }
             add = -1000
         }
         else_if = {
             limit = {
+                # inca doesn't colonize southern andes
                 scope:actor = {
-                    # spain doesn't colonize africa
-                    or = {
-                        has_or_had_tag = CAS
-                        has_or_had_tag = SPA
-                    }
-                }
-                scope:target ?= {
-                    or = { continent = continent:africa }
-                }
-            }
-            add = -1000
-        }
-        else_if = {
-            limit = {
-                scope:actor = {
-                    # inca doesn't colonize southern andes
                     has_or_had_tag = INC
                 }
                 scope:target ?= {
@@ -394,17 +360,41 @@ class ColonizeAction:
         }
         else_if = {
             limit = {
-                # only allow brazil if portugal has < 200 tax base
-                country_exists = c:POR
-                c:POR = {
-                    country_tax_base > 200
+                # keep castillian/spanish colonies safe
+                or = {
+                    c:CAS ?= { country_tax_base > 200 }
+                    c:SPA ?= { country_tax_base > 200 }
                 }
-                scope:actor ?= {
-                    not = { tag = POR }
+                scope:actor = {
+                    not = { has_or_had_tag = CAS }
+                    not = { has_or_had_tag = SPA }
+                }
+                scope:target ?= {
+                    or = {
+                        region = region:colombia_region
+                        region = region:la_plata_region
+                        region = region:central_america_region
+                        region = region:mesoamerica_region
+                        region = region:aridoamerica_region
+                        region = region:east_coast_region
+                    }
+                }
+                current_year < 1700
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
+                # keep portuguese colonies safe
+                country_exists = c:POR
+                c:POR ?= { country_tax_base > 200 }
+                scope:actor = {
+                    not = { has_or_had_tag = POR }
                 }
                 scope:target ?= {
                     region = region:brazil_region
                 }
+                current_year < 1700
             }
             add = -1000
         }
@@ -412,23 +402,14 @@ class ColonizeAction:
             limit = {
                 scope:actor = {
                     # only allow north america if england has < 200 tax base
-                    not = { has_or_had_tag = ENG has_or_had_tag = FRA }
+                    not = { has_or_had_tag = ENG }
+                    not = { has_or_had_tag = FRA }
                     or = {
-                        and = {
-                            country_exists = c:ENG
-                            c:ENG = {
-                                country_tax_base > 200
-                            }
-                        }
-                        and = {
-                            country_exists = c:GBR
-                            c:GBR = {
-                                country_tax_base > 200
-                            }
-                        }
+                        c:ENG ?= { country_tax_base > 200 }
+                        c:GBR ?= { country_tax_base > 200 }
                     }
                 }
-                scope:target = {
+                scope:target ?= {
                     or = {
                         region = region:canada_region
                         region = region:east_coast_region
@@ -438,6 +419,7 @@ class ColonizeAction:
                         area = area:florida_area
                     }
                 }
+                current_year < 1700
             }
             add = -1000
         }

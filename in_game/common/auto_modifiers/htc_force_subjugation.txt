@@ -30,7 +30,6 @@ htc_force_subjugation = {
 				# arabia
 				has_or_had_tag = OMA # oman
 				has_or_had_tag = ORM # hormuz
-				has_or_had_tag = YEM # yemen
 				# indonesia
 				has_or_had_tag = MAJ # majapahit
 			}

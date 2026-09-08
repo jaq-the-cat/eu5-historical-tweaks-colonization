@@ -56,7 +56,7 @@ htc_annex_native_on_capital_occupation = {
 				max = 1
 
 				annex_country = {
-					country = scope:loser
+					country = scope:target.owner
 					reason = MilitaryConquest
 				}
 			}

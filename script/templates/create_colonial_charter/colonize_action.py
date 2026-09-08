@@ -207,6 +207,7 @@ class ColonizeAction:
                             scope:actor.religion = religion:inti
                             region = region:andes_region
                             not = { area = area:ngulumapu_area }
+                            not = { area = area:cuyo_area }
                         }
                         scope:actor.religion = religion:inti
                     }
@@ -218,7 +219,7 @@ class ColonizeAction:
                         limit = { region = region:scandinavian_region }
                         or = {
                             scope:actor.culture = { has_culture_group = culture_group:scandinavian_group }
-                            scope:actor = c:NOV
+                            scope:actor.culture = { has_culture_group = culture_group:russian_group }
                         }
                     }
                     trigger_else_if = {
@@ -234,14 +235,12 @@ class ColonizeAction:
                             or = {
                                 this = province_definition:madeira_province
                                 this = province_definition:azores_province
+                                this = province_definition:canary_islands_province
                             }
                         }
-                        scope:actor = { has_or_had_tag = POR }
-                    }
-                    trigger_else_if = {
-                        limit = { this = province_definition:canary_islands_province }
                         scope:actor = {
                             or = {
+                                has_or_had_tag = POR
                                 has_or_had_tag = CAS
                                 has_or_had_tag = SPA
                             }
@@ -250,12 +249,18 @@ class ColonizeAction:
                     ### year restrictions
                     ## siberia
                     trigger_if = {
-                        limit = { region = region:west_siberia_region }
+                        limit = {
+                            or = {
+                                region = region:west_siberia_region
+                                region = region:russian_region
+                                region = region:ural_region
+                            }
+                        }
                         and = {
                             current_year >= 1560
                             trigger_if = {
-                                limit = { is_ai = yes }
-                                culture = { has_culture_group = culture_group:russian_group }
+                                limit = { scope:actor = { is_ai = yes } }
+                                scope:actor.culture = { has_culture_group = culture_group:russian_group }
                             }
                         }
                     }
@@ -264,8 +269,8 @@ class ColonizeAction:
                         and = {
                             current_year >= 1600
                             trigger_if = {
-                                limit = { is_ai = yes }
-                                culture = { has_culture_group = culture_group:russian_group }
+                                limit = { scope:actor = { is_ai = yes } }
+                                scope:actor.culture = { has_culture_group = culture_group:russian_group }
                             }
                         }
                     }
@@ -298,23 +303,23 @@ class ColonizeAction:
         ### special cases for certain provinces we want to be player & event only
         if = {
             limit = {
-                or = {
-                    not = { exists = scope:target }
-                    and = {
-                        current_year < 1600
-                        # keep french colonies safe so they can actually get there in time
-                        # france will colonize through event anyway
-                        or = {
-                            scope:target ?= { area = area:hispaniola_area }
-                            scope:target ?= { area = area:quebec_area }
-                        }
+                # keep french colonies safe
+                scope:actor = {
+                    not = { has_or_had_tag = FRA }
+                }
+                scope:target ?= {
+                    or = {
+                        area = area:hispaniola_area
+                        area = area:quebec_area
                     }
                 }
+                current_year < 1580
             }
             add = -1000
         }
         else_if = {
             limit = {
+                # dont colonize if someone else owns a location in it
                 scope:target ?= {
                     any_location_in_province_definition = {
                         and = {
@@ -328,24 +333,41 @@ class ColonizeAction:
         }
         else_if = {
             limit = {
-                # if castille/spain exists and has above 50 income, prevent other colonizers from going into their territory
-                or = {
-                    and = {
-    		            country_exists = c:CAS
-                        c:CAS = { monthly_balance > 50 }
-                    }
-                    and = {
-    		            country_exists = c:SPA
-                        c:SPA = { monthly_balance > 50 }
+                # spain doesn't colonize africa
+                scope:actor = {
+                    has_or_had_tag = CAS
+                }
+                scope:target ?= {
+                    continent = continent:africa
+                }
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
+                # inca doesn't colonize southern andes
+                scope:actor = {
+                    has_or_had_tag = INC
+                }
+                scope:target ?= {
+                    or = {
+                        area = area:ngulumapu_area
+                        area = area:cuyo_area
                     }
                 }
+            }
+            add = -1000
+        }
+        else_if = {
+            limit = {
+                # keep castillian/spanish colonies safe
+                or = {
+                    c:CAS ?= { country_tax_base > 200 }
+                    c:SPA ?= { country_tax_base > 200 }
+                }
                 scope:actor = {
-                    or = {
-                        has_or_had_tag = POR
-                        has_or_had_tag = ENG
-                        has_or_had_tag = GBR
-                        has_or_had_tag = FRA
-                    }
+                    not = { has_or_had_tag = CAS }
+                    not = { has_or_had_tag = SPA }
                 }
                 scope:target ?= {
                     or = {
@@ -357,52 +379,49 @@ class ColonizeAction:
                         region = region:east_coast_region
                     }
                 }
+                current_year < 1700
             }
             add = -1000
         }
         else_if = {
             limit = {
+                # keep portuguese colonies safe
+                country_exists = c:POR
+                c:POR ?= { country_tax_base > 200 }
                 scope:actor = {
-                    # spain doesn't colonize africa
-                    has_or_had_tag = CAS
-                    has_or_had_tag = SPA
+                    not = { has_or_had_tag = POR }
                 }
                 scope:target ?= {
-                    or = { continent = continent:africa }
+                    region = region:brazil_region
                 }
+                current_year < 1700
             }
             add = -1000
         }
         else_if = {
             limit = {
                 scope:actor = {
+                    # only allow north america if england has < 200 tax base
+                    not = { has_or_had_tag = ENG }
+                    not = { has_or_had_tag = FRA }
                     or = {
-				        monthly_balance > 50
-                        and = {
-                            is_subject = no
-                            monthly_balance > 10
-                            capital ?= { continent = continent:america }
-                        }
-                        and = {
-                            is_subject = yes
-                            is_subject_type = colonial_nation
-                            exists = capital
-                            capital.region = scope:target.region
-                        }
-                    }
-                    or = {
-                        is_subject_type = colonial_nation
-                        has_colonial_charters = yes
-                        is_colonial_top_overlord = yes
-                        scope:target = {
-                            any_location_in_province_definition = {
-                                adjacent_to_owned_by = scope:actor
-                            }
-                        }
+                        c:ENG ?= { country_tax_base > 200 }
+                        c:GBR ?= { country_tax_base > 200 }
                     }
                 }
+                scope:target ?= {
+                    or = {
+                        region = region:canada_region
+                        region = region:east_coast_region
+                        region = region:great_plains_region
+                    }
+                    not = {
+                        area = area:florida_area
+                    }
+                }
+                current_year < 1700
             }
-            add = "scope:actor.colonial_charter_utility(scope:target)"
+            add = -1000
         }
         else_if = {
             # kongo
@@ -438,6 +457,60 @@ class ColonizeAction:
                 }
             }
             add = 50
+        }
+        else_if = {
+            limit = {
+                scope:actor = {
+                    or = {
+                        # non-american colonizer
+                        and = {
+                            is_possible_colonial_empire = yes
+    				        monthly_balance > 50
+                        }
+                        # scandinavia
+                        and = {
+                            culture ?= {
+                                or = {
+                                    has_culture_group = culture_group:scandinavian_group
+                                    has_culture_group = culture_group:russian_group
+                                }
+                            }
+                            scope:target = {
+                                region = region:scandinavian_region
+                            }
+                        }
+                        # russia
+                        and = {
+                            culture ?= {
+                                has_culture_group = culture_group:russian_group
+                            }
+                            scope:target = {
+                                or = {
+                                    sub_continent = sub_continent:eastern_europe
+                                    sub_continent = sub_continent:north_asia
+                                    sub_continent = sub_continent:central_asia
+                                }
+                            }
+                        }
+                        # independent colonial nation
+                        and = {
+                            is_subject = no
+                            monthly_balance > 10
+                            or = {
+                                capital ?= { continent = continent:america }
+                                capital ?= { continent = continent:africa }
+                            }
+                        }
+                        # colonial subject
+                        and = {
+                            is_subject = yes
+                            is_subject_type = colonial_nation
+                            capital ?= { region = scope:target.region }
+                        }
+                    }
+                }
+            }
+            add = "scope:actor.colonial_charter_utility(scope:target)"
         }
         else = {
             add = -1000

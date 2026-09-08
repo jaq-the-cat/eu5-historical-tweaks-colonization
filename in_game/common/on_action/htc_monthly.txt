@@ -1,11 +1,21 @@
 ﻿monthly_country_pulse = {
 	on_actions = {
-		htc_monthly_country_pulse
+		htc_monthly_pulse
+		htc_monthly_pulse_ai
 		htc_monthly_pulse_force_war
 	}
 }
 
-htc_monthly_country_pulse = {
+htc_monthly_pulse = {
+	random_events = {
+		100 = htc_map_sharing.1
+		100 = htc_map_sharing.2
+
+		chance_to_happen = 10
+	}
+}
+
+htc_monthly_pulse_ai = {
 	random_events = {
 		100 = htc_exploration_crutches.1 # North Atlantic
 		100 = htc_exploration_crutches.2 # South Atlantic

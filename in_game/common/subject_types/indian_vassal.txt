@@ -4,7 +4,7 @@
     level = 1
 
     visible_through_diplomacy = {
-        capital ?= { continent = continent:europe }
+        is_possible_colonial_empire = yes
         has_presence_in = sub_continent:south_asia
         country_rank_level >= scope:target.country_rank_level
         scope:target = {
@@ -15,7 +15,7 @@
     }
 
     visible_through_treaty = {
-        capital ?= { continent = continent:europe }
+        is_possible_colonial_empire = yes
         has_presence_in = sub_continent:south_asia
         country_rank_level >= scope:target.country_rank_level
         scope:target = {
@@ -25,7 +25,7 @@
     }
 
     creation_visible = {
-        capital ?= { continent = continent:europe }
+        is_possible_colonial_empire = yes
         has_presence_in = sub_continent:south_asia
     }
     
@@ -43,7 +43,8 @@
     
     diplomatic_capacity_cost_scale = 0.25
 
-    strength_vs_overlord = -0.75
+    strength_vs_overlord = 0.01
+    great_power_score_transfer = 0.9 # the amount of Great Power Score that is transferred from the Subject to the Overlord
     
     has_overlords_ruler = no
     annexation_speed = 1
@@ -54,7 +55,6 @@
     subject_can_cancel = no
     will_join_independence_wars = yes
     fleet_basing_rights = yes
-
 
     can_overlord_build_roads = yes
     can_overlord_build_buildings = yes
@@ -71,7 +71,6 @@
     can_change_heir_selection = yes
     minimum_opinion_for_offer = 100
 
-    great_power_score_transfer = 0.5 # the amount of Great Power Score that is transferred from the Subject to the Overlord
     
     institution_spread_to_overlord = monthly_institution_spread_weak
     institution_spread_to_subject = 0
@@ -82,7 +81,7 @@
     }
 
     subject_modifier = {
-        loyalty_to_overlord = 30
+        loyalty_to_overlord = 60
         global_defensive = 0.25
         blocked_from_conversion = yes
     }

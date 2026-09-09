@@ -57,9 +57,8 @@
     }
     ordered_country = {
         limit = {
-            exists = capital
-            capital.continent = continent:europe
-            is_subject = no
+            can_see_situation = situation:conquest_of_india
+            is_possible_colonial_empire = yes
             has_presence_in = sub_continent:south_asia
         }
         order_by = {

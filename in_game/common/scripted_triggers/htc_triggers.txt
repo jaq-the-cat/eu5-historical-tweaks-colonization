@@ -11,11 +11,8 @@
 			has_or_had_tag = ENG
 			has_or_had_tag = GBR
 			has_or_had_tag = NED
+			has_or_had_tag = ITA
 			is_colonial_top_overlord = yes
-			and = {
-				is_great_power = yes
-				current_year >= 1700
-			}
 		}
 	}
 }

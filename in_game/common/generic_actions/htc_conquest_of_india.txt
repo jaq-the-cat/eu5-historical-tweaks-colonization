@@ -4,7 +4,7 @@ htc_coi_purchase_location = {
     show_message = no
     potential = {
         scope:actor = {
-            capital ?= { continent = continent:europe }
+            is_possible_colonial_empire = yes
         }
     }
 
@@ -140,7 +140,7 @@ htc_coi_purchase_province = {
     show_message = no
     potential = {
         scope:actor = {
-            capital ?= { continent = continent:europe }
+            is_possible_colonial_empire = yes
         }
     }
 
@@ -297,7 +297,7 @@ htc_coi_offer_protection = {
     show_message = no
     potential = {
         scope:actor = {
-            capital ?= { continent = continent:europe }
+            is_possible_colonial_empire = yes
         }
     }
 
@@ -410,7 +410,7 @@ htc_coi_assist_in_war_for_vassal = {
     show_message = no
     potential = {
         scope:actor = {
-            capital ?= { continent = continent:europe }
+            is_possible_colonial_empire = yes
         }
     }
 

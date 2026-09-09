@@ -26,7 +26,7 @@
         or = {
             has_presence_in = sub_continent:south_asia
             and = {
-                capital ?= { continent = continent:europe }
+                is_possible_colonial_empire = yes
                 any_country_in_diplomatic_range = {
                     capital ?= { sub_continent = sub_continent:south_asia }
                 }

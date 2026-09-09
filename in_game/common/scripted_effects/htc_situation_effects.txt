@@ -7,16 +7,18 @@
         set_variable = { name = sip_location_percentage value = 0 }
         set_variable = { name = sep_location_percentage value = 0 }
     }
+    # strongest = holds the largest share of south asia, not the biggest army.
+    # ordering by the raw count is the same ranking as by share and avoids
+    # fixed-point precision loss on small fractions.
     culture_group:indian_group = {
         ordered_country_in_culture_group = {
-            limit = { is_subject = no }
-            order_by = {
-                add = { value = military_strength }
-                add = { value = monthly_income_trade_and_tax }
+            limit = {
+                is_subject = no
+                has_presence_in = sub_continent:south_asia
             }
+            order_by = htc_coi_south_asia_locations_owned
             max = 1
             check_range_bounds = no
-            # save as strongest power
             situation:conquest_of_india = {
                 set_variable = {
                     name = strongest_indian_power
@@ -24,33 +26,11 @@
                 }
                 set_variable = {
                     name = sip_locations
-                    value = 0
+                    value = prev.htc_coi_south_asia_locations_owned
                 }
-            }
-            # save number of locations in india
-            sub_continent:south_asia = {
-                every_location_in_sub_continent = {
-                    limit = {
-                        owner ?= {
-                            top_overlord_or_this ?= situation:conquest_of_india.var:strongest_indian_power
-                        }
-                    }
-                    situation:conquest_of_india = {
-                        change_variable = {
-                            name = sip_locations
-                            add = 1
-                        }
-                    }
-                }
-            }
-            # get percentage of total
-            situation:conquest_of_india = {
                 set_variable = {
                     name = sip_location_percentage
-                    value = {
-                        value = var:sip_locations
-                        divide = htc_coi_south_asia_location_count
-                    }
+                    value = prev.htc_coi_south_asia_share_owned
                 }
             }
         }
@@ -61,10 +41,7 @@
             is_possible_colonial_empire = yes
             has_presence_in = sub_continent:south_asia
         }
-        order_by = {
-            add = { value = military_strength }
-            add = { value = monthly_income_trade_and_tax }
-        }
+        order_by = htc_coi_south_asia_locations_owned
         max = 1
         check_range_bounds = no
         situation:conquest_of_india = {
@@ -72,37 +49,13 @@
                 name = strongest_european_power
                 value = prev
             }
-        }
-        situation:conquest_of_india = {
             set_variable = {
                 name = sep_locations
-                value = 0
+                value = prev.htc_coi_south_asia_locations_owned
             }
-        }
-        # save number of locations in india
-        sub_continent:south_asia = {
-            every_location_in_sub_continent = {
-                limit = {
-                    owner ?= {
-                        top_overlord_or_this ?= situation:conquest_of_india.var:strongest_european_power
-                    }
-                }
-                situation:conquest_of_india = {
-                    change_variable = {
-                        name = sep_locations
-                        add = 1
-                    }
-                }
-            }
-        }
-        # get percentage of total
-        situation:conquest_of_india = {
             set_variable = {
                 name = sep_location_percentage
-                value = {
-                    value = var:sep_locations
-                    divide = htc_coi_south_asia_location_count
-                }
+                value = prev.htc_coi_south_asia_share_owned
             }
         }
     }

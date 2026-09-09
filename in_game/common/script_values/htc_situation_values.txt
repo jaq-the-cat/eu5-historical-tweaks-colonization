@@ -1,5 +1,27 @@
 htc_coi_south_asia_location_count = 1452
 
+# locations this country itself holds in south asia
+htc_coi_own_locations_in_south_asia = {
+    every_owned_location = {
+        limit = { sub_continent = sub_continent:south_asia }
+        add = 1
+    }
+}
+
+# locations this country holds in south asia, counting its whole subject tree
+htc_coi_south_asia_locations_owned = {
+    value = htc_coi_own_locations_in_south_asia
+    every_subject_or_below = {
+        add = htc_coi_own_locations_in_south_asia
+    }
+}
+
+# the same as a share of the subcontinent
+htc_coi_south_asia_share_owned = {
+    value = htc_coi_south_asia_locations_owned
+    divide = htc_coi_south_asia_location_count
+}
+
 # scope:target = location
 htc_coi_location_purchase_price = {
     value = 100

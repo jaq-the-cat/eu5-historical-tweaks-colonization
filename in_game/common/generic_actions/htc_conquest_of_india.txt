@@ -54,8 +54,13 @@ htc_coi_purchase_location = {
             # is in indian subcontinent
             sub_continent = sub_continent:south_asia
             is_coastal = yes
-            owner = { is_ai = yes }
             not = { owner = scope:actor }
+            owner = {
+                is_ai = yes
+                not = {
+                    is_subject_or_below_of = scope:actor
+                }
+            }
         }
         enabled = {
             owner.culture = { has_culture_group = culture_group:indian_group }
@@ -196,9 +201,13 @@ htc_coi_purchase_province = {
                     is_coastal = yes
                 }
             }
-            owner = { is_ai = yes }
-            # never buy from ourselves
             not = { owner = scope:actor }
+            owner = {
+                is_ai = yes
+                not = {
+                    is_subject_or_below_of = scope:actor
+                }
+            }
         }
         enabled = {
             or = {

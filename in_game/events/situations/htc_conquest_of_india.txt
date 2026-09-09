@@ -182,6 +182,9 @@ htc_conquest_of_india.8 = {
 				multiply = -1
 			}
 		}
+		scope:actor = {
+			take_over_all_wars = root
+		}
 		make_subject_of = {
 			target = scope:actor
 			type = subject_type:indian_vassal

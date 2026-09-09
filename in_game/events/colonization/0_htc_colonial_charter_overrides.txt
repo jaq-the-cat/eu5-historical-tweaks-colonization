@@ -111,7 +111,7 @@ colonial_charter.100 = {
         else_if = {
             limit = {
                 scope:target ?= { OR = { region = region:east_coast_region } }
-                scope:actor ?= { tag = FRA }
+                scope:actor ?= { has_or_had_tag = FRA }
             }
             if = {
                 limit = {
@@ -151,32 +151,6 @@ colonial_charter.100 = {
                         }
                     }
                     c:C_LOU = { save_scope_as = unique_colony }
-                }
-                else = {
-                    set_local_variable = { name = can_be_unique_colony value = no }
-                }
-            }
-            else = {
-                set_local_variable = { name = can_be_unique_colony value = yes }
-            }
-        }
-        else_if = {
-            limit = {
-                scope:target ?= { OR = { area = area:cuba_area } }
-                scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
-            }
-            if = {
-                limit = {
-                    country_exists = c:C_CUB
-                }
-                if = {
-                    limit = {
-                        c:C_CUB ?= {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
-                    }
-                    c:C_CUB = { save_scope_as = unique_colony }
                 }
                 else = {
                     set_local_variable = { name = can_be_unique_colony value = no }
@@ -240,6 +214,32 @@ colonial_charter.100 = {
         }
         else_if = {
             limit = {
+                scope:target ?= { OR = { area = area:cuba_area } }
+                scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
+            }
+            if = {
+                limit = {
+                    country_exists = c:C_CUB
+                }
+                if = {
+                    limit = {
+                        c:C_CUB ?= {
+                            is_subject = yes
+                            is_subject_of = scope:actor
+                        }
+                    }
+                    c:C_CUB = { save_scope_as = unique_colony }
+                }
+                else = {
+                    set_local_variable = { name = can_be_unique_colony value = no }
+                }
+            }
+            else = {
+                set_local_variable = { name = can_be_unique_colony value = yes }
+            }
+        }
+        else_if = {
+            limit = {
                 scope:target ?= { OR = { area = area:hispaniola_area } }
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
             }
@@ -266,32 +266,6 @@ colonial_charter.100 = {
         }
         else_if = {
             limit = {
-                scope:target ?= { OR = { area = area:hispaniola_area } }
-                scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group } }
-            }
-            if = {
-                limit = {
-                    country_exists = c:C_HAI
-                }
-                if = {
-                    limit = {
-                        c:C_HAI ?= {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
-                    }
-                    c:C_HAI = { save_scope_as = unique_colony }
-                }
-                else = {
-                    set_local_variable = { name = can_be_unique_colony value = no }
-                }
-            }
-            else = {
-                set_local_variable = { name = can_be_unique_colony value = yes }
-            }
-        }
-        else_if = {
-            limit = {
                 scope:target ?= { OR = { region = region:central_america_region } }
                 scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
             }
@@ -307,6 +281,32 @@ colonial_charter.100 = {
                         }
                     }
                     c:C_GUA = { save_scope_as = unique_colony }
+                }
+                else = {
+                    set_local_variable = { name = can_be_unique_colony value = no }
+                }
+            }
+            else = {
+                set_local_variable = { name = can_be_unique_colony value = yes }
+            }
+        }
+        else_if = {
+            limit = {
+                scope:target ?= { OR = { area = area:hispaniola_area } }
+                scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group } }
+            }
+            if = {
+                limit = {
+                    country_exists = c:C_HAI
+                }
+                if = {
+                    limit = {
+                        c:C_HAI ?= {
+                            is_subject = yes
+                            is_subject_of = scope:actor
+                        }
+                    }
+                    c:C_HAI = { save_scope_as = unique_colony }
                 }
                 else = {
                     set_local_variable = { name = can_be_unique_colony value = no }
@@ -345,7 +345,7 @@ colonial_charter.100 = {
         else_if = {
             limit = {
                 scope:target ?= { OR = { region = region:colombia_region } }
-                scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
+                scope:actor ?= { has_or_had_tag = CAS }
             }
             if = {
                 limit = {
@@ -370,33 +370,8 @@ colonial_charter.100 = {
         }
         else_if = {
             limit = {
-                scope:target ?= { OR = { region = region:brazil_region } }
-            }
-            if = {
-                limit = {
-                    country_exists = c:C_BRA
-                }
-                if = {
-                    limit = {
-                        c:C_BRA ?= {
-                            is_subject = yes
-                            is_subject_of = scope:actor
-                        }
-                    }
-                    c:C_BRA = { save_scope_as = unique_colony }
-                }
-                else = {
-                    set_local_variable = { name = can_be_unique_colony value = no }
-                }
-            }
-            else = {
-                set_local_variable = { name = can_be_unique_colony value = yes }
-            }
-        }
-        else_if = {
-            limit = {
                 scope:target ?= { OR = { region = region:la_plata_region } }
-                scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
+                scope:actor ?= { has_or_had_tag = CAS }
             }
             if = {
                 limit = {
@@ -422,7 +397,7 @@ colonial_charter.100 = {
         else_if = {
             limit = {
                 scope:target ?= { OR = { region = region:andes_region } }
-                scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
+                scope:actor ?= { has_or_had_tag = CAS }
             }
             if = {
                 limit = {
@@ -448,7 +423,7 @@ colonial_charter.100 = {
         else_if = {
             limit = {
                 scope:target ?= { OR = { region = region:aridoamerica_region region = region:mesoamerica_region } }
-                scope:actor ?= { OR = { tag = SPA AND = { tag = CAS c:ARA ?= { is_subject_of = c:CAS } } } }
+                scope:actor ?= { OR = { has_or_had_tag = SPA AND = { tag = CAS c:ARA ?= { is_subject_of = c:CAS } } } }
             }
             if = {
                 limit = {
@@ -473,8 +448,60 @@ colonial_charter.100 = {
         }
         else_if = {
             limit = {
+                scope:target ?= { OR = { region = region:brazil_region province_definition = province_definition:guenoa_province } }
+                scope:actor ?= { has_or_had_tag = POR }
+            }
+            if = {
+                limit = {
+                    country_exists = c:C_BRA
+                }
+                if = {
+                    limit = {
+                        c:C_BRA ?= {
+                            is_subject = yes
+                            is_subject_of = scope:actor
+                        }
+                    }
+                    c:C_BRA = { save_scope_as = unique_colony }
+                }
+                else = {
+                    set_local_variable = { name = can_be_unique_colony value = no }
+                }
+            }
+            else = {
+                set_local_variable = { name = can_be_unique_colony value = yes }
+            }
+        }
+        else_if = {
+            limit = {
+                scope:target ?= { OR = { region = region:kongo_region } }
+                scope:actor ?= { has_or_had_tag = POR }
+            }
+            if = {
+                limit = {
+                    country_exists = c:C_ANG
+                }
+                if = {
+                    limit = {
+                        c:C_ANG ?= {
+                            is_subject = yes
+                            is_subject_of = scope:actor
+                        }
+                    }
+                    c:C_ANG = { save_scope_as = unique_colony }
+                }
+                else = {
+                    set_local_variable = { name = can_be_unique_colony value = no }
+                }
+            }
+            else = {
+                set_local_variable = { name = can_be_unique_colony value = yes }
+            }
+        }
+        else_if = {
+            limit = {
                 scope:target ?= { OR = { region = region:swahili_coast_region region = region:zimbabwe_region } }
-                scope:actor ?= { tag = POR }
+                scope:actor ?= { has_or_had_tag = POR }
             }
             if = {
                 limit = {
@@ -488,6 +515,31 @@ colonial_charter.100 = {
                         }
                     }
                     c:C_MOZ = { save_scope_as = unique_colony }
+                }
+                else = {
+                    set_local_variable = { name = can_be_unique_colony value = no }
+                }
+            }
+            else = {
+                set_local_variable = { name = can_be_unique_colony value = yes }
+            }
+        }
+        else_if = {
+            limit = {
+                scope:target ?= { OR = { region = region:southern_africa_region } }
+            }
+            if = {
+                limit = {
+                    country_exists = c:C_SAF
+                }
+                if = {
+                    limit = {
+                        c:C_SAF ?= {
+                            is_subject = yes
+                            is_subject_of = scope:actor
+                        }
+                    }
+                    c:C_SAF = { save_scope_as = unique_colony }
                 }
                 else = {
                     set_local_variable = { name = can_be_unique_colony value = no }
@@ -636,7 +688,7 @@ colonial_charter.100 = {
                         limit = {
                             NOT = { country_exists = c:C_NWF }
                             capital ?= { OR = { region = region:east_coast_region } }
-                            overlord ?= { tag = FRA }
+                            overlord ?= { has_or_had_tag = FRA }
                         }
                         name = {
                             name = C_NWF
@@ -658,20 +710,6 @@ colonial_charter.100 = {
                         define_unique_country_tag = C_LOU
                         change_country_name = C_LOU
                         change_country_adjective = C_LOU_ADJ
-                        set_variable = { name = htc_unique_colony value = yes }
-                    }
-                    else_if = {
-                        limit = {
-                            NOT = { country_exists = c:C_CUB }
-                            capital ?= { OR = { area = area:cuba_area } }
-                            overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
-                        }
-                        name = {
-                            name = C_CUB
-                        }
-                        define_unique_country_tag = C_CUB
-                        change_country_name = C_CUB
-                        change_country_adjective = C_CUB_ADJ
                         set_variable = { name = htc_unique_colony value = yes }
                     }
                     else_if = {
@@ -704,6 +742,20 @@ colonial_charter.100 = {
                     }
                     else_if = {
                         limit = {
+                            NOT = { country_exists = c:C_CUB }
+                            capital ?= { OR = { area = area:cuba_area } }
+                            overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
+                        }
+                        name = {
+                            name = C_CUB
+                        }
+                        define_unique_country_tag = C_CUB
+                        change_country_name = C_CUB
+                        change_country_adjective = C_CUB_ADJ
+                        set_variable = { name = htc_unique_colony value = yes }
+                    }
+                    else_if = {
+                        limit = {
                             NOT = { country_exists = c:C_HSP }
                             capital ?= { OR = { area = area:hispaniola_area } }
                             overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
@@ -718,20 +770,6 @@ colonial_charter.100 = {
                     }
                     else_if = {
                         limit = {
-                            NOT = { country_exists = c:C_HAI }
-                            capital ?= { OR = { area = area:hispaniola_area } }
-                            overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group } }
-                        }
-                        name = {
-                            name = C_HAI
-                        }
-                        define_unique_country_tag = C_HAI
-                        change_country_name = C_HAI
-                        change_country_adjective = C_HAI_ADJ
-                        set_variable = { name = htc_unique_colony value = yes }
-                    }
-                    else_if = {
-                        limit = {
                             NOT = { country_exists = c:C_GUA }
                             capital ?= { OR = { region = region:central_america_region } }
                             overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
@@ -742,6 +780,20 @@ colonial_charter.100 = {
                         define_unique_country_tag = C_GUA
                         change_country_name = C_GUA
                         change_country_adjective = C_GUA_ADJ
+                        set_variable = { name = htc_unique_colony value = yes }
+                    }
+                    else_if = {
+                        limit = {
+                            NOT = { country_exists = c:C_HAI }
+                            capital ?= { OR = { area = area:hispaniola_area } }
+                            overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group } }
+                        }
+                        name = {
+                            name = C_HAI
+                        }
+                        define_unique_country_tag = C_HAI
+                        change_country_name = C_HAI
+                        change_country_adjective = C_HAI_ADJ
                         set_variable = { name = htc_unique_colony value = yes }
                     }
                     else_if = {
@@ -762,7 +814,7 @@ colonial_charter.100 = {
                         limit = {
                             NOT = { country_exists = c:C_COL }
                             capital ?= { OR = { region = region:colombia_region } }
-                            overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
+                            overlord ?= { has_or_had_tag = CAS }
                         }
                         name = {
                             name = C_COL
@@ -774,22 +826,9 @@ colonial_charter.100 = {
                     }
                     else_if = {
                         limit = {
-                            NOT = { country_exists = c:C_BRA }
-                            capital ?= { OR = { region = region:brazil_region } }
-                        }
-                        name = {
-                            name = C_BRA
-                        }
-                        define_unique_country_tag = C_BRA
-                        change_country_name = C_BRA
-                        change_country_adjective = C_BRA_ADJ
-                        set_variable = { name = htc_unique_colony value = yes }
-                    }
-                    else_if = {
-                        limit = {
                             NOT = { country_exists = c:C_PLA }
                             capital ?= { OR = { region = region:la_plata_region } }
-                            overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
+                            overlord ?= { has_or_had_tag = CAS }
                         }
                         name = {
                             name = C_PLA
@@ -803,7 +842,7 @@ colonial_charter.100 = {
                         limit = {
                             NOT = { country_exists = c:C_PER }
                             capital ?= { OR = { region = region:andes_region } }
-                            overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group } }
+                            overlord ?= { has_or_had_tag = CAS }
                         }
                         name = {
                             name = C_PER
@@ -817,7 +856,7 @@ colonial_charter.100 = {
                         limit = {
                             NOT = { country_exists = c:C_NSP }
                             capital ?= { OR = { region = region:aridoamerica_region region = region:mesoamerica_region } }
-                            overlord ?= { OR = { tag = SPA AND = { tag = CAS c:ARA ?= { is_subject_of = c:CAS } } } }
+                            overlord ?= { OR = { has_or_had_tag = SPA AND = { tag = CAS c:ARA ?= { is_subject_of = c:CAS } } } }
                         }
                         name = {
                             name = C_NSP
@@ -829,9 +868,37 @@ colonial_charter.100 = {
                     }
                     else_if = {
                         limit = {
+                            NOT = { country_exists = c:C_BRA }
+                            capital ?= { OR = { region = region:brazil_region province_definition = province_definition:guenoa_province } }
+                            overlord ?= { has_or_had_tag = POR }
+                        }
+                        name = {
+                            name = C_BRA
+                        }
+                        define_unique_country_tag = C_BRA
+                        change_country_name = C_BRA
+                        change_country_adjective = C_BRA_ADJ
+                        set_variable = { name = htc_unique_colony value = yes }
+                    }
+                    else_if = {
+                        limit = {
+                            NOT = { country_exists = c:C_ANG }
+                            capital ?= { OR = { region = region:kongo_region } }
+                            overlord ?= { has_or_had_tag = POR }
+                        }
+                        name = {
+                            name = C_ANG
+                        }
+                        define_unique_country_tag = C_ANG
+                        change_country_name = C_ANG
+                        change_country_adjective = C_ANG_ADJ
+                        set_variable = { name = htc_unique_colony value = yes }
+                    }
+                    else_if = {
+                        limit = {
                             NOT = { country_exists = c:C_MOZ }
                             capital ?= { OR = { region = region:swahili_coast_region region = region:zimbabwe_region } }
-                            overlord ?= { tag = POR }
+                            overlord ?= { has_or_had_tag = POR }
                         }
                         name = {
                             name = C_MOZ
@@ -839,6 +906,19 @@ colonial_charter.100 = {
                         define_unique_country_tag = C_MOZ
                         change_country_name = C_MOZ
                         change_country_adjective = C_MOZ_ADJ
+                        set_variable = { name = htc_unique_colony value = yes }
+                    }
+                    else_if = {
+                        limit = {
+                            NOT = { country_exists = c:C_SAF }
+                            capital ?= { OR = { region = region:southern_africa_region } }
+                        }
+                        name = {
+                            name = C_SAF
+                        }
+                        define_unique_country_tag = C_SAF
+                        change_country_name = C_SAF
+                        change_country_adjective = C_SAF_ADJ
                         set_variable = { name = htc_unique_colony value = yes }
                     }
 

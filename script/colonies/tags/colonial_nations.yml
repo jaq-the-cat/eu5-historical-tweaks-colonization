@@ -1,4 +1,5 @@
 # north america
+
 C_CAN:
   name: "Canada"
   adjective: "Canadian"
@@ -16,8 +17,8 @@ C_QBC:
     - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }
 
 C_NWE:
-  name: "New England"
-  adjective: "New English"
+  name: "Thirteen Colonies"
+  adjective: "American"
   geography_triggers:
     - region = region:east_coast_region
   overlord_triggers:
@@ -29,7 +30,7 @@ C_NWF:
   geography_triggers:
     - region = region:east_coast_region
   overlord_triggers:
-    - tag = FRA
+    - has_or_had_tag = FRA
 
 C_LOU:
   name: "Louisiana"
@@ -40,13 +41,6 @@ C_LOU:
     - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }
 
 # central america
-C_CUB:
-  name: "Cuba"
-  adjective: "Cuban"
-  geography_triggers:
-    - area = area:cuba_area
-  overlord_triggers:
-    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group }
 
 C_JAM:
   name: "Jamaica"
@@ -64,11 +58,27 @@ C_BHM:
   overlord_triggers:
     - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group }
 
+C_CUB:
+  name: "Cuba"
+  adjective: "Cuban"
+  geography_triggers:
+    - area = area:cuba_area
+  overlord_triggers:
+    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group }
+
 C_HSP:
   name: "Hispaniola"
   adjective: "Hispaniolan"
   geography_triggers:
     - area = area:hispaniola_area
+  overlord_triggers:
+    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group }
+
+C_GUA:
+  name: "Guatemala"
+  adjective: "Guatemalan"
+  geography_triggers:
+    - region = region:central_america_region
   overlord_triggers:
     - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group }
 
@@ -80,15 +90,8 @@ C_HAI:
   overlord_triggers:
     - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }
 
-C_GUA:
-  name: "Guatemala"
-  adjective: "Guatemalan"
-  geography_triggers:
-    - region = region:central_america_region
-  overlord_triggers:
-    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group }
-
 # south america
+
 C_NGN:
   name: "New Granada"
   adjective: "New Granadine"
@@ -103,14 +106,7 @@ C_COL:
   geography_triggers:
     - region = region:colombia_region
   overlord_triggers:
-    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group }
-
-C_BRA:
-  name: "Brazil"
-  adjective: "Brazilian"
-  geography_triggers:
-    - region = region:brazil_region
-  overlord_triggers:
+    - has_or_had_tag = CAS
 
 C_PLA:
   name: "Platina"
@@ -118,7 +114,7 @@ C_PLA:
   geography_triggers:
     - region = region:la_plata_region
   overlord_triggers:
-    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group }
+    - has_or_had_tag = CAS
 
 C_PER:
   name: "Peru"
@@ -126,7 +122,7 @@ C_PER:
   geography_triggers:
     - region = region:andes_region
   overlord_triggers:
-    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:iberian_group }
+    - has_or_had_tag = CAS
 
 C_NSP:
   name: "New Spain"
@@ -135,9 +131,26 @@ C_NSP:
     - region = region:aridoamerica_region
     - region = region:mesoamerica_region
   overlord_triggers:
-    - OR = { tag = SPA AND = { tag = CAS c:ARA ?= { is_subject_of = c:CAS } } }
+    - OR = { has_or_had_tag = SPA AND = { tag = CAS c:ARA ?= { is_subject_of = c:CAS } } }
 
-# east africa
+C_BRA:
+  name: "Brazil"
+  adjective: "Brazilian"
+  geography_triggers:
+    - region = region:brazil_region
+    - province_definition = province_definition:guenoa_province
+  overlord_triggers:
+    - has_or_had_tag = POR
+
+# africa
+
+C_ANG:
+  name: "Angola"
+  adjective: "Angolan"
+  geography_triggers:
+    - region = region:kongo_region
+  overlord_triggers:
+    - has_or_had_tag = POR
 
 C_MOZ:
   name: "Mozambique"
@@ -146,12 +159,11 @@ C_MOZ:
     - region = region:swahili_coast_region
     - region = region:zimbabwe_region
   overlord_triggers:
-    - tag = POR
+    - has_or_had_tag = POR
 
-# africa
-# CN_SOUTH_AFRICA:
-#   name: "South Africa"
-#   adjective: "South African"
-#   overlord_triggers:
-# { region = region:southern_africa_region }
-#     - and = { is_subject_of_type=colonial_nation overlord ?= { or = { tag=POR tag=CAS tag=SPA tag=FRA tag=ENG tag=GBR tag=NED } } }
+C_SAF:
+  name: "South Africa"
+  adjective: "South African"
+  geography_triggers:
+    - region = region:southern_africa_region
+  overlord_triggers:

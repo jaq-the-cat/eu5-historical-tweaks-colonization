@@ -354,6 +354,12 @@ class ColonialCharterFinishedTemplate(TemplateData):
     }}
 
     after = {{
+        scope:target ?= {{ 
+            every_location_in_province = {{
+                limit = {{ integration_level = colonized }}
+                change_integration_level = integrated
+            }}
+        }}
         trigger_event_silently = treaty_of_tordesillas.1
     }}
 }}

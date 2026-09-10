@@ -1,64 +1,109 @@
 on_siege_won = {
 	on_actions = {
-		htc_annex_native_on_capital_occupation
+		htc_annex_native_on_occupation
 	}
 }
 
 on_location_occupied = {
 	on_actions = {
-		htc_annex_native_on_capital_occupation
+		htc_annex_native_on_occupation
 	}
 }
 
-htc_annex_native_on_capital_occupation = {
+htc_annex_native_on_occupation = {
 	trigger = {
 		or = {
-			is_colonial_overlord = yes
-			is_colonial_subject = yes
-		}
-		scope:target = {
-			is_capital = yes
-		}
-		any_current_war = {
-			defender_leader = scope:target.owner
-			has_casus_belli = yes
-			casus_belli ?= casus_belli:cb_htc_conquer_native
+			# peru and inca
+			and = {
+				or = {
+					has_or_had_tag = C_PER
+					has_or_had_tag = SPA
+				}
+				scope:target = {
+					owner ?= {
+						or = {
+							religion = religion:inti
+							religion.group = religion_group:folk_peruvian_group
+							religion.group = religion_group:folk_south_american_group
+							religion.group = religion_group:folk_argentinian_group
+						}
+						lowest_war_score < -20
+					}
+				}
+			}
+			# new spain and mesoamericans
+			and = {
+				or = {
+					has_or_had_tag = C_NSP
+					has_or_had_tag = SPA
+				}
+				scope:target = {
+					owner ?= {
+						or = {
+							religion.group = religion_group:folk_aridoamerica_group
+							religion.group = religion_group:folk_central_american_group
+							religion.group = religion_group:tonal_group
+						}
+						lowest_war_score < -20
+					}
+				}
+			}
 		}
 	}
 	effect = {
 		if = {
+			# peru and inca
 			limit = {
-				is_colonial_subject = yes
-				is_neighbor_of = scope:target.owner
+				country_exists = c:C_PER
+				or = {
+					has_or_had_tag = C_PER
+					has_or_had_tag = SPA
+				}
+				scope:target = {
+					owner ?= {
+						or = {
+							religion = religion:inti
+							religion.group = religion_group:folk_peruvian_group
+							religion.group = religion_group:folk_south_american_group
+							religion.group = religion_group:folk_argentinian_group
+						}
+						lowest_war_score < -20
+					}
+				}
+				c:C_PER = {
+					is_neighbor_of = scope:target.owner
+				}
 			}
 			annex_country = {
 				country = scope:target.owner
-				reason = MilitaryConquest
+				reason = Diplomatic
 			}
 		}
 		else_if = {
+			# new spain and mesoamericans
 			limit = {
-				is_colonial_overlord = yes
-				any_subject = {
-					is_colonial_subject = yes
+				country_exists = c:C_NSP
+				or = {
+					has_or_had_tag = C_NSP
+					has_or_had_tag = SPA
+				}
+				scope:target = {
+					owner ?= {
+						or = {
+							religion.group = religion_group:folk_aridoamerica_group
+							religion.group = religion_group:folk_central_american_group
+							religion.group = religion_group:tonal_group
+						}
+						lowest_war_score < -20
+					}
+				}
+				c:C_NSP = {
 					is_neighbor_of = scope:target.owner
 				}
-		}
-			ordered_subject = {
-				limit = { 
-					is_colonial_subject = yes
-					is_neighbor_of = scope:target.owner
-				}
-				order_by = {
-					value = "capital.distance_to_squared(scope:target)"
-					multiply = -1
-				}
-				max = 1
-
-				annex_country = {
-					country = scope:target.owner
-					reason = MilitaryConquest
-				}
+			}
+			annex_country = {
+				country = scope:target.owner
+				reason = Diplomatic
 			}
 		}
 	}

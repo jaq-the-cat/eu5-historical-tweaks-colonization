@@ -16,3 +16,33 @@
 		}
 	}
 }
+
+is_possible_indian_colonizer = {
+	custom_tooltip = {
+		text = is_possible_indian_colonizer_tt
+		is_possible_colonial_empire = yes
+		capital ?= {
+			not = { continent = continent:asia }
+		}
+	}
+}
+
+is_indian_colonial_subject = {
+	custom_tooltip = {
+		text = is_indian_colonial_subject_tt
+		capital ?= { sub_continent = sub_continent:south_asia }
+		is_subject = yes
+		top_overlord ?= {
+			is_possible_indian_colonizer = yes
+		}
+	}
+}
+
+
+is_indian_native = {
+	custom_tooltip = {
+		text = is_indian_native_tt
+		capital ?= { sub_continent = sub_continent:south_asia }
+		is_indian_colonial_subject = no
+	}
+}

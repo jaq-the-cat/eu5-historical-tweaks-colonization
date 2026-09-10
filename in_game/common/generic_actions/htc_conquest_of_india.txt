@@ -4,7 +4,7 @@ htc_coi_purchase_location = {
     show_message = no
     potential = {
         scope:actor = {
-            is_possible_colonial_empire = yes
+            is_possible_indian_colonizer = yes
         }
     }
 
@@ -55,6 +55,7 @@ htc_coi_purchase_location = {
             sub_continent = sub_continent:south_asia
             is_coastal = yes
             not = { owner = scope:actor }
+            not = { adjacent_to_owned_or_owned_by_subject = scope:actor }
             owner = {
                 is_ai = yes
                 not = {
@@ -63,7 +64,7 @@ htc_coi_purchase_location = {
             }
         }
         enabled = {
-            owner.culture = { has_culture_group = culture_group:indian_group }
+            owner = { is_indian_native = yes }
             or = {
                 local_control < 0.5
                 prosperity < 0.5
@@ -127,14 +128,6 @@ htc_coi_purchase_location = {
                 limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
                 add = scope:actor.modifier:bias_for_colonialist_policies
             }
-            if = {
-                limit = {
-                    scope:target = {
-                        not = { is_neighbor_of = scope:actor }
-                    }
-                }
-                add = -500
-            }
         }
     }
 }
@@ -145,7 +138,7 @@ htc_coi_purchase_province = {
     show_message = no
     potential = {
         scope:actor = {
-            is_possible_colonial_empire = yes
+            is_possible_indian_colonizer = yes
         }
     }
 
@@ -212,7 +205,7 @@ htc_coi_purchase_province = {
         enabled = {
             or = {
                 # owner is indian
-                owner.culture = { has_culture_group = culture_group:indian_group }
+                owner = { is_indian_native = yes }
                 # we are the strongest european
                 custom_tooltip = {
                     text = htc_coi_we_are_strongest_european_tt
@@ -222,7 +215,7 @@ htc_coi_purchase_province = {
             # province has low control and low satisfaction
             province_average_control < 0.5
             or = {
-                province_satisfaction < 0.75
+                province_satisfaction < 0.5
                 province_food_percentage < 0.5
             }
             # we must actually be able to pay for it
@@ -306,7 +299,7 @@ htc_coi_offer_protection = {
     show_message = no
     potential = {
         scope:actor = {
-            is_possible_colonial_empire = yes
+            is_possible_indian_colonizer = yes
         }
     }
 
@@ -352,26 +345,20 @@ htc_coi_offer_protection = {
         column = { data = great_power_score }
         column = { data = population }
         visible = {
-            culture = { has_culture_group = culture_group:indian_group }
             or = {
-                # is independent and we are more than twice as powerful
+                is_indian_native = yes
                 and = {
-                    is_subject = no
-                    country_strength <= {
-                        value = scope:actor.country_strength
-                        divide = 2
+                    # we are the strongest european
+                    custom_tooltip = {
+                        text = htc_coi_we_are_strongest_european_tt
+                        scope:actor = situation:conquest_of_india.var:strongest_european_power
                     }
+                    is_indian_colonial_subject = yes
                 }
-                # is a subject but we are more than three times as powerful as their top overlord
-                and = {
-                    is_subject = yes
-                    top_overlord ?= {
-                        country_strength < {
-                            value = scope:actor.country_strength
-                            divide = 3
-                        }
-                    }
-                }
+            }
+            top_overlord_or_this.country_strength <= {
+                value = scope:actor.country_strength
+                divide = 2
             }
         }
         enabled = {
@@ -419,7 +406,7 @@ htc_coi_assist_in_war_for_vassal = {
     show_message = no
     potential = {
         scope:actor = {
-            is_possible_colonial_empire = yes
+            is_possible_indian_colonizer = yes
         }
     }
 
@@ -465,10 +452,19 @@ htc_coi_assist_in_war_for_vassal = {
         column = { data = great_power_score }
         column = { data = population }
         visible = {
-            culture = { has_culture_group = culture_group:indian_group }
+            or = {
+                is_indian_native = yes
+                and = {
+                    # we are the strongest european
+                    custom_tooltip = {
+                        text = htc_coi_we_are_strongest_european_tt
+                        scope:actor = situation:conquest_of_india.var:strongest_european_power
+                    }
+                    is_indian_colonial_subject = yes
+                }
+            }
             at_war = yes
-            is_subject = no
-            country_strength <= {
+            top_overlord_or_this.country_strength <= {
                 value = scope:actor.country_strength
                 divide = 2
             }

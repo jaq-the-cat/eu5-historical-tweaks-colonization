@@ -26,7 +26,7 @@
         or = {
             has_presence_in = sub_continent:south_asia
             and = {
-                is_possible_colonial_empire = yes
+                is_possible_indian_colonizer = yes
                 any_country_in_diplomatic_range = {
                     capital ?= { sub_continent = sub_continent:south_asia }
                 }
@@ -41,12 +41,9 @@
         # europeans
         every_country = {
             limit = {
-                capital ?= { continent = continent:europe }
-                or = {
-                    has_presence_in = sub_continent:south_asia
-                    any_country_in_diplomatic_range = {
-                        capital ?= { sub_continent = sub_continent:south_asia }
-                    }
+                is_possible_indian_colonizer = yes
+                any_country_in_diplomatic_range = {
+                    capital ?= { sub_continent = sub_continent:south_asia }
                 }
             }
             trigger_event_non_silently = htc_conquest_of_india.1
@@ -54,7 +51,9 @@
 
         # indians
         every_country = {
-            limit = { culture = { has_culture_group = culture_group:indian_group } }
+            limit = {
+                is_indian_native = yes
+            }
             trigger_event_non_silently = htc_conquest_of_india.2
         }
     }
@@ -77,8 +76,7 @@
         if = {
             limit = {
                 owner ?= {
-                    capital ?= { continent = continent:europe }
-                    has_presence_in = sub_continent:south_asia
+                    is_possible_indian_colonizer = yes
                 }
             }
             custom_tooltip = htc_coi_colonizer_tt
@@ -87,7 +85,7 @@
         else_if = {
             limit = {
                 owner ?= {
-                    culture = { has_culture_group = culture_group:indian_group }
+                    is_indian_native = yes
                 }
             }
             custom_tooltip = htc_coi_indian_tt
@@ -96,9 +94,7 @@
         else_if = {
             limit = {
                 owner ?= {
-                    capital ?= { sub_continent = sub_continent:south_asia }
-                    is_subject = yes
-                    overlord = { capital ?= { continent = continent:europe } }
+                    is_indian_colonial_subject = yes
                 }
             }
             custom_tooltip = htc_coi_subject_of_colonizer_tt
@@ -109,18 +105,19 @@
     }
 
     map_color = {
-        # native indian powers are grey
+        # europeans and their subjects are their own color
         if = {
             limit = {
                 sub_continent = sub_continent:south_asia
                 owner ?= {
                     top_overlord_or_this ?= {
-                        capital ?= { continent = continent:europe }
+                        is_possible_indian_colonizer = yes
                     }
                 }
             }
             value = owner.top_overlord_or_this.country_color
         }
+        # native indian powers are grey
         else_if = {
             limit = {
                 sub_continent = sub_continent:south_asia
@@ -136,13 +133,7 @@
                 # the variable is cleared when no independent Indian power is left,
                 # so guard against dereferencing a dead country
                 exists = situation:conquest_of_india.var:strongest_indian_power
-                not = {
-                    owner ?= {
-                        top_overlord_or_this ?= {
-                            capital ?= { continent = continent:europe }
-                        }
-                    }
-                }
+                is_indian_native = yes
             }
             value = situation:conquest_of_india.var:strongest_indian_power.country_color
         }

@@ -1,13 +1,5 @@
 # north america
 
-C_CAN:
-  name: "Canada"
-  adjective: "Canadian"
-  geography_triggers:
-    - region = region:canada_region
-  overlord_triggers:
-    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group }
-
 C_QBC:
   name: "Québec"
   adjective: "Québécois"
@@ -15,14 +7,6 @@ C_QBC:
     - region = region:canada_region
   overlord_triggers:
     - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:french_group }
-
-C_NWE:
-  name: "Thirteen Colonies"
-  adjective: "American"
-  geography_triggers:
-    - region = region:east_coast_region
-  overlord_triggers:
-    - or = { tag = ENG tag = GBR }
 
 C_NWF:
   name: "New France"

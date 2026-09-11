@@ -21,6 +21,7 @@ htc_annex_native_on_occupation = {
 				}
 				scope:target = {
 					owner ?= {
+						is_ai = yes
 						or = {
 							religion = religion:inti
 							religion.group = religion_group:folk_peruvian_group
@@ -39,6 +40,7 @@ htc_annex_native_on_occupation = {
 				}
 				scope:target = {
 					owner ?= {
+						is_ai = yes
 						or = {
 							religion.group = religion_group:folk_aridoamerica_group
 							religion.group = religion_group:folk_central_american_group
@@ -61,6 +63,7 @@ htc_annex_native_on_occupation = {
 				}
 				scope:target = {
 					owner ?= {
+						is_ai = yes
 						or = {
 							religion = religion:inti
 							religion.group = religion_group:folk_peruvian_group
@@ -89,6 +92,7 @@ htc_annex_native_on_occupation = {
 				}
 				scope:target = {
 					owner ?= {
+						is_ai = yes
 						or = {
 							religion.group = religion_group:folk_aridoamerica_group
 							religion.group = religion_group:folk_central_american_group

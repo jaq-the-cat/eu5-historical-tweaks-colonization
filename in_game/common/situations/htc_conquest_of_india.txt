@@ -3,24 +3,22 @@
     hint_tag = hint_conquest_of_india
     
     can_start = {
+		or = {
+			current_age = age_5_absolutism
+			current_age = age_6_revolutions
+		}
         any_country = {
-            capital ?= { continent = continent:europe }
-            has_presence_in = sub_continent:south_asia
+            is_possible_indian_colonizer = yes
+            any_country_in_diplomatic_range = {
+                capital ?= { sub_continent = sub_continent:south_asia }
+            }
         }
     }
 
     can_end = {
-        custom_tooltip = {
-            text = "htc_coi_europeans_kicked_out_of_india"
-            not = {
-                any_country = {
-                    capital ?= { continent = continent:europe }
-                    has_presence_in = sub_continent:south_asia
-                }
-            }
-        }
+        always = no
     }
-    
+
     # root = country. 
     visible = {
         or = {

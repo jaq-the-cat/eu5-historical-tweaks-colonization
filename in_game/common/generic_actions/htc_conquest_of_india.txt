@@ -116,7 +116,6 @@ htc_coi_purchase_location = {
                     }
                 }
             }
-            add = scope:actor.monthly_balance
             add = scope:actor.societal_value:land_vs_naval
             add = {
                 value = {
@@ -265,7 +264,6 @@ htc_coi_purchase_province = {
                     }
                 }
             }
-            add = scope:actor.monthly_balance
             add = scope:actor.societal_value:land_vs_naval
             add = {
                 value = {
@@ -276,18 +274,6 @@ htc_coi_purchase_province = {
             if = {
                 limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
                 add = scope:actor.modifier:bias_for_colonialist_policies
-            }
-            if = {
-                limit = {
-                    scope:target = {
-                        not = {
-                            any_location_in_province = {
-                                is_neighbor_of = scope:actor
-                            }
-                        }
-                    }
-                }
-                add = -500
             }
         }
     }
@@ -345,6 +331,7 @@ htc_coi_offer_protection = {
         column = { data = great_power_score }
         column = { data = population }
         visible = {
+            not = { has_or_had_tag = MUG }
             or = {
                 is_indian_native = yes
                 and = {
@@ -356,9 +343,8 @@ htc_coi_offer_protection = {
                     is_indian_colonial_subject = yes
                 }
             }
-            top_overlord_or_this.country_strength <= {
+            top_overlord_or_this.country_strength < {
                 value = scope:actor.country_strength
-                divide = 2
             }
         }
         enabled = {
@@ -388,14 +374,11 @@ htc_coi_offer_protection = {
             limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
             add = scope:actor.modifier:bias_for_colonialist_policies
         }
-        add = scope:actor.monthly_balance
-        if = {
-            limit = {
-                scope:target = {
-                    not = { is_neighbor_of = scope:actor }
-                }
-            }
-            add = -500
+        scope:actor ?= {
+            add = monthly_balance
+        }
+        scope:target ?= {
+            subtract = monthly_balance
         }
     }
 }
@@ -452,6 +435,7 @@ htc_coi_assist_in_war_for_vassal = {
         column = { data = great_power_score }
         column = { data = population }
         visible = {
+            not = { has_or_had_tag = MUG }
             or = {
                 is_indian_native = yes
                 and = {
@@ -464,9 +448,8 @@ htc_coi_assist_in_war_for_vassal = {
                 }
             }
             at_war = yes
-            top_overlord_or_this.country_strength <= {
+            top_overlord_or_this.country_strength < {
                 value = scope:actor.country_strength
-                divide = 2
             }
         }
         enabled = {
@@ -501,14 +484,12 @@ htc_coi_assist_in_war_for_vassal = {
                 limit = { scope:actor.modifier:bias_for_colonialist_policies > 0 }
                 add = scope:actor.modifier:bias_for_colonialist_policies
             }
-        }
-        if = {
-            limit = {
-                scope:target = {
-                    not = { is_neighbor_of = scope:actor }
-                }
+            scope:actor ?= {
+                add = monthly_balance
             }
-            add = -500
+            scope:target ?= {
+                subtract = monthly_balance
+            }
         }
     }
 }

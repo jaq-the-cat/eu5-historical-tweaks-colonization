@@ -37,7 +37,7 @@ htc_conquistador_events.1 = {
 				army_light_cavalry = 6
 				army_artillery = 3
 			}
-			cost_multiplier = 0.05
+			cost_multiplier = 0.01
 			save_scope_as = target_mercenary
 			months = 240 # 20 yrs
 		}
@@ -86,7 +86,7 @@ htc_conquistador_events.2 = {
 				army_light_cavalry = 6
 				army_artillery = 3
 			}
-			cost_multiplier = 0.05
+			cost_multiplier = 0.01
 			save_scope_as = target_mercenary
 			months = 240 # 20 yrs
 		}

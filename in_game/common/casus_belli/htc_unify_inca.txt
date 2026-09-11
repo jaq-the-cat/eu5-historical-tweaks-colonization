@@ -1,6 +1,7 @@
 ﻿cb_htc_unify_inca = {
 	create_visible = {
 		religion = religion:inti
+		not = { tag = INC }
 	}
 
 	create_enabled = {

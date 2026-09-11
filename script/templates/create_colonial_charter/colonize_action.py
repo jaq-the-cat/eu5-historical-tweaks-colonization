@@ -362,12 +362,17 @@ class ColonizeAction:
             limit = {
                 # keep castillian/spanish colonies safe
                 or = {
-                    c:CAS ?= { country_tax_base > 200 }
-                    c:SPA ?= { country_tax_base > 200 }
+                    and = {
+                        country_exists = c:CAS
+                        c:CAS ?= { country_tax_base > 200 }
+                    }
+                    and = {
+                        country_exists = c:SPA
+                        c:SPA ?= { country_tax_base > 200 }
+                    }
                 }
                 scope:actor = {
                     not = { has_or_had_tag = CAS }
-                    not = { has_or_had_tag = SPA }
                 }
                 scope:target ?= {
                     or = {
@@ -389,7 +394,7 @@ class ColonizeAction:
                 country_exists = c:POR
                 c:POR ?= { country_tax_base > 200 }
                 scope:actor = {
-                    not = { has_or_had_tag = POR }
+                    not = { tag = POR }
                 }
                 scope:target ?= {
                     region = region:brazil_region

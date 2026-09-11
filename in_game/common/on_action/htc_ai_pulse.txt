@@ -60,6 +60,7 @@ htc_ai_monthly_colonize_pulse = {
         10 = htc_colonize_in_region_spain.5
         10 = htc_colonize_in_region_spain.6
         10 = htc_colonize_in_region_spain.7
+        10 = htc_colonize_in_region_spain.8
         chance_to_happen = 5
 	}
 }

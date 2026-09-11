@@ -3,7 +3,7 @@ wg_htc_conquer_native = {
 	war_name = "COLONIAL_WAR_NAME" # uses second
 	
 	attacker = {
-		conquer_cost = 0.25
+		conquer_cost = 0.1
 		allowed_subjugation = { always = no }
 	}
 
@@ -11,6 +11,6 @@ wg_htc_conquer_native = {
 		conquer_cost = 1.0
 	}
 
-	ticking_war_score = 0.5
+	ticking_war_score = 0.1
 }
 

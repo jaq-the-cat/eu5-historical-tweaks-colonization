@@ -111,7 +111,6 @@ colonial_charter.100 = {
         else_if = {
             limit = {
                 scope:target ?= { OR = { province_definition = province_definition:xaymaca_province } }
-                scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group } }
             }
             if = {
                 limit = {
@@ -137,7 +136,6 @@ colonial_charter.100 = {
         else_if = {
             limit = {
                 scope:target ?= { OR = { province_definition = province_definition:bahamas_province } }
-                scope:actor ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group } }
             }
             if = {
                 limit = {
@@ -359,6 +357,32 @@ colonial_charter.100 = {
                         }
                     }
                     c:C_PER = { save_scope_as = unique_colony }
+                }
+                else = {
+                    set_local_variable = { name = can_be_unique_colony value = no }
+                }
+            }
+            else = {
+                set_local_variable = { name = can_be_unique_colony value = yes }
+            }
+        }
+        else_if = {
+            limit = {
+                scope:target ?= { OR = { region = region:chaco_region } }
+                scope:actor ?= { has_or_had_tag = CAS }
+            }
+            if = {
+                limit = {
+                    country_exists = c:C_PAR
+                }
+                if = {
+                    limit = {
+                        c:C_PAR ?= {
+                            is_subject = yes
+                            is_subject_of = scope:actor
+                        }
+                    }
+                    c:C_PAR = { save_scope_as = unique_colony }
                 }
                 else = {
                     set_local_variable = { name = can_be_unique_colony value = no }
@@ -636,7 +660,6 @@ colonial_charter.100 = {
                         limit = {
                             NOT = { country_exists = c:C_JAM }
                             capital ?= { OR = { province_definition = province_definition:xaymaca_province } }
-                            overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group } }
                         }
                         name = {
                             name = C_JAM
@@ -650,7 +673,6 @@ colonial_charter.100 = {
                         limit = {
                             NOT = { country_exists = c:C_BHM }
                             capital ?= { OR = { province_definition = province_definition:bahamas_province } }
-                            overlord ?= { any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group } }
                         }
                         name = {
                             name = C_BHM
@@ -770,6 +792,20 @@ colonial_charter.100 = {
                         define_unique_country_tag = C_PER
                         change_country_name = C_PER
                         change_country_adjective = C_PER_ADJ
+                        set_variable = { name = htc_unique_colony value = yes }
+                    }
+                    else_if = {
+                        limit = {
+                            NOT = { country_exists = c:C_PAR }
+                            capital ?= { OR = { region = region:chaco_region } }
+                            overlord ?= { has_or_had_tag = CAS }
+                        }
+                        name = {
+                            name = C_PAR
+                        }
+                        define_unique_country_tag = C_PAR
+                        change_country_name = C_PAR
+                        change_country_adjective = C_PAR_ADJ
                         set_variable = { name = htc_unique_colony value = yes }
                     }
                     else_if = {

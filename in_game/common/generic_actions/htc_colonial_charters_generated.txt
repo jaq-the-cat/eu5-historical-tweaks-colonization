@@ -345,9 +345,20 @@
                                 this = province_definition:seles_province
                                 this = province_definition:mbegela_province
                                 this = province_definition:namibe_province
-                                region = region:zimbabwe_region
+                                area = area:ruvuma_lurio_area
+                                this = province_definition:zumbo_province
+                                this = province_definition:tete_province
+                                this = province_definition:shire_province
+                                this = province_definition:lower_zambezi_province
+                                this = province_definition:sena_province
+                                this = province_definition:buzi_province
+                                this = province_definition:pungwe_province
+                                this = province_definition:inhambane_province
+                                this = province_definition:changane_province
+                                this = province_definition:komati_province
                                 region = region:indonesia_region
                                 region = region:indochina_region
+                                area = area:maldives_area
                             }
                         }
                         current_year >= 1560
@@ -466,12 +477,17 @@
             limit = {
                 # keep castillian/spanish colonies safe
                 or = {
-                    c:CAS ?= { country_tax_base > 200 }
-                    c:SPA ?= { country_tax_base > 200 }
+                    and = {
+                        country_exists = c:CAS
+                        c:CAS ?= { country_tax_base > 200 }
+                    }
+                    and = {
+                        country_exists = c:SPA
+                        c:SPA ?= { country_tax_base > 200 }
+                    }
                 }
                 scope:actor = {
                     not = { has_or_had_tag = CAS }
-                    not = { has_or_had_tag = SPA }
                 }
                 scope:target ?= {
                     or = {
@@ -493,7 +509,7 @@
                 country_exists = c:POR
                 c:POR ?= { country_tax_base > 200 }
                 scope:actor = {
-                    not = { has_or_had_tag = POR }
+                    not = { tag = POR }
                 }
                 scope:target ?= {
                     region = region:brazil_region

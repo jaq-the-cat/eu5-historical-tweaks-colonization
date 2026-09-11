@@ -13,7 +13,7 @@
 
 	cooldown = { 
 		type = purchase_trade_port
-		years = 20
+		years = 10
 	}
 
 	allow = {
@@ -171,7 +171,7 @@
 		core = -50
 		location_value = -25
 		rank = -25
-		
+
 		actor_is_rival = -100
 		actor_overlord_is_rival = -100
 		recipient_is_rival = -100

@@ -56,10 +56,25 @@ charters:
     - mbegela_province
     - namibe_province
     # east africa
-    - zimbabwe_region
+    - ruvuma_lurio_area
+    # zambezi_area
+    - zumbo_province
+    - tete_province
+    - shire_province
+    - lower_zambezi_province
+    - sena_province
+    # save_area
+    - buzi_province
+    - pungwe_province
+    # limpopo_area
+    - inhambane_province
+    - changane_province
+    - komati_province
     # south east asia
     - indonesia_region
     - indochina_region
+    # indies
+    - maldives_area
   1580:
     - canada_region
   1600:

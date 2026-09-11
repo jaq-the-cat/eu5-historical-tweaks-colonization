@@ -32,7 +32,6 @@ C_JAM:
   geography_triggers:
     - province_definition = province_definition:xaymaca_province
   overlord_triggers:
-    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group }
 
 C_BHM:
   name: "Bahamas"
@@ -40,7 +39,6 @@ C_BHM:
   geography_triggers:
     - province_definition = province_definition:bahamas_province
   overlord_triggers:
-    - any_primary_or_accepted_culture ?= { has_culture_group = culture_group:british_group }
 
 C_CUB:
   name: "Cuba"
@@ -105,6 +103,14 @@ C_PER:
   adjective: "Peruvian"
   geography_triggers:
     - region = region:andes_region
+  overlord_triggers:
+    - has_or_had_tag = CAS
+
+C_PAR:
+  name: "Paraguay"
+  adjective: "Paraguayan"
+  geography_triggers:
+    - region = region:chaco_region
   overlord_triggers:
     - has_or_had_tag = CAS
 
